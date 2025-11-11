@@ -1,0 +1,56 @@
+.button {
+	background-color: var(--color-primary);
+	cursor: pointer;
+	border-radius: 0.25rem;
+	transition-duration: 300ms;
+	display: none;
+	width: 2.5rem;
+	padding: 0.5rem;
+	gap: 1rem;
+	border: none;
+	font-family: inherit;
+}
+
+.button:hover {
+	box-shadow: var(--shadow-button-default);
+}
+
+.button:active {
+	box-shadow: var(--shadow-button-active);
+}
+
+@media (min-width: 768px) {
+	.button {
+		display: flex;
+	}
+}
+
+@media (min-width: 1024px) {
+	.button {
+		width: 8.75rem;
+	}
+}
+
+.menuIcon {
+	display: none;
+}
+
+@media (min-width: 768px) {
+	.menuIcon {
+		display: block;
+	}
+}
+
+.text {
+	font-size: 1rem;
+	line-height: 1.5rem;
+	color: #ffffff;
+	display: none;
+	font-family: inherit;
+}
+
+@media (min-width: 1024px) {
+	.text {
+		display: block;
+	}
+}
