@@ -17,3 +17,10 @@ body {
 * {
 	box-sizing: border-box;
 }
+
+.home {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5rem;
+}

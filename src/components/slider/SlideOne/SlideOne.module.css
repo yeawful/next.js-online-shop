@@ -1,0 +1,78 @@
+.slideOne {
+	position: relative;
+	background-image: url("/images/graphics/pattern-slider.png");
+	background-repeat: repeat;
+	background-size: contain;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	height: 5rem;
+}
+
+.slideOneOverlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+.slideOneContent {
+	display: flex;
+	flex-direction: row;
+	gap: 0.5rem;
+	align-items: center;
+	z-index: 10;
+	position: relative;
+}
+
+.slideOneImage {
+	position: relative;
+	display: none;
+	top: 1.75rem;
+}
+
+.slideOneTitle {
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+	font-weight: 700;
+	color: #414141;
+}
+
+@media (min-width: 768px) {
+	.slideOne {
+		height: 10rem;
+	}
+
+	.slideOneImage {
+		display: block;
+		width: 12.5rem;
+		height: 8.25rem;
+	}
+
+	.slideOneTitle {
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+}
+
+@media (min-width: 1280px) {
+	.slideOne {
+		height: 12.5rem;
+	}
+
+	.slideOneContent {
+		gap: 1rem;
+	}
+
+	.slideOneImage {
+		width: 18.75rem;
+		height: 12.5rem;
+	}
+
+	.slideOneTitle {
+		font-size: 3rem;
+		line-height: 1;
+	}
+}
