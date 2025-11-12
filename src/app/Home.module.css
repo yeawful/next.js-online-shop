@@ -1,0 +1,26 @@
+.main {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5rem;
+}
+
+.products {
+	padding-left: max(12px, calc((100% - 1208px) / 2));
+	padding-right: max(12px, calc((100% - 1208px) / 2));
+	display: flex;
+	flex-direction: column;
+	gap: 5rem;
+}
+
+@media (min-width: 768px) {
+	.products {
+		margin-bottom: 6.25rem;
+	}
+}
+
+@media (min-width: 1280px) {
+	.products {
+		margin-bottom: 7.5rem;
+	}
+}
