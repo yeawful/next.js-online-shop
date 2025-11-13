@@ -1,32 +1,37 @@
 import Image from "next/image";
-import iconRight from "../../../public/icons-header/icon-arrow-right.svg";
-import articlesDatabase from "@/data/articlesDatabase.json";
-import Link from "next/link";
+import { Article } from "@/types/articles";
 import styles from "./Articles.module.css";
+import ViewAllButton from "../products/ViewAllButton/ViewAllButton";
 
-const Articles = () => {
-	const articles = articlesDatabase;
+const Articles = async () => {
+	let articles: Article[] = [];
+	let error = null;
+
+	try {
+		const res = await fetch(
+			`${process.env.NEXT_PUBLIC_BASE_URL!}/api/articles`
+		);
+		articles = await res.json();
+	} catch (err) {
+		error = "Ошибка получения статей";
+		console.error("Ошибка в компоненте Article:", err);
+	}
+
+	if (error) {
+		return <div>Ошибка: {error}</div>;
+	}
 
 	return (
 		<section className={styles.articles}>
 			<div className={styles.articlesContainer}>
 				<div className={styles.articlesHeader}>
 					<h2 className={styles.articlesTitle}>Статьи</h2>
-					<Link href="#" className={styles.viewArticlesLink}>
-						<p className={styles.viewArticlesText}>К статьям</p>
-						<Image
-							src={iconRight}
-							alt="К статьям"
-							width={24}
-							height={24}
-							sizes="24px"
-						/>
-					</Link>
+					<ViewAllButton btnText="К статьям" href="articles" />
 				</div>
 
 				<ul className={styles.articlesGrid}>
 					{articles.map((article) => (
-						<li key={article.id} className={styles.articleItem}>
+						<li key={article._id} className={styles.articleItem}>
 							<article className={styles.articleCard}>
 								<div className={styles.articleImageContainer}>
 									<Image

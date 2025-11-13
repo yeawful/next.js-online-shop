@@ -38,6 +38,15 @@
 	cursor: pointer;
 	transition-duration: 300ms;
 	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.favoriteButton img {
+	object-fit: contain;
+	width: auto;
+	height: auto;
 }
 
 .favoriteButton:hover {

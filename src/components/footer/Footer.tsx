@@ -10,7 +10,12 @@ const Footer = () => {
 			<div className={styles.gridContainer}>
 				<div className={styles.logo}>
 					<Link href="/" className={styles.logoLink}>
-						<Image src="/icons-footer/logo-footer.png" alt="Логотип" fill />
+						<Image
+							src="/icons-footer/logo-footer.png"
+							alt="Логотип"
+							fill
+							sizes="(max-width: 768px) 100vw, 50vw"
+						/>
 					</Link>
 				</div>
 

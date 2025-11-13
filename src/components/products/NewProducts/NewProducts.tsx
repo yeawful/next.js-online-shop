@@ -1,34 +1,39 @@
-import Image from "next/image";
-import iconRight from "/public/icons-products/icon-arrow-right.svg";
 import ProductCard from "../ProductCard/ProductCard";
-import database from "@/data/database.json";
 import styles from "./NewProducts.module.css";
+import { ProductCardProps } from "@/types/product";
+import { shuffleArray } from "../../../utils/shuffleArray";
+import ViewAllButton from "../ViewAllButton/ViewAllButton";
 
-const NewProducts = () => {
-	const newProducts = database.products.filter((p) =>
-		p.categories?.includes("new")
-	);
+const NewProducts = async () => {
+	let products: ProductCardProps[] = [];
+	let error = null;
+	try {
+		const res = await fetch(
+			`${process.env.NEXT_PUBLIC_BASE_URL}/api/products?category=new`
+		);
+		products = await res.json();
+
+		products = shuffleArray(products);
+	} catch (err) {
+		error = "Ошибка получения новых продуктов";
+		console.error("Ошибка в компоненте NewProducts:", err);
+	}
+
+	if (error) {
+		return <div>Ошибка: {error}</div>;
+	}
 
 	return (
 		<section className={styles.newProducts}>
 			<div className={styles.newProductsContainer}>
 				<div className={styles.newProductsHeader}>
 					<h2 className={styles.newProductsTitle}>Новинки</h2>
-					<button className={styles.viewAllButton}>
-						<p className={styles.viewAllText}>Все новинки</p>
-						<Image
-							src={iconRight}
-							alt="К новинкам"
-							width={24}
-							height={24}
-							sizes="24px"
-						/>
-					</button>
+					<ViewAllButton btnText="Все новинки" href="new" />
 				</div>
 				<ul className={styles.productsGrid}>
-					{newProducts.slice(0, 4).map((item, index) => (
+					{products.slice(0, 4).map((item, index) => (
 						<li
-							key={item.id}
+							key={item._id}
 							className={`
                 ${index >= 4 ? styles.hiddenItem : ""}
                 ${index >= 3 ? styles.mdHidden : ""}

@@ -18,27 +18,6 @@
 	color: var(--color-title);
 }
 
-.viewAllButton {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 0.5rem;
-	cursor: pointer;
-	border: none;
-	background-color: transparent;
-}
-
-.viewAllText {
-	font-size: 1rem;
-	text-align: center;
-	color: #606060;
-	transition-duration: 300ms;
-}
-
-.viewAllText:hover {
-	color: #bfbfbf;
-}
-
 .productsGrid {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);

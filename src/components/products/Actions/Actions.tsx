@@ -1,34 +1,39 @@
-import Image from "next/image";
-import iconRight from "/public/icons-products/icon-arrow-right.svg";
 import ProductCard from "../ProductCard/ProductCard";
-import database from "@/data/database.json";
 import styles from "./Actions.module.css";
+import { ProductCardProps } from "@/types/product";
+import { shuffleArray } from "../../../utils/shuffleArray";
+import ViewAllButton from "../ViewAllButton/ViewAllButton";
 
-const Actions = () => {
-	const actionProducts = database.products.filter((p) =>
-		p.categories.includes("actions")
-	);
+const Actions = async () => {
+	let products: ProductCardProps[] = [];
+	let error = null;
+	try {
+		const res = await fetch(
+			`${process.env.NEXT_PUBLIC_BASE_URL}/api/products?category=actions`
+		);
+		products = await res.json();
+
+		products = shuffleArray(products);
+	} catch (err) {
+		error = "Ошибка получения акционных продуктов";
+		console.error("Ошибка в компоненте Actions:", err);
+	}
+
+	if (error) {
+		return <div>Ошибка: {error}</div>;
+	}
 
 	return (
 		<section>
 			<div className={styles.actionsContainer}>
 				<div className={styles.actionsHeader}>
 					<h2 className={styles.actionsTitle}>Акции</h2>
-					<button className={styles.viewAllButton}>
-						<p className={styles.viewAllText}>Все акции</p>
-						<Image
-							src={iconRight}
-							alt="К акциям"
-							width={24}
-							height={24}
-							sizes="24px"
-						/>
-					</button>
+					<ViewAllButton btnText="Все акции" href="actions" />
 				</div>
 				<ul className={styles.productsGrid}>
-					{actionProducts.slice(0, 4).map((item, index) => (
+					{products.slice(0, 4).map((item, index) => (
 						<li
-							key={item.id}
+							key={item._id}
 							className={`
                 ${index >= 4 ? styles.hiddenItem : ""}
                 ${index >= 3 ? styles.mdHidden : ""}

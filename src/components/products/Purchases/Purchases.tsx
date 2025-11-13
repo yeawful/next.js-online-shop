@@ -1,40 +1,35 @@
-import Image from "next/image";
-import iconRight from "../../../../public/icons-header/icon-arrow-right.svg";
 import ProductCard from "../ProductCard/ProductCard";
-import database from "@/data/database.json";
 import styles from "./Purchases.module.css";
+import { ProductCardProps } from "@/types/product";
+import ViewAllButton from "../ViewAllButton/ViewAllButton";
 
-const Purchases = () => {
-	const userPurchases = database.users[0].purchases
-		.map((purchase) => {
-			const product = database.products.find(
-				(product) => product.id === purchase.id
-			);
-			if (!product) return undefined;
-			const { discountPercent, ...rest } = product;
-			void discountPercent;
-			return rest;
-		})
-		.filter((item) => item !== undefined);
+const Purchases = async () => {
+	let purchases: ProductCardProps[] = [];
+	let error = null;
+
+	try {
+		const res = await fetch(
+			`${process.env.NEXT_PUBLIC_BASE_URL!}/api/users/purchases`
+		);
+		purchases = await res.json();
+	} catch (err) {
+		error = "Ошибка получения купленных продуктов";
+		console.error("Ошибка в компоненте Purchases:", err);
+	}
+
+	if (error) {
+		return <div className="text-red-500">Ошибка: {error}</div>;
+	}
 
 	return (
 		<section className={styles.purchases}>
 			<div className={styles.purchasesContainer}>
 				<div className={styles.purchasesHeader}>
 					<h2 className={styles.purchasesTitle}>Покупали раньше</h2>
-					<button className={styles.viewAllButton}>
-						<p className={styles.viewAllText}>Все покупки</p>
-						<Image
-							src={iconRight}
-							alt="К покупкам"
-							width={24}
-							height={24}
-							sizes="24px"
-						/>
-					</button>
+					<ViewAllButton btnText="Все покупки" href="purchases" />
 				</div>
 				<ul className={styles.productsGrid}>
-					{userPurchases.map((item, index) => (
+					{purchases.map((item, index) => (
 						<li
 							key={item.id}
 							className={`
