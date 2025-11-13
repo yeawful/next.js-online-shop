@@ -1,7 +1,7 @@
 import Image from "next/image";
 import iconHeart from "/public/icons-header/icon-heart.svg";
 import { ProductCardProps } from "@/types/product";
-import { formatPrice } from "../../../../utils/formatPrice";
+import { formatPrice } from "../../../utils/formatPrice";
 import styles from "./ProductCard.module.css";
 import StarRating from "../StarRating/StarRating";
 
@@ -11,7 +11,7 @@ const ProductCard = ({
 	img,
 	description,
 	basePrice,
-	discountPercent,
+	discountPercent = 0,
 	rating,
 	categories,
 }: ProductCardProps) => {

@@ -13,20 +13,6 @@
 	height: 2rem;
 }
 
-@media (min-width: 768px) {
-	.logoContainer {
-		width: 3rem;
-		height: 2.5rem;
-	}
-}
-
-@media (min-width: 1280px) {
-	.logoContainer {
-		width: 2.5rem;
-		height: 2rem;
-	}
-}
-
 .textContainer {
 	position: relative;
 	display: none;
@@ -34,8 +20,22 @@
 	height: 0.75rem;
 }
 
+@media (min-width: 768px) {
+	.logoContainer {
+		width: 3rem;
+		height: 2.5rem;
+	}
+}
+
 @media (min-width: 1024px) {
 	.textContainer {
 		display: block;
+	}
+}
+
+@media (min-width: 1280px) {
+	.logoContainer {
+		width: 2.5rem;
+		height: 2rem;
 	}
 }

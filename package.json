@@ -10,7 +10,10 @@
 	},
 	"dependencies": {
 		"@a1rth/css-normalize": "^1.2.4",
-		"motion": "^12.23.24",
+		"@iminside/react-yandex-maps": "^1.2.7",
+		"dotenv": "^17.2.3",
+		"mongodb": "^7.0.0",
+		"mongoose": "^8.19.3",
 		"next": "16.0.1",
 		"react": "19.2.0",
 		"react-dom": "19.2.0"

@@ -1,0 +1,70 @@
+.maps {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: #414141;
+}
+
+.mapsTitle {
+	margin-bottom: 1rem;
+	font-size: 1.5rem;
+	text-align: left;
+	font-weight: 700;
+}
+
+.locationButtons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 0.5rem;
+	margin-bottom: 1.25rem;
+}
+
+.locationButton {
+	padding: 0.5rem;
+	font-size: 0.75rem;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition-property: color, background-color, box-shadow;
+	transition-duration: 300ms;
+}
+
+.locationButton:active {
+	box-shadow: var(--shadow-button-active);
+}
+
+.locationButtonActive {
+	background-color: var(--color-primary);
+	color: #ffffff;
+}
+
+.locationButtonActive:hover {
+	box-shadow: var(--shadow-button-default);
+}
+
+.locationButtonInactive {
+	background-color: #f3f2f1;
+}
+
+.locationButtonInactive:hover {
+	box-shadow: var(--shadow-button-secondary);
+}
+
+@media (min-width: 768px) {
+	.mapsTitle {
+		margin-bottom: 2rem;
+	}
+}
+
+@media (min-width: 1280px) {
+	.maps {
+		max-width: 1208px;
+	}
+
+	.mapsTitle {
+		margin-bottom: 2.5rem;
+		font-size: 2.25rem;
+	}
+}

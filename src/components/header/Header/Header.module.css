@@ -8,21 +8,6 @@
 	justify-content: center;
 }
 
-@media (min-width: 768px) {
-	.header {
-		box-shadow: var(--shadow-default);
-		flex-direction: row;
-		gap: 2.5rem;
-		padding: 0.5rem;
-	}
-}
-
-@media (min-width: 1280px) {
-	.header {
-		gap: 1.75rem;
-	}
-}
-
 .headerTop {
 	display: flex;
 	flex-direction: row;
@@ -33,12 +18,23 @@
 }
 
 @media (min-width: 768px) {
+	.header {
+		box-shadow: var(--shadow-default);
+		flex-direction: row;
+		gap: 2.5rem;
+		padding: 0.5rem;
+	}
+
 	.headerTop {
 		box-shadow: none;
 	}
 }
 
 @media (min-width: 1280px) {
+	.header {
+		gap: 1.75rem;
+	}
+
 	.headerTop {
 		gap: 2.5rem;
 	}

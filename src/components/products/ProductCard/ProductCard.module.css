@@ -26,8 +26,8 @@
 }
 
 .favoriteButton {
-	width: 2.2rem;
-	height: 2rem;
+	width: auto;
+	height: auto;
 	padding: 0.5rem;
 	background-color: #f3f2f1;
 	position: absolute;

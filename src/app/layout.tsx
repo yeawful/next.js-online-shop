@@ -3,7 +3,7 @@ import { Rubik } from "next/font/google";
 import "@a1rth/css-normalize";
 import "./globals.css";
 import Header from "@/components/header/Header/Header";
-import Footer from "@/components/Footer";
+import Footer from "@/components/footer/Footer";
 
 const rubik = Rubik({
 	variable: "--font-rubik",

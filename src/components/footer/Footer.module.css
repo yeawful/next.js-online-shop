@@ -1,0 +1,162 @@
+.footer {
+	background-color: #f9f4e2;
+	margin-bottom: 3.5rem;
+	background-image: url("/images/graphics/pattern-footer.png");
+	padding-left: max(12px, calc((100% - 1208px) / 2));
+	padding-right: max(12px, calc((100% - 1208px) / 2));
+	width: 100%;
+}
+
+.gridContainer {
+	padding: 1.75rem 2.5rem;
+	display: grid;
+	gap: 1.5rem;
+	color: #414141;
+	align-items: center;
+	grid-template-areas:
+		"logo social"
+		"logo phone"
+		"nav nav"
+		"design design";
+	grid-template-columns: 1fr 1fr;
+}
+
+.logo {
+	grid-area: logo;
+}
+
+.logoLink {
+	position: relative;
+	width: 5.75rem;
+	height: 4rem;
+	display: block;
+}
+
+.social {
+	grid-area: social;
+	display: flex;
+	flex-direction: row;
+	gap: 1.25rem;
+	justify-self: end;
+}
+
+.socialIcons {
+	display: flex;
+	gap: 1.25rem;
+	align-items: flex-start;
+}
+
+.socialIcon {
+	transition-opacity: 300ms;
+}
+
+.socialIcon:hover {
+	opacity: 0.8;
+}
+
+.phone {
+	grid-area: phone;
+	justify-self: end;
+}
+
+.phoneLink {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	transition-opacity: 300ms;
+	text-decoration: none;
+	color: inherit;
+}
+
+.phoneLink:hover {
+	opacity: 0.8;
+	outline: none;
+}
+
+.phoneText {
+	font-size: 1rem;
+	transition-color: 300ms;
+}
+
+.phoneText:hover {
+	color: #000000;
+}
+
+.nav {
+	grid-area: nav;
+}
+
+.navList {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	font-size: 0.75rem;
+}
+
+.navItem {
+	transition-color: 300ms;
+	cursor: pointer;
+}
+
+.navItem:hover {
+	color: #000000;
+}
+
+.navItem a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.navItem a:focus {
+	outline: none;
+}
+
+.design {
+	grid-area: design;
+}
+
+.designLink {
+	transition-opacity: 300ms;
+}
+
+.designLink:hover {
+	opacity: 0.8;
+}
+
+@media (min-width: 768px) {
+	.footer {
+		margin-bottom: 0;
+	}
+
+	.gridContainer {
+		gap: 0 2.5rem;
+		grid-template-areas:
+			"logo nav social phone"
+			"logo nav social design";
+		grid-template-columns: auto 1fr auto auto;
+	}
+
+	.logoLink {
+		width: 4rem;
+		height: 2.75rem;
+	}
+
+	.social {
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.navList {
+		gap: 0 2.5rem;
+	}
+}
+
+@media (min-width: 1280px) {
+	.social {
+		flex-direction: row;
+	}
+
+	.navList {
+		gap: 0.5rem 2.5rem;
+	}
+}
