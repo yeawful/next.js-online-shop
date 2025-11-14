@@ -33,6 +33,8 @@ const ProductCard = ({
 		? basePrice
 		: calculatePriceByCard(finalPrice, cardDiscountPercent);
 
+	const ratingValue = rating?.rate || 5;
+
 	return (
 		<div className={styles.productCard}>
 			<div className={styles.productImageContainer}>
@@ -79,7 +81,7 @@ const ProductCard = ({
 					)}
 				</div>
 				<div className={styles.description}>{description}</div>
-				{rating > 0 && <StarRating rating={rating} />}
+				{ratingValue > 0 && <StarRating rating={ratingValue} />}
 				<button className={styles.addToCartButton}>В корзину</button>
 			</div>
 		</div>
