@@ -5,7 +5,7 @@
 	margin-bottom: 5rem;
 }
 
-.products {
+.components {
 	padding-left: max(12px, calc((100% - 1208px) / 2));
 	padding-right: max(12px, calc((100% - 1208px) / 2));
 	display: flex;
@@ -14,13 +14,13 @@
 }
 
 @media (min-width: 768px) {
-	.products {
+	.components {
 		margin-bottom: 6.25rem;
 	}
 }
 
 @media (min-width: 1280px) {
-	.products {
+	.components {
 		margin-bottom: 7.5rem;
 	}
 }

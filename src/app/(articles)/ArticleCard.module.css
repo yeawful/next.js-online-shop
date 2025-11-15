@@ -1,60 +1,3 @@
-.articles {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	color: #414141;
-}
-
-.articlesContainer {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-
-.articlesHeader {
-	margin-bottom: 1rem;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-}
-
-.articlesTitle {
-	font-size: 1.5rem;
-	text-align: left;
-	font-weight: 700;
-}
-
-.viewArticlesLink {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 0.5rem;
-	cursor: pointer;
-	text-decoration: none;
-}
-
-.viewArticlesText {
-	font-size: 1rem;
-	text-align: center;
-	color: #606060;
-	transition-duration: 300ms;
-	text-decoration: none;
-}
-
-.viewArticlesText:hover {
-	color: #bfbfbf;
-}
-
-.articlesGrid {
-	display: grid;
-	grid-template-columns: repeat(1, 1fr);
-	gap: 1.5rem;
-}
-
-.articleItem {
-	height: 18.75rem;
-}
-
 .articleCard {
 	background-color: #ffffff;
 	height: 100%;
@@ -132,41 +75,7 @@
 	box-shadow: var(--shadow-button-active);
 }
 
-@media (min-width: 640px) {
-	.articlesGrid {
-		grid-template-columns: repeat(3, 1fr);
-	}
-}
-
-@media (min-width: 768px) {
-	.articlesHeader {
-		margin-bottom: 2rem;
-	}
-
-	.articleItem {
-		height: 26.25rem;
-	}
-}
-
-@media (min-width: 1024px) {
-	.articlesGrid {
-		grid-template-columns: repeat(3, 1fr);
-	}
-}
-
 @media (min-width: 1280px) {
-	.articlesContainer {
-		max-width: 1208px;
-	}
-
-	.articlesHeader {
-		margin-bottom: 2.5rem;
-	}
-
-	.articlesTitle {
-		font-size: 2.25rem;
-	}
-
 	.articleTitle {
 		font-size: 1.125rem;
 	}

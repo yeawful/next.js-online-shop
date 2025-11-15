@@ -1,21 +1,26 @@
-.actionsContainer {
+.productsSection {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 }
 
-.actionsHeader {
+.productsSectionCompact {
+	padding-left: max(12px, calc((100% - 1208px) / 2));
+	padding-right: max(12px, calc((100% - 1208px) / 2));
+	margin-top: 5rem;
+}
+
+.productsHeader {
 	margin-bottom: 1rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 }
 
-.actionsTitle {
+.productsTitle {
 	font-size: 1.5rem;
 	text-align: left;
 	font-weight: 700;
-	color: var(--color-title);
+	color: #414141;
 }
 
 .productsGrid {
@@ -30,7 +35,7 @@
 }
 
 @media (min-width: 768px) {
-	.actionsHeader {
+	.productsHeader {
 		margin-bottom: 2rem;
 	}
 
@@ -45,15 +50,11 @@
 }
 
 @media (min-width: 1280px) {
-	.actionsContainer {
-		max-width: 1208px;
-	}
-
-	.actionsHeader {
+	.productsHeader {
 		margin-bottom: 2.5rem;
 	}
 
-	.actionsTitle {
+	.productsTitle {
 		font-size: 2.25rem;
 	}
 

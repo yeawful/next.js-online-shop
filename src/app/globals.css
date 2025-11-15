@@ -23,3 +23,7 @@ body {
 .no-ymaps-copyright [class*="copyrights-pane"] {
 	visibility: hidden;
 }
+
+.error {
+	color: #ef4444;
+}

@@ -1,0 +1,82 @@
+.articleSection {
+	display: flex;
+	flex-direction: column;
+	color: #414141;
+}
+
+.articleSectionCompact {
+	padding-left: max(12px, calc((100% - 1208px) / 2));
+	padding-right: max(12px, calc((100% - 1208px) / 2));
+	margin-top: 5rem;
+}
+
+.articleHeader {
+	margin-bottom: 1rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.articleTitle {
+	font-size: 1.5rem;
+	text-align: left;
+	font-weight: 700;
+}
+
+.articlesGrid {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	gap: 1.5rem;
+}
+
+.articleItem {
+	height: 18.75rem;
+}
+
+.hiddenItem {
+	display: none;
+}
+
+@media (min-width: 640px) {
+	.articlesGrid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media (min-width: 768px) {
+	.articleHeader {
+		margin-bottom: 2rem;
+	}
+
+	.articleItem {
+		height: 26.25rem;
+	}
+
+	.mdHidden {
+		display: none;
+	}
+}
+
+@media (min-width: 1024px) {
+	.articlesGrid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media (min-width: 1280px) {
+	.articleHeader {
+		margin-bottom: 2.5rem;
+	}
+
+	.articleTitle {
+		font-size: 2.25rem;
+	}
+
+	.xlBlock {
+		display: block;
+	}
+
+	.xlHidden {
+		display: none;
+	}
+}
