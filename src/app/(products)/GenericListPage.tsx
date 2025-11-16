@@ -5,7 +5,7 @@ import { CONFIG } from "../../../config/config";
 import PaginationWrapper from "@/components/pagination/PaginationWrapper";
 import ArticleSection from "../(articles)/ArticlesSection";
 import { ProductCardProps } from "@/types/product";
-import { ArticleCardProps } from "@/types/articlesListPageProps";
+import { ArticleCardProps } from "@/types/articles";
 
 const GenericListPage = async ({
 	searchParams,

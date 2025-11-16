@@ -1,4 +1,4 @@
-import { ArticleCardProps } from "./articlesListPageProps";
+import { ArticleCardProps } from "./articles";
 
 export interface ArticlesSectionProps {
 	title: string;

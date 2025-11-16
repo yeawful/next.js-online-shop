@@ -1,4 +1,4 @@
-import { ArticleCardProps } from "@/types/articlesListPageProps";
+import { ArticleCardProps } from "@/types/articles";
 import Image from "next/image";
 import styles from "./ArticleCard.module.css";
 

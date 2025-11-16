@@ -1,4 +1,4 @@
-import { ArticleCardProps } from "@/types/articlesListPageProps";
+import { ArticleCardProps } from "@/types/articles";
 
 const fetchArticles = async () => {
 	try {
