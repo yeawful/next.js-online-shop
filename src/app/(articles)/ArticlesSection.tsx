@@ -13,15 +13,17 @@ const ArticleSection = ({
 		<section>
 			<div
 				className={`${styles.articleSection} ${
-					!compact ? styles.articleSectionCompact : ""
+					!compact ? styles.compact : styles.margin
 				}`}
 			>
 				<div className={styles.articleHeader}>
 					<h2 className={styles.articleTitle}>{title}</h2>
-					<ViewAllButton
-						btnText={viewAllButton.text}
-						href={viewAllButton.href}
-					/>
+					{viewAllButton && (
+						<ViewAllButton
+							btnText={viewAllButton.text}
+							href={viewAllButton.href}
+						/>
+					)}
 				</div>
 				<ul className={styles.articlesGrid}>
 					{articles.map((article, index) => (

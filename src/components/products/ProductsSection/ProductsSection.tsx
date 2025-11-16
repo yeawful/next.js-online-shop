@@ -13,15 +13,17 @@ const ProductsSection = ({
 		<section>
 			<div
 				className={`${styles.productsSection} ${
-					!compact ? styles.productsSectionCompact : ""
+					!compact ? styles.compact : styles.margin
 				}`}
 			>
 				<div className={styles.productsHeader}>
 					<h2 className={styles.productsTitle}>{title}</h2>
-					<ViewAllButton
-						btnText={viewAllButton.text}
-						href={viewAllButton.href}
-					/>
+					{viewAllButton && (
+						<ViewAllButton
+							btnText={viewAllButton.text}
+							href={viewAllButton.href}
+						/>
+					)}
 				</div>
 				<ul className={styles.productsGrid}>
 					{products.map((item, index) => (

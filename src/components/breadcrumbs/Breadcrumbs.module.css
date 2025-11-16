@@ -1,0 +1,48 @@
+.breadcrumbs {
+	padding-left: max(12px, calc((100% - 1208px) / 2));
+	padding-right: max(12px, calc((100% - 1208px) / 2));
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.breadcrumbsList {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	font-size: 0.5rem;
+}
+
+.breadcrumbsItem {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.breadcrumbLast {
+	color: #8f8f8f;
+}
+
+.breadcrumbLink {
+	color: #414141;
+	text-decoration: none;
+}
+
+.breadcrumbLink:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.breadcrumbLink a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.breadcrumbLink a:hover {
+	text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+	.breadcrumbsList {
+		font-size: 0.75rem;
+	}
+}
