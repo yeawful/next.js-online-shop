@@ -9,6 +9,7 @@
 	gap: 1rem;
 	border: none;
 	font-family: inherit;
+	text-decoration: none;
 }
 
 .button:hover {

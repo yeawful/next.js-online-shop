@@ -1,9 +1,10 @@
 import Image from "next/image";
 import styles from "./ButtonSearch.module.css";
+import Link from "next/link";
 
 const ButtonSearch = () => {
 	return (
-		<button className={styles.button}>
+		<Link href="./catalog" className={styles.button}>
 			<Image
 				src="/icons-header/icon-menu.svg"
 				alt="menu"
@@ -12,7 +13,7 @@ const ButtonSearch = () => {
 				className={styles.menuIcon}
 			/>
 			<span className={styles.text}>Каталог</span>
-		</button>
+		</Link>
 	);
 };
 
