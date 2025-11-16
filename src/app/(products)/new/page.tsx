@@ -1,26 +1,27 @@
 import fetchProductsByCategory from "../fetchProducts";
-import ProductsSection from "@/components/products/ProductsSection/ProductsSection";
+import GenericListPage from "../GenericListPage";
 
 export const metadata = {
 	title: 'Новинки магазина "Северяночка"',
 	description: 'Новые товары магазина "Северяночка"',
 };
 
-const AllNew = async () => {
-	try {
-		const products = await fetchProductsByCategory("new");
-
-		return (
-			// eslint-disable-next-line react-hooks/error-boundaries
-			<ProductsSection
-				title="Все новинки"
-				viewAllButton={{ text: "На главную", href: "/" }}
-				products={products}
-			/>
-		);
-	} catch {
-		return <div className="error">Ошибка: не удалось загрузить акции</div>;
-	}
+const AllNew = async ({
+	searchParams,
+}: {
+	searchParams: Promise<{ page?: string; itemsPerPage?: string }>;
+}) => {
+	return (
+		<GenericListPage
+			searchParams={searchParams}
+			props={{
+				fetchData: () => fetchProductsByCategory("new"),
+				pageTitle: " Все новинки",
+				basePath: "/new",
+				errorMessage: "Ошибка: не удалось загрузить новинки",
+			}}
+		/>
+	);
 };
 
 export default AllNew;

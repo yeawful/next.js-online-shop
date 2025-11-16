@@ -28,14 +28,7 @@ const ArticleSection = ({
 						<li
 							key={article._id}
 							className={`${styles.articleItem} ${
-								compact
-									? `
-                    ${index >= 4 ? styles.hiddenItem : ""}
-                    ${index >= 3 ? styles.mdHidden : ""}
-                    ${index >= 3 ? styles.xlBlock : ""}
-                    ${index >= 4 ? styles.xlHidden : ""}
-                  `
-									: ""
+								index >= 3 ? styles.articleItemHidden : ""
 							}`}
 						>
 							<ArticleCard {...article} />

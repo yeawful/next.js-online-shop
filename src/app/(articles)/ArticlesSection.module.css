@@ -33,6 +33,10 @@
 	height: 18.75rem;
 }
 
+.articleItemHidden {
+	display: none;
+}
+
 .hiddenItem {
 	display: none;
 }
@@ -54,12 +58,6 @@
 
 	.mdHidden {
 		display: none;
-	}
-}
-
-@media (min-width: 1024px) {
-	.articlesGrid {
-		grid-template-columns: repeat(3, 1fr);
 	}
 }
 

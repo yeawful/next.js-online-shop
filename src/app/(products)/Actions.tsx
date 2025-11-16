@@ -1,9 +1,11 @@
-import fetchProductsByCategory from "@/app/(products)/fetchProducts";
-import ProductsSection from "../../components/products/ProductsSection/ProductsSection";
+import fetchProductsByCategory from "./fetchProducts";
+import ProductsSection from "@/components/products/ProductsSection/ProductsSection";
+import { shuffleArray } from "@/utils/shuffleArray";
 
 const Actions = async () => {
 	try {
-		const products = await fetchProductsByCategory("actions");
+		let products = await fetchProductsByCategory("actions");
+		products = shuffleArray(products);
 
 		return (
 			// eslint-disable-next-line react-hooks/error-boundaries

@@ -1,8 +1,8 @@
-import { Article } from "@/types/articles";
+import { ArticleCardProps } from "@/types/articlesListPageProps";
 import Image from "next/image";
 import styles from "./ArticleCard.module.css";
 
-const ArticleCard = ({ img, title, createdAt, text }: Article) => {
+const ArticleCard = ({ img, title, createdAt, text }: ArticleCardProps) => {
 	return (
 		<article className={styles.articleCard}>
 			<div className={styles.articleImageContainer}>

@@ -1,0 +1,78 @@
+.pagination {
+	display: flex;
+	justify-content: center;
+	margin-top: 2.5rem;
+	margin-bottom: 5rem;
+	color: #ffffff;
+	font-size: 0.875rem;
+}
+
+.paginationNav {
+	display: flex;
+	gap: 0.25rem;
+	align-items: center;
+}
+
+.buttonSize {
+	width: 1.25rem;
+	height: 1.25rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0.25rem;
+	transition-duration: 300ms;
+}
+
+.buttonActive {
+	background-color: #ff6633;
+	color: #ffffff;
+}
+
+.buttonActive:hover {
+	background-color: #ff6633;
+}
+
+.buttonDisabled {
+	background-color: #fcd5ba;
+	cursor: not-allowed;
+}
+
+.pageButton {
+	border: 1px solid #ff6633;
+}
+
+.pageButtonActive {
+	background-color: #ff6633;
+	color: #ffffff;
+	border-color: transparent;
+}
+
+.pageButtonInactive {
+	color: #ff6633;
+	background-color: #ffffff;
+}
+
+.pageButtonInactive:hover {
+	background-color: #ff6633;
+	color: #ffffff;
+	border-color: transparent;
+}
+
+.ellipsis {
+	color: #ff6633;
+}
+
+@media (min-width: 768px) {
+	.pagination {
+		font-size: 1rem;
+	}
+
+	.paginationNav {
+		gap: 0.5rem;
+	}
+
+	.buttonSize {
+		width: 2.5rem;
+		height: 2.5rem;
+	}
+}
