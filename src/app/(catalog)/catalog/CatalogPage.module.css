@@ -1,0 +1,149 @@
+.notFound {
+	text-align: center;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	color: #6b7280;
+}
+
+.catalogPage {
+	padding-left: max(12px, calc((100% - 1208px) / 2));
+	padding-right: max(12px, calc((100% - 1208px) / 2));
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5rem;
+}
+
+.adminControls {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 1rem;
+}
+
+.editButton {
+	border: 1px solid var(--color-primary);
+	width: 50%;
+	height: 2.5rem;
+	border-radius: 0.25rem;
+	padding: 0.5rem;
+	justify-content: center;
+	align-items: center;
+	color: var(--color-primary);
+	transition: all 0.3s;
+	cursor: pointer;
+	user-select: none;
+}
+
+.editButton:hover {
+	color: #ffffff;
+	background-color: #ff6633;
+	border-color: transparent;
+}
+
+.editButton:active {
+	box-shadow: var(--shadow-button-active);
+}
+
+.resetButton {
+	margin-left: 0.75rem;
+	padding: 0.5rem;
+	font-size: 0.75rem;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	background-color: #f3f2f1;
+}
+
+.resetButton:hover {
+	box-shadow: var(--shadow-button-secondary);
+}
+
+.resetButton:active {
+	box-shadow: var(--shadow-button-active);
+}
+
+.catalogTitle {
+	margin-bottom: 1rem;
+	display: flex;
+	flex-direction: row;
+	font-size: 2.25rem;
+	color: #414141;
+	font-weight: 700;
+}
+
+.categoriesGrid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+}
+
+.categoryItem {
+	background-color: #f3f2f1;
+	border-radius: 0.25rem;
+	overflow: hidden;
+	min-height: 12.5rem;
+	height: 100%;
+}
+
+.categoryItemEditing {
+	border: 4px dashed #9ca3af;
+}
+
+.categoryItemHovered {
+	border: 3px solid #991b1b;
+}
+
+.categoryContent {
+	height: 100%;
+	width: 100%;
+}
+
+.categoryContentDragging {
+	opacity: 0.5;
+}
+
+.colSpan2 {
+	grid-column: span 2 / span 2;
+}
+
+.mobileColSpan2 {
+	grid-column: span 2 / span 2;
+}
+
+@media (min-width: 768px) {
+	.catalogTitle {
+		margin-bottom: 2rem;
+		font-size: 3rem;
+	}
+
+	.categoriesGrid {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.5rem;
+	}
+
+	.tabletColSpan1 {
+		grid-column: span 1 / span 1;
+	}
+
+	.tabletColSpan2 {
+		grid-column: span 2 / span 2;
+	}
+}
+
+@media (min-width: 1280px) {
+	.catalogTitle {
+		margin-bottom: 2.5rem;
+		font-size: 4rem;
+	}
+
+	.categoriesGrid {
+		grid-template-columns: repeat(4, 1fr);
+		gap: 2rem;
+	}
+
+	.desktopColSpan2 {
+		grid-column: span 2 / span 2;
+	}
+}
