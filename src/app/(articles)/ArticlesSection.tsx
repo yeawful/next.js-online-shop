@@ -7,15 +7,10 @@ const ArticleSection = ({
 	title,
 	viewAllButton,
 	articles,
-	compact = false,
 }: ArticlesSectionProps) => {
 	return (
 		<section>
-			<div
-				className={`${styles.articleSection} ${
-					!compact ? styles.compact : styles.margin
-				}`}
-			>
+			<div className={styles.articleSection}>
 				<div className={styles.articleHeader}>
 					<h2 className={styles.articleTitle}>{title}</h2>
 					{viewAllButton && (
@@ -26,13 +21,8 @@ const ArticleSection = ({
 					)}
 				</div>
 				<ul className={styles.articlesGrid}>
-					{articles.map((article, index) => (
-						<li
-							key={article._id}
-							className={`${styles.articleItem} ${
-								index >= 3 ? styles.articleItemHidden : ""
-							}`}
-						>
+					{articles.map((article) => (
+						<li key={article._id} className={styles.articleItem}>
 							<ArticleCard {...article} />
 						</li>
 					))}

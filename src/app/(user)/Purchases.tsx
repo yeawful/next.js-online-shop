@@ -1,17 +1,19 @@
 import fetchPurchases from "./fetchPurchases";
 import ProductsSection from "@/components/products/ProductsSection/ProductsSection";
+import { CONFIG } from "../../../config/config";
 
 const Purchases = async () => {
 	try {
-		const purchases = await fetchPurchases();
+		const { items } = await fetchPurchases({
+			userPurchasesLimit: CONFIG.ITEMS_PER_PAGE_MAIN_PRODUCTS,
+		});
 
 		return (
 			// eslint-disable-next-line react-hooks/error-boundaries
 			<ProductsSection
 				title="Покупали раньше"
 				viewAllButton={{ text: "Все покупки", href: "purchases" }}
-				products={purchases}
-				compact
+				products={items}
 			/>
 		);
 	} catch {

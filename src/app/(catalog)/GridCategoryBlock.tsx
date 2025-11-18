@@ -12,7 +12,7 @@ const GridCategoryBlock = ({ id, title, img }: GridCategoryBlockProps) => {
 				fill
 				sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 				className={styles.categoryImage}
-				priority
+				priority={false}
 			/>
 			<div className={styles.categoryOverlay}></div>
 			<div className={styles.categoryTitle}>

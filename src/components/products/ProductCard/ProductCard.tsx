@@ -43,6 +43,7 @@ const ProductCard = ({
 					alt="Акция"
 					fill
 					className={styles.productImage}
+					priority={false}
 					sizes="(max-width: 768px) 160px, (max-width: 1200px) 224px, 272px"
 				/>
 				<button className={styles.favoriteButton}>

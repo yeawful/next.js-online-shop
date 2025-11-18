@@ -1,16 +1,8 @@
 .articleSection {
 	display: flex;
 	flex-direction: column;
-	color: #414141;
-}
-
-.compact {
 	padding-left: max(12px, calc((100% - 1208px) / 2));
 	padding-right: max(12px, calc((100% - 1208px) / 2));
-}
-
-.margin {
-	margin-top: 5rem;
 }
 
 .articleHeader {
@@ -36,14 +28,6 @@
 	height: 18.75rem;
 }
 
-.articleItemHidden {
-	display: none;
-}
-
-.hiddenItem {
-	display: none;
-}
-
 @media (min-width: 640px) {
 	.articlesGrid {
 		grid-template-columns: repeat(3, 1fr);
@@ -58,10 +42,6 @@
 	.articleItem {
 		height: 26.25rem;
 	}
-
-	.mdHidden {
-		display: none;
-	}
 }
 
 @media (min-width: 1280px) {
@@ -71,13 +51,5 @@
 
 	.articleTitle {
 		font-size: 2.25rem;
-	}
-
-	.xlBlock {
-		display: block;
-	}
-
-	.xlHidden {
-		display: none;
 	}
 }

@@ -1,21 +1,16 @@
-import styles from "./ProductsSection.module.css";
-import { ProductsSectionProps } from "@/types/productsSection";
-import ViewAllButton from "../ViewAllButton/ViewAllButton";
 import ProductCard from "../ProductCard/ProductCard";
+import ViewAllButton from "../ViewAllButton/ViewAllButton";
+import { ProductsSectionProps } from "@/types/productsSection";
+import styles from "./ProductsSection.module.css";
 
 const ProductsSection = ({
 	title,
 	viewAllButton,
 	products,
-	compact = false,
 }: ProductsSectionProps) => {
 	return (
 		<section>
-			<div
-				className={`${styles.productsSection} ${
-					!compact ? styles.compact : styles.margin
-				}`}
-			>
+			<div className={styles.productsSection}>
 				<div className={styles.productsHeader}>
 					<h2 className={styles.productsTitle}>{title}</h2>
 					{viewAllButton && (
@@ -30,14 +25,7 @@ const ProductsSection = ({
 						<li
 							key={item._id}
 							className={
-								compact
-									? `
-                    ${index >= 4 ? styles.hiddenItem : ""}
-                    ${index >= 3 ? styles.mdHidden : ""}
-                    ${index >= 3 ? styles.xlBlock : ""}
-                    ${index >= 4 ? styles.xlHidden : ""}
-                  `
-									: ""
+								index >= 3 ? `${styles.mdHidden} ${styles.xlBlock}` : ""
 							}
 						>
 							<ProductCard {...item} />

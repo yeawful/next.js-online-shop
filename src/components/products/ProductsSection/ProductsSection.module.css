@@ -1,15 +1,8 @@
 .productsSection {
 	display: flex;
 	flex-direction: column;
-}
-
-.compact {
 	padding-left: max(12px, calc((100% - 1208px) / 2));
 	padding-right: max(12px, calc((100% - 1208px) / 2));
-}
-
-.margin {
-	margin-top: 5rem;
 }
 
 .productsHeader {
@@ -33,7 +26,7 @@
 	justify-items: center;
 }
 
-.hiddenItem {
+.mdHidden {
 	display: none;
 }
 
@@ -47,8 +40,8 @@
 		gap: 1.5rem;
 	}
 
-	.mdHidden {
-		display: none;
+	.xlBlock {
+		display: block;
 	}
 }
 
@@ -64,13 +57,5 @@
 	.productsGrid {
 		grid-template-columns: repeat(4, 1fr);
 		gap: 2.5rem;
-	}
-
-	.xlBlock {
-		display: block;
-	}
-
-	.xlHidden {
-		display: none;
 	}
 }
