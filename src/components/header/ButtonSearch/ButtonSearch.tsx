@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const ButtonSearch = () => {
 	return (
-		<Link href="./catalog" className={styles.button}>
+		<Link href="../catalog" className={styles.button}>
 			<Image
 				src="/icons-header/icon-menu.svg"
 				alt="menu"

@@ -1,34 +1,108 @@
-.container {
+.inputBlock {
 	position: relative;
 	min-width: 261px;
 	flex-grow: 1;
 }
 
-.input {
+.searchContainer {
+	position: relative;
+	border-radius: 0.25rem;
+	border: 1px solid var(--color-primary);
+	box-shadow: var(--shadow-button-default);
+	line-height: 150%;
+}
+
+.searchInput {
 	width: 100%;
 	height: 2.5rem;
-	border-radius: 0.25rem;
 	padding: 0.5rem;
-	outline: 1px solid var(--color-primary);
-	border: none;
+	outline: none;
 	color: #8f8f8f;
 	font-size: 1rem;
-	line-height: 150%;
-	font-family: inherit;
+	border: none;
 }
 
-.input:focus {
-	box-shadow: var(--shadow-button-default);
-	outline: 1px solid var(--color-primary);
-}
-
-.searchButton {
+.searchIcon {
 	position: absolute;
 	top: 0.5rem;
 	right: 0.5rem;
+}
+
+.searchDropdown {
+	position: absolute;
+	margin-top: -0.125rem;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	max-height: 300px;
+	overflow-y: auto;
+	background-color: #ffffff;
+	border-bottom-left-radius: 0.25rem;
+	border-bottom-right-radius: 0.25rem;
+	border: 1px solid var(--color-primary);
+	border-top: 0;
+	box-shadow: inherit;
+	word-wrap: break-word;
+}
+
+.searchContent {
+	padding: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.categoryGroup {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.categoryLink {
+	display: flex;
+	align-items: flex-start;
+	gap: 1rem;
+	padding: 0.25rem;
+	border-radius: 0.25rem;
 	cursor: pointer;
-	background: none;
-	border: none;
-	padding: 0;
-	font: inherit;
+}
+
+.categoryLink:hover {
+	background-color: #f3f4f6;
+}
+
+.productsList {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.productItem {
+	padding: 0.25rem;
+}
+
+.productItem:hover {
+	background-color: #f3f4f6;
+}
+
+.productLink {
+	cursor: pointer;
+}
+
+.noResults {
+	color: #8f8f8f;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.searchPrompt {
+	padding: 1rem;
+	color: #8f8f8f;
+}
+
+.loading {
+	padding: 1rem;
+	text-align: center;
 }
