@@ -6,18 +6,29 @@ import Purchases from "@/app/(user)/Purchases";
 import SpecialOffers from "@/components/banners/SpecialOffers/SpecialOffers";
 import Maps from "@/components/maps/Maps";
 import Articles from "@/app/(articles)/Articles";
+import { Loader } from "@/components/loader/Loader";
+import { Suspense } from "react";
 
 export default function Home() {
 	return (
 		<main className={styles.main}>
-			<Hero />
+			<Suspense fallback={<Loader text="баннера" />}>
+				<Hero />
+			</Suspense>
+
 			<div className={styles.components}>
-				<Actions />
-				<NewProducts />
-				<Purchases />
-				<SpecialOffers />
-				<Maps />
-				<Articles />
+				{[
+					{ component: <Actions />, text: "акций" },
+					{ component: <NewProducts />, text: "новинок" },
+					{ component: <Purchases />, text: "Ваших покупок" },
+					{ component: <SpecialOffers />, text: "специальных предложений" },
+					{ component: <Maps />, text: "карт" },
+					{ component: <Articles />, text: "статей" },
+				].map((item, index) => (
+					<Suspense key={index} fallback={<Loader text={item.text} />}>
+						{item.component}
+					</Suspense>
+				))}
 			</div>
 		</main>
 	);
