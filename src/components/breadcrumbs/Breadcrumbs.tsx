@@ -10,7 +10,7 @@ import styles from "./Breadcrumbs.module.css";
 const Breadcrumbs = () => {
 	const pathname = usePathname();
 
-	if (pathname === "/") return null;
+	if (pathname === "/" || pathname === "/search") return null;
 
 	const pathSegments = pathname.split("/").filter((segment) => segment !== "");
 

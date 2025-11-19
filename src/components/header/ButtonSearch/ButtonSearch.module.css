@@ -1,4 +1,4 @@
-.button {
+.buttonSearch {
 	background-color: var(--color-primary);
 	cursor: pointer;
 	border-radius: 0.25rem;
@@ -7,46 +7,49 @@
 	width: 2.5rem;
 	padding: 0.5rem;
 	gap: 1rem;
-	border: none;
-	font-family: inherit;
-	text-decoration: none;
 }
 
-.button:hover {
+.buttonSearch:hover {
 	box-shadow: var(--shadow-button-default);
 }
 
-.button:active {
+.buttonSearch:active {
 	box-shadow: var(--shadow-button-active);
 }
 
-.menuIcon {
+.buttonIcon {
+	position: relative;
+	width: 1.5rem;
+	height: 1.5rem;
 	display: none;
 }
 
-.text {
+.buttonIconImage {
+	object-fit: contain;
+}
+
+.buttonText {
 	font-size: 1rem;
-	line-height: 1.5rem;
 	color: #ffffff;
 	display: none;
-	font-family: inherit;
 }
 
 @media (min-width: 768px) {
-	.button {
+	.buttonSearch {
 		display: flex;
 	}
 
-	.menuIcon {
+	.buttonIcon {
 		display: block;
 	}
 }
 
 @media (min-width: 1024px) {
-	.button {
+	.buttonSearch {
 		width: 8.75rem;
 	}
-	.text {
+
+	.buttonText {
 		display: block;
 	}
 }

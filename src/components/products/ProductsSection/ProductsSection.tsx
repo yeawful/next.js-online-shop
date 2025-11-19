@@ -21,13 +21,8 @@ const ProductsSection = ({
 					)}
 				</div>
 				<ul className={styles.productsGrid}>
-					{products.map((item, index) => (
-						<li
-							key={item._id}
-							className={
-								index >= 3 ? `${styles.mdHidden} ${styles.xlBlock}` : ""
-							}
-						>
+					{products.map((item) => (
+						<li key={item._id}>
 							<ProductCard {...item} />
 						</li>
 					))}

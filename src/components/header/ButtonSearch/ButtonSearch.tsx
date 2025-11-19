@@ -1,18 +1,22 @@
 import Image from "next/image";
-import styles from "./ButtonSearch.module.css";
 import Link from "next/link";
+import styles from "./ButtonSearch.module.css";
 
 const ButtonSearch = () => {
 	return (
-		<Link href="../catalog" className={styles.button}>
-			<Image
-				src="/icons-header/icon-menu.svg"
-				alt="menu"
-				width={24}
-				height={24}
-				className={styles.menuIcon}
-			/>
-			<span className={styles.text}>Каталог</span>
+		<Link href="../catalog" className={styles.buttonSearch}>
+			<div className={styles.buttonIcon}>
+				<Image
+					src="/icons-header/icon-menu.svg"
+					alt="menu"
+					width={24}
+					height={24}
+					className={styles.buttonIconImage}
+					sizes="24px"
+				/>
+			</div>
+
+			<span className={styles.buttonText}>Каталог</span>
 		</Link>
 	);
 };

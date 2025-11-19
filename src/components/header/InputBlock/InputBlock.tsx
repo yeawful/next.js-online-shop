@@ -5,12 +5,14 @@ import iconSearch from "/public/icons-header/icon-search.svg";
 import Link from "next/link";
 import iconBurger from "/public/icons-header/icon-burger-menu.svg";
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { SearchProduct } from "@/types/searchProduct";
 import { TRANSLATIONS } from "../../../utils/translations";
 import HighlightText from "../HighlightText/HighlightText";
 import styles from "./InputBlock.module.css";
 
 const InputBlock = () => {
+	const router = useRouter();
 	const [isOpen, setIsOpen] = useState(false);
 	const [query, setQuery] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
@@ -37,7 +39,6 @@ const InputBlock = () => {
 					setIsLoading(true);
 					const response = await fetch(`/api/search?query=${query}`);
 					const data = await response.json();
-					console.log(data);
 					setGroupedProducts(data);
 				} catch (error) {
 					console.error("Не найден продукт или категория", error);
@@ -61,33 +62,42 @@ const InputBlock = () => {
 		setQuery("");
 	};
 
+	const handleSearch = () => {
+		if (query.trim()) {
+			router.push(`/search?q=${encodeURIComponent(query)}`);
+			setIsOpen(false);
+		}
+	};
+
 	return (
 		<div className={styles.inputBlock} ref={searchRef}>
 			<div className={styles.searchContainer}>
-				<input
-					type="text"
-					value={query}
-					placeholder="Найти товар"
-					className={styles.searchInput}
-					onFocus={handleInputFocus}
-					onChange={(e) => setQuery(e.target.value)}
-				/>
-
-				<Image
-					src={iconSearch}
-					alt="Поиск"
-					width={24}
-					height={24}
-					className={styles.searchIcon}
-				/>
+				<form
+					onSubmit={(e) => {
+						e.preventDefault();
+						handleSearch();
+					}}
+				>
+					<input
+						type="text"
+						value={query}
+						placeholder="Найти товар"
+						className={styles.searchInput}
+						onFocus={handleInputFocus}
+						onChange={(e) => setQuery(e.target.value)}
+					/>
+					<button className={styles.searchButton} type="submit">
+						<Image src={iconSearch} alt="Поиск" width={24} height={24} />
+					</button>
+				</form>
 			</div>
 
 			{isOpen && (
-				<div className={styles.searchDropdown}>
+				<div className={styles.dropdown}>
 					{isLoading ? (
 						<div className={styles.loading}>Поиск...</div>
 					) : groupedProducts.length > 0 ? (
-						<div className={styles.searchContent}>
+						<div className={styles.dropdownContent}>
 							{groupedProducts.map((group) => (
 								<div key={group.category} className={styles.categoryGroup}>
 									<Link
@@ -130,7 +140,7 @@ const InputBlock = () => {
 					) : query.length > 1 ? (
 						<div className={styles.noResults}>Ничего не найдено</div>
 					) : (
-						<div className={styles.searchPrompt}>
+						<div className={styles.placeholder}>
 							Введите 2 и более символов для поиска
 						</div>
 					)}

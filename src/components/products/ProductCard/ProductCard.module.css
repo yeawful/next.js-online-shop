@@ -1,4 +1,5 @@
 .productCard {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -6,6 +7,7 @@
 	border-radius: 0.25rem;
 	overflow: hidden;
 	background-color: #ffffff;
+	height: 349px;
 	align-items: flex-start;
 	padding: 0;
 	transition-duration: 300ms;
@@ -15,19 +17,9 @@
 	box-shadow: var(--shadow-article);
 }
 
-.productImageContainer {
-	position: relative;
-	width: 10rem;
-	height: 10rem;
-}
-
-.productImage {
-	object-fit: contain;
-}
-
 .favoriteButton {
-	width: auto;
-	height: auto;
+	width: 2rem;
+	height: 2rem;
 	padding: 0.5rem;
 	background-color: #f3f2f1;
 	position: absolute;
@@ -37,20 +29,23 @@
 	border-radius: 0.25rem;
 	cursor: pointer;
 	transition-duration: 300ms;
+	z-index: 10;
 	border: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.favoriteButton img {
-	object-fit: contain;
-	width: auto;
-	height: auto;
 }
 
 .favoriteButton:hover {
 	background-color: #fcd5ba;
+}
+
+.productImageContainer {
+	position: relative;
+	aspect-ratio: 1 / 1;
+	width: 10rem;
+	height: 10rem;
+}
+
+.productImage {
+	object-fit: contain;
 }
 
 .discountBadge {
@@ -66,16 +61,17 @@
 .cardContent {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	padding: 0.5rem;
-	gap: 0.5rem;
+	height: 11.8125rem;
 }
 
 .priceSection {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	align-items: flex-end;
+	align-items: flex-start;
+	height: 2.8125rem;
+	outline: none;
 }
 
 .priceContainer {
@@ -90,6 +86,7 @@
 	gap: 0.25rem;
 	font-size: 0.875rem;
 	font-weight: 700;
+	color: #414141;
 }
 
 .cardPriceLabel {
@@ -97,37 +94,33 @@
 	font-size: 0.5rem;
 }
 
-.cardPriceBasicLabel {
-	color: #bfbfbf;
-	font-size: 0.5rem;
-	text-align: right;
-}
-
 .originalPrice {
 	display: flex;
 	flex-direction: row;
 	gap: 0.25rem;
 	font-size: 0.75rem;
-	color: var(--color-title);
+	color: #606060;
 }
 
 .description {
 	height: 3.375rem;
 	font-size: 0.75rem;
-	color: var(--color-title);
+	color: #414141;
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
-	line-clamp: 3;
+	line-height: 1.5;
 }
 
 .addToCartButton {
+	position: absolute;
 	border: 1px solid var(--color-primary);
-	width: 100%;
+	bottom: 0.5rem;
+	left: 0.5rem;
+	right: 0.5rem;
 	height: 2.5rem;
 	border-radius: 0.25rem;
-	padding: 0.5rem;
 	justify-content: center;
 	align-items: center;
 	color: var(--color-primary);
@@ -164,21 +157,13 @@
 		font-size: 0.75rem;
 	}
 
-	.cardPriceBasicLabel {
-		font-size: 0.75rem;
-	}
-
 	.originalPrice {
 		font-size: 1rem;
 	}
 
 	.description {
 		font-size: 1rem;
-		display: -webkit-box;
 		-webkit-line-clamp: 2;
-		-webkit-box-orient: vertical;
-		overflow: hidden;
-		line-clamp: 2;
 	}
 }
 
