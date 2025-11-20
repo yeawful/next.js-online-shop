@@ -30,6 +30,10 @@
 	display: none;
 }
 
+.xlBlock {
+	display: block;
+}
+
 @media (min-width: 768px) {
 	.productsHeader {
 		margin-bottom: 2rem;
@@ -38,10 +42,6 @@
 	.productsGrid {
 		grid-template-columns: repeat(3, 1fr);
 		gap: 1.5rem;
-	}
-
-	.xlBlock {
-		display: block;
 	}
 }
 

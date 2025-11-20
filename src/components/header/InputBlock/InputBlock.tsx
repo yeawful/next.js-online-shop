@@ -11,7 +11,11 @@ import { TRANSLATIONS } from "../../../utils/translations";
 import HighlightText from "../HighlightText/HighlightText";
 import styles from "./InputBlock.module.css";
 
-const InputBlock = () => {
+const InputBlock = ({
+	onFocusChangeAction,
+}: {
+	onFocusChangeAction: (focused: boolean) => void;
+}) => {
 	const router = useRouter();
 	const [isOpen, setIsOpen] = useState(false);
 	const [query, setQuery] = useState("");
@@ -55,6 +59,7 @@ const InputBlock = () => {
 
 	const handleInputFocus = () => {
 		setIsOpen(true);
+		onFocusChangeAction(true);
 	};
 
 	const resetSearch = () => {
@@ -65,8 +70,12 @@ const InputBlock = () => {
 	const handleSearch = () => {
 		if (query.trim()) {
 			router.push(`/search?q=${encodeURIComponent(query)}`);
-			setIsOpen(false);
+			resetSearch();
 		}
+	};
+
+	const handleInputBlur = () => {
+		onFocusChangeAction(false);
 	};
 
 	return (
@@ -85,6 +94,7 @@ const InputBlock = () => {
 						className={styles.searchInput}
 						onFocus={handleInputFocus}
 						onChange={(e) => setQuery(e.target.value)}
+						onBlur={handleInputBlur}
 					/>
 					<button className={styles.searchButton} type="submit">
 						<Image src={iconSearch} alt="Поиск" width={24} height={24} />

@@ -7,7 +7,8 @@ const ProductsSection = ({
 	title,
 	viewAllButton,
 	products,
-}: ProductsSectionProps) => {
+	applyIndexStyles = true,
+}: ProductsSectionProps & { applyIndexStyles?: boolean }) => {
 	return (
 		<section>
 			<div className={styles.productsSection}>
@@ -21,8 +22,17 @@ const ProductsSection = ({
 					)}
 				</div>
 				<ul className={styles.productsGrid}>
-					{products.map((item) => (
-						<li key={item._id}>
+					{products.map((item, index) => (
+						<li
+							key={item._id}
+							className={
+								applyIndexStyles
+									? index >= 3
+										? `${styles.mdHidden} ${styles.xlBlock}`
+										: ""
+									: ""
+							}
+						>
 							<ProductCard {...item} />
 						</li>
 					))}
