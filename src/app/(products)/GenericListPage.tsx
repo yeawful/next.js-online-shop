@@ -6,6 +6,7 @@ import PaginationWrapper from "@/components/pagination/PaginationWrapper";
 import ArticleSection from "../(articles)/ArticlesSection";
 import { ProductCardProps } from "@/types/product";
 import { ArticleCardProps } from "@/types/articles";
+import ErrorComponent from "@/components/error/ErrorComponent";
 
 const GenericListPage = async ({
 	searchParams,
@@ -28,6 +29,7 @@ const GenericListPage = async ({
 		});
 
 		const totalPages = Math.ceil(totalCount / perPage);
+
 		return (
 			<>
 				{!props.contentType ? (
@@ -52,8 +54,13 @@ const GenericListPage = async ({
 				)}
 			</>
 		);
-	} catch {
-		return <div className="error">{props.errorMessage}</div>;
+	} catch (error) {
+		return (
+			<ErrorComponent
+				error={error instanceof Error ? error : new Error(String(error))}
+				userMessage="Не удалось получить элементы пагинации"
+			/>
+		);
 	}
 };
 

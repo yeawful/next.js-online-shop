@@ -1,0 +1,57 @@
+.adminControls {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 1rem;
+}
+
+.editButton {
+	font-size: 0.875rem;
+	border: 1px solid var(--color-primary);
+	width: 66.666667%;
+	height: 2.5rem;
+	border-radius: 0.25rem;
+	padding: 0.5rem;
+	justify-content: center;
+	align-items: center;
+	color: var(--color-primary);
+	transition: all 0.3s;
+	cursor: pointer;
+	user-select: none;
+}
+
+.editButton:hover {
+	color: #ffffff;
+	background-color: #ff6633;
+	border-color: transparent;
+}
+
+.editButton:active {
+	box-shadow: var(--shadow-button-active);
+}
+
+.resetButton {
+	margin-left: 0.75rem;
+	padding: 0.5rem;
+	font-size: 0.75rem;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	background-color: #f3f2f1;
+}
+
+.resetButton:hover {
+	box-shadow: var(--shadow-button-secondary);
+}
+
+.resetButton:active {
+	box-shadow: var(--shadow-button-active);
+}
+
+@media (min-width: 768px) {
+	.editButton {
+		font-size: 1rem;
+	}
+}

@@ -1,17 +1,30 @@
 "use client";
 
-import { Loader } from "@/components/loader/Loader";
+import ErrorComponent from "@/components/error/ErrorComponent";
+import { Loader } from "@/components/loaders/Loader";
 import ProductsSection from "@/components/products/ProductsSection/ProductsSection";
 import { ProductCardProps } from "@/types/product";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
-import styles from "./page.module.css";
+import { Suspense, useEffect, useState } from "react";
+import styles from "./SearchPage.module.css";
+
+const SearchPage = () => {
+	return (
+		<Suspense fallback={<Loader />}>
+			<SearchResult />
+		</Suspense>
+	);
+};
 
 const SearchResult = () => {
 	const searchParams = useSearchParams();
 	const query = searchParams.get("q") || "";
 	const [products, setProducts] = useState<ProductCardProps[]>([]);
 	const [isLoading, setIsLoading] = useState(true);
+	const [error, setError] = useState<{
+		error: Error;
+		userMessage: string;
+	} | null>(null);
 
 	useEffect(() => {
 		const fetchSearchResults = async () => {
@@ -24,7 +37,11 @@ const SearchResult = () => {
 				const data = await response.json();
 				setProducts(data);
 			} catch (error) {
-				console.error("Не удалось получить результаты", error);
+				setError({
+					error:
+						error instanceof Error ? error : new Error("Неизвестная ошибка"),
+					userMessage: "Не удалось загрузить результаты поиска",
+				});
 			} finally {
 				setIsLoading(false);
 			}
@@ -37,8 +54,14 @@ const SearchResult = () => {
 
 	if (isLoading) return <Loader />;
 
+	if (error) {
+		return (
+			<ErrorComponent error={error.error} userMessage={error.userMessage} />
+		);
+	}
+
 	return (
-		<div className={styles.searchResult}>
+		<div className={styles.searchPage}>
 			<h1 className={styles.searchTitle}>Результат поиска</h1>
 			<p className={styles.searchQuery}>
 				по запросу <span className={styles.highlightedQuery}>{query}</span>
@@ -56,4 +79,4 @@ const SearchResult = () => {
 	);
 };
 
-export default SearchResult;
+export default SearchPage;

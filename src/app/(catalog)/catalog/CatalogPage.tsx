@@ -2,8 +2,10 @@
 
 import { CatalogProps } from "@/types/catalog";
 import { useEffect, useState } from "react";
-import GridCategoryBlock from "../GridCategoryBlock";
-import Loading from "./Loading";
+import ErrorComponent from "@/components/error/ErrorComponent";
+import { Loader } from "@/components/loaders/Loader";
+import CatalogAdminControls from "../CatalogAdminControls";
+import CatalogGrid from "../CatalogGrid";
 import styles from "./CatalogPage.module.css";
 
 export const metadata = {
@@ -20,7 +22,10 @@ const CatalogPage = () => {
 	const [hoveredCategoryId, setHoveredCategoryId] = useState<string | null>(
 		null
 	);
-	const [error, setError] = useState<string | null>(null);
+	const [error, setError] = useState<{
+		error: Error;
+		userMessage: string;
+	} | null>(null);
 	const [isLoading, setIsLoading] = useState(true);
 	const isAdmin = true;
 
@@ -33,8 +38,10 @@ const CatalogPage = () => {
 			const data: CatalogProps[] = await response.json();
 			setCategories(data.sort((a, b) => a.order - b.order));
 		} catch (error) {
-			console.error("Не удалось получить категории:", error);
-			setError("Не удалось получить категории");
+			setError({
+				error: error instanceof Error ? error : new Error("Неизвестная ошибка"),
+				userMessage: "Не удалось загрузить каталог категорий",
+			});
 		} finally {
 			setIsLoading(false);
 		}
@@ -69,8 +76,10 @@ const CatalogPage = () => {
 
 			await response.json();
 		} catch (error) {
-			console.error("Ошибка при сохранении порядка:", error);
-			setError("Ошибка при сохранении порядка");
+			setError({
+				error: error instanceof Error ? error : new Error("Неизвестная ошибка"),
+				userMessage: "Не удалось изменить порядок категорий",
+			});
 		} finally {
 			setIsLoading(false);
 		}
@@ -154,90 +163,42 @@ const CatalogPage = () => {
 		fetchCategories();
 	};
 
-	const getCategoryClasses = (category: CatalogProps) => {
-		const classes = [styles.categoryItem];
-
-		if (isEditing) {
-			classes.push(styles.categoryItemEditing);
-		}
-
-		if (hoveredCategoryId === category._id) {
-			classes.push(styles.categoryItemHovered);
-		}
-
-		if (category.mobileColSpan === "col-span-2") {
-			classes.push(styles.mobileColSpan2);
-		}
-
-		if (category.tabletColSpan === "md:col-span-1") {
-			classes.push(styles.tabletColSpan1);
-		} else if (category.tabletColSpan === "md:col-span-2") {
-			classes.push(styles.tabletColSpan2);
-		}
-
-		if (category.colSpan === "col-span-2") {
-			classes.push(styles.colSpan2);
-		} else if (category.colSpan === "xl:col-span-2") {
-			classes.push(styles.desktopColSpan2);
-		}
-
-		return classes.join(" ");
-	};
-
 	if (isLoading) {
-		return <Loading />;
+		return <Loader />;
 	}
 
 	if (error) {
-		throw error;
+		return (
+			<ErrorComponent error={error.error} userMessage={error.userMessage} />
+		);
 	}
 
 	if (!categories.length) {
-		return <div className={styles.notFound}>Категорий каталога не найдено</div>;
+		return (
+			<div className={styles.noCategories}>Категорий каталога не найдено</div>
+		);
 	}
 
 	return (
 		<section className={styles.catalogPage}>
 			{isAdmin && (
-				<div className={styles.adminControls}>
-					<button onClick={handleToggleEditing} className={styles.editButton}>
-						{isEditing ? "Закончить редактирование" : "Изменить расположение"}
-					</button>
-					{isEditing && (
-						<button onClick={resetLayout} className={styles.resetButton}>
-							Сбросить
-						</button>
-					)}
-				</div>
+				<CatalogAdminControls
+					isEditing={isEditing}
+					onToggleEditingAction={handleToggleEditing}
+					onResetLayoutAction={resetLayout}
+				/>
 			)}
 			<h1 className={styles.catalogTitle}>Каталог</h1>
-			<div className={styles.categoriesGrid}>
-				{categories.map((category) => (
-					<div
-						key={category._id}
-						className={getCategoryClasses(category)}
-						onDragOver={(e) => handleDragOver(e, category._id)}
-						onDragLeave={handleDragLeave}
-						onDrop={(e) => handleDrop(e, category._id)}
-					>
-						<div
-							className={`${styles.categoryContent} ${
-								draggedCategory?._id === category._id
-									? styles.categoryContentDragging
-									: ""
-							}`}
-							draggable={isEditing}
-							onDragStart={() => handleDragStart(category)}
-						>
-							<GridCategoryBlock
-								id={category.id}
-								title={category.title}
-								img={category.img}
-							/>
-						</div>
-					</div>
-				))}
-			</div>
+			<CatalogGrid
+				categories={categories}
+				isEditing={isEditing}
+				draggedCategory={draggedCategory}
+				hoveredCategoryId={hoveredCategoryId}
+				onDragStartAction={handleDragStart}
+				onDragOverAction={handleDragOver}
+				onDragLeaveAction={handleDragLeave}
+				onDropAction={handleDrop}
+			/>
 		</section>
 	);
 };

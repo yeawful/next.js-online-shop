@@ -1,6 +1,7 @@
 import fetchProductsByTag from "@/app/(products)/fetchProducts";
 import ProductsSection from "../../components/products/ProductsSection/ProductsSection";
 import { CONFIG } from "../../../config/config";
+import ErrorComponent from "@/components/error/ErrorComponent";
 
 const NewProducts = async () => {
 	try {
@@ -16,8 +17,13 @@ const NewProducts = async () => {
 				products={items}
 			/>
 		);
-	} catch {
-		return <div className="error">Ошибка: не удалось загрузить новинки</div>;
+	} catch (error) {
+		return (
+			<ErrorComponent
+				error={error instanceof Error ? error : new Error(String(error))}
+				userMessage="Не удалось загрузить новинки"
+			/>
+		);
 	}
 };
 

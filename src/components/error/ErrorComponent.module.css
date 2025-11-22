@@ -1,16 +1,14 @@
-.errorBoundary {
+.errorComponent {
 	margin: 1rem;
 	padding: 1rem;
 	background-color: #fef2f2;
 	color: #991b1b;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	border-radius: 0.25rem;
+	text-align: center;
 }
 
 .retryButton {
-	margin-left: 0.5rem;
+	margin-top: 0.5rem;
 	padding: 0.25rem 0.75rem;
 	background-color: #ef4444;
 	color: #ffffff;

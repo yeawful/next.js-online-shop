@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { CONFIG } from "../../../config/config";
 import { debounce } from "@/utils/debounce";
-import Pagination from "./Pagination/Pagination";
+import Pagination from "./Pagination";
 
 function getItemsPerPageByWidth(contentType?: string) {
 	const width = window.innerWidth;

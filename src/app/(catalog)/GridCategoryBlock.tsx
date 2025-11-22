@@ -3,18 +3,25 @@ import Image from "next/image";
 import { GridCategoryBlockProps } from "@/types/categoryBlockProps";
 import styles from "./GridCategoryBlock.module.css";
 
-const GridCategoryBlock = ({ id, title, img }: GridCategoryBlockProps) => {
+const GridCategoryBlock = ({
+	slug,
+	title,
+	img,
+	priority = false,
+}: GridCategoryBlockProps) => {
 	return (
-		<Link href={`category-${id}`} className={styles.categoryLink}>
+		<Link href={`category/${slug}`} className={styles.categoryBlock}>
 			<Image
 				src={img}
 				alt={title}
 				fill
 				sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 				className={styles.categoryImage}
-				priority={false}
+				priority={priority}
+				quality={priority ? 90 : 75}
+				loading={priority ? "eager" : "lazy"}
 			/>
-			<div className={styles.categoryOverlay}></div>
+			<div className={styles.gradientOverlay}></div>
 			<div className={styles.categoryTitle}>
 				<span className={styles.categoryText}>{title}</span>
 			</div>

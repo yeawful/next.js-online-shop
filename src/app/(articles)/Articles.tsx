@@ -1,6 +1,7 @@
 import fetchArticles from "./fetchArticles";
 import ArticleSection from "./ArticlesSection";
 import { CONFIG } from "../../../config/config";
+import ErrorComponent from "@/components/error/ErrorComponent";
 
 const Articles = async () => {
 	try {
@@ -16,8 +17,13 @@ const Articles = async () => {
 				articles={items}
 			/>
 		);
-	} catch {
-		return <div className="error">Ошибка: не удалось загрузить статьи</div>;
+	} catch (error) {
+		return (
+			<ErrorComponent
+				error={error instanceof Error ? error : new Error(String(error))}
+				userMessage="Не удалось загрузить статьи"
+			/>
+		);
 	}
 };
 

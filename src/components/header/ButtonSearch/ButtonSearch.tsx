@@ -4,7 +4,7 @@ import styles from "./ButtonSearch.module.css";
 
 const ButtonSearch = () => {
 	return (
-		<Link href="../catalog" className={styles.buttonSearch}>
+		<Link href="/catalog" className={styles.buttonSearch}>
 			<div className={styles.buttonIcon}>
 				<Image
 					src="/icons-header/icon-menu.svg"

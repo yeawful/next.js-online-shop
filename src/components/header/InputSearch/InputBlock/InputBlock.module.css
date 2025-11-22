@@ -1,0 +1,37 @@
+.inputBlock {
+	position: relative;
+	min-width: 261px;
+	flex-grow: 1;
+}
+
+.searchDropdown {
+	position: absolute;
+	margin-top: -0.125rem;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	max-height: 300px;
+	overflow-y: auto;
+	background-color: #ffffff;
+	border-bottom-left-radius: 0.25rem;
+	border-bottom-right-radius: 0.25rem;
+	border: 1px solid var(--color-primary);
+	border-top: none;
+	box-shadow: inherit;
+	word-wrap: break-word;
+}
+
+.errorMessage {
+	padding: 0.5rem;
+	color: #ef4444;
+	font-size: 0.875rem;
+}
+
+.retryButton {
+	color: #3b82f6;
+	cursor: pointer;
+}
+
+.retryButton:hover {
+	color: #1d4ed8;
+}

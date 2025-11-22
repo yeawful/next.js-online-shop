@@ -1,0 +1,27 @@
+.searchContainer {
+	position: relative;
+	border-radius: 0.25rem;
+	border: 1px solid var(--color-primary);
+	box-shadow: var(--shadow-button-default);
+	line-height: 150%;
+}
+
+.searchInput {
+	width: 100%;
+	height: 2.5rem;
+	padding: 0.5rem;
+	outline: none;
+	color: #8f8f8f;
+	font-size: 1rem;
+	border: none;
+}
+
+.searchButton {
+	position: absolute;
+	right: 0rem;
+	width: 2.5rem;
+	height: 2.5rem;
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+}
