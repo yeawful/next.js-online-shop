@@ -8,7 +8,16 @@ const ProductsSection = ({
 	viewAllButton,
 	products,
 	applyIndexStyles = true,
-}: ProductsSectionProps & { applyIndexStyles?: boolean }) => {
+	contentType,
+}: ProductsSectionProps & {
+	applyIndexStyles?: boolean;
+	contentType?: string;
+}) => {
+	const gridClass =
+		contentType === "category"
+			? styles.productsGridCategory
+			: styles.productsGrid;
+
 	return (
 		<section>
 			<div className={styles.productsSection}>
@@ -21,7 +30,7 @@ const ProductsSection = ({
 						/>
 					)}
 				</div>
-				<ul className={styles.productsGrid}>
+				<ul className={gridClass}>
 					{products.map((item, index) => (
 						<li
 							key={item._id}
