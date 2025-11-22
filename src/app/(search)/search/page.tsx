@@ -6,7 +6,7 @@ import ProductsSection from "@/components/products/ProductsSection/ProductsSecti
 import { ProductCardProps } from "@/types/product";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
-import styles from "./SearchPage.module.css";
+import styles from "./page.module.css";
 
 const SearchPage = () => {
 	return (
