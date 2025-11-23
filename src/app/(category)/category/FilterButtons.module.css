@@ -1,0 +1,52 @@
+.filterButtons {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 1rem;
+	align-items: center;
+	margin-bottom: 2.5rem;
+}
+
+.filterButton {
+	height: 2rem;
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	font-size: 0.75rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition-duration: 300ms;
+	cursor: pointer;
+}
+
+.filterButtonActive {
+	background-color: var(--color-primary);
+	color: #ffffff;
+}
+
+.filterButtonActive:hover {
+	box-shadow: var(--shadow-button-default);
+}
+
+.filterButtonActive:active {
+	box-shadow: var(--shadow-button-active);
+}
+
+.filterButtonInactive {
+	background-color: #f3f2f1;
+	color: #606060;
+}
+
+.filterButtonInactive:hover {
+	box-shadow: var(--shadow-button-secondary);
+}
+
+.filterButtonInactive:active {
+	box-shadow: var(--shadow-button-active);
+}
+
+@media (min-width: 1280px) {
+	.filterButtons {
+		display: flex;
+	}
+}

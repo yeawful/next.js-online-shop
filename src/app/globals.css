@@ -25,6 +25,7 @@ body {
 * {
 	box-sizing: border-box;
 	text-decoration: none;
+	color: inherit;
 }
 
 .no-ymaps-copyright [class*="copyrights-pane"] {

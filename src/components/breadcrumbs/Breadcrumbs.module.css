@@ -31,10 +31,6 @@
 	cursor: pointer;
 }
 
-.breadcrumbLink a {
-	color: inherit;
-}
-
 .breadcrumbLink a:hover {
 	text-decoration: underline;
 }

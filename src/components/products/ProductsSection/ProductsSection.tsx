@@ -30,22 +30,26 @@ const ProductsSection = ({
 						/>
 					)}
 				</div>
-				<ul className={gridClass}>
-					{products.map((item, index) => (
-						<li
-							key={item._id}
-							className={
-								applyIndexStyles
-									? index >= 3
-										? `${styles.mdHidden} ${styles.xlBlock}`
+				{products && products.length > 0 ? (
+					<ul className={gridClass}>
+						{products.map((item, index) => (
+							<li
+								key={item._id}
+								className={
+									applyIndexStyles
+										? index >= 3
+											? `${styles.mdHidden} ${styles.xlBlock}`
+											: ""
 										: ""
-									: ""
-							}
-						>
-							<ProductCard {...item} />
-						</li>
-					))}
-				</ul>
+								}
+							>
+								<ProductCard {...item} />
+							</li>
+						))}
+					</ul>
+				) : (
+					<div className={styles.noProducts}>Товары не найдены</div>
+				)}
 			</div>
 		</section>
 	);

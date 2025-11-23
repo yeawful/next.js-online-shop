@@ -1,0 +1,16 @@
+.priceInputs {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem;
+}
+
+.priceInput {
+	width: 124px;
+	height: 2.5rem;
+	border: 1px solid #bfbfbf;
+	border-radius: 0.25rem;
+	background-color: #ffffff;
+	padding: 0.5rem 1rem;
+}

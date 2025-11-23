@@ -1,0 +1,32 @@
+.priceFilterHeader {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.priceTitle {
+	color: #000000;
+	font-size: 1rem;
+}
+
+.clearButton {
+	font-size: 0.75rem;
+	border-radius: 0.25rem;
+	background-color: #f3f2f1;
+	height: 2rem;
+	padding: 0.5rem;
+	cursor: pointer;
+	transition-duration: 300ms;
+	border: none;
+}
+
+.clearButton:hover {
+	background-color: var(--color-primary);
+	box-shadow: var(--shadow-button-default);
+	color: #ffffff;
+}
+
+.clearButton:active {
+	box-shadow: var(--shadow-button-active);
+}

@@ -1,0 +1,26 @@
+.priceFilter {
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+	color: #414141;
+}
+
+.applyButton {
+	background-color: #ff6633;
+	color: #ffffff;
+	height: 2.5rem;
+	border-radius: 0.25rem;
+	justify-content: center;
+	align-items: center;
+	transition-duration: 300ms;
+	cursor: pointer;
+	border: none;
+}
+
+.applyButton:hover {
+	box-shadow: var(--shadow-article);
+}
+
+.applyButton:active {
+	box-shadow: var(--shadow-button-active);
+}

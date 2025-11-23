@@ -37,7 +37,7 @@ const CatalogMenu = ({
 						)}
 						{isLoading ? (
 							<MiniLoader />
-						) : categories.length > 0 ? (
+						) : categories && categories.length > 0 ? (
 							<div className={styles.categoriesGrid}>
 								{categories.map((category) => (
 									<Link

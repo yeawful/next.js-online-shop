@@ -7,7 +7,7 @@ import styles from "./Footer.module.css";
 const Footer = () => {
 	return (
 		<footer className={styles.footer}>
-			<div className={styles.gridContainer}>
+			<div className={styles.footerContent}>
 				<div className={styles.logo}>
 					<Link href="/" className={styles.logoLink}>
 						<Image
@@ -20,7 +20,7 @@ const Footer = () => {
 				</div>
 
 				<div className={styles.social}>
-					<div className={styles.socialIcons}>
+					<div className={styles.socialLinks}>
 						<a href="https://vk.com" target="_blank" rel="noopener noreferrer">
 							<Image
 								src="/icons-footer/VK.svg"
@@ -40,7 +40,7 @@ const Footer = () => {
 							/>
 						</a>
 					</div>
-					<div className={styles.socialIcons}>
+					<div className={styles.socialLinks}>
 						<a
 							href="https://wa.me/78007773333"
 							target="_blank"

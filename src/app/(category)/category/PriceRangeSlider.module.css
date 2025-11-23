@@ -1,0 +1,12 @@
+.sliderContainer {
+	width: 320px;
+	padding: 0 0.5rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media (min-width: 1280px) {
+	.sliderContainer {
+		width: 272px;
+	}
+}

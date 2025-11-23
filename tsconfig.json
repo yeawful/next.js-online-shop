@@ -29,7 +29,8 @@
 		".next/types/**/*.ts",
 		".next/dev/types/**/*.ts",
 		"**/*.mts",
-		"src/app/(catalog)/catalog/ErrorBoundary.jsx"
+		"src/app/(catalog)/catalog/ErrorBoundary.jsx",
+		"seed-db.ts"
 	],
 	"exclude": ["node_modules"]
 }

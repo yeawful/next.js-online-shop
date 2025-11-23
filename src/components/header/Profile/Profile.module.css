@@ -2,7 +2,7 @@
 	margin-left: 1.5rem;
 	padding: 0.5rem;
 	display: flex;
-	flex: 1 1 0%;
+	flex: 1;
 	justify-content: flex-end;
 	align-items: center;
 	gap: 0.625rem;
@@ -17,8 +17,6 @@
 	display: none;
 	cursor: pointer;
 	padding: 0.625rem;
-	margin: 0;
-	font-size: 16px;
 }
 
 .arrowButton {
@@ -30,7 +28,10 @@
 }
 
 @media (min-width: 1280px) {
-	.name,
+	.name {
+		display: block;
+	}
+
 	.arrowButton {
 		display: block;
 	}

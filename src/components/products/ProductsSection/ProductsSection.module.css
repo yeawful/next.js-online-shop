@@ -41,6 +41,12 @@
 	display: block;
 }
 
+.noProducts {
+	text-align: center;
+	padding: 2rem;
+	color: #6b7280;
+}
+
 @media (min-width: 768px) {
 	.productsHeader {
 		margin-bottom: 2rem;
