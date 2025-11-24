@@ -18,14 +18,14 @@
 }
 
 .filterButtonInactive {
-	background-color: #f3f2f1;
+	background-color: var(--color-bg-gray);
 	color: #606060;
 	cursor: not-allowed;
 }
 
 .filterButtonActive {
 	background-color: var(--color-primary);
-	color: #ffffff;
+	color: var(--color-white);
 }
 
 .priceFilterButton {
@@ -39,7 +39,7 @@
 	transition-duration: 300ms;
 	gap: 0.5rem;
 	background-color: var(--color-primary);
-	color: #ffffff;
+	color: var(--color-white);
 }
 
 .clearFilterLink {

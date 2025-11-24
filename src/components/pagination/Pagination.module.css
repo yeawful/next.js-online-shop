@@ -2,7 +2,7 @@
 	display: flex;
 	justify-content: center;
 	margin-top: 2.5rem;
-	color: #ffffff;
+	color: var(--color-white);
 	font-size: 0.875rem;
 }
 
@@ -24,7 +24,7 @@
 
 .buttonActive {
 	background-color: #ff6633;
-	color: #ffffff;
+	color: var(--color-white);
 }
 
 .buttonActive:hover {
@@ -42,18 +42,18 @@
 
 .pageButtonActive {
 	background-color: #ff6633;
-	color: #ffffff;
+	color: var(--color-white);
 	border-color: transparent;
 }
 
 .pageButtonInactive {
 	color: #ff6633;
-	background-color: #ffffff;
+	background-color: var(--color-white);
 }
 
 .pageButtonInactive:hover {
 	background-color: #ff6633;
-	color: #ffffff;
+	color: var(--color-white);
 	border-color: transparent;
 }
 

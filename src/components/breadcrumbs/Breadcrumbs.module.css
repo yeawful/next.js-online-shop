@@ -23,7 +23,7 @@
 }
 
 .breadcrumbLink {
-	color: #414141;
+	color: var(--color-title);
 }
 
 .breadcrumbLink:hover {

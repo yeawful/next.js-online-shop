@@ -13,7 +13,7 @@
 .clearButton {
 	font-size: 0.75rem;
 	border-radius: 0.25rem;
-	background-color: #f3f2f1;
+	background-color: var(--color-bg-gray);
 	height: 2rem;
 	padding: 0.5rem;
 	cursor: pointer;
@@ -24,7 +24,7 @@
 .clearButton:hover {
 	background-color: var(--color-primary);
 	box-shadow: var(--shadow-button-default);
-	color: #ffffff;
+	color: var(--color-white);
 }
 
 .clearButton:active {

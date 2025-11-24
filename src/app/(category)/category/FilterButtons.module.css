@@ -21,7 +21,7 @@
 
 .filterButtonActive {
 	background-color: var(--color-primary);
-	color: #ffffff;
+	color: var(--color-white);
 }
 
 .filterButtonActive:hover {
@@ -33,7 +33,7 @@
 }
 
 .filterButtonInactive {
-	background-color: #f3f2f1;
+	background-color: var(--color-bg-gray);
 	color: #606060;
 }
 

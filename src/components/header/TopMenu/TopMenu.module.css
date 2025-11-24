@@ -40,7 +40,7 @@
 
 .menuText {
 	font-size: 0.875rem;
-	color: #414141;
+	color: var(--color-title);
 }
 
 .menuTextActive {

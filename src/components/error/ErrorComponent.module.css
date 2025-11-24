@@ -11,7 +11,7 @@
 	margin-top: 0.5rem;
 	padding: 0.25rem 0.75rem;
 	background-color: #ef4444;
-	color: #ffffff;
+	color: var(--color-white);
 	border-radius: 0.25rem;
 	cursor: pointer;
 }

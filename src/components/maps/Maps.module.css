@@ -2,7 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	color: #414141;
+	color: var(--color-title);
 }
 
 .mapsTitle {
@@ -37,7 +37,7 @@
 
 .locationButtonActive {
 	background-color: var(--color-primary);
-	color: #ffffff;
+	color: var(--color-white);
 }
 
 .locationButtonActive:hover {
@@ -45,7 +45,7 @@
 }
 
 .locationButtonInactive {
-	background-color: #f3f2f1;
+	background-color: var(--color-bg-gray);
 }
 
 .locationButtonInactive:hover {

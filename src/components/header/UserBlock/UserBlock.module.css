@@ -11,7 +11,7 @@
 	width: 100%;
 	padding: 0.5rem 1rem;
 	box-shadow: var(--shadow-default);
-	background-color: #ffffff;
+	background-color: var(--color-white);
 	z-index: 50;
 }
 

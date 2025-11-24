@@ -16,7 +16,7 @@
 	font-size: 1.5rem;
 	text-align: left;
 	font-weight: 700;
-	color: #414141;
+	color: var(--color-title);
 }
 
 .productsGrid {

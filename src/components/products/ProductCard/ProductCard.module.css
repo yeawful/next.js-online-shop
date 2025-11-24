@@ -6,7 +6,7 @@
 	width: 10rem;
 	border-radius: 0.25rem;
 	overflow: hidden;
-	background-color: #ffffff;
+	background-color: var(--color-white);
 	height: 349px;
 	align-items: flex-start;
 	padding: 0;
@@ -21,7 +21,7 @@
 	width: 2rem;
 	height: 2rem;
 	padding: 0.5rem;
-	background-color: #f3f2f1;
+	background-color: var(--color-bg-gray);
 	position: absolute;
 	top: 0.5rem;
 	right: 0.5rem;
@@ -53,7 +53,7 @@
 	background-color: #ff6633;
 	padding: 0.25rem 0.5rem;
 	border-radius: 0.25rem;
-	color: #ffffff;
+	color: var(--color-white);
 	bottom: 0.625rem;
 	left: 0.625rem;
 }
@@ -86,7 +86,7 @@
 	gap: 0.25rem;
 	font-size: 0.875rem;
 	font-weight: 700;
-	color: #414141;
+	color: var(--color-title);
 }
 
 .cardPriceLabel {
@@ -105,7 +105,7 @@
 .description {
 	height: 3.375rem;
 	font-size: 0.75rem;
-	color: #414141;
+	color: var(--color-title);
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
@@ -131,7 +131,7 @@
 }
 
 .addToCartButton:hover {
-	color: #ffffff;
+	color: var(--color-white);
 	background-color: #ff6633;
 	border-color: transparent;
 }

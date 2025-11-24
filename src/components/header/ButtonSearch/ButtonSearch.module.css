@@ -30,7 +30,7 @@
 
 .buttonText {
 	font-size: 1rem;
-	color: #ffffff;
+	color: var(--color-white);
 	display: none;
 }
 
