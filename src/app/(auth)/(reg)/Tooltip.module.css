@@ -1,0 +1,41 @@
+.tooltip {
+	position: absolute;
+	left: 0;
+	top: 100%;
+	margin-top: 0.25rem;
+	width: 100%;
+	transition: all 0.3s ease-in-out;
+}
+
+.tooltipContent {
+	position: relative;
+	background-color: #d80000;
+	color: #ffffff;
+	font-size: 0.875rem;
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	max-width: 16.25rem;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	align-items: center;
+	z-index: 50;
+	opacity: 0;
+	animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+.tooltipIcon {
+	margin-right: 1rem;
+}
+
+.tooltipArrow {
+	position: absolute;
+	left: 50%;
+	top: -0.1875rem;
+	transform: translateX(-50%);
+	width: 0;
+	height: 0;
+	border-left: 0.375rem solid transparent;
+	border-right: 0.375rem solid transparent;
+	border-bottom: 0.25rem solid #d80000;
+}

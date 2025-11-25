@@ -8,12 +8,42 @@
 	gap: 0.625rem;
 }
 
+.loginButton {
+	width: 2.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	color: #ffffff;
+	font-size: 1rem;
+	background-color: #ff6633;
+	transition-duration: 300ms;
+	text-decoration: none;
+	margin-left: 2rem;
+}
+
+.loginButton:hover {
+	box-shadow: var(--shadow-article);
+}
+
+.loginButton:active {
+	box-shadow: var(--shadow-button-active);
+}
+
+.loginText {
+	width: 6.8125rem;
+	justify-content: center;
+	display: none;
+}
+
 .avatar {
 	min-width: 2.5rem;
 	min-height: 2.5rem;
 }
 
-.name {
+.userName {
 	display: none;
 	cursor: pointer;
 	padding: 0.625rem;
@@ -23,12 +53,18 @@
 	display: none;
 	cursor: pointer;
 	padding: 0.5rem;
-	background: none;
-	border: none;
 }
 
 @media (min-width: 1280px) {
-	.name {
+	.loginButton {
+		width: 9.8125rem;
+	}
+
+	.loginText {
+		display: flex;
+	}
+
+	.userName {
 		display: block;
 	}
 

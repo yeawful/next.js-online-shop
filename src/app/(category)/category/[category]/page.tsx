@@ -60,10 +60,7 @@ const CategoryPage = async ({
 				</div>
 				<div className={styles.productsContent}>
 					<div className={styles.filterControlsDesktop}>
-						<FilterControls
-							activeFilter={resolvedSearchParams.filter}
-							basePath={`/category/${category}`}
-						/>
+						<FilterControls basePath={`/category/${category}`} />
 					</div>
 
 					<Suspense fallback={<Loader />}>

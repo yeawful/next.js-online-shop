@@ -1,9 +1,28 @@
 import Image from "next/image";
 import avatar from "/public/images/graphics/avatar.png";
 import iconArrow from "/public/icons-header/icon-arrow.svg";
+import Link from "next/link";
 import styles from "./Profile.module.css";
 
 const Profile = () => {
+	const user = false;
+
+	if (!user) {
+		return (
+			<Link href="/login" className={styles.loginButton}>
+				<div className={styles.loginText}>
+					<p>Войти</p>
+				</div>
+				<Image
+					src="/icons-header/icon-entry.svg"
+					alt="Войти"
+					width={24}
+					height={24}
+				/>
+			</Link>
+		);
+	}
+
 	return (
 		<div className={styles.profile}>
 			<Image
@@ -13,7 +32,7 @@ const Profile = () => {
 				height={40}
 				className={styles.avatar}
 			/>
-			<p className={styles.name}>Алексей</p>
+			<p className={styles.userName}>Алексей</p>
 			<button className={styles.arrowButton}>
 				<Image
 					src={iconArrow}
