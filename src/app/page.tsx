@@ -1,5 +1,5 @@
 import Actions from "./(products)/Actions";
-import styles from "./Home.module.css";
+import styles from "./page.module.css";
 import Hero from "@/components/banners/Hero/Hero";
 import NewProducts from "./(products)/NewProducts";
 import Purchases from "@/app/(user)/Purchases";
