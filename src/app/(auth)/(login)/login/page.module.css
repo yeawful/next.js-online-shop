@@ -1,0 +1,150 @@
+.loginOverlay {
+	position: fixed;
+	inset: 0;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #fcd5bacc;
+	min-height: 100vh;
+	color: #414141;
+}
+
+.loginContainer {
+	background-color: #ffffff;
+	border-radius: 0.25rem;
+	box-shadow: var(--shadow-auth-form);
+	width: 100%;
+	max-width: 420px;
+	max-height: 100vh;
+	overflow-y: auto;
+}
+
+.closeButtonContainer {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.closeButton {
+	background-color: #f3f2f1;
+	border-radius: 0.25rem;
+	transition-duration: 300ms;
+	cursor: pointer;
+	margin-bottom: 2rem;
+}
+
+.mainTitle {
+	font-size: 1.5rem;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 2.5rem;
+}
+
+.form {
+	width: 100%;
+	max-width: 552px;
+	margin-left: auto;
+	margin-right: auto;
+	max-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow-y: auto;
+}
+
+.formRow {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 2rem 1rem;
+}
+
+.formColumn {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	align-items: flex-start;
+}
+
+.submitButton {
+	width: 16.25rem;
+	height: 4.25rem;
+	margin: 2.5rem auto;
+	font-size: 1.5rem;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+
+.submitButtonActive {
+	background-color: #ff6633;
+	color: #ffffff;
+}
+
+.submitButtonActive:hover {
+	box-shadow: var(--shadow-article);
+}
+
+.submitButtonActive:active {
+	box-shadow: var(--shadow-button-active);
+}
+
+.submitButtonInactive {
+	background-color: #fcd5ba;
+	color: #ff6633;
+	cursor: not-allowed;
+}
+
+.linksContainer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-bottom: 2.5rem;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 0.75rem;
+}
+
+.registerLink {
+	margin-bottom: 2.5rem;
+	margin-left: auto;
+	margin-right: auto;
+	height: 2rem;
+	color: var(--color-primary);
+	border: 1px solid var(--color-primary);
+	background-color: #ffffff;
+	width: 7.5rem;
+	border-radius: 0.25rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition-duration: 300ms;
+	text-decoration: none;
+}
+
+.registerLink:hover {
+	color: #ffffff;
+	background-color: var(--color-primary);
+}
+
+.registerLink:active {
+	color: #ffffff;
+	box-shadow: var(--shadow-button-default);
+}
+
+.forgotPasswordLink {
+	height: 2rem;
+	color: #414141;
+	width: 7.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition-duration: 300ms;
+	text-decoration: none;
+}
+
+.forgotPasswordLink:hover {
+	color: #000000;
+}

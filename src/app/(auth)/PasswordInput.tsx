@@ -2,7 +2,7 @@
 
 import IconVision from "@/components/svg/IconVision";
 import { ChangeEvent } from "react";
-import Tooltip from "./Tooltip";
+import Tooltip from "./(reg)/Tooltip";
 import styles from "./PasswordInput.module.css";
 
 interface PasswordInputProps {
