@@ -56,7 +56,7 @@ const PasswordInput = ({
 			<label htmlFor={id} className={styles.label}>
 				{label}
 			</label>
-			<div className="relative">
+			<div className={styles.inputContainer}>
 				<input
 					id={id}
 					type={showPassword ? "text" : "password"}

@@ -1,0 +1,38 @@
+.genderContainer {
+	font-size: 0.75rem;
+	width: 100%;
+}
+
+.label {
+	font-size: 1rem;
+	color: #8f8f8f;
+	display: block;
+}
+
+.genderGroup {
+	display: flex;
+	gap: 0.25rem;
+	background-color: #f3f2f1;
+	height: 2.5rem;
+	border-radius: 0.25rem;
+	padding: 0.25rem;
+}
+
+.genderLabel {
+	display: flex;
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0.25rem;
+	transition-duration: 300ms;
+	cursor: pointer;
+}
+
+.genderLabelActive {
+	background-color: var(--color-primary);
+	color: #ffffff;
+}
+
+.genderInput {
+	display: none;
+}

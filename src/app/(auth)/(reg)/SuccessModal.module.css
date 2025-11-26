@@ -1,0 +1,56 @@
+.successOverlay {
+	position: fixed;
+	inset: 0;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #fcd5bacc;
+	min-height: 100vh;
+}
+
+.successContainer {
+	background-color: #ffffff;
+	border-radius: 0.5rem;
+	box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+		0 10px 10px -5px rgba(0, 0, 0, 0.04);
+	padding: 2rem;
+	max-width: 28rem;
+	margin: 0 1rem;
+	text-align: center;
+}
+
+.successTitle {
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: var(--color-primary);
+	margin-bottom: 1rem;
+}
+
+.successMessage {
+	font-size: 1.125rem;
+	margin-bottom: 1.5rem;
+}
+
+.progressContainer {
+	width: 100%;
+	background-color: #e5e7eb;
+	border-radius: 9999px;
+	height: 0.625rem;
+}
+
+.progressBar {
+	background-color: var(--color-primary);
+	height: 0.625rem;
+	border-radius: 9999px;
+	animation: progress 3s linear forwards;
+}
+
+@keyframes progress {
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 100%;
+	}
+}

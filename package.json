@@ -13,6 +13,7 @@
 		"@faker-js/faker": "^10.1.0",
 		"@iminside/react-yandex-maps": "^1.2.7",
 		"@react-input/mask": "^2.0.4",
+		"bcrypt": "^6.0.0",
 		"dotenv": "^17.2.3",
 		"mongodb": "^7.0.0",
 		"mongoose": "^8.19.3",
@@ -22,6 +23,7 @@
 		"react-dom": "19.2.0"
 	},
 	"devDependencies": {
+		"@types/bcrypt": "^6.0.0",
 		"@types/node": "^20",
 		"@types/react": "^19",
 		"@types/react-dom": "^19",

@@ -1,7 +1,3 @@
-.passwordContainer {
-	position: relative;
-}
-
 .label {
 	font-size: 1rem;
 	color: #8f8f8f;
@@ -17,6 +13,9 @@
 	border: 1px solid #bfbfbf;
 	border-radius: 0.25rem;
 	caret-color: var(--color-primary);
+	appearance: none;
+	padding-right: 2rem;
+	cursor: pointer;
 }
 
 .input:focus {
@@ -26,31 +25,14 @@
 	outline: none;
 }
 
-.inputContainer {
+.selectContainer {
 	position: relative;
 }
 
-.toggleButton {
+.arrowIcon {
 	position: absolute;
-	right: 0.75rem;
+	right: 0.5rem;
 	top: 50%;
-	transform: translateY(-50%);
-	background: none;
-	border: none;
-	padding: 0;
-	margin: 0;
-	cursor: pointer;
-	outline: none;
-	box-shadow: none;
-}
-
-.toggleButton:focus {
-	outline: none;
-	box-shadow: none;
-}
-
-.toggleButton:active {
-	background: none;
-	border: none;
-	box-shadow: none;
+	transform: translateY(-50%) rotate(90deg);
+	pointer-events: none;
 }

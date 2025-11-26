@@ -1,0 +1,56 @@
+.submitButton {
+	width: 16.25rem;
+	height: 4.25rem;
+	margin: 2.5rem auto;
+	font-size: 1.5rem;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition: all 0.2s;
+	border: none;
+	background: none;
+}
+
+.submitButtonActive {
+	background-color: #ff6633;
+	color: #ffffff;
+}
+
+.submitButtonActive:hover {
+	box-shadow: var(--shadow-article);
+}
+
+.submitButtonActive:active {
+	box-shadow: var(--shadow-button-active);
+}
+
+.submitButtonInactive {
+	background-color: #fcd5ba;
+	color: #ff6633;
+}
+
+.loginLink {
+	margin-bottom: 2.5rem;
+	margin-left: auto;
+	margin-right: auto;
+	height: 2rem;
+	color: var(--color-primary);
+	border: 1px solid var(--color-primary);
+	background-color: #ffffff;
+	width: 7.5rem;
+	border-radius: 0.25rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition-duration: 300ms;
+	text-decoration: none;
+}
+
+.loginLink:hover {
+	color: #ffffff;
+	background-color: var(--color-primary);
+}
+
+.loginLink:active {
+	color: #ffffff;
+	box-shadow: var(--shadow-button-default);
+}

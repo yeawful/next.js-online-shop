@@ -1,0 +1,34 @@
+.cardContainer {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+}
+
+.label {
+	font-size: 1rem;
+	color: #8f8f8f;
+	display: block;
+}
+
+.input {
+	width: 16.25rem;
+	height: 2.5rem;
+	padding: 0.5rem 1rem;
+	color: #414141;
+	font-size: 1rem;
+	border: 1px solid #bfbfbf;
+	border-radius: 0.25rem;
+	caret-color: var(--color-primary);
+}
+
+.input:focus {
+	border-color: #70c05b;
+	box-shadow: var(--shadow-button-default);
+	background-color: #ffffff;
+	outline: none;
+}
+
+.inputDisabled {
+	background-color: #f3f2f1;
+	cursor: not-allowed;
+}

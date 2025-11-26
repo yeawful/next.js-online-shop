@@ -1,4 +1,4 @@
-.passwordContainer {
+.dateInputContainer {
 	position: relative;
 }
 
@@ -17,6 +17,7 @@
 	border: 1px solid #bfbfbf;
 	border-radius: 0.25rem;
 	caret-color: var(--color-primary);
+	padding-right: 2rem;
 }
 
 .input:focus {
@@ -30,9 +31,9 @@
 	position: relative;
 }
 
-.toggleButton {
+.calendarButton {
 	position: absolute;
-	right: 0.75rem;
+	right: 0.5rem;
 	top: 50%;
 	transform: translateY(-50%);
 	background: none;
@@ -44,12 +45,12 @@
 	box-shadow: none;
 }
 
-.toggleButton:focus {
+.calendarButton:focus {
 	outline: none;
 	box-shadow: none;
 }
 
-.toggleButton:active {
+.calendarButton:active {
 	background: none;
 	border: none;
 	box-shadow: none;
