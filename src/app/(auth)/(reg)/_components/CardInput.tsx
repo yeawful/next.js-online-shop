@@ -5,7 +5,7 @@ import { ChangeEvent } from "react";
 import styles from "./CardInput.module.css";
 
 interface CardInputProps {
-	value: string;
+	value?: string;
 	onChangeAction: (e: ChangeEvent<HTMLInputElement>) => void;
 	disabled: boolean;
 }

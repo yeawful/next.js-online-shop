@@ -1,39 +1,25 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
-import PhoneInput from "../../PhoneInput";
-import PersonInput from "../PersonInput";
-import PasswordInput from "../../PasswordInput";
-import DateInput from "../DateInput";
-import SelectRegion from "../SelectRegion";
-import SelectCity from "../SelectCity";
-import GenderSelect from "../GenderSelect";
-import CardInput from "../CardInput";
-import CheckboxCard from "../CheckboxCard";
-import EmailInput from "../EmailInput";
-import RegFormFooter from "../RegFormFooter";
+import PhoneInput from "../../_components/PhoneInput";
+import PersonInput from "../_components/PersonInput";
+import PasswordInput from "../../_components/PasswordInput";
+import DateInput from "../_components/DateInput";
+import SelectRegion from "../_components/SelectRegion";
+import SelectCity from "../_components/SelectCity";
+import GenderSelect from "../_components/GenderSelect";
+import CardInput from "../_components/CardInput";
+import CheckboxCard from "../_components/CheckboxCard";
+import EmailInput from "../_components/EmailInput";
+import RegFormFooter from "../_components/RegFormFooter";
 import { validateRegisterForm } from "../../../../utils/validation/form";
 import { Loader } from "@/components/loaders/Loader";
 import ErrorComponent from "@/components/error/ErrorComponent";
-import SuccessModal from "../SuccessModal";
+import SuccessModal from "../_components/SuccessModal";
+import { initialRegFormData } from "@/constants/regFormData";
+import { RegFormData } from "@/types/regFormData";
+import { AuthFormLayout } from "../../_components/AuthFormLayout";
 import styles from "./page.module.css";
-
-const initialFormData = {
-	phone: "+7",
-	surname: "",
-	firstName: "",
-	password: "",
-	confirmPassword: "",
-	birthdayDate: "",
-	region: "",
-	location: "",
-	gender: "",
-	card: "",
-	email: "",
-	hasCard: false,
-};
 
 const RegisterPage = () => {
 	const [isLoading, setIsLoading] = useState(false);
@@ -41,16 +27,11 @@ const RegisterPage = () => {
 		error: Error;
 		userMessage: string;
 	} | null>(null);
-	const [formData, setFormData] = useState(initialFormData);
+	const [registerForm, setRegisterForm] =
+		useState<RegFormData>(initialRegFormData);
 	const [showPassword, setShowPassword] = useState(false);
 	const [invalidFormMessage, setInvalidFormMessage] = useState("");
 	const [isSuccess, setIsSuccess] = useState(false);
-	const router = useRouter();
-
-	const handleClose = () => {
-		setFormData(initialFormData);
-		router.back();
-	};
 
 	const handleChange = (
 		e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -63,7 +44,7 @@ const RegisterPage = () => {
 		}
 
 		if (id === "hasCard" && value === true) {
-			setFormData((prev) => ({
+			setRegisterForm((prev) => ({
 				...prev,
 				hasCard: true,
 				card: "",
@@ -71,7 +52,7 @@ const RegisterPage = () => {
 
 			return;
 		}
-		setFormData((prev) => ({ ...prev, [id]: value }));
+		setRegisterForm((prev) => ({ ...prev, [id]: value }));
 	};
 
 	const handleSubmit = async (e: React.FormEvent) => {
@@ -80,7 +61,7 @@ const RegisterPage = () => {
 		setError(null);
 		setInvalidFormMessage("");
 
-		const validation = validateRegisterForm(formData);
+		const validation = validateRegisterForm(registerForm);
 		if (!validation.isValid) {
 			setInvalidFormMessage(
 				validation.errorMessage || "Заполните поля корректно"
@@ -90,12 +71,12 @@ const RegisterPage = () => {
 		}
 
 		try {
-			const [day, month, year] = formData.birthdayDate.split(".");
+			const [day, month, year] = registerForm.birthdayDate.split(".");
 			const formattedBirthdayDate = new Date(`${year}-${month}-${day}`);
 
 			const userData = {
-				...formData,
-				phone: formData.phone.replace(/\D/g, ""),
+				...registerForm,
+				phone: registerForm.phone.replace(/\D/g, ""),
 				birthdayDate: formattedBirthdayDate,
 			};
 
@@ -121,7 +102,7 @@ const RegisterPage = () => {
 		}
 	};
 
-	const isFormValid = () => validateRegisterForm(formData).isValid;
+	const isFormValid = () => validateRegisterForm(registerForm).isValid;
 
 	if (isLoading) return <Loader />;
 	if (error)
@@ -132,117 +113,100 @@ const RegisterPage = () => {
 	if (isSuccess) return <SuccessModal />;
 
 	return (
-		<div className={styles.registerOverlay}>
-			<div className={styles.registerContainer}>
-				<div className={styles.closeButtonContainer}>
-					<button
-						onClick={handleClose}
-						className={styles.closeButton}
-						aria-label="Закрыть"
-					>
-						<Image
-							src="/icons-products/icon-closer.svg"
-							width={24}
-							height={24}
-							alt="Закрыть"
+		<AuthFormLayout variant="register">
+			<h1 className={styles.mainTitle}>Регистрация</h1>
+			<h2 className={styles.sectionTitle}>Обязательные поля</h2>
+			<form onSubmit={handleSubmit} autoComplete="off" className={styles.form}>
+				<div className={styles.formRow}>
+					<div className={styles.formColumn}>
+						<PhoneInput
+							value={registerForm.phone}
+							onChangeAction={handleChange}
 						/>
-					</button>
+						<PersonInput
+							id="surname"
+							label="Фамилия"
+							value={registerForm.surname}
+							onChange={handleChange}
+						/>
+						<PersonInput
+							id="firstName"
+							label="Имя"
+							value={registerForm.firstName}
+							onChange={handleChange}
+						/>
+						<PasswordInput
+							id="password"
+							label="Пароль"
+							value={registerForm.password}
+							onChangeAction={handleChange}
+							showPassword={showPassword}
+							togglePasswordVisibilityAction={() =>
+								setShowPassword(!showPassword)
+							}
+							showRequirements={true}
+						/>
+						<PasswordInput
+							id="confirmPassword"
+							label="Подтвердите пароль"
+							value={registerForm.confirmPassword}
+							onChangeAction={handleChange}
+							showPassword={showPassword}
+							togglePasswordVisibilityAction={() =>
+								setShowPassword(!showPassword)
+							}
+							compareWith={registerForm.password}
+						/>
+					</div>
+					<div className={styles.formColumn}>
+						<DateInput
+							value={registerForm.birthdayDate}
+							onChangeAction={(value) =>
+								setRegisterForm((prev) => ({ ...prev, birthdayDate: value }))
+							}
+						/>
+						<SelectRegion
+							value={registerForm.region}
+							onChangeAction={handleChange}
+						/>
+						<SelectCity
+							value={registerForm.location}
+							onChangeAction={handleChange}
+						/>
+						<GenderSelect
+							value={registerForm.gender}
+							onChangeAction={(gender) =>
+								setRegisterForm((prev) => ({ ...prev, gender }))
+							}
+						/>
+					</div>
 				</div>
-				<h1 className={styles.mainTitle}>Регистрация</h1>
-				<h2 className={styles.sectionTitle}>Обязательные поля</h2>
-				<form
-					onSubmit={handleSubmit}
-					autoComplete="off"
-					className={styles.form}
-				>
-					<div className={styles.formRow}>
-						<div className={styles.formColumn}>
-							<PhoneInput
-								value={formData.phone}
-								onChangeAction={handleChange}
-							/>
-							<PersonInput
-								id="surname"
-								label="Фамилия"
-								value={formData.surname}
-								onChange={handleChange}
-							/>
-							<PersonInput
-								id="firstName"
-								label="Имя"
-								value={formData.firstName}
-								onChange={handleChange}
-							/>
-							<PasswordInput
-								id="password"
-								label="Пароль"
-								value={formData.password}
-								onChangeAction={handleChange}
-								showPassword={showPassword}
-								togglePasswordVisibilityAction={() =>
-									setShowPassword(!showPassword)
-								}
-								showRequirements={true}
-							/>
-							<PasswordInput
-								id="confirmPassword"
-								label="Подтвердите пароль"
-								value={formData.confirmPassword}
-								onChangeAction={handleChange}
-								showPassword={showPassword}
-								togglePasswordVisibilityAction={() =>
-									setShowPassword(!showPassword)
-								}
-								compareWith={formData.password}
-							/>
-						</div>
-						<div className={styles.formColumn}>
-							<DateInput
-								value={formData.birthdayDate}
-								onChangeAction={(value) =>
-									setFormData((prev) => ({ ...prev, birthdayDate: value }))
-								}
-							/>
-							<SelectRegion
-								value={formData.region}
-								onChangeAction={handleChange}
-							/>
-							<SelectCity
-								value={formData.location}
-								onChangeAction={handleChange}
-							/>
-							<GenderSelect
-								value={formData.gender}
-								onChangeAction={(gender) =>
-									setFormData((prev) => ({ ...prev, gender }))
-								}
-							/>
-						</div>
+				<h2 className={`${styles.sectionTitle} ${styles.optionalSection}`}>
+					Необязательные поля
+				</h2>
+				<div className={styles.optionalFormRow}>
+					<div className={styles.cardColumn}>
+						<CardInput
+							value={registerForm.card}
+							onChangeAction={handleChange}
+							disabled={!!registerForm.hasCard}
+						/>
+						<CheckboxCard
+							checked={registerForm.hasCard}
+							onChangeAction={handleChange}
+						/>
 					</div>
-					<h2 className={`${styles.sectionTitle} ${styles.optionalSection}`}>
-						Необязательные поля
-					</h2>
-					<div className={styles.optionalFormRow}>
-						<div className={styles.cardColumn}>
-							<CardInput
-								value={formData.card}
-								onChangeAction={handleChange}
-								disabled={formData.hasCard}
-							/>
-							<CheckboxCard
-								checked={formData.hasCard}
-								onChangeAction={handleChange}
-							/>
-						</div>
-						<EmailInput value={formData.email} onChangeAction={handleChange} />
-					</div>
-					{invalidFormMessage && (
-						<div className={styles.errorMessage}>{invalidFormMessage}</div>
-					)}
-					<RegFormFooter isFormValid={isFormValid()} isLoading={isLoading} />
-				</form>
-			</div>
-		</div>
+					<EmailInput
+						value={registerForm.email}
+						onChangeAction={handleChange}
+					/>
+				</div>
+				{invalidFormMessage && (
+					<div className={styles.errorMessage}>{invalidFormMessage}</div>
+				)}
+				<RegFormFooter isFormValid={isFormValid()} isLoading={isLoading} />
+			</form>
+		</AuthFormLayout>
 	);
 };
 

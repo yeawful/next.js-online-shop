@@ -4,10 +4,10 @@ import ErrorComponent from "@/components/error/ErrorComponent";
 import { Loader } from "@/components/loaders/Loader";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import Image from "next/image";
-import PhoneInput from "../../PhoneInput";
-import PasswordInput from "../../PasswordInput";
+import PhoneInput from "../../_components/PhoneInput";
+import PasswordInput from "../../_components/PasswordInput";
 import Link from "next/link";
+import { AuthFormLayout } from "../../_components/AuthFormLayout";
 import styles from "./page.module.css";
 
 const initialFormData = {
@@ -24,11 +24,6 @@ const LoginPage = () => {
 	const [formData, setFormData] = useState(initialFormData);
 	const [showPassword, setShowPassword] = useState(false);
 	const router = useRouter();
-
-	const handleClose = () => {
-		setFormData(initialFormData);
-		router.back();
-	};
 
 	const handleChange = (
 		e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -81,68 +76,45 @@ const LoginPage = () => {
 		);
 
 	return (
-		<div className={styles.loginOverlay}>
-			<div className={styles.loginContainer}>
-				<div className={styles.closeButtonContainer}>
-					<button
-						onClick={handleClose}
-						className={styles.closeButton}
-						aria-label="Закрыть"
-					>
-						<Image
-							src="/icons-products/icon-closer.svg"
-							width={24}
-							height={24}
-							alt="Закрыть"
+		<AuthFormLayout>
+			<h1 className={styles.mainTitle}>Вход</h1>
+			<form onSubmit={handleSubmit} autoComplete="off" className={styles.form}>
+				<div className={styles.formRow}>
+					<div className={styles.formColumn}>
+						<PhoneInput value={formData.phone} onChangeAction={handleChange} />
+						<PasswordInput
+							id="password"
+							label="Пароль"
+							value={formData.password}
+							onChangeAction={handleChange}
+							showPassword={showPassword}
+							togglePasswordVisibilityAction={() =>
+								setShowPassword(!showPassword)
+							}
 						/>
-					</button>
+					</div>
 				</div>
-				<h1 className={styles.mainTitle}>Вход</h1>
-				<form
-					onSubmit={handleSubmit}
-					autoComplete="off"
-					className={styles.form}
+				<button
+					type="submit"
+					disabled={!isFormValid || isLoading}
+					className={`${styles.submitButton} ${
+						isFormValid
+							? styles.submitButtonActive
+							: styles.submitButtonInactive
+					}`}
 				>
-					<div className={styles.formRow}>
-						<div className={styles.formColumn}>
-							<PhoneInput
-								value={formData.phone}
-								onChangeAction={handleChange}
-							/>
-							<PasswordInput
-								id="password"
-								label="Пароль"
-								value={formData.password}
-								onChangeAction={handleChange}
-								showPassword={showPassword}
-								togglePasswordVisibilityAction={() =>
-									setShowPassword(!showPassword)
-								}
-							/>
-						</div>
-					</div>
-					<button
-						type="submit"
-						disabled={!isFormValid || isLoading}
-						className={`${styles.submitButton} ${
-							isFormValid
-								? styles.submitButtonActive
-								: styles.submitButtonInactive
-						}`}
-					>
-						Вход
-					</button>
-					<div className={styles.linksContainer}>
-						<Link href="/register" className={styles.registerLink}>
-							Регистрация
-						</Link>
-						<Link href="forgotPassword" className={styles.forgotPasswordLink}>
-							Забыли пароль?
-						</Link>
-					</div>
-				</form>
-			</div>
-		</div>
+					Вход
+				</button>
+				<div className={styles.linksContainer}>
+					<Link href="/register" className={styles.registerLink}>
+						Регистрация
+					</Link>
+					<Link href="forgotPassword" className={styles.forgotPasswordLink}>
+						Забыли пароль?
+					</Link>
+				</div>
+			</form>
+		</AuthFormLayout>
 	);
 };
 

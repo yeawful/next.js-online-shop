@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/header/Header/Header";
 import Footer from "@/components/footer/Footer";
 import Breadcrumbs from "@/components/breadcrumbs/Breadcrumbs";
+import { RegFormProvider } from "./contexts/RegFormContext";
 
 const rubik = Rubik({
 	variable: "--font-rubik",
@@ -24,10 +25,12 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${rubik.variable} font-sans`}>
-				<Header />
-				<Breadcrumbs />
-				{children}
-				<Footer />
+				<RegFormProvider>
+					<Header />
+					<Breadcrumbs />
+					{children}
+					<Footer />
+				</RegFormProvider>
 			</body>
 		</html>
 	);

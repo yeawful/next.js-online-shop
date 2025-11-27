@@ -5,7 +5,7 @@ import Image from "next/image";
 import styles from "./CheckboxCard.module.css";
 
 interface CheckboxNoCardProps {
-	checked: boolean;
+	checked: boolean | undefined;
 	onChangeAction: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 

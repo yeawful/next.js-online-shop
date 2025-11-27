@@ -4,7 +4,7 @@ import { ChangeEvent } from "react";
 import styles from "./EmailInput.module.css";
 
 interface EmailInputProps {
-	value: string;
+	value?: string;
 	onChangeAction: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 

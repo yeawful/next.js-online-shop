@@ -2,8 +2,8 @@
 
 import { ChangeEvent, useState } from "react";
 import Image from "next/image";
-import Tooltip from "./Tooltip";
-import { validateBirthDate } from "../../../utils/validation/validateBirthDate";
+import Tooltip from "../../_components/Tooltip";
+import { validateBirthDate } from "../../../../utils/validation/validateBirthDate";
 import styles from "./DateInput.module.css";
 
 interface DateInputProps {

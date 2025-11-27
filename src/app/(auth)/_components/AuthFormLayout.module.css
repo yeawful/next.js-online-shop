@@ -1,0 +1,40 @@
+.authOverlay {
+	position: absolute;
+	inset: 0;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #fcd5bacc;
+	min-height: 100vh;
+	color: #414141;
+	padding: 2.5rem 0.75rem;
+	backdrop-filter: blur(4px);
+}
+
+.authContainer {
+	position: relative;
+	background-color: #ffffff;
+	border-radius: 0.25rem;
+	box-shadow: var(--shadow-auth-form);
+	max-height: calc(100vh - 5rem);
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 0 1.5rem;
+}
+
+.authContainerRegister {
+	max-width: 42.9375rem;
+}
+
+.authContainerDefault {
+	max-width: 26.25rem;
+}
+
+.authContent {
+	padding-top: 4.5rem;
+	padding-bottom: 2.5rem;
+	overflow-y: auto;
+	flex: 1;
+}
