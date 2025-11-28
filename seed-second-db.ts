@@ -4,7 +4,7 @@ import "dotenv/config";
 
 // Подключение к вашей БД
 const DB_URL = process.env.ONLINE_SHOP_DB_URL || "mongodb://localhost:27017";
-const DB_NAME = process.env.ONLINE_SHOP_DB_NAME || "online-shop";
+const DB_NAME = process.env.ONLINE_SHOP_DB_NAME || "onlineshop";
 
 interface Product {
 	title: string;

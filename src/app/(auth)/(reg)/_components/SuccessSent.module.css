@@ -1,0 +1,68 @@
+.successContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+.successHeader {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 1rem;
+}
+
+.successIcon {
+	padding: 0.75rem;
+	background-color: var(--color-primary);
+	border-radius: 9999px;
+}
+
+.icon {
+	width: 2rem;
+	height: 2rem;
+	color: #ffffff;
+}
+
+.successTitle {
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: #111827;
+}
+
+.successMessage {
+	color: #6b7280;
+	max-width: 28rem;
+}
+
+.highlightedEmail {
+	font-weight: 600;
+	color: #ff6633;
+}
+
+.actionsContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	width: 100%;
+}
+
+.loginButton {
+	width: 100%;
+	padding: 0.5rem 1rem;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	border: 1px solid var(--color-primary);
+	color: #ffffff;
+	background-color: #ff6633;
+	transition-duration: 300ms;
+}
+
+.loginButton:hover {
+	box-shadow: var(--shadow-article);
+}
+
+.loginButton:active {
+	box-shadow: var(--shadow-button-active);
+}

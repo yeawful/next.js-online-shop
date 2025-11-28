@@ -12,15 +12,19 @@
 		"@a1rth/css-normalize": "^1.2.4",
 		"@faker-js/faker": "^10.1.0",
 		"@iminside/react-yandex-maps": "^1.2.7",
+		"@react-email/components": "^1.0.1",
 		"@react-input/mask": "^2.0.4",
 		"bcrypt": "^6.0.0",
+		"better-auth": "^1.4.3",
 		"dotenv": "^17.2.3",
+		"lucide-react": "^0.555.0",
 		"mongodb": "^7.0.0",
 		"mongoose": "^8.19.3",
 		"next": "16.0.1",
 		"rc-slider": "^11.1.9",
 		"react": "19.2.0",
-		"react-dom": "19.2.0"
+		"react-dom": "19.2.0",
+		"resend": "^6.5.2"
 	},
 	"devDependencies": {
 		"@types/bcrypt": "^6.0.0",

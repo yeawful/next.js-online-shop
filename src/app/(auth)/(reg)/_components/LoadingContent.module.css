@@ -1,0 +1,58 @@
+.loadingContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.spinnerContainer {
+	position: relative;
+}
+
+.spinnerIcon {
+	width: 2.5rem;
+	height: 2.5rem;
+	color: #ff6633;
+	animation: spin 1s linear infinite;
+}
+
+.spinnerPing {
+	position: absolute;
+	inset: 0;
+	border-radius: 9999px;
+	border: 2px solid #ff6633;
+	border-opacity: 0.2;
+	animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.loadingText {
+	text-align: center;
+	color: #414141;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.loadingTitle {
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: #414141;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes ping {
+	75%,
+	100% {
+		transform: scale(2);
+		opacity: 0;
+	}
+}

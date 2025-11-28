@@ -11,7 +11,7 @@ import { AuthFormLayout } from "../../_components/AuthFormLayout";
 import styles from "./page.module.css";
 
 const initialFormData = {
-	phone: "+7",
+	phoneNumber: "+7",
 	password: "",
 };
 
@@ -43,7 +43,7 @@ const LoginPage = () => {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({
-					phone: formData.phone.replace(/\D/g, ""),
+					phoneNumber: formData.phoneNumber.replace(/\D/g, ""),
 					password: formData.password,
 				}),
 			});
@@ -67,8 +67,6 @@ const LoginPage = () => {
 		}
 	};
 
-	const isFormValid = formData.phone && formData.password;
-
 	if (isLoading) return <Loader />;
 	if (error)
 		return (
@@ -81,7 +79,10 @@ const LoginPage = () => {
 			<form onSubmit={handleSubmit} autoComplete="off" className={styles.form}>
 				<div className={styles.formRow}>
 					<div className={styles.formColumn}>
-						<PhoneInput value={formData.phone} onChangeAction={handleChange} />
+						<PhoneInput
+							value={formData.phoneNumber}
+							onChangeAction={handleChange}
+						/>
 						<PasswordInput
 							id="password"
 							label="Пароль"
@@ -96,9 +97,9 @@ const LoginPage = () => {
 				</div>
 				<button
 					type="submit"
-					disabled={!isFormValid || isLoading}
+					disabled={!(formData.phoneNumber && formData.password) || isLoading}
 					className={`${styles.submitButton} ${
-						isFormValid
+						formData.phoneNumber && formData.password
 							? styles.submitButtonActive
 							: styles.submitButtonInactive
 					}`}

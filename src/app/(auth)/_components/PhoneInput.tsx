@@ -12,13 +12,13 @@ interface PhoneInputProps {
 const PhoneInput = ({ value, onChangeAction }: PhoneInputProps) => {
 	return (
 		<div>
-			<label htmlFor="phone" className={styles.label}>
+			<label htmlFor="phoneNumber" className={styles.label}>
 				Телефон
 			</label>
 			<InputMask
 				mask="+7 (___) ___-__-__"
 				replacement={{ _: /\d/ }}
-				id="phone"
+				id="phoneNumber"
 				type="text"
 				value={value}
 				placeholder="+7 (___) ___-__-__"
