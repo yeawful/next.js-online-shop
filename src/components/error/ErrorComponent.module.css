@@ -14,4 +14,5 @@
 	color: var(--color-white);
 	border-radius: 0.25rem;
 	cursor: pointer;
+	border: none;
 }

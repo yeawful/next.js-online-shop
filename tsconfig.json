@@ -30,7 +30,8 @@
 		".next/dev/types/**/*.ts",
 		"**/*.mts",
 		"src/app/(catalog)/catalog/ErrorBoundary.jsx",
-		"seed-db.ts"
+		"seed-db.ts",
+		"src/app/api/auth/set-password"
 	],
 	"exclude": ["node_modules"]
 }
