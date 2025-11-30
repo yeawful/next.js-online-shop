@@ -7,6 +7,9 @@ import { useEffect, useState } from "react";
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import useTimer from "@/hooks/useTimer";
+import OTPResendCode from "../../_components/OTPResendButton";
+import { AuthFormLayout } from "../../_components/AuthFormLayout";
+import { LoadingContent } from "./LoadingContent";
 import styles from "./EnterCode.module.css";
 
 const MAX_ATTEMPTS = 3;
@@ -14,6 +17,7 @@ const TIMEOUT_PERIOD = 180;
 
 export const EnterCode = ({ phoneNumber }: { phoneNumber: string }) => {
 	const [code, setCode] = useState("");
+	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState("");
 	const [attemptsLeft, setAttemptsLeft] = useState(MAX_ATTEMPTS);
 	const { regFormData } = useRegFormContext();
@@ -28,6 +32,8 @@ export const EnterCode = ({ phoneNumber }: { phoneNumber: string }) => {
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 		if (code.length !== 4) return;
+
+		setIsLoading(true);
 
 		try {
 			const { data: verifyData, error: verifyError } =
@@ -72,6 +78,8 @@ export const EnterCode = ({ phoneNumber }: { phoneNumber: string }) => {
 			} else {
 				setError(`Неверный код. Осталось попыток: ${attemptsLeft - 1}`);
 			}
+		} finally {
+			setIsLoading(false);
 		}
 	};
 
@@ -97,8 +105,16 @@ export const EnterCode = ({ phoneNumber }: { phoneNumber: string }) => {
 		}
 	};
 
+	if (isLoading) {
+		return (
+			<AuthFormLayout>
+				<LoadingContent title={"Проверяем код..."} />
+			</AuthFormLayout>
+		);
+	}
+
 	return (
-		<>
+		<AuthFormLayout>
 			<div className={styles.container}>
 				<h1 className={styles.title}>Регистрация</h1>
 				<div>
@@ -125,7 +141,7 @@ export const EnterCode = ({ phoneNumber }: { phoneNumber: string }) => {
 						{error && <div className={styles.error}>{error}</div>}
 						<button
 							type="submit"
-							className={`${styles.button} ${code.length !== 4 ? styles.buttonInactive : styles.buttonActive} ${styles.buttonMargin}`}
+							className={`${styles.button} ${code.length !== 4 ? styles.buttonInactive : styles.buttonActive}`}
 							disabled={code.length !== 4 || attemptsLeft <= 0}
 						>
 							Подтвердить
@@ -133,20 +149,12 @@ export const EnterCode = ({ phoneNumber }: { phoneNumber: string }) => {
 					</form>
 				</div>
 
-				{!canResend ? (
-					<p className={styles.timerText}>
-						Запросить код повторно можно через{" "}
-						<span className={styles.timerBold}>{timeLeft} секунд</span>
-					</p>
-				) : (
-					<button
-						onClick={handleResend}
-						disabled={!canResend}
-						className={styles.resendButton}
-					>
-						Отправить еще раз
-					</button>
-				)}
+				<OTPResendCode
+					canResend={canResend}
+					timeLeft={timeLeft}
+					onResendAction={handleResend}
+				/>
+
 				<Link href="/register" className={styles.backLink}>
 					<Image
 						src="/icons-auth/icon-arrow-left.svg"
@@ -157,6 +165,6 @@ export const EnterCode = ({ phoneNumber }: { phoneNumber: string }) => {
 					Вернуться
 				</Link>
 			</div>
-		</>
+		</AuthFormLayout>
 	);
 };

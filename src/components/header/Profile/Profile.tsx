@@ -1,13 +1,16 @@
+"use client";
+
 import Image from "next/image";
+import { useAuthStore } from "@/store/authStore";
 import avatar from "/public/images/graphics/avatar.png";
 import iconArrow from "/public/icons-header/icon-arrow.svg";
 import Link from "next/link";
 import styles from "./Profile.module.css";
 
 const Profile = () => {
-	const user = false;
+	const { isAuth, userName } = useAuthStore();
 
-	if (!user) {
+	if (!isAuth) {
 		return (
 			<Link href="/login" className={styles.loginButton}>
 				<div className={styles.loginText}>
@@ -32,7 +35,7 @@ const Profile = () => {
 				height={40}
 				className={styles.avatar}
 			/>
-			<p className={styles.userName}>Алексей</p>
+			<p className={styles.userName}>{userName}</p>
 			<button className={styles.arrowButton}>
 				<Image
 					src={iconArrow}

@@ -1,18 +1,39 @@
 import Image from "next/image";
 import styles from "./Tooltip.module.css";
 
-const Tooltip = ({ text }: { text: string }) => {
+type TooltipProps = {
+	text: string;
+	position?: "top" | "bottom";
+};
+
+const Tooltip = ({ text, position = "bottom" }: TooltipProps) => {
 	return (
-		<div className={styles.tooltip}>
-			<div className={styles.tooltipContent}>
+		<div
+			className={
+				position === "top"
+					? styles.tooltipContainerTop
+					: styles.tooltipContainer
+			}
+		>
+			<div
+				className={
+					position === "bottom" ? styles.tooltipBottom : styles.tooltipTop
+				}
+			>
 				<Image
 					src="/icons-auth/icon-attention.svg"
 					alt={text}
 					width={21}
 					height={21}
-					className={styles.tooltipIcon}
+					className={position === "bottom" ? styles.iconBottom : styles.iconTop}
 				/>
-				<div className={styles.tooltipArrow}></div>
+
+				{position === "top" ? (
+					<div className={styles.triangleTop}></div>
+				) : (
+					<div className={styles.triangleBottom}></div>
+				)}
+
 				{text}
 			</div>
 		</div>

@@ -5,7 +5,6 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	overflow-y: auto;
 	gap: 2rem;
 }
 
@@ -34,57 +33,10 @@
 	width: 100%;
 }
 
-.label {
-	font-size: 1rem;
-	color: #8f8f8f;
-	display: block;
-}
-
-.input {
-	width: 260px;
-	height: 2.5rem;
-	padding: 0.5rem 1rem;
-	color: #414141;
-	font-size: 1rem;
-	border: 1px solid #bfbfbf;
-	border-radius: 4px;
-	caret-color: var(--color-primary);
-}
-
-.input:focus {
-	border-color: #70c05b;
-	box-shadow: var(--shadow-button-default);
-	background-color: white;
-	outline: none;
-}
-
-.authToggle {
-	display: flex;
-	gap: 0.5rem;
-	font-size: 0.875rem;
-	margin: 0 auto;
-}
-
-.toggleButton {
-	padding: 0.25rem 0.5rem;
-	border-radius: 4px;
-	cursor: pointer;
-	border: none;
-}
-
-.toggleButtonActive {
-	background-color: #ff6633;
-	color: white;
-}
-
-.toggleButtonInactive {
-	background-color: #f3f4f6;
-}
-
 .button {
 	width: 260px;
 	height: 68px;
-	margin: 0 auto;
+	margin: 2rem auto;
 	font-size: 1.5rem;
 	border-radius: 4px;
 	cursor: pointer;
@@ -95,6 +47,7 @@
 .buttonActive {
 	background-color: #ff6633;
 	color: white;
+	border: none;
 }
 
 .buttonActive:hover {
@@ -108,40 +61,34 @@
 .buttonInactive {
 	background-color: #fcd5ba;
 	color: #ff6633;
-	cursor: not-allowed;
 }
 
-.navLinks {
+.buttonMargin {
+	margin: 2rem 0;
+}
+
+.navButtons {
 	display: flex;
 	flex-flow: row wrap;
 	margin: 0 auto;
 	font-size: 0.75rem;
-	gap: 1rem;
-	justify-content: center;
 }
 
-.registerLink {
-	margin: 0 auto;
+.backButton {
 	height: 2rem;
-	color: var(--color-primary);
-	background-color: white;
-	border: 1px solid var(--color-primary);
-	border-radius: 4px;
+	color: #414141;
 	width: 120px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	gap: 0.5rem;
 	transition-duration: 300ms;
-	padding: 0 0.5rem;
+	cursor: pointer;
+	border: none;
 }
 
-.registerLink:hover {
-	color: white;
-	background-color: var(--color-primary);
-}
-
-.registerLink:active {
-	box-shadow: var(--shadow-button-default);
+.backButton:hover {
+	color: black;
 }
 
 .forgotLink {
@@ -152,14 +99,9 @@
 	align-items: center;
 	justify-content: center;
 	transition-duration: 300ms;
+	cursor: pointer;
 }
 
 .forgotLink:hover {
 	color: black;
-}
-
-.errorIcon {
-	height: 2rem;
-	width: 2rem;
-	color: #dc2626;
 }

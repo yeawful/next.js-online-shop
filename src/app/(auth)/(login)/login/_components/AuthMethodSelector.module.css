@@ -1,0 +1,116 @@
+.container {
+	animation: zoomIn 0.2s ease-out;
+	position: relative;
+}
+
+@keyframes zoomIn {
+	from {
+		opacity: 0;
+		transform: scale(0.95);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+.header {
+	text-align: center;
+}
+
+.title {
+	font-size: 1.875rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+}
+
+.description {
+	color: #374151;
+}
+
+.buttonsContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	width: 100%;
+}
+
+.button {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	border: 1px solid #e5e7eb;
+	transition: all 0.3s;
+	cursor: pointer;
+	width: 100%;
+	position: relative;
+	border: none;
+}
+
+.button:hover {
+	box-shadow:
+		0 4px 6px -1px rgba(0, 0, 0, 0.1),
+		0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.iconContainer {
+	padding: 0.75rem;
+	margin-bottom: 1rem;
+	border-radius: 9999px;
+	background-color: #fff2ed;
+	transition: background-color 0.3s;
+}
+
+.button:hover .iconContainer {
+	background-color: #ff6633;
+}
+
+.icon {
+	height: 1.5rem;
+	width: 1.5rem;
+	color: #ff6633;
+	transition: color 0.3s;
+}
+
+.button:hover .icon {
+	color: white;
+}
+
+.buttonText {
+	font-weight: 500;
+	color: #111827;
+}
+
+.backButton {
+	height: 2rem;
+	font-size: 0.75rem;
+	color: #414141;
+	width: 120px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	margin: 0 auto;
+	transition-duration: 300ms;
+	cursor: pointer;
+	border: none;
+}
+
+.backButton:hover {
+	color: black;
+}
+
+.backIcon {
+	height: 1rem;
+	width: 1rem;
+}

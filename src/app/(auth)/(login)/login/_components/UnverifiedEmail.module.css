@@ -1,0 +1,150 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	justify-content: center;
+	align-items: center;
+}
+
+.icon {
+	height: 2rem;
+	width: 2rem;
+	color: #ff6633;
+}
+
+.title {
+	font-size: 1.5rem;
+	font-weight: 500;
+	color: #414141;
+	letter-spacing: -0.025em;
+	text-align: center;
+}
+
+.highlight {
+	color: #ff6633;
+	font-weight: 600;
+}
+
+.emailCard {
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.95);
+	border-radius: 4px;
+	padding: 1rem;
+	border: 1px solid #f3f4f6;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.emailLabel {
+	color: #414141;
+	font-size: 0.875rem;
+	font-weight: 300;
+}
+
+.emailValue {
+	font-weight: 500;
+	color: #414141;
+	font-size: 1.125rem;
+	margin-top: 0.25rem;
+}
+
+.emailHint {
+	font-size: 0.75rem;
+	color: #9ca3af;
+	margin-top: 0.5rem;
+	font-weight: 300;
+}
+
+.buttonsContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	width: 100%;
+}
+
+.button {
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 0.2s;
+	width: 100%;
+	border: none;
+}
+
+.buttonPrimary {
+	background-color: #ff6633;
+	color: white;
+}
+
+.buttonPrimary:hover {
+	box-shadow: var(--shadow-article);
+}
+
+.buttonPrimary:active {
+	box-shadow: var(--shadow-button-active);
+}
+
+.buttonSecondary {
+	margin: 0 auto;
+	height: auto;
+	color: var(--color-primary);
+	background-color: white;
+	border: 1px solid var(--color-primary);
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition-duration: 300ms;
+	border: none;
+}
+
+.buttonSecondary:hover {
+	color: white;
+	background-color: var(--color-primary);
+}
+
+.buttonSecondary:active {
+	box-shadow: var(--shadow-button-default);
+}
+
+.buttonTertiary {
+	border: 1px solid #d1d5db;
+	border-radius: 4px;
+	transition-duration: 300ms;
+}
+
+.buttonTertiary:hover {
+	background-color: #d1d5db;
+}
+
+.buttonContent {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	font-weight: 500;
+	padding: 0.875rem 1.5rem;
+	font-size: 0.875rem;
+	border: none;
+}
+
+.iconSmall {
+	height: 1.25rem;
+	width: 1.25rem;
+}
+
+.textOffset {
+	transform: translateY(1px);
+}
+
+.searchIcon {
+	height: 1.25rem;
+	width: 1.25rem;
+	color: var(--color-primary);
+	transition: color 0.3s;
+}
+
+.buttonSecondary:hover .searchIcon {
+	color: white;
+}

@@ -1,0 +1,23 @@
+.timerText {
+	color: #414141;
+	font-size: 0.75rem;
+	text-align: center;
+}
+
+.timerBold {
+	font-weight: bold;
+}
+
+.resendButton {
+	font-size: 0.75rem;
+	text-decoration: underline;
+	cursor: pointer;
+	text-align: center;
+	color: #ff6633;
+	border: none;
+}
+
+.resendButton:disabled {
+	color: #9ca3af;
+	cursor: not-allowed;
+}

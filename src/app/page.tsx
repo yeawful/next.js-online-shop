@@ -1,5 +1,4 @@
 import Actions from "./(products)/Actions";
-import styles from "./page.module.css";
 import Hero from "@/components/banners/Hero/Hero";
 import NewProducts from "./(products)/NewProducts";
 import Purchases from "@/app/(user)/Purchases";
@@ -8,6 +7,7 @@ import Maps from "@/components/maps/Maps";
 import Articles from "@/app/(articles)/Articles";
 import { Loader } from "@/components/loaders/Loader";
 import { Suspense } from "react";
+import styles from "./page.module.css";
 
 export default function Home() {
 	return (

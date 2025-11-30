@@ -24,7 +24,8 @@
 		"rc-slider": "^11.1.9",
 		"react": "19.2.0",
 		"react-dom": "19.2.0",
-		"resend": "^6.5.2"
+		"resend": "^6.5.2",
+		"zustand": "^5.0.8"
 	},
 	"devDependencies": {
 		"@types/bcrypt": "^6.0.0",
@@ -32,6 +33,7 @@
 		"@types/react": "^19",
 		"@types/react-dom": "^19",
 		"babel-plugin-react-compiler": "1.0.0",
+		"baseline-browser-mapping": "^2.8.32",
 		"eslint": "^9",
 		"eslint-config-next": "16.0.1",
 		"typescript": "^5"
