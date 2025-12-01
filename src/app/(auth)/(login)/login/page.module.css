@@ -133,6 +133,7 @@
 	justify-content: center;
 	transition-duration: 300ms;
 	padding: 0 0.5rem;
+	background: none;
 }
 
 .registerLink:hover {
@@ -152,6 +153,8 @@
 	align-items: center;
 	justify-content: center;
 	transition-duration: 300ms;
+	border: none;
+	background: none;
 }
 
 .forgotLink:hover {

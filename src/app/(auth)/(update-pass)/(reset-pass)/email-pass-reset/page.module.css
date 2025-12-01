@@ -1,0 +1,64 @@
+.container {
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	justify-content: center;
+}
+
+.title {
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.formRow {
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	gap: 1rem 2rem;
+}
+
+.formGroup {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	align-items: flex-start;
+}
+
+.button {
+	color: white;
+	background-color: var(--color-primary);
+	width: 100%;
+	max-width: 260px;
+	margin: 0 auto;
+	padding: 0.5rem;
+	gap: 1rem;
+	cursor: pointer;
+	transition-duration: 300ms;
+	border-radius: 4px;
+	border: none;
+	font-size: 1rem;
+}
+
+.button:hover {
+	box-shadow: var(--shadow-button-default);
+}
+
+.button:active {
+	box-shadow: var(--shadow-button-active);
+}
+
+.button:disabled {
+	background-color: #e5ffde;
+	cursor: not-allowed;
+}
+
+.errorIcon {
+	height: 2rem;
+	width: 2rem;
+	color: #dc2626;
+}

@@ -85,6 +85,7 @@
 	transition-duration: 300ms;
 	cursor: pointer;
 	border: none;
+	background: none;
 }
 
 .backButton:hover {
@@ -100,6 +101,8 @@
 	justify-content: center;
 	transition-duration: 300ms;
 	cursor: pointer;
+	border: none;
+	background: none;
 }
 
 .forgotLink:hover {

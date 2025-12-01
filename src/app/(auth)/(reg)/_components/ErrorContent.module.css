@@ -62,6 +62,7 @@
 	justify-content: center;
 	gap: 0.5rem;
 	cursor: pointer;
+	border: none;
 }
 
 .primaryButton:hover {
@@ -75,17 +76,17 @@
 	padding: 0.75rem 1rem;
 	border: 1px solid #d1d5db;
 	color: #374151;
-	border-radius: 0.25rem;
+	border-radius: 4px;
 	transition-duration: 300ms;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 0.5rem;
+	gap: 1.5rem;
 	cursor: pointer;
 }
 
 .secondaryButton:hover {
-	background-color: #f9fafb;
+	background-color: #e5e7eb;
 }
 
 .buttonIcon {

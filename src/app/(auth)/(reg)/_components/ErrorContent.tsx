@@ -14,7 +14,7 @@ type ErrorContentProps = {
 		className?: string;
 	};
 	secondaryAction?: {
-		label: string;
+		label: string | React.ReactNode;
 		onClick: () => void;
 		className?: string;
 	};
@@ -52,9 +52,7 @@ export const ErrorContent = ({
 				{secondaryAction && (
 					<button
 						onClick={secondaryAction.onClick}
-						className={`${styles.secondaryButton} ${
-							secondaryAction.className || ""
-						}`}
+						className={`${styles.secondaryButton} ${secondaryAction.className}`}
 					>
 						<RotateCw className={styles.buttonIcon} />
 						<span>{secondaryAction.label}</span>

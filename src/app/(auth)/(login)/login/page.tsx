@@ -37,6 +37,14 @@ const EnterLoginPage = () => {
 		setError(null);
 	};
 
+	const handleForgotPassword = () => {
+		if (loginType === "phone") {
+			router.replace(`/phone-pass-reset`);
+		} else {
+			router.replace("/forgot-password");
+		}
+	};
+
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 		setIsLoading(true);
@@ -227,9 +235,9 @@ const EnterLoginPage = () => {
 					<Link href="/register" className={styles.registerLink}>
 						Регистрация
 					</Link>
-					<Link href="/forgot-password" className={styles.forgotLink}>
+					<button onClick={handleForgotPassword} className={styles.forgotLink}>
 						Забыли пароль?
-					</Link>
+					</button>
 				</div>
 			</form>
 		</AuthFormLayout>

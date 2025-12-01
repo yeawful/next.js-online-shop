@@ -1,0 +1,90 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.icon {
+	width: 3rem;
+	height: 3rem;
+	color: var(--color-primary);
+	margin-bottom: 1rem;
+}
+
+.title {
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-align: center;
+}
+
+.description {
+	color: #374151;
+	line-height: 1.5;
+}
+
+.description strong {
+	font-weight: 600;
+}
+
+.emailNotice {
+	color: var(--color-primary);
+	background-color: white;
+	padding: 1rem;
+	border-radius: 4px;
+	border: 1px solid var(--color-primary);
+}
+
+.emailNoticeTitle {
+	font-weight: 600;
+	margin-bottom: 0.5rem;
+}
+
+.emailNoticeList {
+	font-size: 0.875rem;
+	list-style-type: disc;
+	list-style-position: inside;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.phoneNotice {
+	margin-top: 1rem;
+	padding: 1rem;
+	background-color: white;
+	border-radius: 4px;
+	border: 1px solid #ff6633;
+}
+
+.phoneNoticeTitle {
+	font-weight: 600;
+	color: #ff6633;
+	margin-bottom: 0.5rem;
+}
+
+.phoneNoticeText {
+	color: #ff6633;
+	font-size: 0.875rem;
+	line-height: 1.4;
+}
+
+.phoneButton {
+	color: #ff6633;
+	font-weight: 500;
+	text-decoration: underline;
+	margin-left: 0.25rem;
+	cursor: pointer;
+	background: none;
+	border: none;
+	transition-duration: 300ms;
+}
+
+.phoneButton:hover {
+	text-decoration: none;
+}
