@@ -1,46 +1,70 @@
-.profile {
+.profileContainer {
+	position: relative;
 	margin-left: 1.5rem;
-	padding: 0.5rem;
-	display: flex;
-	flex: 1;
-	justify-content: flex-end;
-	align-items: center;
-	gap: 0.625rem;
 }
 
-.loginButton {
+.linkContainer {
+	margin-left: 1.5rem;
 	width: 2.5rem;
+	height: 2.5rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	gap: 0.5rem;
 	padding: 0.5rem;
-	border-radius: 0.25rem;
-	color: #ffffff;
+	border-radius: 4px;
+	color: white;
 	font-size: 1rem;
 	background-color: #ff6633;
-	transition-duration: 300ms;
+	transition: all 0.3s;
+	cursor: pointer;
 	text-decoration: none;
-	margin-left: 2rem;
 }
 
-.loginButton:hover {
+.linkContainer:hover {
 	box-shadow: var(--shadow-article);
 }
 
-.loginButton:active {
+.linkContainer:active {
 	box-shadow: var(--shadow-button-active);
 }
 
-.loginText {
+.linkText {
 	width: 6.8125rem;
 	justify-content: center;
 	display: none;
 }
 
+@media (min-width: 1280px) {
+	.linkText {
+		display: flex;
+	}
+}
+
+.userInfo {
+	display: flex;
+	align-items: center;
+	gap: 0.625rem;
+	cursor: pointer;
+}
+
 .avatar {
 	min-width: 2.5rem;
 	min-height: 2.5rem;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+@media (min-width: 768px) {
+	.avatar {
+		display: block;
+	}
+}
+
+@media (min-width: 1280px) {
+	.avatar {
+		display: block;
+	}
 }
 
 .userName {
@@ -49,28 +73,110 @@
 	padding: 0.625rem;
 }
 
-.arrowButton {
-	display: none;
-	cursor: pointer;
-	padding: 0.5rem;
-	border: none;
-	background: none;
-}
-
 @media (min-width: 1280px) {
-	.loginButton {
-		width: 9.8125rem;
-	}
-
-	.loginText {
-		display: flex;
-	}
-
 	.userName {
 		display: block;
 	}
+}
 
-	.arrowButton {
+.arrowIcon {
+	display: none;
+	transform-origin: center;
+	transition: transform 0.3s;
+}
+
+@media (min-width: 1280px) {
+	.arrowIcon {
 		display: block;
+	}
+}
+
+.arrowRotated {
+	transform: rotate(180deg);
+}
+
+.dropdownMenu {
+	position: absolute;
+	right: 0;
+	background-color: white;
+	border-radius: 4px;
+	box-shadow: var(--shadow-button-secondary);
+	overflow: hidden;
+	z-index: 50;
+	min-width: 200px;
+	transition: all 0.3s;
+	opacity: 0;
+	transform: translateY(-0.5rem);
+	pointer-events: none;
+}
+
+.dropdownOpen {
+	opacity: 1;
+	transform: translateY(0);
+	pointer-events: auto;
+}
+
+.dropdownMobile {
+	bottom: 100%;
+	top: auto;
+	margin-bottom: 1.5rem;
+}
+
+.dropdownDesktop {
+	top: 100%;
+	margin-top: 1.5rem;
+}
+
+.menuItem {
+	display: block;
+	padding: 0.75rem 1rem;
+	color: #414141;
+	text-decoration: none;
+	transition: color 0.3s;
+}
+
+.menuItem:hover {
+	color: #ff6633;
+}
+
+.logoutButton {
+	width: 100%;
+	text-align: left;
+	padding: 0.75rem 1rem;
+	color: #414141;
+	border-top: 1px solid #e5e7eb;
+	cursor: pointer;
+	transition: color 0.3s;
+	background: none;
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+}
+
+.logoutButton:hover {
+	color: #ff6633;
+}
+
+.logoutButton:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.loadingAvatar {
+	margin-left: 1.5rem;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 50%;
+	background-color: #e5e7eb;
+	animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
 	}
 }
