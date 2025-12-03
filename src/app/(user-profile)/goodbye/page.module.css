@@ -1,0 +1,43 @@
+.container {
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.title {
+	font-size: 1.5rem;
+	line-height: 2rem;
+	font-weight: bold;
+	color: #414141;
+	margin-bottom: 1rem;
+}
+
+.message {
+	color: #414141;
+	margin-bottom: 1.5rem;
+}
+
+.linkButton {
+	background-color: #ff6633;
+	width: 100%;
+	text-align: center;
+	color: white;
+	font-size: 1.5rem;
+	line-height: 2rem;
+	padding: 0.5rem 0.75rem;
+	cursor: pointer;
+	border-radius: 0.375rem;
+	transition-duration: 300ms;
+	text-decoration: none;
+	display: block;
+}
+
+.linkButton:hover {
+	box-shadow: var(--shadow-button-default);
+}
+
+.linkButton:active {
+	box-shadow: var(--shadow-button-active);
+}

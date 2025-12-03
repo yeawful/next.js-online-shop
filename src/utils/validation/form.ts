@@ -14,7 +14,6 @@ export function validateRegisterForm(formData: {
 	email?: string;
 	hasCard?: boolean;
 }): { isValid: boolean; errorMessage?: string } {
-	// Проверка телефона
 	if (
 		!formData.phoneNumber ||
 		formData.phoneNumber.replace(/\D/g, "").length !== 11
@@ -25,7 +24,6 @@ export function validateRegisterForm(formData: {
 		};
 	}
 
-	// Проверка фамилии
 	if (
 		!formData.surname ||
 		!/^[а-яА-ЯёЁa-zA-Z-]{2,}$/.test(formData.surname.trim())
@@ -36,7 +34,6 @@ export function validateRegisterForm(formData: {
 		};
 	}
 
-	// Проверка имени
 	if (!formData.name || !/^[а-яА-ЯёЁa-zA-Z-]{2,}$/.test(formData.name.trim())) {
 		return {
 			isValid: false,
@@ -44,7 +41,6 @@ export function validateRegisterForm(formData: {
 		};
 	}
 
-	// Проверка пароля
 	if (
 		!formData.password ||
 		!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/.test(formData.password)
@@ -56,7 +52,6 @@ export function validateRegisterForm(formData: {
 		};
 	}
 
-	// Проверка подтверждения пароля
 	if (formData.password !== formData.confirmPassword) {
 		return {
 			isValid: false,
@@ -64,7 +59,6 @@ export function validateRegisterForm(formData: {
 		};
 	}
 
-	// Проверка даты рождения
 	const birthDateValidation = validateBirthDate(formData.birthdayDate);
 	if (!birthDateValidation.isValid) {
 		return {
@@ -73,7 +67,6 @@ export function validateRegisterForm(formData: {
 		};
 	}
 
-	// Проверка региона
 	if (!formData.region) {
 		return {
 			isValid: false,
@@ -81,7 +74,6 @@ export function validateRegisterForm(formData: {
 		};
 	}
 
-	// Проверка города
 	if (!formData.location) {
 		return {
 			isValid: false,
@@ -89,7 +81,6 @@ export function validateRegisterForm(formData: {
 		};
 	}
 
-	// Проверка пола
 	if (!formData.gender) {
 		return {
 			isValid: false,
@@ -97,7 +88,6 @@ export function validateRegisterForm(formData: {
 		};
 	}
 
-	// Проверка email (если указан)
 	if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
 		return {
 			isValid: false,
@@ -105,7 +95,6 @@ export function validateRegisterForm(formData: {
 		};
 	}
 
-	// Проверка номера карты (если указан и не отмечено "нет карты")
 	if (
 		!formData.hasCard &&
 		formData.card &&

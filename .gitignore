@@ -40,5 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 all_project_code.txt
-all_project_code_v35.txt
+all_project_code_v37.txt
 all_project_code_v36.txt

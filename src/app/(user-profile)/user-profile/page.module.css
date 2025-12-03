@@ -1,0 +1,91 @@
+.pageContainer {
+	background-color: #fbf8ec;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+	.pageContainer {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
+}
+
+@media (min-width: 1280px) {
+	.pageContainer {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+}
+
+.contentContainer {
+	max-width: 56rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.animatedWrapper {
+	animation: slideIn 0.7s ease-out;
+	opacity: 0;
+	transform: translateY(2rem);
+	animation-fill-mode: forwards;
+}
+
+.profileCard {
+	background-color: white;
+	border-radius: 0.75rem;
+	box-shadow:
+		0 10px 15px -3px rgba(0, 0, 0, 0.1),
+		0 4px 6px -4px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	transition-duration: 700ms;
+	transition-timing-function: ease-out;
+}
+
+.cardContent {
+	padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+	.cardContent {
+		padding: 2rem;
+	}
+}
+
+.badgeContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 1.5rem;
+}
+
+.badge {
+	background-color: #ff6633;
+	color: white;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
+	border-radius: 9999px;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	display: flex;
+	align-items: center;
+}
+
+.badgeIcon {
+	height: 1rem;
+	width: 1rem;
+	margin-right: 0.25rem;
+}
+
+@keyframes slideIn {
+	from {
+		opacity: 0;
+		transform: translateY(2rem);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
