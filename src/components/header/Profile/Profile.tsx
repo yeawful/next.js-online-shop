@@ -14,8 +14,22 @@ const Profile = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isLoggingOut, setIsLoggingOut] = useState(false);
 	const [isMobile, setIsMobile] = useState(false);
+	const [avatarSrc, setAvatarSrc] = useState<string>("");
+	const [lastUpdate, setLastUpdate] = useState(Date.now());
 	const menuRef = useRef<HTMLDivElement>(null);
 	const router = useRouter();
+
+	useEffect(() => {
+		setLastUpdate(Date.now());
+	}, [user]);
+
+	useEffect(() => {
+		if (user?.id) {
+			setAvatarSrc(`/api/auth/avatar/${user.id}?t=${lastUpdate}`);
+		} else if (user?.gender) {
+			setAvatarSrc(getAvatarByGender(user.gender));
+		}
+	}, [user, lastUpdate]);
 
 	useEffect(() => {
 		checkAuth();
@@ -44,12 +58,19 @@ const Profile = () => {
 		setIsLoggingOut(true);
 		try {
 			await logout();
+
 			router.replace("/");
 		} catch (error) {
 			console.error("Не удалось выйти:", error);
 		} finally {
 			setIsLoggingOut(false);
 			setIsMenuOpen(false);
+		}
+	};
+
+	const handleAvatarError = () => {
+		if (user?.gender) {
+			setAvatarSrc(getAvatarByGender(user.gender));
 		}
 	};
 
@@ -77,11 +98,13 @@ const Profile = () => {
 		<div className={styles.profileContainer} ref={menuRef}>
 			<div className={styles.userInfo} onClick={toggleMenu}>
 				<Image
-					src={getAvatarByGender(user?.gender)}
+					src={avatarSrc || getAvatarByGender(user?.gender)}
 					alt="Ваш профиль"
 					width={40}
 					height={40}
+					onError={handleAvatarError}
 					className={styles.avatar}
+					unoptimized={true}
 				/>
 				<p className={styles.userName}>
 					{isLoading ? "Загрузка..." : user?.name}

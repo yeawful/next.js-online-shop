@@ -20,7 +20,7 @@
 		"lucide-react": "^0.555.0",
 		"mongodb": "^7.0.0",
 		"mongoose": "^8.19.3",
-		"next": "16.0.1",
+		"next": "^16.0.7",
 		"rc-slider": "^11.1.9",
 		"react": "19.2.0",
 		"react-dom": "19.2.0",
@@ -29,6 +29,7 @@
 	},
 	"devDependencies": {
 		"@types/bcrypt": "^6.0.0",
+		"@types/next": "^8.0.7",
 		"@types/node": "^20",
 		"@types/react": "^19",
 		"@types/react-dom": "^19",

@@ -62,15 +62,15 @@
 }
 
 .logoutProfileButton {
-	display: flex;
+	background-color: #ff6633;
+	color: white;
 	flex: 1;
+	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 3rem;
-	background-color: #f3f2f1;
-	color: #606060;
-	padding: 0.5rem 1rem;
-	border-radius: 0.375rem;
+	height: 48px;
+	padding: 8px 16px;
+	border-radius: 6px;
 	font-weight: 500;
 	cursor: pointer;
 	transition-duration: 300ms;
@@ -78,11 +78,15 @@
 }
 
 .logoutProfileButton:hover {
-	box-shadow: var(--shadow-button-cancel);
+	background-color: #f3f2f1;
+	color: #606060;
+	box-shadow: var(--shadow-article);
 }
 
 .logoutProfileButton:active {
-	box-shadow: var(--shadow-button-cancel-active);
+	background-color: #f3f2f1;
+	color: #606060;
+	box-shadow: var(--shadow-button-active);
 }
 
 .logoutAppButton {

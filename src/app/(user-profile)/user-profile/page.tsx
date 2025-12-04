@@ -8,8 +8,8 @@ import ProfileHeader from "../_components/ProfileHeader";
 import { useEffect, useState } from "react";
 import { Loader } from "@/components/loaders/Loader";
 import SecuritySection from "../_components/SecuritySection";
+import ProfileAvatar from "../_components/ProfileAvatar";
 import styles from "./page.module.css";
-
 const ProfilePage = () => {
 	const { user, isAuth, checkAuth } = useAuthStore();
 	const [isCheckingAuth, setIsCheckingAuth] = useState(true);
@@ -83,6 +83,7 @@ const ProfilePage = () => {
 									)}
 								</div>
 							</div>
+							<ProfileAvatar gender={user.gender || "male"} />
 							<SecuritySection />
 						</div>
 					</div>
