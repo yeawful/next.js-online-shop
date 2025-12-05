@@ -8,9 +8,16 @@ import styles from "./SelectCity.module.css";
 interface SelectCityProps {
 	value: string;
 	onChangeAction: (e: ChangeEvent<HTMLSelectElement>) => void;
+	className?: string;
+	disabled?: boolean;
 }
 
-const SelectCity = ({ value, onChangeAction }: SelectCityProps) => {
+const SelectCity = ({
+	value,
+	onChangeAction,
+	className,
+	disabled,
+}: SelectCityProps) => {
 	return (
 		<div>
 			<label htmlFor="location" className={styles.label}>
@@ -19,22 +26,28 @@ const SelectCity = ({ value, onChangeAction }: SelectCityProps) => {
 			<div className={styles.selectContainer}>
 				<select
 					id="location"
+					name="location"
 					value={value}
+					disabled={disabled}
 					onChange={onChangeAction}
-					className={styles.input}
+					className={`${styles.input} ${className}`}
 				>
 					{cities.map((city) => (
-						<option key={city.value}>{city.label}</option>
+						<option key={city.value} value={city.label}>
+							{city.label}
+						</option>
 					))}
 				</select>
-				<div className={styles.arrowIcon}>
-					<Image
-						src="/icons-products/icon-arrow-right.svg"
-						alt="Выберите населенный пункт"
-						width={24}
-						height={24}
-					/>
-				</div>
+				{!disabled && (
+					<div className={styles.arrowIcon}>
+						<Image
+							src="/icons-products/icon-arrow-right.svg"
+							alt="Выберите населенный пункт"
+							width={24}
+							height={24}
+						/>
+					</div>
+				)}
 			</div>
 		</div>
 	);

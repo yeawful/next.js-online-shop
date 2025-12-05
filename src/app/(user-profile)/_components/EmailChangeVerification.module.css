@@ -1,0 +1,128 @@
+.body {
+	background-color: #f3f4f6;
+	font-family:
+		ui-sans-serif,
+		system-ui,
+		-apple-system,
+		BlinkMacSystemFont,
+		"Segoe UI",
+		Roboto,
+		"Helvetica Neue",
+		Arial,
+		"Noto Sans",
+		sans-serif;
+	padding: 16px 8px;
+	margin: 0;
+	width: 100%;
+}
+
+.container {
+	background-color: white;
+	border-radius: 8px;
+	padding: 24px;
+	max-width: 580px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.title {
+	font-size: 1.25rem;
+	font-weight: 700;
+	color: #111827;
+	margin-bottom: 16px;
+	margin-top: 0;
+}
+
+.text {
+	font-size: 1rem;
+	color: #374151;
+	margin-bottom: 16px;
+	margin-top: 0;
+	line-height: 1.5;
+}
+
+.emailSection {
+	background-color: #f9fafb;
+	border-radius: 8px;
+	padding: 16px;
+	margin-bottom: 24px;
+}
+
+.emailText {
+	font-size: 0.875rem;
+	color: #374151;
+	margin-bottom: 8px;
+	margin-top: 0;
+}
+
+.emailText:last-child {
+	margin-bottom: 0;
+}
+
+.buttonSection {
+	text-align: center;
+	margin-bottom: 24px;
+}
+
+.button {
+	background-color: #70c05b;
+	color: white;
+	padding: 8px 24px;
+	border-radius: 4px;
+	font-size: 1rem;
+	font-weight: 500;
+	text-decoration: none;
+	display: inline-block;
+	border: none;
+	cursor: pointer;
+}
+
+.button:hover {
+	opacity: 0.9;
+}
+
+.smallText {
+	font-size: 0.875rem;
+	color: #4b5563;
+	margin-bottom: 16px;
+	margin-top: 0;
+	line-height: 1.5;
+}
+
+.breakAll {
+	word-break: break-all;
+}
+
+.divider {
+	border-color: #e5e7eb;
+	margin: 16px 0;
+}
+
+.footerText {
+	font-size: 0.75rem;
+	color: #6b7280;
+	margin: 0;
+	line-height: 1.25;
+}
+
+.companySection {
+	margin-top: 24px;
+	padding-top: 16px;
+	border-top: 1px solid #e5e7eb;
+}
+
+.companyInfo {
+	font-size: 0.75rem;
+	color: #9ca3af;
+	margin: 0;
+	text-align: center;
+	line-height: 1.25;
+}
+
+.copyright {
+	font-size: 0.75rem;
+	color: #9ca3af;
+	margin: 8px 0 0 0;
+	text-align: center;
+	line-height: 1.25;
+}

@@ -121,22 +121,19 @@
 }
 
 @media (max-width: 360px) {
-	.bg-gradient-to-r {
+	.cardContent {
 		padding: 1.5rem 1rem !important;
-	}
-	.p-6 {
-		padding: 1.5rem !important;
 	}
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
-	.max-w-4xl {
+	.contentContainer {
 		max-width: 90% !important;
 	}
 }
 
 @media (min-width: 1280px) {
-	.max-w-4xl {
+	.contentContainer {
 		max-width: 1200px !important;
 	}
 }

@@ -9,6 +9,8 @@ import { useEffect, useState } from "react";
 import { Loader } from "@/components/loaders/Loader";
 import SecuritySection from "../_components/SecuritySection";
 import ProfileAvatar from "../_components/ProfileAvatar";
+import LocationSection from "../_components/LocationSection";
+import ProfileEmail from "../_components/ProfileEmail";
 import styles from "./page.module.css";
 const ProfilePage = () => {
 	const { user, isAuth, checkAuth } = useAuthStore();
@@ -70,7 +72,7 @@ const ProfilePage = () => {
 						<div className={styles.cardContent}>
 							<div className={styles.badgeContainer}>
 								<div className={styles.badge}>
-									{!isPhoneRegistration ? (
+									{isPhoneRegistration ? (
 										<>
 											<Phone className={styles.badgeIcon} />
 											<span>Зарегистрирован по телефону</span>
@@ -84,6 +86,8 @@ const ProfilePage = () => {
 								</div>
 							</div>
 							<ProfileAvatar gender={user.gender || "male"} />
+							<LocationSection />
+							<ProfileEmail />
 							<SecuritySection />
 						</div>
 					</div>

@@ -5,24 +5,29 @@
 }
 
 .input {
-	width: 16.25rem;
+	width: 260px;
 	height: 2.5rem;
 	padding: 0.5rem 1rem;
 	color: #414141;
 	font-size: 1rem;
 	border: 1px solid #bfbfbf;
-	border-radius: 0.25rem;
-	caret-color: var(--color-primary);
+	border-radius: 4px;
 	appearance: none;
 	padding-right: 2rem;
 	cursor: pointer;
+	caret-color: var(--color-primary);
 }
 
 .input:focus {
 	border-color: #70c05b;
 	box-shadow: var(--shadow-button-default);
-	background-color: #ffffff;
+	background-color: white;
 	outline: none;
+}
+
+.input:disabled {
+	cursor: not-allowed;
+	background-color: #f3f2f1;
 }
 
 .selectContainer {
