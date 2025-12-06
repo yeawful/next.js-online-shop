@@ -9,9 +9,11 @@ import { useEffect, useState } from "react";
 import { Loader } from "@/components/loaders/Loader";
 import SecuritySection from "../_components/SecuritySection";
 import ProfileAvatar from "../_components/ProfileAvatar";
+import styles from "./page.module.css";
 import LocationSection from "../_components/LocationSection";
 import ProfileEmail from "../_components/ProfileEmail";
-import styles from "./page.module.css";
+import ProfilePhoneSettings from "../_components/ProfilePhone/ProfilePhoneSettings";
+
 const ProfilePage = () => {
 	const { user, isAuth, checkAuth } = useAuthStore();
 	const [isCheckingAuth, setIsCheckingAuth] = useState(true);
@@ -64,33 +66,32 @@ const ProfilePage = () => {
 
 	return (
 		<div className={styles.pageContainer}>
-			<div className={styles.contentContainer}>
-				<div className={styles.animatedWrapper}>
-					<div className={styles.profileCard}>
-						<ProfileHeader name={user.name} surname={user.surname} />
+			<div className={styles.profileCard}>
+				<ProfileHeader name={user.name} surname={user.surname} />
 
-						<div className={styles.cardContent}>
-							<div className={styles.badgeContainer}>
-								<div className={styles.badge}>
-									{isPhoneRegistration ? (
-										<>
-											<Phone className={styles.badgeIcon} />
-											<span>Зарегистрирован по телефону</span>
-										</>
-									) : (
-										<>
-											<MailWarning className={styles.badgeIcon} />
-											<span>Зарегистрирован по email</span>
-										</>
-									)}
-								</div>
-							</div>
-							<ProfileAvatar gender={user.gender || "male"} />
-							<LocationSection />
-							<ProfileEmail />
-							<SecuritySection />
+				<div className={styles.cardContent}>
+					<div className={styles.registrationBadge}>
+						<div className={styles.badge}>
+							{isPhoneRegistration ? (
+								<>
+									<Phone className={styles.badgeIcon} />
+									<span>Зарегистрирован по телефону</span>
+								</>
+							) : (
+								<>
+									<MailWarning className={styles.badgeIcon} />
+									<span>Зарегистрирован по email</span>
+								</>
+							)}
 						</div>
 					</div>
+					<ProfileAvatar gender={user.gender || "male"} />
+					<LocationSection />
+					<div className={styles.gridLayout}>
+						<ProfileEmail />
+						<ProfilePhoneSettings />
+					</div>
+					<SecuritySection />
 				</div>
 			</div>
 		</div>

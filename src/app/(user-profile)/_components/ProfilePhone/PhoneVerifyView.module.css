@@ -1,0 +1,118 @@
+.verifyContainer {
+	margin-top: 1rem;
+	padding: 1rem;
+	background-color: #f0fdf4;
+	border-radius: 0.25rem;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 0.75rem;
+}
+
+.headerText {
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	color: var(--color-primary);
+	font-weight: 500;
+}
+
+.inputRow {
+	display: flex;
+	flex-direction: row;
+	gap: 0.75rem;
+	justify-content: center;
+}
+
+.codeInput {
+	width: 110px;
+	height: 2.5rem;
+	padding: 0.5rem 1rem;
+	text-align: center;
+	color: #414141;
+	font-size: 1rem;
+	border: 1px solid #bfbfbf;
+	border-radius: 0.25rem;
+	background-color: white;
+	caret-color: var(--color-primary);
+}
+
+.codeInput:focus {
+	border-color: #70c05b;
+	box-shadow: var(--shadow-button-default);
+	background-color: white;
+	outline: none;
+}
+
+.verifyButton {
+	padding: 0.5rem 1rem;
+	height: 2.5rem;
+	background-color: var(--color-primary);
+	color: white;
+	border-radius: 0.25rem;
+	cursor: pointer;
+}
+
+.verifyButton:disabled {
+	background-color: #6b7280;
+	cursor: not-allowed;
+}
+
+.resendButton {
+	padding: 0.5rem 1rem;
+	border-radius: 0.25rem;
+	transition-property:
+		color, background-color, border-color, text-decoration-color, fill, stroke;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 300ms;
+	cursor: pointer;
+}
+
+.resendButtonActive {
+	background-color: var(--color-primary);
+	color: white;
+}
+
+.resendButtonInactive {
+	background-color: #f3f2f1;
+	color: #606060;
+}
+
+.saveButton {
+	padding: 0.5rem 1rem;
+	flex: 1;
+	background-color: var(--color-primary);
+	border-radius: 0.25rem;
+	color: white;
+	transition-duration: 300ms;
+	cursor: pointer;
+}
+
+.saveButton:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.saveButton:hover:not(:disabled) {
+	box-shadow: var(--shadow-button-default);
+}
+
+.saveButton:active:not(:disabled) {
+	box-shadow: var(--shadow-button-active);
+}
+
+.resendButtonActive:hover:not(:disabled) {
+	box-shadow: var(--shadow-button-default);
+}
+
+.resendButtonActive:active:not(:disabled) {
+	box-shadow: var(--shadow-button-active);
+}
+
+@media (min-width: 768px) {
+	.saveButton {
+		flex: none;
+	}
+}

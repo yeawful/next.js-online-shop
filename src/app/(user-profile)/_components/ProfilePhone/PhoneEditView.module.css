@@ -1,0 +1,62 @@
+.buttonRow {
+	display: flex;
+	gap: 0.5rem;
+	width: 100%;
+}
+
+.cancelButton {
+	padding: 0.5rem 1rem;
+	flex: 1;
+	background-color: #f3f2f1;
+	border-radius: 0.25rem;
+	color: #606060;
+	transition-duration: 300ms;
+	cursor: pointer;
+	border: none;
+}
+
+.saveButton {
+	padding: 0.5rem 1rem;
+	flex: 1;
+	background-color: var(--color-primary);
+	border-radius: 0.25rem;
+	color: white;
+	transition-duration: 300ms;
+	cursor: pointer;
+	border: none;
+}
+
+.saveButton:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.cancelButton:hover {
+	box-shadow: var(--shadow-button-secondary);
+}
+
+.cancelButton:active {
+	box-shadow: var(--shadow-button-active);
+}
+
+.saveButton:hover:not(:disabled) {
+	box-shadow: var(--shadow-button-default);
+}
+
+.saveButton:active:not(:disabled) {
+	box-shadow: var(--shadow-button-active);
+}
+
+@media (min-width: 768px) {
+	.buttonRow {
+		width: auto;
+	}
+
+	.cancelButton {
+		flex: none;
+	}
+
+	.saveButton {
+		flex: none;
+	}
+}

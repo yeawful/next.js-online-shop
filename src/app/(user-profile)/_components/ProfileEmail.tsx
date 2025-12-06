@@ -1,10 +1,11 @@
 import { useAuthStore } from "@/store/authStore";
-import { Mail, Edit, AlertCircle } from "lucide-react";
+import { Mail, Edit } from "lucide-react";
 import { ChangeEvent, useEffect, useState } from "react";
 import { CONFIG } from "../../../../config/config";
 import { AuthFormLayout } from "@/app/(auth)/_components/AuthFormLayout";
 import { SuccessChangeEmail } from "./SuccessChangeEmail";
 import { authClient } from "@/lib/auth-client";
+import AlertMessage from "./AlertMessage";
 import styles from "./ProfileEmail.module.css";
 
 const ProfileEmail = () => {
@@ -56,22 +57,7 @@ const ProfileEmail = () => {
 
 		try {
 			if (isPhoneRegistered) {
-				const response = await fetch("/api/auth/update-email", {
-					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify({ email, userId: user.id }),
-				});
-
-				const data = await response.json();
-
-				if (!response.ok) {
-					setError(data.error);
-					return;
-				}
-
-				await fetchUserData();
-				alert("Email успешно обновлен!");
-				setIsEditing(false);
+				await updateEmailDirectly();
 			} else {
 				const response = await authClient.changeEmail({
 					newEmail: email,
@@ -102,6 +88,25 @@ const ProfileEmail = () => {
 		}
 	};
 
+	const updateEmailDirectly = async () => {
+		const response = await fetch("/api/auth/update-email", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify({ email, userId: user?.id }),
+		});
+
+		const data = await response.json();
+
+		if (!response.ok) {
+			setError(data.error);
+			return;
+		}
+
+		await fetchUserData();
+		alert("Email успешно обновлен!");
+		setIsEditing(false);
+	};
+
 	if (showSuccess) {
 		return (
 			<AuthFormLayout>
@@ -111,8 +116,8 @@ const ProfileEmail = () => {
 	}
 
 	return (
-		<div className={styles.container}>
-			<div className={styles.header}>
+		<div className={styles.profileEmailContainer}>
+			<div className={styles.headerContainer}>
 				<h3 className={styles.sectionTitle}>Email</h3>
 				{!isEditing ? (
 					<button
@@ -138,42 +143,6 @@ const ProfileEmail = () => {
 				)}
 			</div>
 
-			{hasNoEmail && !isEditing && (
-				<div className={styles.alertWarning}>
-					<AlertCircle className={styles.alertIcon} />
-					<span className={styles.alertText}>
-						Рекомендуем добавить email для получения уведомлений
-					</span>
-				</div>
-			)}
-
-			{isEditing && isPhoneRegistered && (
-				<div className={styles.alertSuccess}>
-					<AlertCircle className={styles.alertIcon} />
-					<span className={styles.alertText}>
-						Вы можете изменить email без подтверждения, так как были
-						зарегистрированы по телефону
-					</span>
-				</div>
-			)}
-
-			{isEditing && !isPhoneRegistered && (
-				<div className={styles.alertInfo}>
-					<AlertCircle className={styles.alertIcon} />
-					<span className={styles.alertText}>
-						Для смены email потребуется подтверждение на прежнем и новом
-						адресах.
-					</span>
-				</div>
-			)}
-
-			{error && (
-				<div className={styles.alertError}>
-					<AlertCircle className={styles.alertIcon} />
-					<span className={styles.alertText}>{error}</span>
-				</div>
-			)}
-
 			<div className={styles.inputContainer}>
 				<input
 					id="email"
@@ -184,8 +153,31 @@ const ProfileEmail = () => {
 					placeholder="Введите ваш email"
 					disabled={!isEditing}
 				/>
-				<Mail className={styles.inputIcon} />
+				<Mail className={styles.mailIcon} />
 			</div>
+
+			{hasNoEmail && !isEditing && (
+				<AlertMessage
+					type="warning"
+					message="Рекомендуем добавить email для получения уведомлений"
+				/>
+			)}
+
+			{isEditing && isPhoneRegistered && (
+				<AlertMessage
+					type="success"
+					message="Вы можете изменить email без подтверждения, так как были зарегистрированы по телефону"
+				/>
+			)}
+
+			{isEditing && !isPhoneRegistered && (
+				<AlertMessage
+					type="warning"
+					message="Для смены email потребуется подтверждение на прежнем и новом адресах."
+				/>
+			)}
+
+			{error && <AlertMessage type="error" message={error} />}
 		</div>
 	);
 };

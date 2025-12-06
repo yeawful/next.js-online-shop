@@ -1,0 +1,18 @@
+.profileSection {
+	margin-bottom: 2rem;
+}
+
+.titleRow {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1rem;
+	gap: 1rem;
+}
+
+.sectionTitle {
+	font-size: 1.125rem;
+	font-weight: 600;
+	color: #414141;
+}

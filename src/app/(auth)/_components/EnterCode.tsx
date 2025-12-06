@@ -47,18 +47,22 @@ export const EnterCode = ({ phoneNumber }: { phoneNumber: string }) => {
 				body: JSON.stringify({
 					userId: verifyData.user.id,
 					password: regFormData.password,
+					surname: regFormData.surname,
+					name: regFormData.name,
+					birthdayDate: regFormData.birthdayDate,
+					region: regFormData.region,
+					location: regFormData.location,
+					gender: regFormData.gender,
+					card: regFormData.card,
+					hasCard: regFormData.hasCard,
 				}),
 			});
 
 			if (!passwordResponse.ok) {
 				const errorData = await passwordResponse.json();
 				console.error("Детали ошибки", errorData);
-				throw new Error(errorData.error || "Ошибка установки пароля");
+				throw new Error(errorData.error || "Ошибка установки пароля и данных");
 			}
-
-			const { error: updateError } = await authClient.updateUser(regFormData);
-
-			if (updateError) throw updateError;
 
 			router.replace("/login");
 		} catch (error) {

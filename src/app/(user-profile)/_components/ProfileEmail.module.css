@@ -1,8 +1,8 @@
-.container {
+.profileEmailContainer {
 	margin-bottom: 2rem;
 }
 
-.header {
+.headerContainer {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -17,37 +17,6 @@
 	color: #414141;
 }
 
-.editButton {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 0.75rem;
-	width: 100%;
-	justify-content: center;
-	padding: 0.5rem 1rem;
-	border-radius: 0.375rem;
-	font-weight: 500;
-	cursor: pointer;
-	transition-duration: 300ms;
-	background-color: #70c05b;
-	color: white;
-	border: none;
-	font-size: 1rem;
-}
-
-.editButton:hover {
-	box-shadow: 0 4px 8px rgba(112, 192, 91, 0.2);
-}
-
-.editButton:active {
-	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.editIcon {
-	height: 1rem;
-	width: 1rem;
-}
-
 .buttonGroup {
 	display: flex;
 	gap: 0.5rem;
@@ -55,11 +24,38 @@
 }
 
 @media (min-width: 768px) {
-	.editButton {
+	.buttonGroup {
 		width: auto;
 	}
+}
 
-	.buttonGroup {
+.editButton {
+	width: 100%;
+	padding: 0.5rem 1rem;
+	border-radius: 0.375rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 0.75rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition-duration: 300ms;
+	background-color: #ff6633;
+	color: white;
+	border: none;
+}
+
+.editButton:hover {
+	box-shadow: var(--shadow-article);
+}
+
+.editButton:active {
+	box-shadow: var(--shadow-button-active);
+}
+
+@media (min-width: 768px) {
+	.editButton {
 		width: auto;
 	}
 }
@@ -67,13 +63,20 @@
 .cancelButton {
 	flex: 1;
 	padding: 0.5rem 1rem;
-	background-color: #f3f2f1;
 	border-radius: 0.375rem;
+	background-color: #f3f2f1;
 	color: #606060;
 	cursor: pointer;
 	transition-duration: 300ms;
 	border: none;
-	font-size: 1rem;
+}
+
+.cancelButton:hover {
+	box-shadow: var(--shadow-button-secondary);
+}
+
+.cancelButton:active {
+	box-shadow: var(--shadow-button-active);
 }
 
 @media (min-width: 768px) {
@@ -82,24 +85,28 @@
 	}
 }
 
-.cancelButton:hover {
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.cancelButton:active {
-	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 .saveButton {
 	flex: 1;
 	padding: 0.5rem 1rem;
-	background-color: #70c05b;
 	border-radius: 0.375rem;
+	background-color: var(--color-primary);
 	color: white;
 	cursor: pointer;
 	transition-duration: 300ms;
 	border: none;
-	font-size: 1rem;
+}
+
+.saveButton:hover {
+	box-shadow: var(--shadow-button-default);
+}
+
+.saveButton:active {
+	box-shadow: var(--shadow-button-active);
+}
+
+.saveButton:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
 }
 
 @media (min-width: 768px) {
@@ -108,85 +115,24 @@
 	}
 }
 
-.saveButton:hover {
-	box-shadow: 0 4px 8px rgba(112, 192, 91, 0.2);
-}
-
-.saveButton:active {
-	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.saveButton:disabled {
-	opacity: 0.5;
-	cursor: not-allowed;
-}
-
-/* Alert styles */
-.alertWarning,
-.alertSuccess,
-.alertInfo,
-.alertError {
-	display: flex;
-	align-items: center;
-	padding: 0.75rem 1rem;
-	border-radius: 0.5rem;
-	margin-bottom: 0.75rem;
-}
-
-.alertWarning {
-	background-color: #fffbeb;
-	color: #92400e;
-}
-
-.alertSuccess {
-	background-color: #f0fdf4;
-	color: #70c05b;
-}
-
-.alertInfo {
-	background-color: #fff7ed;
-	color: #ff6633;
-}
-
-.alertError {
-	background-color: #fef2f2;
-	color: #dc2626;
-}
-
-.alertIcon {
-	height: 1rem;
-	width: 1rem;
-	margin-right: 0.5rem;
-	flex-shrink: 0;
-}
-
-.alertText {
-	font-size: 0.875rem;
-}
-
-/* Input styles */
 .inputContainer {
 	position: relative;
-	width: 100%;
 }
 
 .input {
 	width: 100%;
 	height: 2.5rem;
 	padding: 0.5rem 1rem;
-	padding-right: 2.5rem;
 	color: #414141;
 	font-size: 1rem;
 	border: 1px solid #bfbfbf;
-	border-radius: 0.25rem;
-	caret-color: #70c05b;
-	transition: all 0.3s ease;
-	box-sizing: border-box;
+	border-radius: 0.375rem;
+	caret-color: var(--color-primary);
 }
 
 .input:focus {
 	border-color: #70c05b;
-	box-shadow: 0 4px 8px rgba(112, 192, 91, 0.2);
+	box-shadow: var(--shadow-button-default);
 	background-color: white;
 	outline: none;
 }
@@ -196,7 +142,7 @@
 	cursor: not-allowed;
 }
 
-.inputIcon {
+.mailIcon {
 	position: absolute;
 	right: 0.75rem;
 	top: 50%;
@@ -204,5 +150,10 @@
 	height: 1.25rem;
 	width: 1.25rem;
 	color: #9ca3af;
-	pointer-events: none;
+}
+
+.editIcon {
+	height: 1rem;
+	width: 1rem;
+	margin-right: 0.25rem;
 }
