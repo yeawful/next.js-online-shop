@@ -7,6 +7,8 @@ import Link from "next/link";
 import { useAuthStore } from "@/store/authStore";
 import { useRouter } from "next/navigation";
 import { getAvatarByGender } from "../../../utils/getAvatarByGender";
+import { checkAvatarExists } from "../../../utils/avatarUtils";
+import MiniLoader from "@/components/loaders/MiniLoader";
 import styles from "./Profile.module.css";
 
 const Profile = () => {
@@ -19,17 +21,51 @@ const Profile = () => {
 	const menuRef = useRef<HTMLDivElement>(null);
 	const router = useRouter();
 
+	const getDisplayName = () => {
+		if (!user?.name) return <MiniLoader />;
+
+		if (user.role === "manager") {
+			return "Менеджер";
+		} else if (user.role === "admin") {
+			return "Администратор";
+		}
+
+		return user.name;
+	};
+
+	const isManagerOrAdmin = () => {
+		return user?.role === "manager" || user?.role === "admin";
+	};
+
 	useEffect(() => {
 		setLastUpdate(Date.now());
 	}, [user]);
 
 	useEffect(() => {
-		if (user?.id) {
-			setAvatarSrc(`/api/auth/avatar/${user.id}?t=${lastUpdate}`);
-		} else if (user?.gender) {
-			setAvatarSrc(getAvatarByGender(user.gender));
-		}
+		const checkAvatar = async () => {
+			if (user?.id) {
+				try {
+					const exists = await checkAvatarExists(user.id);
+
+					if (exists) {
+						setAvatarSrc(`/api/auth/avatar/${user.id}?t=${lastUpdate}`);
+					} else {
+						setAvatarSrc(getAvatarByGender(user.gender));
+					}
+				} catch {
+					setAvatarSrc(getAvatarByGender(user.gender));
+				}
+			} else if (user?.gender) {
+				setAvatarSrc(getAvatarByGender(user.gender));
+			}
+		};
+
+		checkAvatar();
 	}, [user, lastUpdate]);
+
+	useEffect(() => {
+		checkAuth();
+	}, [checkAuth]);
 
 	useEffect(() => {
 		checkAuth();
@@ -106,9 +142,7 @@ const Profile = () => {
 					className={styles.avatar}
 					unoptimized={true}
 				/>
-				<p className={styles.userName}>
-					{isLoading ? "Загрузка..." : user?.name}
-				</p>
+				<p className={styles.userName}>{getDisplayName()}</p>
 				<div className={styles.arrowIcon}>
 					<Image
 						src={iconArrow}
@@ -139,6 +173,15 @@ const Profile = () => {
 				>
 					Главная
 				</Link>
+				{isManagerOrAdmin() && (
+					<Link
+						href="/administrator"
+						className={styles.menuItem}
+						onClick={() => setIsMenuOpen(false)}
+					>
+						Панель управления
+					</Link>
+				)}
 				<button
 					onClick={handleLogout}
 					disabled={isLoggingOut}

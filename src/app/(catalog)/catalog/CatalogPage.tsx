@@ -6,6 +6,7 @@ import ErrorComponent from "@/components/error/ErrorComponent";
 import { Loader } from "@/components/loaders/Loader";
 import CatalogAdminControls from "../CatalogAdminControls";
 import CatalogGrid from "../CatalogGrid";
+import { useAuthStore } from "@/store/authStore";
 import styles from "./CatalogPage.module.css";
 
 export const metadata = {
@@ -27,7 +28,9 @@ const CatalogPage = () => {
 		userMessage: string;
 	} | null>(null);
 	const [isLoading, setIsLoading] = useState(true);
-	const isAdmin = true;
+	const { user } = useAuthStore();
+
+	const isAdmin = user?.role === "admin";
 
 	const fetchCategories = async () => {
 		try {

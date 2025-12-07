@@ -1,4 +1,4 @@
-.profileEmailContainer {
+.profileCardContainer {
 	margin-bottom: 2rem;
 }
 
@@ -69,7 +69,6 @@
 	color: #606060;
 	cursor: pointer;
 	transition-duration: 300ms;
-	border: none;
 }
 
 .cancelButton:hover {
@@ -78,6 +77,11 @@
 
 .cancelButton:active {
 	box-shadow: var(--shadow-button-active);
+}
+
+.cancelButton:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
 }
 
 @media (min-width: 768px) {
@@ -94,7 +98,6 @@
 	color: white;
 	cursor: pointer;
 	transition-duration: 300ms;
-	border: none;
 }
 
 .saveButton:hover {
@@ -143,7 +146,7 @@
 	cursor: not-allowed;
 }
 
-.mailIcon {
+.creditCardIcon {
 	position: absolute;
 	right: 0.75rem;
 	top: 50%;
@@ -153,8 +156,20 @@
 	color: #9ca3af;
 }
 
-.editIcon {
+.arrowIcon {
 	height: 1rem;
 	width: 1rem;
-	margin-right: 0.25rem;
+	margin-left: 0.25rem;
+}
+
+.errorMessage {
+	color: #ef4444;
+	font-size: 0.875rem;
+	margin-top: 0.5rem;
+}
+
+.hintText {
+	color: #6b7280;
+	font-size: 0.875rem;
+	margin-top: 0.5rem;
 }

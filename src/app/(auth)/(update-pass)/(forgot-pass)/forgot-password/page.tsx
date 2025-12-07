@@ -45,7 +45,7 @@ const ForgotPassword = () => {
 			<div className={styles.container}>
 				<div className={styles.header}>
 					<KeyRound className={styles.icon} />
-					<h1 className={styles.title}>Восстановление пароля</h1>
+					<h1 className={styles.title}>Восстановление / сброс пароля</h1>
 				</div>
 				<p className={styles.description}>
 					Введите email, по которому проходила регистрация, и мы вышлем Вам

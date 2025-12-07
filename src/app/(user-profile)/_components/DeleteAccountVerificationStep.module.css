@@ -1,0 +1,150 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.iconContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.trashIcon {
+	width: 3rem;
+	height: 3rem;
+	color: #ef4444;
+	margin-bottom: 1rem;
+}
+
+.title {
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-align: center;
+}
+
+.warningText {
+	text-align: center;
+	color: #dc2626;
+	font-weight: 500;
+}
+
+.description {
+	text-align: center;
+}
+
+.errorMessage {
+	padding: 0.75rem;
+	background-color: #ffc7c7;
+	color: #d80000;
+	text-align: center;
+	border-radius: 0.375rem;
+}
+
+.formContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	align-items: center;
+}
+
+.inputRow {
+	display: flex;
+	flex-direction: row;
+	gap: 0.75rem;
+	justify-content: center;
+}
+
+.codeInput {
+	width: 6.875rem;
+	height: 2.5rem;
+	padding: 0.5rem 1rem;
+	color: #414141;
+	font-size: 1rem;
+	border: 1px solid #bfbfbf;
+	border-radius: 0.375rem;
+	background-color: white;
+	display: block;
+	text-align: center;
+	caret-color: var(--color-primary);
+}
+
+.codeInput:focus {
+	border-color: #70c05b;
+	box-shadow: var(--shadow-button-default);
+	background-color: white;
+	outline: none;
+}
+
+.deleteButton {
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 0.75rem;
+	background-color: #ffc7c7;
+	color: #d80000;
+	padding: 0.5rem 1rem;
+	height: 2.5rem;
+	border-radius: 0.375rem;
+	font-weight: 500;
+	transition-duration: 300ms;
+	text-align: center;
+	cursor: pointer;
+	border: none;
+}
+
+.deleteButton:hover {
+	background-color: #d80000;
+	color: #f2f2f2;
+}
+
+.deleteButton:disabled {
+	background-color: #fcd5ba;
+	cursor: not-allowed;
+}
+
+.deleteButton:disabled:hover {
+	background-color: #fcd5ba;
+	color: #d80000;
+}
+
+.resendButton {
+	color: #414141;
+	font-size: 0.875rem;
+	text-decoration: underline;
+	transition-duration: 300ms;
+	cursor: pointer;
+	border: none;
+}
+
+.resendButton:hover {
+	color: black;
+}
+
+.resendButton:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.checkIcon {
+	width: 1rem;
+	height: 1rem;
+	flex-shrink: 0;
+}
+
+.loaderIcon {
+	width: 1rem;
+	height: 1rem;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}

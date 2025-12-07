@@ -14,6 +14,15 @@
 	cursor: pointer;
 }
 
+.menuItemUpgrade {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.225rem;
+	width: 2.75rem;
+	cursor: pointer;
+}
+
 .menuLink {
 	display: flex;
 	flex-direction: column;
