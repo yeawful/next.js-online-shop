@@ -38,13 +38,13 @@
 }
 
 .articleTitle {
-	color: var(--color-title);
+	color: var(--color-main-text);
 	font-size: 1rem;
 	font-weight: 700;
 }
 
 .articleText {
-	color: var(--color-title);
+	color: var(--color-main-text);
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;

@@ -1,7 +1,7 @@
 :root {
 	--font-sans: var(--font-rubik);
 	--color-primary: #70c05b;
-	--color-title: #414141;
+	--color-main-text: #414141;
 	--color-bg-gray: #f3f2f1;
 	--color-white: #ffffff;
 	--shadow-default: 2px 4px 8px 0px rgba(0, 0, 0, 0.1);

@@ -14,7 +14,7 @@
 .sectionTitle {
 	font-size: 1.125rem;
 	font-weight: 600;
-	color: #414141;
+	color: --color-main-text;
 	width: 5rem;
 }
 

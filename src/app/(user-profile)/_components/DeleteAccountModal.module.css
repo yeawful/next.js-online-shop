@@ -34,7 +34,7 @@
 }
 
 .messageText {
-	color: #414141;
+	color: --color-main-text;
 	margin-bottom: 1.5rem;
 }
 

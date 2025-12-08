@@ -50,14 +50,6 @@ export const EnterCode = ({ phoneNumber }: { phoneNumber: string }) => {
 				body: JSON.stringify({
 					userId: verifyData.user.id,
 					password: regFormData.password,
-					surname: regFormData.surname,
-					name: regFormData.name,
-					birthdayDate: regFormData.birthdayDate,
-					region: regFormData.region,
-					location: regFormData.location,
-					gender: regFormData.gender,
-					card: regFormData.card,
-					hasCard: regFormData.hasCard,
 				}),
 			});
 
@@ -66,6 +58,18 @@ export const EnterCode = ({ phoneNumber }: { phoneNumber: string }) => {
 				console.error("Детали ошибки", errorData);
 				throw new Error(errorData.error || "Ошибка установки пароля");
 			}
+
+			let userDataToUpdate = { ...regFormData };
+
+			if (verifyData.user.phoneNumberVerified) {
+				// eslint-disable-next-line @typescript-eslint/no-unused-vars
+				const { email, ...rest } = userDataToUpdate;
+				userDataToUpdate = rest as typeof regFormData;
+			}
+
+			const { error: updateError } =
+				await authClient.updateUser(userDataToUpdate);
+			if (updateError) throw updateError;
 
 			router.replace("/login");
 		} catch (error) {

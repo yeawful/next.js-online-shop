@@ -28,7 +28,7 @@
 
 .loadingText {
 	text-align: center;
-	color: #414141;
+	color: --color-main-text;
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
@@ -37,7 +37,7 @@
 .loadingTitle {
 	font-size: 1.25rem;
 	font-weight: 600;
-	color: #414141;
+	color: --color-main-text;
 }
 
 @keyframes spin {

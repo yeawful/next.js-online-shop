@@ -1,5 +1,5 @@
 .timerText {
-	color: #414141;
+	color: --color-main-text;
 	font-size: 0.75rem;
 	text-align: center;
 }

@@ -3,7 +3,7 @@
 	flex-direction: column;
 	margin-bottom: 1rem;
 	justify-content: space-between;
-	color: var(--color-title);
+	color: var(--color-main-text);
 }
 
 .specialOffersContainer {

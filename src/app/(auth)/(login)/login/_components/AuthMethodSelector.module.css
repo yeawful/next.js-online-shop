@@ -94,7 +94,7 @@
 .backButton {
 	height: 2rem;
 	font-size: 0.75rem;
-	color: #414141;
+	color: --color-main-text;
 	width: 120px;
 	display: flex;
 	align-items: center;

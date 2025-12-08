@@ -87,7 +87,7 @@
 	gap: 0.25rem;
 	font-size: 0.875rem;
 	font-weight: 700;
-	color: var(--color-title);
+	color: var(--color-main-text);
 }
 
 .cardPriceLabel {
@@ -106,7 +106,7 @@
 .description {
 	height: 3.375rem;
 	font-size: 0.75rem;
-	color: var(--color-title);
+	color: var(--color-main-text);
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;

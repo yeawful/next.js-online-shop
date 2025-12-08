@@ -1,7 +1,7 @@
 .searchPage {
 	padding-left: max(12px, calc((100% - 1208px) / 2));
 	padding-right: max(12px, calc((100% - 1208px) / 2));
-	color: var(--color-title);
+	color: var(--color-main-text);
 	margin-top: 5rem;
 	margin-bottom: 5rem;
 }
