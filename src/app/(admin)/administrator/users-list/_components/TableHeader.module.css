@@ -1,0 +1,76 @@
+.container {
+	display: none;
+	grid-template-columns: repeat(1, minmax(0, 1fr));
+	gap: 0.5rem;
+	padding: 0.75rem;
+	border-radius: 0.25rem;
+	background-color: #f3f2f1;
+	border-bottom: 1px solid #d1d5db;
+}
+
+@media (min-width: 768px) {
+	.container {
+		display: grid;
+		grid-template-columns: repeat(12, minmax(0, 1fr));
+	}
+}
+
+.column {
+	font-size: 0.75rem;
+	line-height: 1rem;
+	font-weight: 600;
+	word-break: break-all;
+	transition-duration: 300ms;
+}
+
+.column:not(:last-child) {
+	border-right: 1px solid #d1d5db;
+}
+
+.sortable {
+	cursor: default;
+}
+
+.notSortable {
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+
+.labelContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.25rem;
+}
+
+.sortIconsContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.icon {
+	height: 0.75rem;
+	width: 0.75rem;
+	cursor: pointer;
+}
+
+.iconUp {
+	margin-bottom: -0.25rem;
+}
+
+.iconDown {
+	margin-top: -0.25rem;
+}
+
+.iconActive {
+	color: #008c48;
+}
+
+.iconInactive {
+	color: #9ca3af;
+}
+
+.iconInactive:hover {
+	color: #4b5563;
+}

@@ -1,0 +1,46 @@
+.container {
+	border-bottom: 1px solid #d1d5db;
+	order: 2;
+	display: flex;
+	flex-direction: row;
+	gap: 0.75rem;
+}
+
+.name {
+	font-size: 0.75rem;
+	line-height: 1rem;
+	font-weight: 500;
+	text-align: left;
+}
+
+.birthdaySoon {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: #ff6633;
+	font-size: 0.75rem;
+	line-height: 1rem;
+}
+
+.birthdayIcon {
+	height: 1rem;
+	width: 1rem;
+}
+
+@media (min-width: 768px) {
+	.container {
+		border-bottom: 0;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+		border-right: 1px solid #d1d5db;
+		border-radius: 0.25rem;
+	}
+
+	.name {
+		font-size: 0.875rem;
+		line-height: 1.25rem;
+	}
+}

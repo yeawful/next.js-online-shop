@@ -1,0 +1,166 @@
+.colSpan1 {
+	grid-column: span 1 / span 1;
+}
+
+.colSpan2 {
+	grid-column: span 2 / span 2;
+}
+
+.flexCenter {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.pr2 {
+	padding-right: 0.5rem;
+}
+
+.py2 {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+
+.borderRight {
+	border-right: 1px solid #d1d5db;
+}
+
+.borderBottom {
+	border-bottom: 1px solid #d1d5db;
+}
+
+.cellPadding {
+	padding: 0.75rem;
+}
+
+.sectionMargin {
+	margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+	.sectionMargin {
+		margin-bottom: 1.5rem;
+	}
+
+	.borderRight {
+		border-radius: 0;
+	}
+
+	.borderBottom {
+		border-radius: 0;
+	}
+}
+
+.hideMobile {
+	display: none;
+}
+
+@media (min-width: 768px) {
+	.hideMobile {
+		display: grid;
+	}
+}
+
+.bgGrayLight {
+	background-color: #f3f2f1;
+}
+
+.textXs {
+	font-size: 0.75rem;
+	line-height: 1rem;
+}
+
+.fontSemibold {
+	font-weight: 600;
+}
+
+.textGreen {
+	color: #008c48;
+}
+
+.textGray400 {
+	color: #9ca3af;
+}
+
+.textGray600 {
+	color: #4b5563;
+}
+
+.textGray600Hover:hover {
+	color: #4b5563;
+}
+
+.cursorDefault {
+	cursor: default;
+}
+
+.cursorNotAllowed {
+	cursor: not-allowed;
+}
+
+.cursorPointer {
+	cursor: pointer;
+}
+
+.breakAll {
+	word-break: break-all;
+}
+
+.opacity50 {
+	opacity: 0.5;
+}
+
+.rounded {
+	border-radius: 0.25rem;
+}
+
+.duration300 {
+	transition-duration: 300ms;
+}
+
+.flexCol {
+	display: flex;
+	flex-direction: column;
+}
+
+.gap1 {
+	gap: 0.25rem;
+}
+
+.mtNegative1 {
+	margin-top: -0.25rem;
+}
+
+.iconSmall {
+	height: 0.75rem;
+	width: 0.75rem;
+}
+
+.gridCols1 {
+	grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 768px) {
+	.gridCols12 {
+		grid-template-columns: repeat(12, minmax(0, 1fr));
+	}
+
+	.gap2 {
+		gap: 0.5rem;
+	}
+}
+
+.roleAdmin {
+	background-color: #ffc7c7;
+	color: #d80000;
+}
+
+.roleManager {
+	background-color: #e5ffde;
+	color: #008c48;
+}
+
+.roleUser {
+	background-color: #f3f2f1;
+	color: #414141;
+}

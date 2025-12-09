@@ -1,0 +1,50 @@
+import styles from "./table.module.css";
+
+export const tableStyles = {
+	colSpans: {
+		id: `${styles.colSpan1} ${styles.flexCenter} ${styles.pr2}`,
+		name: `${styles.colSpan2} ${styles.flexCenter}`,
+		age: `${styles.colSpan1} ${styles.flexCenter} ${styles.pr2}`,
+		email: `${styles.colSpan2} ${styles.flexCenter} ${styles.pr2}`,
+		phone: `${styles.colSpan2} ${styles.flexCenter} ${styles.pr2}`,
+		role: `${styles.colSpan2} ${styles.flexCenter} ${styles.pr2}`,
+		registration: `${styles.colSpan2} ${styles.flexCenter} ${styles.pr2}`,
+	},
+	border: {
+		right: `${styles.borderRight} ${styles.py2} ${styles.rounded}`,
+		bottom: `${styles.borderBottom} ${styles.py2} ${styles.rounded}`,
+	},
+	spacing: {
+		cell: styles.cellPadding,
+		section: styles.sectionMargin,
+	},
+	grid: {
+		cols1: styles.gridCols1,
+		cols12: styles.gridCols12,
+	},
+	utils: {
+		hideMobile: styles.hideMobile,
+		rounded: styles.rounded,
+		bgGrayLight: styles.bgGrayLight,
+		textXs: styles.textXs,
+		breakAll: styles.breakAll,
+		fontSemibold: styles.fontSemibold,
+		cursorDefault: styles.cursorDefault,
+		cursorNotAllowed: styles.cursorNotAllowed,
+		duration300: styles.duration300,
+		flexCenter: styles.flexCenter,
+		gap1: styles.gap1,
+		flexCol: styles.flexCol,
+		iconSmall: styles.iconSmall,
+		cursorPointer: styles.cursorPointer,
+		textGreen: styles.textGreen,
+		textGray400: styles.textGray400,
+		textGray600Hover: styles.textGray600Hover,
+		mtNegative1: styles.mtNegative1,
+		opacity50: styles.opacity50,
+		gap2: styles.gap2,
+		roleAdmin: styles.roleAdmin,
+		roleManager: styles.roleManager,
+		roleUser: styles.roleUser,
+	},
+};

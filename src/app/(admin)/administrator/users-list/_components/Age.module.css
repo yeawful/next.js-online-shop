@@ -1,0 +1,23 @@
+.container {
+	font-size: 0.75rem;
+	line-height: 1rem;
+	border-bottom: 1px solid #d1d5db;
+	order: 3;
+}
+
+.ageText {
+	display: none;
+	margin-left: 0.25rem;
+}
+
+@media (max-width: 767px) {
+	.ageText {
+		display: inline;
+	}
+}
+
+@media (min-width: 767px) {
+	.container {
+		border-bottom: none;
+	}
+}
