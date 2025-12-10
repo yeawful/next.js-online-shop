@@ -2,7 +2,7 @@
 
 import { useSearchParams, useRouter } from "next/navigation";
 import { FormEvent, useCallback, useEffect, useState } from "react";
-import { CONFIG } from "../../../../config/config";
+import { CONFIG } from "../../../../../../config/config";
 import { PriceFilterProps, PriceRange } from "@/types/priceTypes";
 import MiniLoader from "@/components/loaders/MiniLoader";
 import ErrorComponent from "@/components/error/ErrorComponent";

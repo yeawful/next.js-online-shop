@@ -1,0 +1,93 @@
+.container {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	height: 248px;
+	justify-content: center;
+}
+
+@media (min-width: 1280px) {
+	.container {
+		height: 496px;
+	}
+}
+
+.thumbnails {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	flex-shrink: 0;
+}
+
+.thumbnail {
+	position: relative;
+	background-color: white;
+	width: 4rem;
+	height: 37px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	flex-shrink: 0;
+}
+
+@media (min-width: 1280px) {
+	.thumbnail {
+		height: 86px;
+	}
+}
+
+.thumbnailImage {
+	object-fit: cover;
+}
+
+.mainImage {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	height: 248px;
+	width: 248px;
+	padding: 0.625rem;
+	flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+	.mainImage {
+		width: 272px;
+	}
+}
+
+@media (min-width: 1280px) {
+	.mainImage {
+		height: 496px;
+		width: 504px;
+	}
+}
+
+.mainImage {
+	box-shadow:
+		0 4px 6px -1px rgba(0, 0, 0, 0.1),
+		0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.image {
+	object-fit: contain;
+}
+
+.discountBadge {
+	position: absolute;
+	top: 1.25rem;
+	right: 1.25rem;
+	background-color: #ff6633;
+	color: white;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
+	border-radius: 0.25rem;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+}

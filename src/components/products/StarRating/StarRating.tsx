@@ -1,21 +1,17 @@
+import IconStar from "@/components/svg/IconStar";
 import styles from "./StarRating.module.css";
 
-const StarRating = ({ rating }: { rating: number }) => {
-	return (
-		<div className={styles.starRating}>
-			{[1, 2, 3, 4, 5].map((star) => (
-				<span
-					key={star}
-					className={`${styles.star} ${star <= rating ? styles.filled : ""} ${
-						star > rating && star - rating < 1 ? styles.halfFilled : ""
-					}`}
-				>
-					★
-				</span>
-			))}
-			<span className={styles.ratingValue}>({rating})</span>
-		</div>
-	);
+const StarRating = ({ rating = 5.0 }: { rating: number }) => {
+	const stars = [];
+
+	for (let i = 1; i <= 5; i++) {
+		const fillAmount = Math.max(0, Math.min(1, rating - (i - 1)));
+		const fillPercentage = Math.round(fillAmount * 100);
+
+		stars.push(<IconStar key={i} fillPercentage={fillPercentage} />);
+	}
+
+	return <div className={styles.container}>{stars}</div>;
 };
 
 export default StarRating;

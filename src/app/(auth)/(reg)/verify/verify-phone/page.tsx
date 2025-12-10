@@ -8,7 +8,7 @@ import { LoadingContent } from "../../_components/LoadingContent";
 import { PhoneOff } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { ErrorContent } from "../../_components/ErrorContent";
-import { EnterCode } from "@/app/(auth)/_components/EnterCode";
+import { EnterCode } from "../../_components/EnterCode";
 
 export default function VerifyPhonePage() {
 	const { regFormData } = useRegFormContext();

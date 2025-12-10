@@ -10,7 +10,7 @@ const GridCategoryBlock = ({
 	priority = false,
 }: GridCategoryBlockProps) => {
 	return (
-		<Link href={`category/${slug}`} className={styles.categoryBlock}>
+		<Link href={`/catalog/${slug}`} className={styles.categoryBlock}>
 			<Image
 				src={img}
 				alt={title}

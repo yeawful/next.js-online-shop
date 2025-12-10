@@ -42,7 +42,7 @@ const CatalogMenu = ({
 								{categories.map((category) => (
 									<Link
 										key={category.slug}
-										href={`/category/${category.slug}`}
+										href={`/catalog/${category.slug}`}
 										className={styles.categoryLink}
 										onClick={() => setIsCatalogOpen(false)}
 									>

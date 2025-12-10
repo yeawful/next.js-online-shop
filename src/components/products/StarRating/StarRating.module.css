@@ -1,29 +1,5 @@
-.starRating {
+.container {
 	display: flex;
-	align-items: center;
-	gap: 3px;
-}
-
-.star {
-	color: #bfbfbf;
-	font-size: 1.4rem;
-	font-weight: 700;
-	line-height: 1;
-}
-
-.filled {
-	color: #ff6633;
-}
-
-.halfFilled {
-	background: linear-gradient(90deg, #ff6633 50%, #bfbfbf 50%);
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-
-.ratingValue {
-	font-size: 14px;
-	color: #666;
-	margin-left: 8px;
+	flex-direction: row;
+	gap: 0.25rem;
 }

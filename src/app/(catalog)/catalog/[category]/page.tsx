@@ -2,11 +2,11 @@ import GenericListPage from "@/app/(products)/GenericListPage";
 import { Loader } from "@/components/loaders/Loader";
 import { Suspense } from "react";
 import { TRANSLATIONS } from "../../../../utils/translations";
-import fetchProductsByCategory from "../fetchCategory";
-import FilterButtons from "../FilterButtons";
-import FilterControls from "../FilterControls";
-import PriceFilter from "../PriceFilter";
-import DropFilter from "../DropFilter";
+import fetchProductsByCategory from "./fetchCategory";
+import FilterButtons from "./_components/FilterButtons";
+import FilterControls from "./_components/FilterControls";
+import PriceFilter from "./_components/PriceFilter";
+import DropFilter from "./_components/DropFilter";
 import styles from "./page.module.css";
 
 export async function generateMetadata({
@@ -75,7 +75,7 @@ const CategoryPage = async ({
 										priceTo,
 										inStock,
 									}),
-								basePath: `/category/${category}`,
+								basePath: `/catalog/${category}`,
 								contentType: "category",
 							}}
 						/>

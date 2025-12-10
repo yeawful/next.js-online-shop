@@ -21,7 +21,7 @@ const SearchResults = ({
 				{groupedProducts.map((group) => (
 					<div key={group.category} className={styles.categoryGroup}>
 						<Link
-							href={`/category/${encodeURIComponent(group.category)}`}
+							href={`/catalog/${encodeURIComponent(group.category)}`}
 							className={styles.categoryLink}
 							onClick={resetSearch}
 						>
@@ -43,7 +43,7 @@ const SearchResults = ({
 							{group.products.map((product) => (
 								<li key={product.id} className={styles.productItem}>
 									<Link
-										href={`/product/${product.id}`}
+										href={`/catalog/${encodeURIComponent(group.category)}/${product.id}?desc=${encodeURIComponent(product.title.substring(0, 50))}`}
 										className={styles.productLink}
 										onClick={resetSearch}
 									>

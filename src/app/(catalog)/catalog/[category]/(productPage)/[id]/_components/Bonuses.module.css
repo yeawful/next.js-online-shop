@@ -1,0 +1,21 @@
+.container {
+	width: 212px;
+	display: flex;
+	flex-direction: row;
+	gap: 0.5rem;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0.5rem;
+}
+
+.text {
+	font-size: 0.75rem;
+	line-height: 1rem;
+	color: var(--primary-color);
+}
+
+.bonusAmount {
+	font-weight: bold;
+}

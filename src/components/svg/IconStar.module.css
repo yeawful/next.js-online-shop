@@ -1,0 +1,30 @@
+.container {
+	position: relative;
+	display: inline-block;
+}
+
+.baseSvg {
+	display: block;
+}
+
+.baseStar {
+	fill: #bfbfbf;
+	fill-opacity: 1;
+}
+
+.filledStarContainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	overflow: hidden;
+}
+
+.filledSvg {
+	display: block;
+}
+
+.filledStar {
+	fill: #ff6633;
+	fill-opacity: 1;
+}

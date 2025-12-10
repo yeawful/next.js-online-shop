@@ -6,7 +6,8 @@
 		"dev": "next dev --webpack -p 3000",
 		"build": "next build --webpack",
 		"start": "next start -p 3000",
-		"lint": "eslint"
+		"lint": "next lint",
+		"price-check": "curl -X GET http://localhost:3000/api/cron/price-check?secret=7f46cc0abf1a94d4c0ce48118bb9acc74d7f17a32c1b56cc9d8030cba82bb758"
 	},
 	"dependencies": {
 		"@a1rth/css-normalize": "^1.2.4",
@@ -25,6 +26,7 @@
 		"rc-slider": "^11.1.9",
 		"react": "19.2.0",
 		"react-dom": "19.2.0",
+		"react-share": "^5.2.2",
 		"resend": "^6.5.2",
 		"zustand": "^5.0.8"
 	},
