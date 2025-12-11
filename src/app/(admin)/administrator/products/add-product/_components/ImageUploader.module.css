@@ -1,0 +1,96 @@
+.container {
+	width: 100%;
+}
+
+.uploadArea {
+	border: 2px dashed;
+	border-radius: 0.5rem;
+	padding: 1.5rem;
+	text-align: center;
+	cursor: pointer;
+	transition-duration: 300ms;
+}
+
+.uploadAreaDragging {
+	border-color: var(--color-primary);
+	background-color: #e5ffde;
+}
+
+.uploadAreaDefault {
+	border-color: #d1d5db;
+}
+
+.uploadAreaDefault:hover {
+	border-color: #9ca3af;
+}
+
+.uploadAreaDisabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.hiddenInput {
+	display: none;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.spinner {
+	animation: spin 1s linear infinite;
+	border-radius: 50%;
+	height: 3rem;
+	width: 3rem;
+	border-bottom: 2px solid var(--color-primary);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.icon {
+	width: 3rem;
+	height: 3rem;
+	color: #9ca3af;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.uploadText {
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	color: #4b5563;
+}
+
+.fileLink {
+	font-weight: 500;
+	color: var(--color-primary);
+	transition-duration: 300ms;
+}
+
+.fileLink:hover {
+	color: #008c49;
+}
+
+.fileInfo {
+	font-size: 0.75rem;
+	line-height: 1rem;
+	color: #6b7280;
+}
+
+.error {
+	margin-top: 0.5rem;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	color: #dc2626;
+}

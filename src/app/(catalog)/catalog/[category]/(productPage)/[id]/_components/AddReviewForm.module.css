@@ -59,7 +59,7 @@
 
 .textarea:focus {
 	outline: none;
-	ring: 1px solid var(--primary-color);
+	ring: 1px solid var(--color-primary);
 }
 
 .textarea::placeholder {

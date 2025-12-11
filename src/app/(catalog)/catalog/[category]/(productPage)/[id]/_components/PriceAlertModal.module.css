@@ -25,7 +25,7 @@
 	font-size: 0.875rem;
 	line-height: 1.25rem;
 	position: relative;
-	border: 1px solid var(--primary-color);
+	border: 1px solid var(--color-primary);
 	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 	outline: 0;
 	width: 100%;
@@ -66,7 +66,7 @@
 	border-radius: 0.25rem;
 	font-size: 0.875rem;
 	line-height: 1.25rem;
-	background-color: var(--primary-color);
+	background-color: var(--color-primary-color);
 	border: none;
 	cursor: pointer;
 	transition-duration: 300ms;

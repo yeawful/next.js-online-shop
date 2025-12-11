@@ -10,6 +10,12 @@ const AdminPanel = () => {
 				<Link href="/administrator/users-list" className={styles.adminLink}>
 					Управление пользователями
 				</Link>
+				<Link
+					href="/administrator/products/add-product"
+					className={styles.adProductLink}
+				>
+					Добавление товара
+				</Link>
 			</div>
 		</div>
 	);

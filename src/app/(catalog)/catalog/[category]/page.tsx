@@ -49,18 +49,18 @@ const CategoryPage = async ({
 			<h1 className={styles.categoryTitle}>
 				{TRANSLATIONS[category] || category}
 			</h1>
-			<DropFilter basePath={`/category/${category}`} category={category} />
+			<DropFilter basePath={`/catalog/${category}`} category={category} />
 			<div className={styles.filterButtonsDesktop}>
-				<FilterButtons basePath={`/category/${category}`} />
+				<FilterButtons basePath={`/catalog/${category}`} />
 			</div>
 			<div className={styles.categoryContent}>
 				<div className={styles.filtersSidebar}>
 					<div className={styles.filterHeader}>Фильтр</div>
-					<PriceFilter basePath={`/category/${category}`} category={category} />
+					<PriceFilter basePath={`/catalog/${category}`} category={category} />
 				</div>
 				<div className={styles.productsContent}>
 					<div className={styles.filterControlsDesktop}>
-						<FilterControls basePath={`/category/${category}`} />
+						<FilterControls basePath={`/catalog/${category}`} />
 					</div>
 
 					<Suspense fallback={<Loader />}>

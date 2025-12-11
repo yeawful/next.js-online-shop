@@ -1,0 +1,79 @@
+.container {
+	display: block;
+}
+
+.label {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	font-weight: 500;
+	margin-bottom: 1rem;
+}
+
+.required {
+	color: #d80000;
+}
+
+.previewContainer {
+	margin-bottom: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.imageWrapper {
+	position: relative;
+	width: 20rem;
+	height: 20rem;
+	display: inline-block;
+}
+
+.image {
+	object-fit: contain;
+	border-radius: 0.25rem;
+	border: 2px solid #e5e7eb;
+}
+
+.removeButton {
+	position: absolute;
+	top: -0.5rem;
+	right: -0.5rem;
+	background-color: #ef4444;
+	color: white;
+	border-radius: 50%;
+	transition-property: background-color;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+	border: none;
+	cursor: pointer;
+}
+
+.removeButton:hover {
+	background-color: #dc2626;
+}
+
+.removeButton:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.removeIcon {
+	width: 1rem;
+	height: 1rem;
+	cursor: pointer;
+}
+
+.fileInfo {
+	margin-top: 0.5rem;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	color: var(--color-primary);
+}
+
+.uploadingText {
+	margin-top: 0.5rem;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	color: #ff6633;
+}

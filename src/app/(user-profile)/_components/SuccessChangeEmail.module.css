@@ -52,7 +52,7 @@
 
 .newEmail {
 	font-weight: 600;
-	color: #70c05b;
+	color: var(--color-primary);
 }
 
 .buttonContainer {
