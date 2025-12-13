@@ -5,7 +5,7 @@ import { authClient } from "@/lib/auth-client";
 import { AuthFormLayout } from "../../../_components/AuthFormLayout";
 import { Loader2, Mail, KeyRound } from "lucide-react";
 import SuccessSentEmail from "../../_components/SuccessSentEmail";
-import styles from "./ForgotPassword.module.css";
+import styles from "./page.module.css";
 
 const ForgotPassword = () => {
 	const [email, setEmail] = useState("");

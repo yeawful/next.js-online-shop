@@ -3,11 +3,12 @@
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import Image from "next/image";
+import { Suspense } from "react";
 import iconToRight from "/public/icons-products/icon-arrow-right.svg";
 import { TRANSLATIONS } from "../../utils/translations";
 import styles from "./Breadcrumbs.module.css";
 
-const Breadcrumbs = () => {
+function BreadcrumbsContent() {
 	const pathname = usePathname();
 	const searchParams = useSearchParams();
 
@@ -46,20 +47,22 @@ const Breadcrumbs = () => {
 		isLast: false,
 	});
 
+	const getItemClass = (isLast: boolean) => {
+		return isLast ? styles.lastItem : styles.linkItem;
+	};
+
 	return (
 		<nav className={styles.breadcrumbs}>
-			<ol className={styles.breadcrumbsList}>
+			<ol className={styles.list}>
 				{breadcrumbs.map((item, index) => (
-					<li key={index} className={styles.breadcrumbsItem}>
-						<div
-							className={
-								item.isLast ? styles.breadcrumbLast : styles.breadcrumbLink
-							}
-						>
+					<li key={index} className={styles.listItem}>
+						<div className={getItemClass(item.isLast)}>
 							{item.isLast ? (
 								item.label
 							) : (
-								<Link href={item.href}>{item.label}</Link>
+								<Link href={item.href} className={styles.link}>
+									{item.label}
+								</Link>
 							)}
 						</div>
 						{!item.isLast && (
@@ -71,12 +74,29 @@ const Breadcrumbs = () => {
 								width={24}
 								height={24}
 								sizes="24px"
+								className={styles.icon}
 							/>
 						)}
 					</li>
 				))}
 			</ol>
 		</nav>
+	);
+}
+
+const Breadcrumbs = () => {
+	return (
+		<Suspense
+			fallback={
+				<nav className={styles.skeletonContainer}>
+					<div className={styles.skeletonItem}>
+						<div className={styles.skeletonText}></div>
+					</div>
+				</nav>
+			}
+		>
+			<BreadcrumbsContent />
+		</Suspense>
 	);
 };
 

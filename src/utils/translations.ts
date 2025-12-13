@@ -24,4 +24,6 @@ export const TRANSLATIONS: Record<string, string> = {
 	product: "Продукт",
 	products: "Продукты",
 	"add-product": "Добавить товар",
+	"products-list": "Список товаров",
+	"edit-product": "Редактировать товар",
 };

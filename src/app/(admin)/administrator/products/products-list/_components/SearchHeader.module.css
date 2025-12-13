@@ -1,0 +1,70 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 1rem;
+	align-items: center;
+	margin-bottom: 1.5rem;
+	color: var(--color-main-text);
+}
+
+@media (min-width: 768px) {
+	.container {
+		flex-direction: row;
+	}
+}
+
+.backLink {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	text-decoration: none;
+}
+
+.backLink:hover {
+	text-decoration: underline;
+}
+
+.backIcon {
+	width: 1.25rem;
+	height: 1.25rem;
+}
+
+.addProductLink {
+	background-color: var(--color-primary);
+	color: white;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition-duration: 300ms;
+	padding: 0.5rem 1rem;
+	display: flex;
+	flex-direction: row;
+	gap: 0.5rem;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+}
+
+.addProductLink:hover {
+	box-shadow:
+		0 4px 6px -1px rgb(0 0 0 / 0.1),
+		0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.addProductLink:active {
+	box-shadow:
+		0 10px 15px -3px rgb(0 0 0 / 0.1),
+		0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.addIcon {
+	width: 1rem;
+	height: 1rem;
+}
+
+.title {
+	font-size: 1.5rem;
+	line-height: 2rem;
+	font-weight: 700;
+	margin-bottom: 1.5rem;
+}

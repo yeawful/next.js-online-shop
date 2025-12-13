@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { X } from "lucide-react";
 import ImageUploader from "./ImageUploader";
@@ -8,15 +8,24 @@ interface ImageUploadSectionProps {
 	onImageChange: (file: File | null) => void;
 	uploading: boolean;
 	loading: boolean;
+	existingImage?: string;
 }
 
 const ImageUploadSection = ({
 	onImageChange,
 	uploading,
 	loading,
+	existingImage,
 }: ImageUploadSectionProps) => {
 	const [image, setImage] = useState<File | null>(null);
 	const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+
+	useEffect(() => {
+		if (existingImage) {
+			// eslint-disable-next-line react-hooks/set-state-in-effect
+			setPreviewUrl(existingImage);
+		}
+	}, [existingImage]);
 
 	const handleImageUpload = (file: File) => {
 		setImage(file);
@@ -30,7 +39,7 @@ const ImageUploadSection = ({
 		setImage(null);
 		onImageChange(null);
 
-		if (previewUrl) {
+		if (previewUrl && previewUrl.startsWith("blob:")) {
 			URL.revokeObjectURL(previewUrl);
 		}
 		setPreviewUrl(null);
@@ -61,8 +70,14 @@ const ImageUploadSection = ({
 						</button>
 					</div>
 					<p className={styles.fileInfo}>
-						Выбрано: {image?.name} (
-						{(image ? image.size / 1024 / 1024 : 0).toFixed(2)} MB)
+						{image ? (
+							<>
+								Выбрано: {image?.name} (
+								{(image ? image.size / 1024 / 1024 : 0).toFixed(2)} MB)
+							</>
+						) : (
+							"Существующее изображение"
+						)}
 					</p>
 				</div>
 			) : (

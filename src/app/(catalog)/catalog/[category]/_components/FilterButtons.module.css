@@ -1,4 +1,4 @@
-.filterButtons {
+.container {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -7,46 +7,80 @@
 	margin-bottom: 2.5rem;
 }
 
-.filterButton {
+.filterLink {
 	height: 2rem;
 	padding: 0.5rem;
 	border-radius: 0.25rem;
 	font-size: 0.75rem;
+	line-height: 1rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	transition-duration: 300ms;
 	cursor: pointer;
+	text-decoration: none;
 }
 
-.filterButtonActive {
+.filterLinkActive {
 	background-color: var(--color-primary);
-	color: var(--color-white);
+	color: white;
 }
 
-.filterButtonActive:hover {
-	box-shadow: var(--shadow-button-default);
+.filterLinkActive:hover {
+	box-shadow:
+		0 4px 6px -1px rgb(0 0 0 / 0.1),
+		0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
-.filterButtonActive:active {
-	box-shadow: var(--shadow-button-active);
+.filterLinkActive:active {
+	box-shadow:
+		0 10px 15px -3px rgb(0 0 0 / 0.1),
+		0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
-.filterButtonInactive {
-	background-color: var(--color-bg-gray);
+.filterLinkInactive {
+	background-color: #f3f2f1;
 	color: #606060;
 }
 
-.filterButtonInactive:hover {
-	box-shadow: var(--shadow-button-secondary);
+.filterLinkInactive:hover {
+	box-shadow:
+		0 1px 3px 0 rgb(0 0 0 / 0.1),
+		0 1px 2px -1px rgb(0 0 0 / 0.1);
 }
 
-.filterButtonInactive:active {
-	box-shadow: var(--shadow-button-active);
+.filterLinkInactive:active {
+	box-shadow:
+		0 10px 15px -3px rgb(0 0 0 / 0.1),
+		0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
-@media (min-width: 1280px) {
-	.filterButtons {
-		display: flex;
+.skeletonContainer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 1rem;
+	align-items: center;
+	margin-bottom: 2.5rem;
+}
+
+.skeletonFilter {
+	height: 2rem;
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	font-size: 0.75rem;
+	line-height: 1rem;
+	background-color: #f3f2f1;
+	color: #606060;
+	animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
 	}
 }

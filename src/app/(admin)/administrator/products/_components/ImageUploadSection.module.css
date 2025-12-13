@@ -42,6 +42,7 @@
 	background-color: #ef4444;
 	color: white;
 	border-radius: 50%;
+	padding: 0.25rem;
 	transition-property: background-color;
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	transition-duration: 150ms;
@@ -49,7 +50,7 @@
 	cursor: pointer;
 }
 
-.removeButton:hover {
+.removeButton:hover:not(:disabled) {
 	background-color: #dc2626;
 }
 
@@ -68,7 +69,7 @@
 	margin-top: 0.5rem;
 	font-size: 0.875rem;
 	line-height: 1.25rem;
-	color: var(--color-primary);
+	color: var(--primary);
 }
 
 .uploadingText {

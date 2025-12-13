@@ -10,7 +10,7 @@ import { MailWarning } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
 import SuccessUpdatePass from "../../_components/SuccessUpdatePass";
-import styles from "./ResetPassword.module.css";
+import styles from "./page.module.css";
 
 const ResetPassword = () => {
 	const [password, setPassword] = useState("");

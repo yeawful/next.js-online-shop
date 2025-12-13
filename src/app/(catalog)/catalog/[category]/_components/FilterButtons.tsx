@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import styles from "./FilterButtons.module.css";
 
 const FILTERS = [
@@ -10,7 +11,7 @@ const FILTERS = [
 	{ key: "non-gmo", label: "Без ГМО" },
 ];
 
-const FilterButtons = ({ basePath }: { basePath: string }) => {
+function FilterButtonsContent({ basePath }: { basePath: string }) {
 	const searchParams = useSearchParams();
 	const currentFilters = searchParams.getAll("filter");
 
@@ -34,22 +35,42 @@ const FilterButtons = ({ basePath }: { basePath: string }) => {
 	const isFilterActive = (filterKey: string) =>
 		currentFilters.includes(filterKey);
 
+	const getFilterClass = (filterKey: string) => {
+		return isFilterActive(filterKey)
+			? `${styles.filterLink} ${styles.filterLinkActive}`
+			: `${styles.filterLink} ${styles.filterLinkInactive}`;
+	};
+
 	return (
-		<div className={styles.filterButtons}>
+		<div className={styles.container}>
 			{FILTERS.map((filter) => (
 				<Link
 					key={filter.key}
 					href={buildFilterLink(filter.key)}
-					className={`${styles.filterButton} ${
-						isFilterActive(filter.key)
-							? styles.filterButtonActive
-							: styles.filterButtonInactive
-					}`}
+					className={getFilterClass(filter.key)}
 				>
 					{filter.label}
 				</Link>
 			))}
 		</div>
+	);
+}
+
+const FilterButtons = ({ basePath }: { basePath: string }) => {
+	return (
+		<Suspense
+			fallback={
+				<div className={styles.skeletonContainer}>
+					{FILTERS.map((filter) => (
+						<div key={filter.key} className={styles.skeletonFilter}>
+							{filter.label}
+						</div>
+					))}
+				</div>
+			}
+		>
+			<FilterButtonsContent basePath={basePath} />
+		</Suspense>
 	);
 };
 

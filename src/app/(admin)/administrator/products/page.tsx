@@ -1,30 +1,27 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 
-const AdminPanel = () => {
+const AdminProducts = () => {
 	return (
-		<div className={styles.adminPanelContainer}>
+		<div className={styles.container}>
 			<h1 className={styles.title}>Панель управления</h1>
 
-			<div className={styles.grid}>
-				<Link href="/administrator/users-list" className={styles.adminLink}>
-					Управление пользователями
-				</Link>
+			<div className={styles.linksGrid}>
 				<Link
 					href="/administrator/products/add-product"
-					className={styles.adProductLink}
+					className={styles.link}
 				>
 					Добавление товара
 				</Link>
 				<Link
 					href="/administrator/products/products-list"
-					className={styles.adProductLink}
+					className={styles.link}
 				>
 					Список товаров
 				</Link>
 				<Link
 					href="/administrator/products/products-list"
-					className={styles.adProductLink}
+					className={styles.link}
 				>
 					Редактирование товара
 				</Link>
@@ -33,4 +30,4 @@ const AdminPanel = () => {
 	);
 };
 
-export default AdminPanel;
+export default AdminProducts;

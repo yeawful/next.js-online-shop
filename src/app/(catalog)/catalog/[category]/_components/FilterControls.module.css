@@ -1,4 +1,4 @@
-.filterControls {
+.container {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
@@ -10,39 +10,41 @@
 	padding: 0.5rem;
 	border-radius: 0.25rem;
 	font-size: 0.75rem;
+	line-height: 1rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	transition-duration: 300ms;
 	gap: 0.5rem;
-}
-
-.filterButtonInactive {
-	background-color: var(--color-bg-gray);
-	color: #606060;
 	cursor: not-allowed;
 }
 
 .filterButtonActive {
 	background-color: var(--color-primary);
-	color: var(--color-white);
+	color: white;
 }
 
-.priceFilterButton {
+.filterButtonInactive {
+	background-color: #f3f2f1;
+	color: #606060;
+}
+
+.filterTag {
 	height: 2rem;
 	padding: 0.5rem;
 	border-radius: 0.25rem;
 	font-size: 0.75rem;
+	line-height: 1rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	transition-duration: 300ms;
 	gap: 0.5rem;
 	background-color: var(--color-primary);
-	color: var(--color-white);
+	color: white;
 }
 
-.clearFilterLink {
+.filterLink {
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
@@ -50,14 +52,34 @@
 	color: inherit;
 }
 
-.clearFilterLink:hover,
-.clearFilterLink:focus,
-.clearFilterLink:active {
-	text-decoration: none;
-	color: inherit;
-	outline: none;
+.clearIcon {
+	filter: brightness(0) invert(1);
 }
 
-.filterIcon {
-	filter: brightness(0) invert(1);
+.skeletonContainer {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	gap: 1rem;
+}
+
+.skeletonFilter {
+	height: 2rem;
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	font-size: 0.75rem;
+	line-height: 1rem;
+	background-color: #f3f2f1;
+	color: #606060;
+	animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
 }

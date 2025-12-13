@@ -1,0 +1,46 @@
+.container {
+	text-align: center;
+	padding: 3rem 0;
+	color: var(--color-main-text);
+}
+
+.searchIcon {
+	width: 3rem;
+	height: 3rem;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1rem;
+	color: #bfbfbf;
+}
+
+.title {
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+}
+
+.subtitle {
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+}
+
+.loadingIcon {
+	width: 2rem;
+	height: 2rem;
+	margin-left: auto;
+	margin-right: auto;
+	animation: spin 1s linear infinite;
+	color: var(--color-primary);
+}
+
+.loadingText {
+	margin-top: 0.5rem;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
