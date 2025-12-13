@@ -9,12 +9,12 @@ import { useEffect, useState } from "react";
 import { Loader } from "@/components/loaders/Loader";
 import SecuritySection from "../_components/SecuritySection";
 import ProfileAvatar from "../_components/ProfileAvatar";
-import styles from "./page.module.css";
 import LocationSection from "../_components/LocationSection";
 import ProfileEmail from "../_components/ProfileEmail";
 import ProfilePhoneSettings from "../_components/ProfilePhone/ProfilePhoneSettings";
 import ProfilePassword from "../_components/ProfilePassword";
 import ProfileCard from "../_components/ProfileCard";
+import styles from "./page.module.css";
 
 const ProfilePage = () => {
 	const { user, isAuth, checkAuth } = useAuthStore();
@@ -68,10 +68,10 @@ const ProfilePage = () => {
 
 	return (
 		<div className={styles.pageContainer}>
-			<div className={styles.profileCard}>
+			<div className={styles.content}>
 				<ProfileHeader name={user.name} surname={user.surname} />
 
-				<div className={styles.cardContent}>
+				<div className={styles.innerContent}>
 					<div className={styles.registrationBadge}>
 						<div className={styles.badge}>
 							{isPhoneRegistration ? (
@@ -89,11 +89,11 @@ const ProfilePage = () => {
 					</div>
 					<ProfileAvatar gender={user.gender || "male"} />
 					<LocationSection />
-					<div className={styles.gridLayout}>
+					<div className={styles.grid}>
 						<ProfileEmail />
 						<ProfilePhoneSettings />
 					</div>
-					<div className={styles.gridLayout}>
+					<div className={styles.grid}>
 						<ProfilePassword />
 						<ProfileCard />
 					</div>
