@@ -8,7 +8,7 @@ const ProfileHeader = ({
 	surname: string;
 }) => {
 	return (
-		<div className={styles.header}>
+		<div className={styles.container}>
 			<h1 className={styles.title}>
 				Профиль пользователя: {name} {surname}
 			</h1>

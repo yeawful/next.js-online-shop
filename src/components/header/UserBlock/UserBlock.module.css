@@ -13,6 +13,7 @@
 	box-shadow: var(--shadow-default);
 	background-color: var(--color-white);
 	z-index: 50;
+	gap: 1.5rem;
 }
 
 @media (min-width: 768px) {

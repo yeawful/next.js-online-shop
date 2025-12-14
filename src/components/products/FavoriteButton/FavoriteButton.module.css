@@ -1,0 +1,32 @@
+.button {
+	width: 2rem;
+	height: 2rem;
+	padding: 0.5rem;
+	background-color: #f3f2f1;
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+	border-radius: 0.25rem;
+	transition-duration: 300ms;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+}
+
+.button:hover:not(.disabled) {
+	background-color: #fcd5ba;
+	transform: scale(1.1);
+	cursor: pointer;
+}
+
+.disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.disabled:hover {
+	transform: none;
+	background-color: #f3f2f1;
+}

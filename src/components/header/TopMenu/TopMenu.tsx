@@ -1,53 +1,51 @@
 "use client";
 
 import Image from "next/image";
-import iconHeart from "/public/icons-header/icon-heart.svg";
 import iconCart from "/public/icons-header/icon-cart.svg";
 import IconMenuMob from "@/components/svg/IconMenuMob";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useAuthStore } from "@/store/authStore";
 import IconBox from "@/components/svg/IconBox";
+import IconHeart from "@/components/svg/IconHeart";
 import styles from "./TopMenu.module.css";
 
 const TopMenu = () => {
 	const pathname = usePathname();
 	const isCatalogPage = pathname === "/catalog";
+	const isFavoritePage = pathname === "/favorites";
 	const { user } = useAuthStore();
 
 	const isManagerOrAdmin = user?.role === "manager" || user?.role === "admin";
 
+	const getTextClass = (isActive: boolean) => {
+		return isActive ? styles.menuTextActive : styles.menuText;
+	};
+
 	return (
-		<ul className={styles.topMenu}>
-			<Link href="/catalog" className={styles.menuLink}>
-				<li className={styles.menuItem}>
+		<ul className={styles.container}>
+			<li>
+				<Link
+					href="/catalog"
+					className={`${styles.menuItem} ${styles.mobileOnly}`}
+				>
 					<IconMenuMob isCatalogPage={isCatalogPage} />
-					<span
-						className={isCatalogPage ? styles.menuTextActive : styles.menuText}
-					>
-						Каталог
-					</span>
-				</li>
-			</Link>
+					<span className={getTextClass(isCatalogPage)}>Каталог</span>
+				</Link>
+			</li>
 
 			{!isManagerOrAdmin && (
-				<li className={styles.menuItem}>
-					<Image
-						src={iconHeart}
-						alt="Избранное"
-						width={24}
-						height={24}
-						className={styles.menuIcon}
-					/>
-					<span>Избранное</span>
+				<li>
+					<Link href="/favorites" className={styles.menuItem}>
+						<IconHeart isActive={isFavoritePage} variant="orange" />
+						<span className={getTextClass(isFavoritePage)}>Избранное</span>
+					</Link>
 				</li>
 			)}
 
 			<li className={styles.menuItemUpgrade}>
 				<IconBox />
-				<span className={isManagerOrAdmin ? styles.menuTextActive : ""}>
-					Заказы
-				</span>
+				<span className={getTextClass(isManagerOrAdmin)}>Заказы</span>
 			</li>
 			{!isManagerOrAdmin && (
 				<li className={styles.menuItem}>
@@ -56,9 +54,9 @@ const TopMenu = () => {
 						alt="Корзина"
 						width={24}
 						height={24}
-						className={styles.menuIcon}
+						className={styles.icon}
 					/>
-					<span>Корзина</span>
+					<span className={styles.menuText}>Корзина</span>
 				</li>
 			)}
 		</ul>

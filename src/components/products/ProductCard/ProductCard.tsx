@@ -1,11 +1,11 @@
 import Image from "next/image";
-import iconHeart from "/public/icons-header/icon-heart.svg";
 import { ProductCardProps } from "@/types/product";
 import { formatPrice } from "@/utils/formatPrice";
 import StarRating from "../StarRating/StarRating";
 import Link from "next/link";
 import styles from "./ProductCard.module.css";
 import { CONFIG } from "../../../../config/config";
+import FavoriteButton from "../FavoriteButton/FavoriteButton";
 
 const cardDiscountPercent = CONFIG.CARD_DISCOUNT_PERCENT;
 
@@ -46,20 +46,12 @@ const ProductCard = ({
 
 	return (
 		<div className={styles.productCard}>
-			<button className={styles.favoriteButton}>
-				<Image
-					src={iconHeart}
-					alt="В избранное"
-					width={24}
-					height={24}
-					sizes="24px"
-				/>
-			</button>
+			<FavoriteButton productId={productId.toString()} />
 			<Link href={productUrl}>
 				<div className={styles.productImageContainer}>
 					<Image
 						src={img}
-						alt="Акция"
+						alt="Товар"
 						fill
 						className={styles.productImage}
 						priority={false}

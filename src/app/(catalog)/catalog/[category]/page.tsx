@@ -3,10 +3,10 @@ import { Loader } from "@/components/loaders/Loader";
 import { Suspense } from "react";
 import { TRANSLATIONS } from "../../../../utils/translations";
 import fetchProductsByCategory from "./fetchCategory";
-import FilterButtons from "./_components/FilterButtons";
-import FilterControls from "./_components/FilterControls";
-import PriceFilter from "./_components/PriceFilter";
-import DropFilter from "./_components/DropFilter";
+import FilterButtons from "@/components/filter/FilterButtons";
+import FilterControls from "@/components/filter/FilterControls";
+import PriceFilter from "@/components/filter/PriceFilter";
+import DropFilter from "@/components/filter/DropFilter";
 import styles from "./page.module.css";
 
 export async function generateMetadata({
@@ -49,7 +49,12 @@ const CategoryPage = async ({
 			<h1 className={styles.categoryTitle}>
 				{TRANSLATIONS[category] || category}
 			</h1>
-			<DropFilter basePath={`/catalog/${category}`} category={category} />
+			<DropFilter
+				basePath={`/catalog/${category}`}
+				category={category}
+				apiEndpoint={""}
+				userId={""}
+			/>
 			<div className={styles.filterButtonsDesktop}>
 				<FilterButtons basePath={`/catalog/${category}`} />
 			</div>

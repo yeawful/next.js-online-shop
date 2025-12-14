@@ -1,13 +1,13 @@
-.header {
-	background: linear-gradient(90deg, #ff6633 0%, --color-primary 100%);
+.container {
+	background: linear-gradient(to right, #ff6633, #70c05b);
 	padding: 2rem 1.5rem;
-	color: var(--color-main-text);
+	color: white;
 }
 
 .title {
 	font-size: 1.875rem;
 	line-height: 2.25rem;
-	font-weight: bold;
+	font-weight: 700;
 }
 
 .subtitle {

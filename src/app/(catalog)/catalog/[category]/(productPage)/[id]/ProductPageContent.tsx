@@ -15,6 +15,7 @@ import SameBrandProducts from "./_components/SameBrandProducts";
 import RatingDistribution from "./_components/RatingDistribution";
 import ReviewsWrapper from "./_components/ReviewsWrapper";
 import Actions from "@/app/(products)/Actions";
+import Link from "next/link";
 import styles from "./ProductPageContent.module.css";
 
 interface ProductPageContentProps {
@@ -46,7 +47,7 @@ const ProductPageContent = ({
 					</p>
 				</div>
 				<ShareButton title={product.title} />
-				<button className={styles.favoriteButton}>
+				<Link href="/favorites" className={styles.favoriteButton}>
 					<Image
 						src="/icons-header/icon-heart.svg"
 						alt="Избранное"
@@ -55,7 +56,7 @@ const ProductPageContent = ({
 						className={styles.favoriteIcon}
 					/>
 					<p className={styles.favoriteText}>В избранное</p>
-				</button>
+				</Link>
 			</div>
 			<div className={styles.content}>
 				<div className={styles.mainContent}>
