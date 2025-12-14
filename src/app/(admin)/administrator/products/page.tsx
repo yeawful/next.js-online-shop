@@ -4,9 +4,12 @@ import styles from "./page.module.css";
 const AdminProducts = () => {
 	return (
 		<div className={styles.container}>
-			<h1 className={styles.title}>Панель управления</h1>
+			<h1 className={styles.title}>Панель управления продуктами</h1>
 
 			<div className={styles.linksGrid}>
+				<Link href="/administrator/users-list" className={styles.link}>
+					Управление пользователями
+				</Link>
 				<Link
 					href="/administrator/products/add-product"
 					className={styles.link}

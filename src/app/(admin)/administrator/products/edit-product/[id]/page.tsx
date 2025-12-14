@@ -5,8 +5,8 @@ import {
 	AddProductFormData,
 	ImageUploadResponse,
 } from "@/types/addProductTypes";
-import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { useParams, useRouter } from "next/navigation";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import Title from "../../_components/Title";
 import Article from "../../_components/Article";
@@ -21,22 +21,21 @@ import Categories from "../../_components/Categories";
 import Tags from "../../_components/Tags";
 import CheckboxGroup from "../../_components/CheckboxGroup";
 import ImageUploadSection from "../../_components/ImageUploadSection";
-import { useParams } from "next/navigation";
 import { ProductCardProps } from "@/types/product";
-import MiniLoader from "@/components/loaders/MiniLoader";
-import styles from "./page.module.css";
+import styles from "./EditProductPage.module.css";
 
 export default function EditProductPage() {
 	const params = useParams();
+	const router = useRouter();
 	const productId = params.id as string;
 
 	const [formData, setFormData] =
 		useState<AddProductFormData>(initialProductData);
 	const [uploading, setUploading] = useState(false);
 	const [loading, setLoading] = useState(false);
-	const [isLoadingProduct, setIsLoadingProduct] = useState(true);
 	const [image, setImage] = useState<File | null>(null);
 	const [existingImage, setExistingImage] = useState<string>("");
+	const [isLoadingProduct, setIsLoadingProduct] = useState(true);
 	const [error, setError] = useState<string | null>(null);
 
 	useEffect(() => {
@@ -115,6 +114,7 @@ export default function EditProductPage() {
 
 	const handleSubmit = async (e: FormEvent) => {
 		e.preventDefault();
+
 		if (
 			hasActionsTag &&
 			(!formData.discountPercent || formData.discountPercent === "0")
@@ -135,7 +135,7 @@ export default function EditProductPage() {
 				}
 			}
 
-			const response = await fetch("/api/update-product", {
+			const response = await fetch(`/api/update-product`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -155,7 +155,8 @@ export default function EditProductPage() {
 			const result = await response.json();
 
 			if (response.ok && result.success) {
-				alert("товар успешно обновлен");
+				alert("Товар успешно обновлен!");
+				router.push("/administrator");
 			} else {
 				alert(
 					"Ошибка обновления товара: " + (result.error || "Неизвестная ошибка")
@@ -191,15 +192,19 @@ export default function EditProductPage() {
 	};
 
 	if (isLoadingProduct) {
-		return <MiniLoader />;
+		return (
+			<div className={styles.container}>
+				<div className={styles.loading}>Загрузка данных товара...</div>
+			</div>
+		);
 	}
 
 	if (error) {
 		return (
-			<div className={styles.errorContainer}>
-				<div className={styles.errorMessage}>{error}</div>
-				<Link href="/administrator/products-list" className={styles.errorLink}>
-					Вернуться к списку продуктов
+			<div className={styles.container}>
+				<div className={styles.error}>{error}</div>
+				<Link href="/administrator" className={styles.backButton}>
+					Вернуться в панель управления
 				</Link>
 			</div>
 		);
@@ -207,14 +212,10 @@ export default function EditProductPage() {
 
 	return (
 		<div className={styles.container}>
-			<Link href="/administrator" className={styles.backLink}>
-				<ArrowLeft className={styles.backIcon} />
-				Назад в панель управления
-			</Link>
 			<h1 className={styles.title}>Редактировать товар</h1>
 
 			<form onSubmit={handleSubmit} className={styles.form}>
-				<div className={`${styles.gridCols2} ${styles.gridCols1}`}>
+				<div className={`${styles.grid} ${styles.gridCols2}`}>
 					<Title onChangeAction={handleInputChange} title={formData.title} />
 					<Article
 						onChangeAction={handleInputChange}
@@ -225,7 +226,7 @@ export default function EditProductPage() {
 					onChangeAction={handleInputChange}
 					description={formData.description}
 				/>
-				<div className={`${styles.gridCols3} ${styles.gridCols1}`}>
+				<div className={`${styles.grid} ${styles.gridCols3}`}>
 					<BasePrice
 						onChangeAction={handleInputChange}
 						basePrice={formData.basePrice}
@@ -240,7 +241,7 @@ export default function EditProductPage() {
 						quantity={formData.quantity}
 					/>
 				</div>
-				<div className={`${styles.gridCols3} ${styles.gridCols1}`}>
+				<div className={`${styles.grid} ${styles.gridCols3}`}>
 					<Weight onChangeAction={handleInputChange} weight={formData.weight} />
 					<Brand onChangeAction={handleInputChange} brand={formData.brand} />
 					<Manufacturer
@@ -276,6 +277,7 @@ export default function EditProductPage() {
 					loading={loading}
 					existingImage={existingImage}
 				/>
+
 				<button
 					type="submit"
 					disabled={loading || uploading}

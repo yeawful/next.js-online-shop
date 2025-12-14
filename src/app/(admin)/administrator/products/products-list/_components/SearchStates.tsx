@@ -10,10 +10,10 @@ interface SearchStatesProps {
 const SearchStates = ({ hasSearched, loading }: SearchStatesProps) => {
 	if (!hasSearched && !loading) {
 		return (
-			<div className={styles.container}>
-				<Search className={styles.searchIcon} />
-				<p className={styles.title}>Введите запрос для поиска товаров</p>
-				<p className={styles.subtitle}>
+			<div className={styles.initialState}>
+				<Search size={48} className={styles.initialIcon} />
+				<p className={styles.initialTitle}>Введите запрос для поиска товаров</p>
+				<p className={styles.initialSubtitle}>
 					Найдите товары по названию или артикулу
 				</p>
 			</div>
@@ -22,8 +22,8 @@ const SearchStates = ({ hasSearched, loading }: SearchStatesProps) => {
 
 	if (loading) {
 		return (
-			<div className={styles.container}>
-				<Loader className={styles.loadingIcon} />
+			<div className={styles.loadingState}>
+				<Loader size={32} className={styles.loadingIcon} />
 				<p className={styles.loadingText}>Поиск товаров...</p>
 			</div>
 		);

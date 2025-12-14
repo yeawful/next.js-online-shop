@@ -5,17 +5,17 @@ import styles from "./SearchHeader.module.css";
 const SearchHeader = () => {
 	return (
 		<>
-			<div className={styles.container}>
+			<div className={styles.headerContainer}>
 				<Link href="/administrator" className={styles.backLink}>
-					<ArrowLeft className={styles.backIcon} />
+					<ArrowLeft size={20} />
 					Назад в панель управления
 				</Link>
 
 				<Link
 					href="/administrator/products/add-product"
-					className={styles.addProductLink}
+					className={styles.addButton}
 				>
-					<Plus className={styles.addIcon} />
+					<Plus size={16} />
 					Добавить товар
 				</Link>
 			</div>

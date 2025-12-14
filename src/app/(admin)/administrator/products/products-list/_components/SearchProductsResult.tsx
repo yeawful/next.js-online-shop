@@ -1,11 +1,19 @@
 import { Edit, Trash2 } from "lucide-react";
 import Link from "next/link";
 import { TRANSLATIONS } from "../../../../../../utils/translations";
-import { ProductCardProps } from "@/types/product";
-import styles from "./SearchProductsResult.module.css";
+import styles from "./SearchProductResult.module.css";
+
+interface Product {
+	id: number;
+	title: string;
+	article: string;
+	basePrice: number;
+	quantity: number;
+	categories: string[];
+}
 
 interface SearchProductResultProps {
-	products: ProductCardProps[];
+	products: Product[];
 	deletingId: number | null;
 	onClearResults: () => void;
 	onOpenDeleteModal: (productId: number, productTitle: string) => void;
@@ -18,11 +26,9 @@ const SearchProductResult = ({
 	onOpenDeleteModal,
 }: SearchProductResultProps) => {
 	return (
-		<div className={styles.container}>
+		<div>
 			<div className={styles.header}>
-				<p className={styles.resultsCount}>
-					Найдено товаров: {products.length}
-				</p>
+				<p className={styles.resultCount}>Найдено товаров: {products.length}</p>
 				{products.length > 0 && (
 					<button onClick={onClearResults} className={styles.clearButton}>
 						Очистить результаты
@@ -32,9 +38,9 @@ const SearchProductResult = ({
 
 			<div className={styles.productsGrid}>
 				{products.length === 0 ? (
-					<div className={styles.noResults}>
-						<p className={styles.noResultsTitle}>Товары не найдены</p>
-						<p className={styles.noResultsSubtitle}>
+					<div className={styles.emptyState}>
+						<p className={styles.emptyTitle}>Товары не найдены</p>
+						<p className={styles.emptySubtitle}>
 							Попробуйте изменить поисковый запрос
 						</p>
 					</div>
@@ -43,17 +49,15 @@ const SearchProductResult = ({
 						<div key={product.id} className={styles.productCard}>
 							<div className={styles.productInfo}>
 								<h3 className={styles.productTitle}>{product.title}</h3>
-								<div className={styles.productDetails}>
-									<p className={styles.productDetail}>
-										Артикул: {product.article}
-									</p>
-									<p className={styles.productDetail}>
+								<div className={styles.detailsGrid}>
+									<p className={styles.detail}>Артикул: {product.article}</p>
+									<p className={styles.detail}>
 										Цена: {product.basePrice} руб.
 									</p>
-									<p className={styles.productDetail}>
+									<p className={styles.detail}>
 										Остаток: {product.quantity} шт.
 									</p>
-									<p className={styles.productDetail}>
+									<p className={styles.detail}>
 										Категории:{" "}
 										{product.categories
 											.map((cat) => TRANSLATIONS[cat] || cat)
@@ -65,9 +69,9 @@ const SearchProductResult = ({
 							<div className={styles.actions}>
 								<Link
 									href={`/administrator/products/edit-product/${product.id}`}
-									className={styles.editLink}
+									className={styles.editButton}
 								>
-									<Edit className={styles.icon} />
+									<Edit size={16} />
 									Редактировать
 								</Link>
 
@@ -76,7 +80,7 @@ const SearchProductResult = ({
 									disabled={deletingId === product.id}
 									className={styles.deleteButton}
 								>
-									<Trash2 className={styles.icon} />
+									<Trash2 size={16} />
 									Удалить
 								</button>
 							</div>

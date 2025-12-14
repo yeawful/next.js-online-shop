@@ -3,10 +3,10 @@ import { Loader } from "@/components/loaders/Loader";
 import { Suspense } from "react";
 import { TRANSLATIONS } from "../../../../utils/translations";
 import fetchProductsByCategory from "./fetchCategory";
-import FilterButtons from "@/components/filter/FilterButtons";
-import FilterControls from "@/components/filter/FilterControls";
-import PriceFilter from "@/components/filter/PriceFilter";
-import DropFilter from "@/components/filter/DropFilter";
+import FilterButtons from "@/app/(catalog)/catalog/[category]/_components/FilterButtons";
+import FilterControls from "@/app/(catalog)/catalog/[category]/_components/FilterControls";
+import PriceFilter from "./_components/PriceFilter";
+import DropFilter from "@/app/(catalog)/catalog/[category]/_components/DropFilter";
 import styles from "./page.module.css";
 
 export async function generateMetadata({

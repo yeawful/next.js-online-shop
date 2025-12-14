@@ -1,8 +1,10 @@
-import Image from "next/image";
 import { ProductCardProps } from "@/types/product";
 import { CONFIG } from "../../../../../../../config/config";
+import {
+	calculateFinalPrice,
+	calculatePriceByCard,
+} from "../../../../../../utils/calcPrices";
 import StarRating from "@/components/products/StarRating/StarRating";
-import { getReviewsWord } from "../../../../../../utils/reviewsWord";
 import ShareButton from "./_components/ShareButton";
 import ImagesBlock from "./_components/ImagesBlock";
 import ProductOffer from "./_components/ProductOffer";
@@ -15,7 +17,8 @@ import SameBrandProducts from "./_components/SameBrandProducts";
 import RatingDistribution from "./_components/RatingDistribution";
 import ReviewsWrapper from "./_components/ReviewsWrapper";
 import Actions from "@/app/(products)/Actions";
-import Link from "next/link";
+import FavoriteButton from "@/components/products/FavoriteButton/FavoriteButton";
+import { getFullEnding } from "../../../../../../utils/getWordEnding";
 import styles from "./ProductPageContent.module.css";
 
 interface ProductPageContentProps {
@@ -27,51 +30,49 @@ const ProductPageContent = ({
 	product,
 	productId,
 }: ProductPageContentProps) => {
-	const discountedPrice = product.discountPercent
-		? product.basePrice * (1 - product.discountPercent / 100)
-		: product.basePrice;
+	const priceWithDiscount = calculateFinalPrice(
+		product.basePrice,
+		product.discountPercent || 0
+	);
 
-	const cardPrice = discountedPrice * (1 - CONFIG.CARD_DISCOUNT_PERCENT / 100);
-	const bonusesAmount = cardPrice * 0.05;
+	const cardPrice = calculatePriceByCard(
+		priceWithDiscount,
+		CONFIG.CARD_DISCOUNT_PERCENT
+	);
+
+	const bonusesAmount = Math.round(
+		(priceWithDiscount * CONFIG.BONUSES_PERCENT) / 100
+	);
 
 	return (
 		<div className={styles.container}>
 			<h1 className={styles.title}>{product.description}</h1>
-			<div className={styles.header}>
+			<div className={styles.productHeader}>
 				<div className={styles.article}>арт. {product.article}</div>
-				<div className={styles.ratingSection}>
+				<div className={styles.ratingContainer}>
 					<StarRating rating={product.rating.rate || 5} />
 					<p className={styles.reviewsCount}>
 						{product.rating.count || 0}{" "}
-						{getReviewsWord(product.rating.count || 0)}
+						{`отзыв${getFullEnding(product.rating.count || 0)}`}
 					</p>
 				</div>
 				<ShareButton title={product.title} />
-				<Link href="/favorites" className={styles.favoriteButton}>
-					<Image
-						src="/icons-header/icon-heart.svg"
-						alt="Избранное"
-						width={24}
-						height={24}
-						className={styles.favoriteIcon}
-					/>
-					<p className={styles.favoriteText}>В избранное</p>
-				</Link>
+				<FavoriteButton productId={productId} />
 			</div>
-			<div className={styles.content}>
+			<div className={styles.contentWrapper}>
 				<div className={styles.mainContent}>
 					<ImagesBlock product={product} />
-					<div className={styles.sidebar}>
+					<div className={styles.infoColumn}>
 						<ProductOffer
-							discountedPrice={discountedPrice}
+							discountedPrice={priceWithDiscount}
 							cardPrice={cardPrice}
 						/>
-						<CartButton />
+						<CartButton productId={productId} />
 						<Bonuses bonus={bonusesAmount} />
 						<DiscountMessage
 							productId={productId.toString()}
 							productTitle={product.title}
-							currentPrice={discountedPrice.toString()}
+							currentPrice={priceWithDiscount.toString()}
 						/>
 						<AdditionalInfo
 							brand={product.brand}
@@ -82,7 +83,7 @@ const ProductPageContent = ({
 					<SimilarProducts currentProduct={product} />
 				</div>
 				<SameBrandProducts currentProduct={product} />
-				<div className={styles.reviewsSection}>
+				<div>
 					<h2 className={styles.reviewsTitle}>Отзывы</h2>
 					<div className={styles.reviewsContainer}>
 						<RatingDistribution

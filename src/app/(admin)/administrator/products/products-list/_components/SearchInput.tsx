@@ -16,31 +16,11 @@ const SearchInput = ({
 	onSearch,
 	onKeyPress,
 }: SearchInputProps) => {
-	const getHintClass = () => {
-		if (searchTerm.trim().length === 0) {
-			return styles.defaultHint;
-		} else if (searchTerm.trim().length < 3) {
-			return styles.warningHint;
-		} else {
-			return styles.successHint;
-		}
-	};
-
-	const getHintText = () => {
-		if (searchTerm.trim().length === 0) {
-			return "Введите минимум 3 символа для поиска";
-		} else if (searchTerm.trim().length < 3) {
-			return `Введите еще ${3 - searchTerm.trim().length} символ(а, ов) для поиска`;
-		} else {
-			return "✓ Можно выполнить поиск";
-		}
-	};
-
 	return (
 		<div className={styles.container}>
-			<div className={styles.searchWrapper}>
-				<div className={styles.searchContainer}>
-					<Search className={styles.searchIcon} />
+			<div className={styles.inputWrapper}>
+				<div className={styles.inputContainer}>
+					<Search className={styles.searchIcon} size={20} />
 					<input
 						type="text"
 						placeholder="Введите название товара или артикул..."
@@ -56,15 +36,27 @@ const SearchInput = ({
 					className={styles.searchButton}
 				>
 					{loading ? (
-						<Loader className={`${styles.buttonIcon} ${styles.spinner}`} />
+						<Loader size={18} className={styles.searchButtonLoading} />
 					) : (
-						<Search className={styles.buttonIcon} />
+						<Search size={18} />
 					)}
 					Найти
 				</button>
 			</div>
 
-			<p className={`${styles.hint} ${getHintClass()}`}>{getHintText()}</p>
+			<p className={styles.hint}>
+				{searchTerm.trim().length === 0 ? (
+					<span className={styles.hintEmpty}>
+						Введите минимум 3 символа для поиска
+					</span>
+				) : searchTerm.trim().length < 3 ? (
+					<span className={styles.hintWarning}>
+						Введите еще {3 - searchTerm.trim().length} символа для поиска
+					</span>
+				) : (
+					<span className={styles.hintSuccess}>✓ Можно выполнить поиск</span>
+				)}
+			</p>
 		</div>
 	);
 };

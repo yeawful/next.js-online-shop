@@ -7,6 +7,7 @@ const fetchFavorites = async (options: {
 	userId?: string | null;
 }) => {
 	const { pagination, filter, priceFrom, priceTo, inStock, userId } = options;
+	console.log(options);
 
 	try {
 		if (!userId) {
@@ -44,16 +45,20 @@ const fetchFavorites = async (options: {
 			url.searchParams.append("inStock", inStock.toString());
 		}
 
-		const res = await fetch(url.toString(), { cache: "no-store" });
+		const res = await fetch(url.toString(), {
+			next: { revalidate: 60 },
+		});
 
-		if (!res.ok)
-			throw new Error(`Серверная ошибка получения продуктов категории`);
+		if (!res.ok) {
+			throw new Error(`Ошибка получения избранного: ${res.status}`);
+		}
 
 		const data = await res.json();
+		console.log(data);
 
 		return {
-			items: data.products || data,
-			totalCount: data.totalCount || data.length,
+			items: data.products || [],
+			totalCount: data.totalCount || 0,
 		};
 	} catch (err) {
 		throw err;

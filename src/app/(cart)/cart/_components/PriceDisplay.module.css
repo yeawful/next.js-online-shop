@@ -1,0 +1,42 @@
+.priceContainer {
+	margin-top: 0.5rem;
+	font-size: 0.75rem;
+	display: flex;
+	gap: 0.5rem;
+	align-items: baseline;
+}
+
+.priceColumn {
+	display: flex;
+	flex-direction: column;
+}
+
+.discountPrice {
+	font-weight: 700;
+}
+
+.discountPriceOutOfStock {
+	font-weight: 700;
+	color: #6b7280;
+}
+
+.discountLabel {
+	color: #bfbfbf;
+}
+
+.regularPrice {
+	color: #606060;
+}
+
+.regularPriceOutOfStock {
+	color: #9ca3af;
+	text-decoration: line-through;
+}
+
+.regularLabel {
+	color: #bfbfbf;
+}
+
+.perUnit {
+	color: #bfbfbf;
+}

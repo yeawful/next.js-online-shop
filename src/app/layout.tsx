@@ -6,7 +6,7 @@ import Header from "@/components/header/Header/Header";
 import Footer from "@/components/footer/Footer";
 import Breadcrumbs from "@/components/breadcrumbs/Breadcrumbs";
 import { RegFormProvider } from "./contexts/RegFormContext";
-import AuthProvider from "@/store/AuthProvider";
+import StatesProvider from "@/store/StatesProvider";
 
 const rubik = Rubik({
 	variable: "--font-rubik",
@@ -29,14 +29,14 @@ export default function RootLayout({
 	return (
 		<html lang="ru">
 			<body className={`${rubik.variable} font-sans`}>
-				<AuthProvider>
+				<StatesProvider>
 					<RegFormProvider>
 						<Header />
 						<Breadcrumbs />
 						{children}
 						<Footer />
 					</RegFormProvider>
-				</AuthProvider>
+				</StatesProvider>
 			</body>
 		</html>
 	);

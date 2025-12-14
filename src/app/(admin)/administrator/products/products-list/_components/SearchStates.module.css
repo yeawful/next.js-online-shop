@@ -1,39 +1,36 @@
-.container {
+.initialState {
 	text-align: center;
-	padding: 3rem 0;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
 	color: var(--color-main-text);
 }
 
-.searchIcon {
-	width: 3rem;
-	height: 3rem;
+.initialIcon {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 1rem;
 	color: #bfbfbf;
 }
 
-.title {
+.initialTitle {
 	font-size: 1.125rem;
-	line-height: 1.75rem;
 }
 
-.subtitle {
+.initialSubtitle {
 	font-size: 0.875rem;
-	line-height: 1.25rem;
+}
+
+.loadingState {
+	text-align: center;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
 }
 
 .loadingIcon {
-	width: 2rem;
-	height: 2rem;
 	margin-left: auto;
 	margin-right: auto;
 	animation: spin 1s linear infinite;
 	color: var(--color-primary);
-}
-
-.loadingText {
-	margin-top: 0.5rem;
 }
 
 @keyframes spin {
@@ -43,4 +40,8 @@
 	to {
 		transform: rotate(360deg);
 	}
+}
+
+.loadingText {
+	margin-top: 0.5rem;
 }

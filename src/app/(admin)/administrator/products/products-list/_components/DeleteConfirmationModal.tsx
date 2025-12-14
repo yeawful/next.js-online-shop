@@ -17,26 +17,23 @@ export function DeleteConfirmationModal({
 	if (!isOpen) return null;
 
 	return (
-		<div className={styles.modalOverlay}>
-			<div className={styles.modalContent}>
-				<div className={styles.modalBody}>
-					<h3 className={styles.modalTitle}>Подтверждение удаления</h3>
-					<p className={styles.modalText}>
+		<div className={styles.overlay}>
+			<div className={styles.modal}>
+				<div className={styles.content}>
+					<h3 className={styles.title}>Подтверждение удаления</h3>
+					<p className={styles.message}>
 						Вы уверены, что хотите удалить товар{" "}
-						<strong className={styles.productTitle}>
-							&quot;{productTitle}&quot;
-						</strong>
-						?
+						<strong>&quot;{productTitle}&quot;</strong>?
 					</p>
 					<div className={styles.warning}>
-						<AlertTriangle className={styles.warningIcon} />
+						<AlertTriangle size={16} className={styles.warningIcon} />
 						<p>
 							Это действие нельзя отменить! Товар будет полностью удален из
 							системы.
 						</p>
 					</div>
 
-					<div className={styles.buttons}>
+					<div className={styles.actions}>
 						<button
 							onClick={onClose}
 							disabled={isDeleting}
@@ -51,14 +48,12 @@ export function DeleteConfirmationModal({
 						>
 							{isDeleting ? (
 								<>
-									<Loader
-										className={`${styles.buttonIcon} ${styles.spinner}`}
-									/>
+									<Loader size={16} className={styles.spinner} />
 									Удаление...
 								</>
 							) : (
 								<>
-									<Trash2 className={styles.buttonIcon} />
+									<Trash2 size={16} />
 									Удалить
 								</>
 							)}

@@ -1,0 +1,120 @@
+.summarySection {
+	display: flex;
+	flex-direction: column;
+	gap: 0.625rem;
+	padding-bottom: 1.5rem;
+	border-bottom-width: 2px;
+	border-bottom-color: #f3f2f1;
+}
+
+.summaryRow {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.itemCount {
+	color: #8f8f8f;
+}
+
+.itemCountPrice {
+	color: #000000;
+}
+
+.discountText {
+	color: #8f8f8f;
+}
+
+.discountAmount {
+	color: #ff6633;
+	font-weight: 700;
+}
+
+.finalSection {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 1.5rem;
+}
+
+.totalRow {
+	font-size: 1rem;
+	color: #8f8f8f;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.totalAmount {
+	font-weight: 700;
+	font-size: 1.5rem;
+	color: var(--color-main-text);
+}
+
+.minimumWarning {
+	background-color: #d80000;
+	border-radius: 0.25rem;
+	color: #ffffff;
+	font-size: 0.75rem;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 0.1875rem;
+	padding-bottom: 0.1875rem;
+	padding-left: 0.375rem;
+	padding-right: 0.375rem;
+	margin-bottom: 1rem;
+	width: 100%;
+}
+
+.orderButton {
+	padding: 0.75rem;
+	border-radius: 0.25rem;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	font-size: 1.5rem;
+	cursor: pointer;
+	border: none;
+}
+
+.buttonBase {
+	width: 16.25rem;
+	height: 4.25rem;
+	margin-top: 2.5rem;
+	margin-bottom: 2.5rem;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.5rem;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition-duration: 300ms;
+}
+
+.buttonActive {
+	background-color: #ff6633;
+	color: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition-duration: 300ms;
+}
+
+.buttonActive:hover {
+	box-shadow: var(--shadow-article);
+}
+
+.buttonActive:active {
+	box-shadow: var(--shadow-button-active);
+}
+
+.buttonInactive {
+	background-color: #fcd5ba;
+	color: #ff6633;
+	border-radius: 0.25rem;
+}

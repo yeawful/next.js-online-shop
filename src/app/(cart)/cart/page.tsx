@@ -1,0 +1,287 @@
+"use client";
+
+import { useEffect, useState, useCallback } from "react";
+import {
+	calculateFinalPrice,
+	calculatePriceByCard,
+} from "../../../utils/calcPrices";
+import {
+	getOrderCartAction,
+	getUserBonusesAction,
+	removeMultipleOrderItemsAction,
+	updateOrderItemQuantityAction,
+} from "@/actions/orderActions";
+import { useCartStore } from "@/store/cartStore";
+import { Loader } from "@/components/loaders/Loader";
+import { ProductCardProps } from "@/types/product";
+import { CONFIG } from "../../../../config/config";
+import CartHeader from "./_components/CartHeader";
+import CartControls from "./_components/CartControls";
+import CartItem from "./_components/CartItem";
+import CartSummary from "./_components/CartSummary";
+import BonusesSection from "./_components/BonusesSection";
+import styles from "./page.module.css";
+
+const CartPage = () => {
+	const [selectedItems, setSelectedItems] = useState<string[]>([]);
+	const [productsData, setProductsData] = useState<{
+		[key: string]: ProductCardProps;
+	}>({});
+	const [bonusesCount, setBonusesCount] = useState<number>(0);
+	const [hasLoyaltyCard, setHasLoyaltyCard] = useState<boolean>(false);
+	const [removedItems, setRemovedItems] = useState<string[]>([]);
+	const [isCartLoading, setIsCartLoading] = useState(true);
+	const [useBonuses, setUseBonuses] = useState<boolean>(false);
+
+	const { cartItems, updateCart } = useCartStore();
+
+	const visibleCartItems = cartItems.filter(
+		(item) => !removedItems.includes(item.productId)
+	);
+
+	const availableCartItems = visibleCartItems.filter((item) => {
+		const product = productsData[item.productId];
+		return product && product.quantity > 0;
+	});
+
+	const fetchCartAndProducts = async () => {
+		setIsCartLoading(true);
+		try {
+			const userData = await getUserBonusesAction();
+			setBonusesCount(userData.bonusesCount);
+			setHasLoyaltyCard(userData.hasLoyaltyCard);
+
+			const cartItems = await getOrderCartAction();
+			updateCart(cartItems);
+
+			const productPromises = cartItems.map(async (item) => {
+				try {
+					const response = await fetch(`/api/products/${item.productId}`);
+					const product = await response.json();
+					return { productId: item.productId, product };
+				} catch (error) {
+					console.error(`Ошибка получения продукта ${item.productId}:`, error);
+					return null;
+				}
+			});
+
+			const productsResults = await Promise.all(productPromises);
+			const productsMap: { [key: string]: ProductCardProps } = {};
+
+			productsResults.forEach((result) => {
+				if (result && result.product) {
+					productsMap[result.productId] = result.product;
+				}
+			});
+
+			setProductsData(productsMap);
+		} catch (error) {
+			console.error("Ошибка получения данных корзины:", error);
+		} finally {
+			setIsCartLoading(false);
+		}
+	};
+
+	useEffect(() => {
+		fetchCartAndProducts();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+
+	const handleQuantityUpdate = useCallback(
+		async (productId: string, newQuantity: number) => {
+			const updatedCartItems = cartItems.map((item) =>
+				item.productId === productId ? { ...item, quantity: newQuantity } : item
+			);
+			updateCart(updatedCartItems);
+
+			try {
+				await updateOrderItemQuantityAction(productId, newQuantity);
+			} catch (error) {
+				console.error("Ошибка обновления количества:", error);
+				updateCart(cartItems);
+			}
+		},
+		[cartItems, updateCart]
+	);
+
+	const handleRemoveSelected = async () => {
+		if (selectedItems.length === 0) return;
+
+		setRemovedItems((prev) => [...prev, ...selectedItems]);
+
+		const updatedCartItems = cartItems.filter(
+			(item) => !selectedItems.includes(item.productId)
+		);
+		updateCart(updatedCartItems);
+
+		try {
+			removeMultipleOrderItemsAction(selectedItems);
+			setSelectedItems([]);
+		} catch (error) {
+			console.error("Ошибка удаления товаров:", error);
+			setRemovedItems((prev) =>
+				prev.filter((id) => !selectedItems.includes(id))
+			);
+			updateCart(cartItems);
+		}
+	};
+
+	const selectAllItems = () => {
+		setSelectedItems(visibleCartItems.map((item) => item.productId));
+	};
+
+	const deselectAllItems = () => {
+		setSelectedItems([]);
+	};
+
+	const handleItemSelection = useCallback(
+		(productId: string, isSelected: boolean) => {
+			if (isSelected) {
+				setSelectedItems((prev) => [...prev, productId]);
+			} else {
+				setSelectedItems((prev) => prev.filter((id) => id !== productId));
+			}
+		},
+		[]
+	);
+
+	const totalPrice = availableCartItems.reduce((total, item) => {
+		const product = productsData[item.productId];
+		if (!product) return total;
+
+		const priceWithDiscount = calculateFinalPrice(
+			product.basePrice,
+			product.discountPercent || 0
+		);
+
+		const finalPrice = hasLoyaltyCard
+			? calculatePriceByCard(priceWithDiscount, CONFIG.CARD_DISCOUNT_PERCENT)
+			: priceWithDiscount;
+
+		return total + finalPrice * item.quantity;
+	}, 0);
+
+	const totalMaxPrice = availableCartItems.reduce((total, item) => {
+		const product = productsData[item.productId];
+		if (!product) return total;
+
+		const priceWithDiscount = calculateFinalPrice(
+			product.basePrice,
+			product.discountPercent || 0
+		);
+
+		return total + priceWithDiscount * item.quantity;
+	}, 0);
+
+	const totalDiscount = availableCartItems.reduce((total, item) => {
+		const product = productsData[item.productId];
+		if (!product) return total;
+
+		const priceWithDiscount = calculateFinalPrice(
+			product.basePrice,
+			product.discountPercent || 0
+		);
+
+		const finalPrice = hasLoyaltyCard
+			? calculatePriceByCard(priceWithDiscount, CONFIG.CARD_DISCOUNT_PERCENT)
+			: priceWithDiscount;
+
+		const itemDiscount = (priceWithDiscount - finalPrice) * item.quantity;
+
+		return total + itemDiscount;
+	}, 0);
+
+	const maxBonusUse = Math.min(
+		bonusesCount,
+		Math.floor((totalPrice * CONFIG.MAX_BONUSES_PERCENT) / 100)
+	);
+
+	const finalPrice = useBonuses
+		? Math.max(0, totalPrice - maxBonusUse)
+		: totalPrice;
+
+	const totalBonuses = availableCartItems.reduce((total, item) => {
+		const product = productsData[item.productId];
+		if (!product) return total;
+
+		const priceWithDiscount = calculateFinalPrice(
+			product.basePrice,
+			product.discountPercent || 0
+		);
+
+		const bonuses = priceWithDiscount * (CONFIG.BONUSES_PERCENT / 100);
+
+		return total + Math.round(bonuses) * item.quantity;
+	}, 0);
+
+	const isMinimumReached = finalPrice >= 1000;
+
+	const isAllSelected =
+		selectedItems.length > 0 &&
+		selectedItems.length === visibleCartItems.length;
+
+	if (isCartLoading) {
+		return <Loader />;
+	}
+
+	if (visibleCartItems.length === 0 && removedItems.length === 0) {
+		return (
+			<div className={styles.emptyContainer}>
+				<h1 className={styles.emptyTitle}>Корзина</h1>
+				<div className={styles.emptyMessage}>
+					<p className={styles.emptyText}>Корзина пуста</p>
+				</div>
+			</div>
+		);
+	}
+
+	return (
+		<div className={styles.container}>
+			<CartHeader itemCount={visibleCartItems.length} />
+
+			<CartControls
+				isAllSelected={isAllSelected}
+				selectedItemsCount={selectedItems.length}
+				onSelectAll={selectAllItems}
+				onDeselectAll={deselectAllItems}
+				onRemoveSelected={handleRemoveSelected}
+			/>
+
+			<div className={styles.contentWrapper}>
+				<div className={styles.itemsColumn}>
+					{visibleCartItems.map((item) => (
+						<CartItem
+							key={item.productId}
+							item={item}
+							productData={productsData[item.productId]}
+							isSelected={selectedItems.includes(item.productId)}
+							onSelectionChange={handleItemSelection}
+							onQuantityUpdate={handleQuantityUpdate}
+							hasLoyaltyCard={hasLoyaltyCard}
+						/>
+					))}
+				</div>
+
+				<div className={styles.sidebarColumn}>
+					<BonusesSection
+						bonusesCount={bonusesCount}
+						useBonuses={useBonuses}
+						onUseBonusesChange={setUseBonuses}
+						totalPrice={totalPrice}
+					/>
+
+					<CartSummary
+						visibleCartItems={visibleCartItems}
+						totalMaxPrice={totalMaxPrice}
+						totalDiscount={totalDiscount}
+						finalPrice={finalPrice}
+						totalBonuses={totalBonuses}
+						isMinimumReached={isMinimumReached}
+					/>
+				</div>
+			</div>
+		</div>
+	);
+};
+
+export default CartPage;

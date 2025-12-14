@@ -30,6 +30,8 @@
 @media (min-width: 1280px) {
 	.title {
 		margin-left: 0;
+		font-size: 4rem;
+		line-height: 4rem;
 		margin-bottom: 3.75rem;
 	}
 }

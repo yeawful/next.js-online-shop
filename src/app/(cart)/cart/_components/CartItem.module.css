@@ -1,0 +1,171 @@
+.container {
+	background-color: #ffffff;
+	border-radius: 0.25rem;
+	display: flex;
+	box-shadow:
+		0 4px 6px -1px rgba(0, 0, 0, 0.1),
+		0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	transition-duration: 300ms;
+	position: relative;
+}
+
+.container:hover {
+	box-shadow: var(--shadow-article);
+}
+
+.containerOutOfStock {
+	opacity: 0.6;
+}
+
+.contentWrapper {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 100%;
+}
+
+@media (min-width: 768px) {
+	.contentWrapper {
+		flex-wrap: nowrap;
+	}
+}
+
+.productSection {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+	.productSection {
+		flex-wrap: nowrap;
+	}
+}
+
+.details {
+	flex: 1;
+	display: flex;
+	min-width: 14rem;
+	flex-direction: column;
+	gap: 0.625rem;
+	padding: 0.625rem;
+}
+
+@media (min-width: 768px) {
+	.details {
+		flex: initial;
+	}
+}
+
+.productLink {
+	font-size: 1rem;
+	color: #000000;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.productLink:hover {
+	color: #ff6633;
+}
+
+.infoRow {
+	display: flex;
+	flex-direction: row;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+.priceRowMobile {
+	display: flex;
+	flex-direction: row;
+	gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+	.priceRowMobile {
+		display: none;
+	}
+}
+
+.discountedPrice {
+	text-decoration: line-through;
+	font-weight: normal;
+	font-size: 0.75rem;
+	color: #8f8f8f;
+}
+
+@media (min-width: 768px) {
+	.discountedPrice {
+		font-size: 1rem;
+	}
+}
+
+.discountAmount {
+	font-weight: normal;
+	font-size: 0.75rem;
+	color: #ff6633;
+}
+
+.controlsSection {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.5rem;
+	width: 100%;
+	padding: 0.5rem;
+}
+
+@media (min-width: 768px) {
+	.controlsSection {
+		width: 7.5rem;
+		flex-wrap: nowrap;
+		flex-direction: column;
+		justify-content: normal;
+		align-items: flex-end;
+	}
+}
+
+@media (min-width: 1280px) {
+	.controlsSection {
+		width: 14.75rem;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: flex-end;
+	}
+}
+
+.totalPrice {
+	font-size: 0.875rem;
+	font-weight: 700;
+	text-align: right;
+}
+
+@media (min-width: 768px) {
+	.totalPrice {
+		font-size: 1.125rem;
+	}
+}
+
+.totalPriceOutOfStock {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.outOfStockText {
+	font-weight: normal;
+	font-size: 0.875rem;
+	display: flex;
+}
+
+@media (min-width: 768px) {
+	.outOfStockText {
+		font-size: 1rem;
+	}
+}
+
+.priceColumn {
+	width: 6.5rem;
+}

@@ -2,16 +2,16 @@ import GenericListPage from "@/app/(products)/GenericListPage";
 import { Loader } from "@/components/loaders/Loader";
 import { Suspense } from "react";
 import { TRANSLATIONS } from "../../../utils/translations";
-import FilterButtons from "@/components/filter/FilterButtons";
-import FilterControls from "@/components/filter/FilterControls";
-import PriceFilter from "@/components/filter/PriceFilter";
-import DropFilter from "@/components/filter/DropFilter";
+import fetchFavorites from "./fetchFavorites";
+import FilterButtons from "@/app/(catalog)/catalog/[category]/_components/FilterButtons";
+import FilterControls from "@/app/(catalog)/catalog/[category]/_components/FilterControls";
+import PriceFilter from "@/app/(catalog)/catalog/[category]/_components/PriceFilter";
+import DropFilter from "@/app/(catalog)/catalog/[category]/_components/DropFilter";
 import { headers } from "next/headers";
 import {
 	getCustomSessionToken,
 	getValidCustomSession,
 } from "../../../utils/auth-helpers";
-import fetchFavorites from "./fetchFavorites";
 import styles from "./page.module.css";
 
 async function getServerUserId() {
@@ -56,8 +56,8 @@ const FavoritesPage = async ({
 				<DropFilter
 					basePath={`/${category}`}
 					category={category}
-					userId={userId}
-					apiEndpoint="users/favorites/products"
+					apiEndpoint={""}
+					userId={""}
 				/>
 			</div>
 			<div className={styles.desktopFilter}>
@@ -69,8 +69,8 @@ const FavoritesPage = async ({
 					<PriceFilter
 						basePath={`/${category}`}
 						category={category}
-						userId={userId}
 						apiEndpoint="users/favorites/products"
+						userId={userId}
 					/>
 				</div>
 				<div className={styles.content}>

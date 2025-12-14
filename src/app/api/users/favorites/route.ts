@@ -4,7 +4,10 @@ import { ObjectId } from "mongodb";
 
 interface UserDocument {
 	_id: ObjectId;
+	email: string;
+	password: string;
 	favorites: string[];
+	createdAt: Date;
 	updatedAt: Date;
 }
 
@@ -45,7 +48,7 @@ export async function POST(request: NextRequest) {
 		}
 
 		const db = await getDB();
-		const userObjectId = ObjectId.createFromHexString(userId);
+		const userObjectId = new ObjectId(userId);
 
 		if (action === "add") {
 			const result = await db.collection<UserDocument>("user").updateOne(

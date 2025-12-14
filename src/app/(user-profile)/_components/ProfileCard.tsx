@@ -82,6 +82,7 @@ const ProfileCard = () => {
 		if (!isEditing) return;
 
 		const value = e.target.value;
+		// Очищаем и ограничиваем 16 цифрами
 		const cleanValue = cleanCardNumber(value).slice(0, 16);
 		setCardNumber(cleanValue);
 	};
@@ -89,17 +90,17 @@ const ProfileCard = () => {
 	const displayValue = formatCardNumber(cardNumber, isEditing);
 
 	return (
-		<div className={styles.profileCardContainer}>
-			<div className={styles.headerContainer}>
-				<h3 className={styles.sectionTitle}>Карта</h3>
+		<div className={styles.container}>
+			<div className={styles.header}>
+				<h3 className={styles.title}>Карта</h3>
 
 				{!isEditing ? (
 					<button onClick={handleEditClick} className={styles.editButton}>
 						{user?.card ? "Изменить карту" : "Добавить карту"}
-						<ArrowRight className={styles.arrowIcon} />
+						<ArrowRight className={styles.editIcon} />
 					</button>
 				) : (
-					<div className={styles.buttonGroup}>
+					<div className={styles.buttons}>
 						<button
 							onClick={handleCancel}
 							className={styles.cancelButton}
@@ -126,25 +127,25 @@ const ProfileCard = () => {
 						value={displayValue}
 						onChange={handleCardNumberChange}
 						placeholder="0000 0000 0000 0000"
-						className={styles.input}
+						className={`${styles.input} ${styles.inputFullWidth}`}
 						disabled={isLoading}
 					/>
 				) : (
 					<input
 						type="text"
 						value={displayValue || "Не указана"}
-						className={styles.input}
+						className={`${styles.input} ${styles.inputFullWidth} ${styles.disabled}`}
 						disabled
 						readOnly
 					/>
 				)}
-				<CreditCard className={styles.creditCardIcon} />
+				<CreditCard className={styles.cardIcon} />
 			</div>
 
-			{error && <p className={styles.errorMessage}>{error}</p>}
+			{error && <p className={styles.error}>{error}</p>}
 
 			{!user?.card && !isEditing && (
-				<p className={styles.hintText}>
+				<p className={styles.info}>
 					Добавьте номер карты лояльности для получения бонусов
 				</p>
 			)}

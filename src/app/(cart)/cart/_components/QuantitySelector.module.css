@@ -1,0 +1,67 @@
+.container {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	width: 6.25rem;
+	height: 2.5rem;
+	background-color: var(--color-primary);
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	color: #ffffff;
+	position: relative;
+}
+
+.button {
+	width: 1.5rem;
+	height: 1.5rem;
+	border-radius: 0.25rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition-duration: 300ms;
+	cursor: pointer;
+	border: none;
+	background: none;
+}
+
+.button:disabled {
+	opacity: 0.5;
+}
+
+.minusIcon {
+	width: 0.9375rem;
+	height: 1px;
+	background-color: #ffffff;
+}
+
+.quantity {
+	width: 3rem;
+	text-align: center;
+	font-size: 1rem;
+}
+
+.plusIcon {
+	position: relative;
+	width: 0.9375rem;
+	height: 0.9375rem;
+}
+
+.plusIconHorizontal {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background-color: #ffffff;
+	transform: translateY(-50%);
+}
+
+.plusIconVertical {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	width: 1px;
+	height: 100%;
+	background-color: #ffffff;
+	transform: translateX(-50%);
+}

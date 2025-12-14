@@ -93,33 +93,6 @@
 	line-height: 1.5;
 }
 
-.addToCartButton {
-	position: absolute;
-	border: 1px solid var(--color-primary);
-	bottom: 0.5rem;
-	left: 0.5rem;
-	right: 0.5rem;
-	height: 2.5rem;
-	border-radius: 0.25rem;
-	justify-content: center;
-	align-items: center;
-	color: var(--color-primary);
-	transition: all 300ms;
-	cursor: pointer;
-	user-select: none;
-	background-color: transparent;
-}
-
-.addToCartButton:hover {
-	color: var(--color-white);
-	background-color: #ff6633;
-	border-color: transparent;
-}
-
-.addToCartButton:active {
-	box-shadow: var(--shadow-button-active);
-}
-
 @media (min-width: 768px) {
 	.productCard {
 		width: 224px;

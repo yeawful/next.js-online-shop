@@ -1,15 +1,15 @@
-.container {
+.headerContainer {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	gap: 1rem;
+	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 1.5rem;
 	color: var(--color-main-text);
 }
 
 @media (min-width: 768px) {
-	.container {
+	.headerContainer {
 		flex-direction: row;
 	}
 }
@@ -19,52 +19,40 @@
 	align-items: center;
 	gap: 0.5rem;
 	text-decoration: none;
+	color: inherit;
 }
 
 .backLink:hover {
 	text-decoration: underline;
 }
 
-.backIcon {
-	width: 1.25rem;
-	height: 1.25rem;
-}
-
-.addProductLink {
+.addButton {
 	background-color: var(--color-primary);
-	color: white;
 	border-radius: 0.25rem;
+	color: #ffffff;
 	cursor: pointer;
 	transition-duration: 300ms;
-	padding: 0.5rem 1rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 	display: flex;
 	flex-direction: row;
 	gap: 0.5rem;
 	align-items: center;
 	justify-content: center;
-	text-decoration: none;
 }
 
-.addProductLink:hover {
-	box-shadow:
-		0 4px 6px -1px rgb(0 0 0 / 0.1),
-		0 2px 4px -2px rgb(0 0 0 / 0.1);
+.addButton:hover {
+	box-shadow: var(--shadow-button-default);
 }
 
-.addProductLink:active {
-	box-shadow:
-		0 10px 15px -3px rgb(0 0 0 / 0.1),
-		0 4px 6px -4px rgb(0 0 0 / 0.1);
-}
-
-.addIcon {
-	width: 1rem;
-	height: 1rem;
+.addButton:active {
+	box-shadow: var(--shadow-button-active);
 }
 
 .title {
 	font-size: 1.5rem;
-	line-height: 2rem;
 	font-weight: 700;
 	margin-bottom: 1.5rem;
 }

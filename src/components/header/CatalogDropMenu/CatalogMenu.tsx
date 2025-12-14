@@ -51,9 +51,11 @@ const CatalogMenu = ({
 								))}
 							</div>
 						) : (
-							<div className={styles.noCategoriesText}>
-								Нет доступных категорий
-							</div>
+							!isLoading && (
+								<div className={styles.noCategoriesText}>
+									Нет доступных категорий
+								</div>
+							)
 						)}
 					</div>
 				</div>

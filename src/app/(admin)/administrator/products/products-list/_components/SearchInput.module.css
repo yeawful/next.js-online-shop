@@ -2,12 +2,12 @@
 	margin-bottom: 1.5rem;
 }
 
-.searchWrapper {
+.inputWrapper {
 	display: flex;
 	gap: 0.75rem;
 }
 
-.searchContainer {
+.inputContainer {
 	position: relative;
 	flex: 1;
 }
@@ -17,9 +17,7 @@
 	left: 0.75rem;
 	top: 50%;
 	transform: translateY(-50%);
-	width: 1.25rem;
-	height: 1.25rem;
-	color: #6b7280;
+	color: #000000;
 }
 
 .input {
@@ -30,42 +28,39 @@
 	padding-bottom: 0.5rem;
 	border-radius: 0.25rem;
 	outline: none;
-	border: 1px solid var(--color-primary);
-	background-color: white;
+	border-width: 1px;
+	border-color: var(--color-primary);
+	background-color: #ffffff;
 	transition-duration: 300ms;
 }
 
 .input:focus {
-	box-shadow:
-		0 4px 6px -1px rgb(0 0 0 / 0.1),
-		0 2px 4px -2px rgb(0 0 0 / 0.1);
+	box-shadow: var(--shadow-button-default);
 }
 
 .searchButton {
 	background-color: var(--color-primary);
-	color: white;
 	border-radius: 0.25rem;
+	color: #ffffff;
 	transition-duration: 300ms;
-	padding: 0.5rem 1rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 	display: flex;
 	flex-direction: row;
 	gap: 0.5rem;
 	align-items: center;
 	justify-content: center;
-	border: none;
 	cursor: pointer;
 }
 
 .searchButton:hover {
-	box-shadow:
-		0 4px 6px -1px rgb(0 0 0 / 0.1),
-		0 2px 4px -2px rgb(0 0 0 / 0.1);
+	box-shadow: var(--shadow-button-default);
 }
 
 .searchButton:active {
-	box-shadow:
-		0 10px 15px -3px rgb(0 0 0 / 0.1),
-		0 4px 6px -4px rgb(0 0 0 / 0.1);
+	box-shadow: var(--shadow-button-active);
 }
 
 .searchButton:disabled {
@@ -73,12 +68,7 @@
 	cursor: not-allowed;
 }
 
-.buttonIcon {
-	width: 1.125rem;
-	height: 1.125rem;
-}
-
-.spinner {
+.searchButtonLoading {
 	animation: spin 1s linear infinite;
 }
 
@@ -93,18 +83,17 @@
 
 .hint {
 	font-size: 0.875rem;
-	line-height: 1.25rem;
 	margin-top: 0.5rem;
 }
 
-.defaultHint {
+.hintEmpty {
 	color: var(--color-main-text);
 }
 
-.warningHint {
+.hintWarning {
 	color: #ff6633;
 }
 
-.successHint {
+.hintSuccess {
 	color: #008c49;
 }

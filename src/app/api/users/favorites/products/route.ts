@@ -2,7 +2,8 @@ import { ProductCardProps } from "@/types/product";
 import { CONFIG } from "../../../../../../config/config";
 import { getDB } from "../../../../../utils/api-routes";
 import { NextResponse } from "next/server";
-import { Filter, ObjectId } from "mongodb";
+import { Filter } from "mongodb";
+import { ObjectId } from "mongodb";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 60;
@@ -23,6 +24,11 @@ export async function GET(request: Request) {
 		const userId = searchParams.get("userId");
 
 		if (!userId) {
+			if (getPriceRangeOnly) {
+				return NextResponse.json({
+					priceRange: CONFIG.FALLBACK_PRICE_RANGE,
+				});
+			}
 			return NextResponse.json({ products: [], totalCount: 0 });
 		}
 
@@ -31,11 +37,17 @@ export async function GET(request: Request) {
 				.collection("user")
 				.findOne({ _id: new ObjectId(userId) });
 
-			const favoriteProductsIds = user?.favorites || [];
+			if (!user) {
+				return NextResponse.json({
+					priceRange: CONFIG.FALLBACK_PRICE_RANGE,
+				});
+			}
 
-			const numericFavoriteIds = favoriteProductsIds.map((id: string) =>
-				parseInt(id)
-			);
+			const favoriteProductIds = user.favorites || [];
+
+			const numericFavoriteIds = favoriteProductIds
+				.map((id) => parseInt(id))
+				.filter((id) => !isNaN(id));
 
 			if (numericFavoriteIds.length === 0) {
 				return NextResponse.json({
@@ -73,14 +85,22 @@ export async function GET(request: Request) {
 			.collection("user")
 			.findOne({ _id: new ObjectId(userId) });
 
-		const favoriteProductsIds = user?.favorites || [];
+		if (!user) {
+			return NextResponse.json({ products: [], totalCount: 0 });
+		}
 
-		const numericFavoriteIds = favoriteProductsIds.map((id: string) =>
-			parseInt(id)
-		);
+		const favoriteProductIds = user.favorites || [];
+
+		console.log("⭐ Favorite IDs (strings):", favoriteProductIds);
+
+		const numericFavoriteIds = favoriteProductIds
+			.map((id) => parseInt(id))
+			.filter((id) => !isNaN(id));
 
 		if (numericFavoriteIds.length === 0) {
 			return NextResponse.json({
+				products: [],
+				totalCount: 0,
 				priceRange: CONFIG.FALLBACK_PRICE_RANGE,
 			});
 		}
@@ -95,7 +115,6 @@ export async function GET(request: Request) {
 
 		if (filters.length > 0) {
 			query.$and = query.$and || [];
-
 			if (filters.includes("our-production")) {
 				query.$and.push({ manufacturer: "Россия" });
 			}
@@ -109,8 +128,12 @@ export async function GET(request: Request) {
 
 		if (priceFrom || priceTo) {
 			query.basePrice = {};
-			if (priceFrom) query.basePrice.$gte = parseInt(priceFrom);
-			if (priceTo) query.basePrice.$lte = parseInt(priceTo);
+			if (priceFrom) {
+				query.basePrice.$gte = parseInt(priceFrom);
+			}
+			if (priceTo) {
+				query.basePrice.$lte = parseInt(priceTo);
+			}
 		}
 
 		const [totalCount, products] = await Promise.all([
@@ -138,9 +161,8 @@ export async function GET(request: Request) {
 			priceRange: actualPriceRange,
 		});
 	} catch (error) {
-		console.error("Ошибка сервера:", error);
 		return NextResponse.json(
-			{ message: "Ошибка при загрузке продуктов" },
+			{ message: "Ошибка при загрузке избранных товаров", error },
 			{ status: 500 }
 		);
 	}

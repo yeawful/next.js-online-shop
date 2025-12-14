@@ -1,5 +1,5 @@
 .container {
-	display: block;
+	margin-bottom: 1rem;
 }
 
 .header {
@@ -9,56 +9,50 @@
 	margin-bottom: 1rem;
 }
 
-.resultsCount {
+.resultCount {
 	color: var(--color-main-text);
 }
 
 .clearButton {
 	background-color: #ff6633;
-	color: white;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	border-radius: 0.25rem;
+	color: #ffffff;
 	cursor: pointer;
 	transition-duration: 300ms;
-	padding: 0.5rem 1rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 	font-size: 0.875rem;
-	line-height: 1.25rem;
-	border: none;
 }
 
 .clearButton:hover {
-	box-shadow:
-		0 10px 15px -3px rgb(0 0 0 / 0.1),
-		0 4px 6px -4px rgb(0 0 0 / 0.1);
+	box-shadow: var(--shadow-article);
 }
 
 .clearButton:active {
-	box-shadow:
-		0 20px 25px -5px rgb(0 0 0 / 0.1),
-		0 8px 10px -6px rgb(0 0 0 / 0.1);
+	box-shadow: var(--shadow-button-active);
+}
+
+.emptyState {
+	text-align: center;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	color: #6b7280;
+}
+
+.emptyTitle {
+	font-size: 1.125rem;
+	margin-bottom: 0.25rem;
+}
+
+.emptySubtitle {
+	font-size: 0.875rem;
 }
 
 .productsGrid {
 	display: grid;
 	gap: 1rem;
-}
-
-.noResults {
-	text-align: center;
-	padding: 2rem 0;
-	color: #6b7280;
-}
-
-.noResultsTitle {
-	font-size: 1.125rem;
-	line-height: 1.75rem;
-}
-
-.noResultsSubtitle {
-	font-size: 0.875rem;
-	line-height: 1.25rem;
 }
 
 .productCard {
@@ -75,29 +69,25 @@
 }
 
 .productTitle {
-	font-size: 1.125rem;
-	line-height: 1.75rem;
 	font-weight: 600;
+	font-size: 1.125rem;
 	margin-bottom: 0.25rem;
 }
 
-.productDetails {
+.detailsGrid {
 	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
 	gap: 0.5rem;
-	font-size: 0.875rem;
-	line-height: 1.25rem;
-	color: #4b5563;
 }
 
 @media (min-width: 768px) {
-	.productDetails {
-		grid-template-columns: repeat(4, minmax(0, 1fr));
+	.detailsGrid {
+		grid-template-columns: repeat(4, 1fr);
 	}
 }
 
-.productDetail {
-	display: block;
+.detail {
+	font-size: 0.875rem;
+	color: #6b7280;
 }
 
 .actions {
@@ -106,13 +96,16 @@
 	margin-left: 1rem;
 }
 
-.editLink {
+.editButton {
 	background-color: var(--color-primary);
-	color: white;
 	border-radius: 0.25rem;
+	color: #ffffff;
 	cursor: pointer;
 	transition-duration: 300ms;
-	padding: 0.5rem 1rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 	display: flex;
 	flex-direction: row;
 	gap: 0.5rem;
@@ -121,36 +114,29 @@
 	text-decoration: none;
 }
 
-.editLink:hover {
-	box-shadow:
-		0 4px 6px -1px rgb(0 0 0 / 0.1),
-		0 2px 4px -2px rgb(0 0 0 / 0.1);
+.editButton:hover {
+	box-shadow: var(--shadow-button-default);
 }
 
-.editLink:active {
-	box-shadow:
-		0 10px 15px -3px rgb(0 0 0 / 0.1),
-		0 4px 6px -4px rgb(0 0 0 / 0.1);
+.editButton:active {
+	box-shadow: var(--shadow-button-active);
 }
 
 .deleteButton {
 	background-color: #d80000;
-	color: white;
-	padding: 0.5rem 1rem;
+	color: #ffffff;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 	border-radius: 0.25rem;
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
-	border: none;
 	cursor: pointer;
 }
 
 .deleteButton:disabled {
 	opacity: 0.5;
-	cursor: not-allowed;
-}
-
-.icon {
-	width: 1rem;
-	height: 1rem;
+	cursor: default;
 }

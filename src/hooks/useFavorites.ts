@@ -8,6 +8,7 @@ export const useFavorites = () => {
 	const [favorites, setFavorites] = useState<string[]>([]);
 	const [isLoading, setIsLoading] = useState(false);
 
+	// Получение избранного
 	useEffect(() => {
 		const loadFavorites = async () => {
 			if (!user?.id) {
@@ -16,7 +17,6 @@ export const useFavorites = () => {
 			}
 
 			setIsLoading(true);
-
 			try {
 				const response = await fetch(`/api/users/favorites?userId=${user.id}`);
 				if (response.ok) {

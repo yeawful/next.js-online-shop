@@ -2,7 +2,7 @@
 
 import IconVision from "@/components/svg/IconVision";
 import { ChangeEvent } from "react";
-import Tooltip from "./Tooltip";
+import Tooltip from "@/components/tooltip/Tooltip";
 import { isPasswordValid } from "../../../utils/validation/passwordValid";
 import styles from "./PasswordInput.module.css";
 

@@ -1,0 +1,24 @@
+.icon {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+.rect {
+	fill-opacity: 0;
+}
+
+.rectActive {
+	fill: #ff6633;
+}
+
+.pathActive {
+	fill: #ff6633;
+}
+
+.rectInactive {
+	fill: #606060;
+}
+
+.pathInactive {
+	fill: #606060;
+}

@@ -1,13 +1,13 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useState, useCallback } from "react";
+import { DeleteConfirmationModal } from "./_components/DeleteConfirmationModal";
+import SearchProductResult from "./_components/SearchProductsResult";
 import SearchHeader from "./_components/SearchHeader";
 import SearchInput from "./_components/SearchInput";
-import { ProductCardProps } from "@/types/product";
 import SearchStates from "./_components/SearchStates";
-import SearchProductResult from "./_components/SearchProductsResult";
-import { DeleteConfirmationModal } from "./_components/DeleteConfirmationModal";
-import style from "./page.module.css";
+import { ProductCardProps } from "@/types/product";
+import styles from "./ProductsListPage.module.css";
 
 interface DeleteModalState {
 	isOpen: boolean;
@@ -19,8 +19,8 @@ export default function ProductsListPage() {
 	const [products, setProducts] = useState<ProductCardProps[]>([]);
 	const [searchTerm, setSearchTerm] = useState("");
 	const [loading, setLoading] = useState(false);
-	const [hasSearched, setHasSearched] = useState(false);
 	const [deletingId, setDeletingId] = useState<number | null>(null);
+	const [hasSearched, setHasSearched] = useState(false);
 	const [deleteModal, setDeleteModal] = useState<DeleteModalState>({
 		isOpen: false,
 		productId: null,
@@ -68,12 +68,6 @@ export default function ProductsListPage() {
 		}
 	};
 
-	const handleClearResults = () => {
-		setSearchTerm("");
-		setProducts([]);
-		setHasSearched(false);
-	};
-
 	const openDeleteModal = (productId: number, productTitle: string) => {
 		setDeleteModal({
 			isOpen: true,
@@ -88,6 +82,12 @@ export default function ProductsListPage() {
 			productId: null,
 			productTitle: "",
 		});
+	};
+
+	const handleClearResults = () => {
+		setSearchTerm("");
+		setProducts([]);
+		setHasSearched(false);
 	};
 
 	const handleDeleteProduct = async () => {
@@ -126,8 +126,17 @@ export default function ProductsListPage() {
 	};
 
 	return (
-		<div className={style.container}>
+		<div className={styles.container}>
+			<DeleteConfirmationModal
+				isOpen={deleteModal.isOpen}
+				onClose={closeDeleteModal}
+				onConfirm={handleDeleteProduct}
+				productTitle={deleteModal.productTitle}
+				isDeleting={deletingId !== null}
+			/>
+
 			<SearchHeader />
+
 			<SearchInput
 				searchTerm={searchTerm}
 				loading={loading}
@@ -135,11 +144,13 @@ export default function ProductsListPage() {
 				onSearch={handleSearch}
 				onKeyPress={handleKeyPress}
 			/>
+
 			<SearchStates
 				hasSearched={hasSearched}
 				loading={loading}
 				searchTerm={searchTerm}
 			/>
+
 			{hasSearched && !loading && (
 				<SearchProductResult
 					products={products}
@@ -148,13 +159,6 @@ export default function ProductsListPage() {
 					onOpenDeleteModal={openDeleteModal}
 				/>
 			)}
-			<DeleteConfirmationModal
-				isOpen={deleteModal.isOpen}
-				onClose={closeDeleteModal}
-				onConfirm={handleDeleteProduct}
-				productTitle={deleteModal.productTitle}
-				isDeleting={deletingId !== null}
-			/>
 		</div>
 	);
 }

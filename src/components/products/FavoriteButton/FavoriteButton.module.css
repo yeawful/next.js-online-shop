@@ -1,4 +1,21 @@
 .button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	transition-duration: 300ms;
+}
+
+.button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.button:not(:disabled) {
+	cursor: pointer;
+}
+
+.buttonDefault {
 	width: 2rem;
 	height: 2rem;
 	padding: 0.5rem;
@@ -7,26 +24,45 @@
 	top: 0.5rem;
 	right: 0.5rem;
 	border-radius: 0.25rem;
-	transition-duration: 300ms;
 	z-index: 10;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border: none;
 }
 
-.button:hover:not(.disabled) {
+.buttonDefault:hover:not(:disabled) {
 	background-color: #fcd5ba;
 	transform: scale(1.1);
-	cursor: pointer;
 }
 
-.disabled {
-	opacity: 0.5;
-	cursor: not-allowed;
+.buttonOnProductPage {
+	width: auto;
+	height: 1.5rem;
+	background: none;
 }
 
-.disabled:hover {
-	transform: none;
-	background-color: #f3f2f1;
+.buttonOnProductPage:hover:not(:disabled) {
+	opacity: 0.8;
+}
+
+.buttonOrange {
+	width: 2rem;
+	height: 2rem;
+	padding: 0.5rem;
+	background-color: #ff6633;
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+	border-radius: 0.25rem;
+	z-index: 10;
+}
+
+.buttonOrange:hover:not(:disabled) {
+	background-color: #e55a2a;
+	transform: scale(1.1);
+}
+
+.buttonText {
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	user-select: none;
+	margin-left: 0.5rem;
+	color: var(--color-main-text);
 }

@@ -1,10 +1,9 @@
 import Image from "next/image";
-import { getBonusesWord } from "../../../../../../../utils/bonusWord";
+import { getFullEnding } from "@/utils/getWordEnding";
 import styles from "./Bonuses.module.css";
 
 const Bonuses = ({ bonus }: { bonus: number }) => {
 	const roundedBonus = Math.round(bonus);
-	const bonusWord = getBonusesWord(roundedBonus);
 
 	return (
 		<div className={styles.container}>
@@ -17,7 +16,7 @@ const Bonuses = ({ bonus }: { bonus: number }) => {
 			<p className={styles.text}>
 				Вы получаете{" "}
 				<span className={styles.bonusAmount}>
-					{roundedBonus} {bonusWord}
+					{roundedBonus} бонус{getFullEnding(roundedBonus)}
 				</span>
 			</p>
 		</div>

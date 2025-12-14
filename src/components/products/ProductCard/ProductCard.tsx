@@ -6,6 +6,11 @@ import Link from "next/link";
 import styles from "./ProductCard.module.css";
 import { CONFIG } from "../../../../config/config";
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
+import {
+	calculateFinalPrice,
+	calculatePriceByCard,
+} from "../../../utils/calcPrices";
+import AddToCartButton from "../AddToCartButton/AddToCartButton";
 
 const cardDiscountPercent = CONFIG.CARD_DISCOUNT_PERCENT;
 
@@ -19,14 +24,6 @@ const ProductCard = ({
 	tags,
 	categories,
 }: ProductCardProps) => {
-	const calculateFinalPrice = (price: number, discount: number): number => {
-		return discount > 0 ? price * (1 - discount / 100) : price;
-	};
-
-	const calculatePriceByCard = (price: number, discount: number): number => {
-		return calculateFinalPrice(price, discount);
-	};
-
 	const isNewProduct = tags?.includes("new");
 
 	const finalPrice = isNewProduct
@@ -37,7 +34,7 @@ const ProductCard = ({
 		? basePrice
 		: calculatePriceByCard(finalPrice, cardDiscountPercent);
 
-	const ratingValue = rating && rating.count > 0 ? rating.rate : 5.0;
+	const ratingValue = rating?.average ?? 5.0;
 
 	const productId = id;
 	const mainCategory = categories?.[0];
@@ -87,7 +84,7 @@ const ProductCard = ({
 					{<StarRating rating={ratingValue} />}
 				</div>
 			</Link>
-			<button className={styles.addToCartButton}>В корзину</button>
+			<AddToCartButton productId={productId.toString()} />
 		</div>
 	);
 };

@@ -1,0 +1,13 @@
+.badge {
+	background-color: #ff6633;
+	border-radius: 0.25rem;
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	color: #ffffff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.75rem;
+}

@@ -1,24 +1,25 @@
-.modalOverlay {
+.overlay {
 	position: absolute;
 	inset: 0;
 	z-index: 100;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: #fcd5bacc;
+	background-color: rgba(252, 213, 186, 0.8);
 	min-height: 100vh;
 	color: var(--color-main-text);
-	padding: 2.5rem 0.75rem;
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
 	backdrop-filter: blur(4px);
 }
 
-.modalContent {
+.modal {
 	position: relative;
-	background-color: white;
-	border-radius: 0.5rem;
-	box-shadow:
-		0 20px 25px -5px rgb(0 0 0 / 0.1),
-		0 8px 10px -6px rgb(0 0 0 / 0.1);
+	background-color: #ffffff;
+	border-radius: 0.25rem;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 	max-height: calc(100vh - 80px);
 	width: 100%;
 	display: flex;
@@ -27,24 +28,19 @@
 	padding-right: 1.5rem;
 }
 
-.modalBody {
+.content {
 	padding: 1.5rem;
 }
 
-.modalTitle {
+.title {
 	font-size: 1.125rem;
-	line-height: 1.75rem;
 	font-weight: 600;
 	margin-bottom: 0.5rem;
 }
 
-.modalText {
-	color: #4b5563;
+.message {
+	color: #6b7280;
 	margin-bottom: 1rem;
-}
-
-.productTitle {
-	font-weight: 600;
 }
 
 .warning {
@@ -52,33 +48,34 @@
 	align-items: flex-start;
 	gap: 0.5rem;
 	font-size: 0.875rem;
-	line-height: 1.25rem;
 	color: #dc2626;
 	margin-bottom: 1.5rem;
 }
 
 .warningIcon {
-	width: 1rem;
-	height: 1rem;
 	margin-top: 0.125rem;
 	flex-shrink: 0;
 }
 
-.buttons {
+.actions {
 	display: flex;
 	gap: 0.75rem;
 	justify-content: flex-end;
 }
 
 .cancelButton {
-	padding: 0.5rem 1rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 	border: 1px solid #d1d5db;
 	border-radius: 0.25rem;
+	color: #000000;
 	background-color: transparent;
 	cursor: pointer;
 }
 
-.cancelButton:hover:not(:disabled) {
+.cancelButton:hover {
 	background-color: #f9fafb;
 }
 
@@ -88,29 +85,26 @@
 }
 
 .deleteButton {
-	padding: 0.5rem 1rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 	background-color: #dc2626;
-	color: white;
+	color: #ffffff;
 	border-radius: 0.25rem;
-	border: none;
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
 	cursor: pointer;
 }
 
-.deleteButton:hover:not(:disabled) {
+.deleteButton:hover {
 	background-color: #b91c1c;
 }
 
 .deleteButton:disabled {
 	opacity: 0.5;
 	cursor: not-allowed;
-}
-
-.buttonIcon {
-	width: 1rem;
-	height: 1rem;
 }
 
 .spinner {
