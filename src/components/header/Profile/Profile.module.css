@@ -130,7 +130,7 @@
 .menuItem {
 	display: block;
 	padding: 0.75rem 1rem;
-	color: --color-main-text;
+	color: var(--color-main-text);
 	text-decoration: none;
 	transition: color 0.3s;
 }

@@ -12,7 +12,7 @@
 	width: 16.25rem;
 	height: 2.5rem;
 	padding: 0.5rem 1rem;
-	color: --color-main-text;
+	color: var(--color-main-text);
 	font-size: 1rem;
 	border: 1px solid #bfbfbf;
 	border-radius: 0.25rem;

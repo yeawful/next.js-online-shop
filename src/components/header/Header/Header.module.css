@@ -13,7 +13,6 @@
 	flex-direction: row;
 	gap: 1rem;
 	padding: 0.5rem 1rem;
-	padding-left: 0rem;
 	align-items: center;
 	box-shadow: var(--shadow-default);
 }
@@ -27,6 +26,7 @@
 
 	.headerTop {
 		box-shadow: none;
+		padding-left: 0rem;
 	}
 }
 

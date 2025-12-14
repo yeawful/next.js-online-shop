@@ -43,7 +43,7 @@ const TopMenu = () => {
 				</li>
 			)}
 
-			<li className={styles.menuItemUpgrade}>
+			<li className={styles.menuItem}>
 				<IconBox />
 				<span className={getTextClass(isManagerOrAdmin)}>Заказы</span>
 			</li>

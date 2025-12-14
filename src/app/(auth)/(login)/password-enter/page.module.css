@@ -11,7 +11,7 @@
 .title {
 	font-size: 1.5rem;
 	font-weight: bold;
-	color: --color-main-text;
+	color: var(--color-main-text);
 	text-align: center;
 	margin-bottom: 2rem;
 }
@@ -76,7 +76,7 @@
 
 .backButton {
 	height: 2rem;
-	color: --color-main-text;
+	color: var(--color-main-text);
 	width: 120px;
 	display: flex;
 	align-items: center;
@@ -94,7 +94,7 @@
 
 .forgotLink {
 	height: 2rem;
-	color: --color-main-text;
+	color: var(--color-main-text);
 	width: 120px;
 	display: flex;
 	align-items: center;

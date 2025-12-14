@@ -7,7 +7,7 @@
 	justify-content: center;
 	background-color: #fcd5bacc;
 	min-height: 100vh;
-	color: --color-main-text;
+	color: var(--color-main-text);
 	padding: 2.5rem 0.75rem;
 	backdrop-filter: blur(4px);
 }

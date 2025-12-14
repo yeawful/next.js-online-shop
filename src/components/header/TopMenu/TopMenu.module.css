@@ -12,19 +12,10 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 0.625rem;
+	gap: 0.175rem;
 	width: 2.75rem;
 	cursor: pointer;
 	text-decoration: none;
-}
-
-.menuItemUpgrade {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 0.2rem;
-	width: 2.75rem;
-	cursor: pointer;
 }
 
 .menuText {
@@ -35,6 +26,8 @@
 
 .menuTextActive {
 	color: #ff6633;
+	line-height: 1.125rem;
+	font-size: 0.75rem;
 }
 
 .mobileOnly {
@@ -44,6 +37,10 @@
 @media (min-width: 768px) {
 	.mobileOnly {
 		display: none;
+	}
+
+	.menuItem {
+		gap: 0.6rem;
 	}
 }
 

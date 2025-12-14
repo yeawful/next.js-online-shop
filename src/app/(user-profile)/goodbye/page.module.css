@@ -10,12 +10,12 @@
 	font-size: 1.5rem;
 	line-height: 2rem;
 	font-weight: bold;
-	color: --color-main-text;
+	color: var(--color-main-text);
 	margin-bottom: 1rem;
 }
 
 .message {
-	color: --color-main-text;
+	color: var(--color-main-text);
 	margin-bottom: 1.5rem;
 }
 

@@ -37,7 +37,7 @@ const ProductCard = ({
 		? basePrice
 		: calculatePriceByCard(finalPrice, cardDiscountPercent);
 
-	const ratingValue = rating?.average ?? 5.0;
+	const ratingValue = rating && rating.count > 0 ? rating.rate : 5.0;
 
 	const productId = id;
 	const mainCategory = categories?.[0];

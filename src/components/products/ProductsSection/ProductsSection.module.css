@@ -1,6 +1,8 @@
 .productsSection {
 	display: flex;
 	flex-direction: column;
+	padding-left: max(calc((100% - 1208px) / 2));
+	padding-right: max(calc((100% - 1208px) / 2));
 }
 
 .productsHeader {
@@ -106,6 +108,12 @@
 
 @media (min-width: 1280px) {
 	.xlHidden {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+	.productsGrid > :nth-child(4) {
 		display: none;
 	}
 }
