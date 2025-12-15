@@ -32,7 +32,7 @@ export const optimizeImage = async (
 				sourceWidth = img.height;
 				sourceX = (img.width - sourceWidth) / 2;
 			} else if (aspectRatio < 1) {
-				sourceHeight = img.width; //
+				sourceHeight = img.width;
 				sourceY = (img.height - sourceHeight) / 2;
 			}
 

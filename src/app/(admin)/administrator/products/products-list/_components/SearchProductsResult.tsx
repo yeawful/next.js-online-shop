@@ -1,7 +1,7 @@
 import { Edit, Trash2 } from "lucide-react";
 import Link from "next/link";
 import { TRANSLATIONS } from "../../../../../../utils/translations";
-import styles from "./SearchProductResult.module.css";
+import styles from "./SearchProductsResult.module.css";
 
 interface Product {
 	id: number;

@@ -31,6 +31,12 @@
 	}
 }
 
+@media (min-width: 1280px) {
+	.contentWrapper {
+		min-width: 54.75rem;
+	}
+}
+
 .productSection {
 	display: flex;
 	flex-direction: row;

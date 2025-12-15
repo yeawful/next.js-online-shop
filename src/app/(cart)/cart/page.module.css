@@ -63,21 +63,3 @@
 	flex-direction: column;
 	row-gap: 1.5rem;
 }
-
-.sidebarColumn {
-	display: flex;
-	flex-direction: column;
-	row-gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-	.sidebarColumn {
-		width: 255px;
-	}
-}
-
-@media (min-width: 1280px) {
-	.sidebarColumn {
-		width: 272px;
-	}
-}

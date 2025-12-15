@@ -7,7 +7,7 @@ import SearchHeader from "./_components/SearchHeader";
 import SearchInput from "./_components/SearchInput";
 import SearchStates from "./_components/SearchStates";
 import { ProductCardProps } from "@/types/product";
-import styles from "./ProductsListPage.module.css";
+import styles from "./page.module.css";
 
 interface DeleteModalState {
 	isOpen: boolean;

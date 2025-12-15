@@ -15,7 +15,6 @@ export async function POST(request: NextRequest) {
 			);
 		}
 
-		// Конвертируем userId в ObjectId
 		let objectId;
 		try {
 			objectId = ObjectId.createFromHexString(userId);
@@ -26,7 +25,6 @@ export async function POST(request: NextRequest) {
 			);
 		}
 
-		// Проверяем существование пользователя
 		const user = await db.collection("user").findOne({ _id: objectId });
 		if (!user) {
 			return NextResponse.json(
@@ -35,7 +33,6 @@ export async function POST(request: NextRequest) {
 			);
 		}
 
-		// Обновляем данные карты
 		const result = await db.collection("user").updateOne(
 			{ _id: objectId },
 			{

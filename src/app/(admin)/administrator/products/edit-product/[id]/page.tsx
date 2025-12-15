@@ -22,7 +22,7 @@ import Tags from "../../_components/Tags";
 import CheckboxGroup from "../../_components/CheckboxGroup";
 import ImageUploadSection from "../../_components/ImageUploadSection";
 import { ProductCardProps } from "@/types/product";
-import styles from "./EditProductPage.module.css";
+import styles from "./page.module.css";
 
 export default function EditProductPage() {
 	const params = useParams();

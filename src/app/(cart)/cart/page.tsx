@@ -2,10 +2,6 @@
 
 import { useEffect, useState, useCallback } from "react";
 import {
-	calculateFinalPrice,
-	calculatePriceByCard,
-} from "../../../utils/calcPrices";
-import {
 	getOrderCartAction,
 	getUserBonusesAction,
 	removeMultipleOrderItemsAction,
@@ -14,12 +10,11 @@ import {
 import { useCartStore } from "@/store/cartStore";
 import { Loader } from "@/components/loaders/Loader";
 import { ProductCardProps } from "@/types/product";
-import { CONFIG } from "../../../../config/config";
 import CartHeader from "./_components/CartHeader";
 import CartControls from "./_components/CartControls";
 import CartItem from "./_components/CartItem";
-import CartSummary from "./_components/CartSummary";
-import BonusesSection from "./_components/BonusesSection";
+import { usePricing } from "@/hooks/usePricing";
+import CartSidebar from "./_components/CartSidebar";
 import styles from "./page.module.css";
 
 const CartPage = () => {
@@ -32,7 +27,6 @@ const CartPage = () => {
 	const [removedItems, setRemovedItems] = useState<string[]>([]);
 	const [isCartLoading, setIsCartLoading] = useState(true);
 	const [useBonuses, setUseBonuses] = useState<boolean>(false);
-
 	const { cartItems, updateCart } = useCartStore();
 
 	const visibleCartItems = cartItems.filter(
@@ -43,6 +37,36 @@ const CartPage = () => {
 		const product = productsData[item.productId];
 		return product && product.quantity > 0;
 	});
+
+	const pricingData = usePricing({
+		availableCartItems,
+		productsData,
+		hasLoyaltyCard,
+		bonusesCount,
+		useBonuses,
+	});
+
+	const {
+		totalPrice,
+		totalMaxPrice,
+		totalDiscount,
+		finalPrice,
+		totalBonuses,
+		isMinimumReached,
+	} = pricingData;
+
+	const commonSidebarProps = {
+		bonusesCount,
+		useBonuses,
+		onUseBonusesChange: setUseBonuses,
+		totalPrice,
+		visibleCartItems,
+		totalMaxPrice,
+		totalDiscount,
+		finalPrice,
+		totalBonuses,
+		isMinimumReached,
+	};
 
 	const fetchCartAndProducts = async () => {
 		setIsCartLoading(true);
@@ -145,77 +169,6 @@ const CartPage = () => {
 		[]
 	);
 
-	const totalPrice = availableCartItems.reduce((total, item) => {
-		const product = productsData[item.productId];
-		if (!product) return total;
-
-		const priceWithDiscount = calculateFinalPrice(
-			product.basePrice,
-			product.discountPercent || 0
-		);
-
-		const finalPrice = hasLoyaltyCard
-			? calculatePriceByCard(priceWithDiscount, CONFIG.CARD_DISCOUNT_PERCENT)
-			: priceWithDiscount;
-
-		return total + finalPrice * item.quantity;
-	}, 0);
-
-	const totalMaxPrice = availableCartItems.reduce((total, item) => {
-		const product = productsData[item.productId];
-		if (!product) return total;
-
-		const priceWithDiscount = calculateFinalPrice(
-			product.basePrice,
-			product.discountPercent || 0
-		);
-
-		return total + priceWithDiscount * item.quantity;
-	}, 0);
-
-	const totalDiscount = availableCartItems.reduce((total, item) => {
-		const product = productsData[item.productId];
-		if (!product) return total;
-
-		const priceWithDiscount = calculateFinalPrice(
-			product.basePrice,
-			product.discountPercent || 0
-		);
-
-		const finalPrice = hasLoyaltyCard
-			? calculatePriceByCard(priceWithDiscount, CONFIG.CARD_DISCOUNT_PERCENT)
-			: priceWithDiscount;
-
-		const itemDiscount = (priceWithDiscount - finalPrice) * item.quantity;
-
-		return total + itemDiscount;
-	}, 0);
-
-	const maxBonusUse = Math.min(
-		bonusesCount,
-		Math.floor((totalPrice * CONFIG.MAX_BONUSES_PERCENT) / 100)
-	);
-
-	const finalPrice = useBonuses
-		? Math.max(0, totalPrice - maxBonusUse)
-		: totalPrice;
-
-	const totalBonuses = availableCartItems.reduce((total, item) => {
-		const product = productsData[item.productId];
-		if (!product) return total;
-
-		const priceWithDiscount = calculateFinalPrice(
-			product.basePrice,
-			product.discountPercent || 0
-		);
-
-		const bonuses = priceWithDiscount * (CONFIG.BONUSES_PERCENT / 100);
-
-		return total + Math.round(bonuses) * item.quantity;
-	}, 0);
-
-	const isMinimumReached = finalPrice >= 1000;
-
 	const isAllSelected =
 		selectedItems.length > 0 &&
 		selectedItems.length === visibleCartItems.length;
@@ -262,23 +215,7 @@ const CartPage = () => {
 					))}
 				</div>
 
-				<div className={styles.sidebarColumn}>
-					<BonusesSection
-						bonusesCount={bonusesCount}
-						useBonuses={useBonuses}
-						onUseBonusesChange={setUseBonuses}
-						totalPrice={totalPrice}
-					/>
-
-					<CartSummary
-						visibleCartItems={visibleCartItems}
-						totalMaxPrice={totalMaxPrice}
-						totalDiscount={totalDiscount}
-						finalPrice={finalPrice}
-						totalBonuses={totalBonuses}
-						isMinimumReached={isMinimumReached}
-					/>
-				</div>
+				<CartSidebar {...commonSidebarProps} />
 			</div>
 		</div>
 	);

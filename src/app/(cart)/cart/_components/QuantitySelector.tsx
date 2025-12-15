@@ -7,6 +7,7 @@ interface QuantitySelectorProps {
 	isOutOfStock: boolean;
 	onDecrement: () => void;
 	onIncrement: () => void;
+	onProductCard?: boolean;
 }
 
 const QuantitySelector = memo(function QuantitySelector({
@@ -15,9 +16,14 @@ const QuantitySelector = memo(function QuantitySelector({
 	isOutOfStock,
 	onDecrement,
 	onIncrement,
+	onProductCard,
 }: QuantitySelectorProps) {
+	const containerClass = onProductCard
+		? `${styles.container} ${styles.containerProductCard}`
+		: `${styles.container} ${styles.containerRegular}`;
+
 	return (
-		<div className={styles.container}>
+		<div className={containerClass}>
 			<button
 				onClick={onDecrement}
 				disabled={quantity < 0 || isUpdating || isOutOfStock}

@@ -46,8 +46,8 @@ export async function GET(request: Request) {
 			const favoriteProductIds = user.favorites || [];
 
 			const numericFavoriteIds = favoriteProductIds
-				.map((id) => parseInt(id))
-				.filter((id) => !isNaN(id));
+				.map((id: string) => parseInt(id))
+				.filter((id: number) => !isNaN(id));
 
 			if (numericFavoriteIds.length === 0) {
 				return NextResponse.json({
@@ -91,11 +91,11 @@ export async function GET(request: Request) {
 
 		const favoriteProductIds = user.favorites || [];
 
-		console.log("⭐ Favorite IDs (strings):", favoriteProductIds);
+		// console.log("⭐ Favorite IDs (strings):", favoriteProductIds);
 
 		const numericFavoriteIds = favoriteProductIds
-			.map((id) => parseInt(id))
-			.filter((id) => !isNaN(id));
+			.map((id: string) => parseInt(id))
+			.filter((id: number) => !isNaN(id));
 
 		if (numericFavoriteIds.length === 0) {
 			return NextResponse.json({

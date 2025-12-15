@@ -1,4 +1,4 @@
-.formButton {
+.button {
 	position: absolute;
 	bottom: 0.5rem;
 	left: 0.5rem;
@@ -16,17 +16,26 @@
 	background-color: transparent;
 }
 
-.formButton:hover {
+.button:hover {
 	color: #ffffff;
 	background-color: #ff6633;
 	border-color: transparent;
 }
 
-.formButton:active {
+.button:active {
 	box-shadow: var(--shadow-button-active);
 }
 
-.formButton:disabled {
+.button:disabled {
 	opacity: 0.5;
 	cursor: not-allowed;
+}
+
+.quantityContainer {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	bottom: 0.5rem;
+	left: 0.5rem;
+	right: 0.5rem;
 }

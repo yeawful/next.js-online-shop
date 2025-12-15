@@ -1,6 +1,5 @@
 import InStockToggle from "@/components/filter/InStockToggle";
 import { CONFIG } from "../../../../../config/config";
-import { getFullEnding } from "../../../../utils/getWordEnding";
 import styles from "./BonusesSection.module.css";
 
 interface BonusesSectionProps {
@@ -16,7 +15,7 @@ const BonusesSection = ({
 	onUseBonusesChange,
 	totalPrice,
 }: BonusesSectionProps) => {
-	if (bonusesCount <= 0) return null;
+	if (bonusesCount < 0) return null;
 
 	return (
 		<div className={styles.container}>
@@ -35,7 +34,7 @@ const BonusesSection = ({
 				</p>
 			</div>
 			<div className={styles.bonusInfo}>
-				{`На карте накоплено ${bonusesCount} бонус${getFullEnding(bonusesCount)}`}
+				{`На карте накоплено ${bonusesCount} ₽`}
 			</div>
 		</div>
 	);

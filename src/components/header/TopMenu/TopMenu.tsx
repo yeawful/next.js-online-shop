@@ -60,7 +60,7 @@ const TopMenu = () => {
 
 			{!isManagerOrAdmin && (
 				<li className={styles.cartItem}>
-					<Link href="/cart" className={styles.cartLink}>
+					<Link href="/cart" className={styles.menuItem}>
 						<IconCart isActive={isCartPage} />
 
 						{totalItems > 0 && (

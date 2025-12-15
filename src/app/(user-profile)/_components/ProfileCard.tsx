@@ -82,7 +82,7 @@ const ProfileCard = () => {
 		if (!isEditing) return;
 
 		const value = e.target.value;
-		// Очищаем и ограничиваем 16 цифрами
+
 		const cleanValue = cleanCardNumber(value).slice(0, 16);
 		setCardNumber(cleanValue);
 	};

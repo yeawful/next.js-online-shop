@@ -1,4 +1,3 @@
-// src/data/columnsUsersList.ts
 import { tableStyles } from "@/app/(admin)/administrator/styles";
 
 export const columns = [

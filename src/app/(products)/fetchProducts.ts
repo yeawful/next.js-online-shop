@@ -19,7 +19,7 @@ const fetchProductsByTag = async (
 			url.searchParams.append("perPage", options.pagination.perPage.toString());
 		}
 
-		const res = await fetch(url.toString(), { cache: "no-store" });
+		const res = await fetch(url.toString(), { next: { revalidate: 60 } });
 
 		if (!res.ok) throw new Error(`Серверная ошибка получения продуктов ${tag}`);
 
