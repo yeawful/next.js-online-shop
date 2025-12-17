@@ -30,7 +30,7 @@
 	outline: none;
 	border-width: 1px;
 	border-color: var(--color-primary);
-	background-color: #ffffff;
+	background-color: var(--color-bg-white);
 	transition-duration: 300ms;
 }
 
@@ -41,7 +41,7 @@
 .searchButton {
 	background-color: var(--color-primary);
 	border-radius: 0.25rem;
-	color: #ffffff;
+	color: var(--color-bg-white);
 	transition-duration: 300ms;
 	padding-left: 1rem;
 	padding-right: 1rem;
@@ -91,7 +91,7 @@
 }
 
 .hintWarning {
-	color: #ff6633;
+	color: var(--color-accent);
 }
 
 .hintSuccess {

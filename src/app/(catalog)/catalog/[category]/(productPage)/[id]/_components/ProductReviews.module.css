@@ -30,7 +30,7 @@
 
 .skeletonLineShort1 {
 	height: 1rem;
-	background-color: #d1d5db;
+	background-color: var(--color-border-default);
 	border-radius: 0.25rem;
 	width: 25%;
 	margin-bottom: 0.5rem;
@@ -38,7 +38,7 @@
 
 .skeletonLineShort2 {
 	height: 1rem;
-	background-color: #d1d5db;
+	background-color: var(--color-border-default);
 	border-radius: 0.25rem;
 	width: 33.333333%;
 	margin-bottom: 1rem;
@@ -46,7 +46,7 @@
 
 .skeletonLineFull {
 	height: 0.75rem;
-	background-color: #d1d5db;
+	background-color: var(--color-border-default);
 	border-radius: 0.25rem;
 	width: 100%;
 	margin-bottom: 0.25rem;
@@ -54,7 +54,7 @@
 
 .skeletonLinePartial {
 	height: 0.75rem;
-	background-color: #d1d5db;
+	background-color: var(--color-border-default);
 	border-radius: 0.25rem;
 	width: 66.666667%;
 }
@@ -78,7 +78,7 @@
 
 .userIconContainer {
 	border-radius: 47px;
-	border: 1px solid #f3f2f1;
+	border: 1px solid var(--color-bg-light);
 	padding: 0.625rem;
 	width: 2.25rem;
 	height: 2.25rem;
@@ -101,7 +101,7 @@
 }
 
 .reviewDate {
-	color: #8f8f8f;
+	color: var(--color-text-placeholder);
 	font-size: 0.75rem;
 	line-height: 1rem;
 }

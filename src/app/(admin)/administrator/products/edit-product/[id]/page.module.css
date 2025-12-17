@@ -15,21 +15,15 @@
 	font-size: 1.125rem;
 }
 
-.errorContainer {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
 .error {
-	color: #ef4444;
+	color: var(--color-error-light);
 	font-size: 1.125rem;
 	margin-bottom: 1rem;
 }
 
 .backButton {
 	background-color: var(--color-primary);
-	color: #ffffff;
+	color: var(--color-bg-white);
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
 	padding-left: 1rem;
@@ -57,10 +51,6 @@
 	gap: 1.5rem;
 }
 
-.gridCols1 {
-	grid-template-columns: 1fr;
-}
-
 @media (min-width: 768px) {
 	.gridCols2 {
 		grid-template-columns: repeat(2, 1fr);
@@ -76,7 +66,7 @@
 .submitButton {
 	flex: 1;
 	background-color: var(--color-primary);
-	color: #ffffff;
+	color: var(--color-bg-white);
 	padding-top: 0.75rem;
 	padding-bottom: 0.75rem;
 	padding-left: 1rem;

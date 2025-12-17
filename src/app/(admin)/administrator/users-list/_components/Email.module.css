@@ -1,5 +1,5 @@
 .container {
-	border-bottom: 1px solid #d1d5db;
+	border-bottom: 1px solid var(--color-border-default);
 	order: 4;
 	gap: 0.5rem;
 	display: flex;
@@ -21,11 +21,11 @@
 }
 
 .emailVerified {
-	color: #008c48;
+	color: var(--color-success);
 }
 
 .emailNotVerified {
-	color: #d80000;
+	color: var(--color-error);
 }
 
 .temporaryEmail {

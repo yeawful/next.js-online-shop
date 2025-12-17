@@ -29,6 +29,6 @@
 }
 
 .error {
-	background-color: #ffc7c7;
-	color: #d80000;
+	background-color: var(--color-error-bg);
+	color: var(--color-error);
 }

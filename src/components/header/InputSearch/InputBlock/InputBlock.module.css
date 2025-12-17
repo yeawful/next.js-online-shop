@@ -12,7 +12,7 @@
 	z-index: 100;
 	max-height: 300px;
 	overflow-y: auto;
-	background-color: var(--color-white);
+	background-color: var(--color-bg-white);
 	border-bottom-left-radius: 0.25rem;
 	border-bottom-right-radius: 0.25rem;
 	border: 1px solid var(--color-primary);
@@ -23,7 +23,7 @@
 
 .errorMessage {
 	padding: 0.5rem;
-	color: #ef4444;
+	color: var(--color-error-light);
 	font-size: 0.875rem;
 }
 

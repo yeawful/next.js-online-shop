@@ -1,5 +1,5 @@
 .container {
-	background-color: #ffffff;
+	background-color: var(--color-bg-white);
 	border-radius: 0.25rem;
 	display: flex;
 	box-shadow:
@@ -72,7 +72,7 @@
 }
 
 .productLink:hover {
-	color: #ff6633;
+	color: var(--color-accent);
 }
 
 .infoRow {
@@ -98,7 +98,7 @@
 	text-decoration: line-through;
 	font-weight: normal;
 	font-size: 0.75rem;
-	color: #8f8f8f;
+	color: var(--color-text-placeholder);
 }
 
 @media (min-width: 768px) {
@@ -110,7 +110,7 @@
 .discountAmount {
 	font-weight: normal;
 	font-size: 0.75rem;
-	color: #ff6633;
+	color: var(--color-accent);
 }
 
 .controlsSection {

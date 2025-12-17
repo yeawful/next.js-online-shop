@@ -22,7 +22,7 @@
 .icon {
 	width: 2rem;
 	height: 2rem;
-	color: #ffffff;
+	color: var(--color-bg-white);
 }
 
 .successTitle {
@@ -32,13 +32,13 @@
 }
 
 .successMessage {
-	color: #6b7280;
+	color: var(--color-text-secondary);
 	max-width: 28rem;
 }
 
 .highlightedEmail {
 	font-weight: 600;
-	color: #ff6633;
+	color: var(--color-accent);
 }
 
 .actionsContainer {
@@ -54,8 +54,8 @@
 	border-radius: 0.25rem;
 	cursor: pointer;
 	border: 1px solid var(--color-primary);
-	color: #ffffff;
-	background-color: #ff6633;
+	color: var(--color-bg-white);
+	background-color: var(--color-accent);
 	transition-duration: 300ms;
 }
 

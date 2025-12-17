@@ -1,7 +1,7 @@
 .verifyContainer {
 	margin-top: 1rem;
 	padding: 1rem;
-	background-color: #f0fdf4;
+	background-color: var(--color-success-bg);
 	border-radius: 0.25rem;
 }
 
@@ -33,16 +33,16 @@
 	text-align: center;
 	color: var(--color-main-text);
 	font-size: 1rem;
-	border: 1px solid #bfbfbf;
+	border: 1px solid var(--color-border-input);
 	border-radius: 0.25rem;
-	background-color: white;
+	background-color: var(--color-bg-white);
 	caret-color: var(--color-primary);
 }
 
 .codeInput:focus {
 	border-color: var(--color-primary);
 	box-shadow: var(--shadow-button-default);
-	background-color: white;
+	background-color: var(--color-bg-white);
 	outline: none;
 }
 
@@ -50,13 +50,13 @@
 	padding: 0.5rem 1rem;
 	height: 2.5rem;
 	background-color: var(--color-primary);
-	color: white;
+	color: var(--color-bg-white);
 	border-radius: 0.25rem;
 	cursor: pointer;
 }
 
 .verifyButton:disabled {
-	background-color: #6b7280;
+	background-color: var(--color-text-secondary);
 	cursor: not-allowed;
 }
 
@@ -72,11 +72,11 @@
 
 .resendButtonActive {
 	background-color: var(--color-primary);
-	color: white;
+	color: var(--color-bg-white);
 }
 
 .resendButtonInactive {
-	background-color: #f3f2f1;
+	background-color: var(--color-bg-light);
 	color: #606060;
 }
 
@@ -85,7 +85,7 @@
 	flex: 1;
 	background-color: var(--color-primary);
 	border-radius: 0.25rem;
-	color: white;
+	color: var(--color-bg-white);
 	transition-duration: 300ms;
 	cursor: pointer;
 }

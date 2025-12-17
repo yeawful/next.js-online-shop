@@ -16,5 +16,5 @@
 }
 
 .viewAllText:hover {
-	color: #bfbfbf;
+	color: var(--color-border-input);
 }

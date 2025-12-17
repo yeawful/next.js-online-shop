@@ -1,5 +1,5 @@
 .iconActive {
-	color: #ff6633;
+	color: var(--color-accent);
 }
 
 .iconInactive {

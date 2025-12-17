@@ -11,8 +11,8 @@
 }
 
 .notificationContent {
-	background-color: #008c48;
-	color: white;
+	background-color: var(--color-success);
+	color: var(--color-bg-white);
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
 	padding-top: 0.75rem;
@@ -43,7 +43,7 @@
 }
 
 .button:hover {
-	background-color: #e5e7eb;
+	background-color: var(--color-border-light);
 }
 
 .button:disabled {

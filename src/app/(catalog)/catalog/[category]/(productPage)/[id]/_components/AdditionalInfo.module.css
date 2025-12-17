@@ -4,13 +4,13 @@
 	gap: 0.25rem;
 	font-size: 0.75rem;
 	line-height: 1rem;
-	color: #4b5563;
+	color: var(--color-text-hover);
 }
 
 .rowOdd {
 	display: flex;
 	justify-content: space-between;
-	background-color: #f3f2f1;
+	background-color: var(--color-bg-light);
 	padding-top: 0.25rem;
 	padding-bottom: 0.25rem;
 	padding-left: 0.5rem;

@@ -6,7 +6,7 @@
 
 .label {
 	font-size: 1rem;
-	color: #8f8f8f;
+	color: var(--color-text-placeholder);
 	display: block;
 }
 
@@ -16,7 +16,7 @@
 	padding: 0.5rem 1rem;
 	color: var(--color-main-text);
 	font-size: 1rem;
-	border: 1px solid #bfbfbf;
+	border: 1px solid var(--color-border-input);
 	border-radius: 0.25rem;
 	caret-color: var(--color-primary);
 }
@@ -24,11 +24,11 @@
 .input:focus {
 	border-color: var(--color-primary);
 	box-shadow: var(--shadow-button-default);
-	background-color: #ffffff;
+	background-color: var(--color-bg-white);
 	outline: none;
 }
 
 .inputDisabled {
-	background-color: #f3f2f1;
+	background-color: var(--color-bg-light);
 	cursor: not-allowed;
 }

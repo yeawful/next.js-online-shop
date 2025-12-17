@@ -9,7 +9,7 @@
 .icon {
 	height: 2rem;
 	width: 2rem;
-	color: #ff6633;
+	color: var(--color-accent);
 }
 
 .title {
@@ -21,7 +21,7 @@
 }
 
 .highlight {
-	color: #ff6633;
+	color: var(--color-accent);
 	font-weight: 600;
 }
 
@@ -52,7 +52,7 @@
 
 .emailHint {
 	font-size: 0.75rem;
-	color: #9ca3af;
+	color: var(--color-text-muted);
 	margin-top: 0.5rem;
 	font-weight: 300;
 }
@@ -73,8 +73,8 @@
 }
 
 .buttonPrimary {
-	background-color: #ff6633;
-	color: white;
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
 }
 
 .buttonPrimary:hover {
@@ -89,7 +89,7 @@
 	margin: 0 auto;
 	height: auto;
 	color: var(--color-primary);
-	background-color: white;
+	background-color: var(--color-bg-white);
 	border: 1px solid var(--color-primary);
 	border-radius: 4px;
 	display: flex;
@@ -100,7 +100,7 @@
 }
 
 .buttonSecondary:hover {
-	color: white;
+	color: var(--color-bg-white);
 	background-color: var(--color-primary);
 }
 
@@ -109,13 +109,13 @@
 }
 
 .buttonTertiary {
-	border: 1px solid #d1d5db;
+	border: 1px solid var(--color-border-default);
 	border-radius: 4px;
 	transition-duration: 300ms;
 }
 
 .buttonTertiary:hover {
-	background-color: #d1d5db;
+	background-color: var(--color-border-default);
 }
 
 .buttonContent {
@@ -146,5 +146,5 @@
 }
 
 .buttonSecondary:hover .searchIcon {
-	color: white;
+	color: var(--color-bg-white);
 }

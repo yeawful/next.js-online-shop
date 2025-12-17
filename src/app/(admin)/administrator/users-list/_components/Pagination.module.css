@@ -4,7 +4,7 @@
 	align-items: center;
 	margin-top: 3rem;
 	padding: 1rem;
-	border-top: 1px solid #d1d5db;
+	border-top: 1px solid var(--color-border-default);
 }
 
 .buttonsContainer {
@@ -14,7 +14,7 @@
 
 .navButton {
 	padding: 0.25rem 0.75rem;
-	border: 1px solid #d1d5db;
+	border: 1px solid var(--color-border-default);
 	border-radius: 0.25rem;
 	transition-duration: 300ms;
 	cursor: pointer;
@@ -39,8 +39,8 @@
 }
 
 .pageButton:hover {
-	background-color: #ff6633;
-	color: white;
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
 }
 
 .buttonBase {
@@ -55,8 +55,8 @@
 }
 
 .buttonActive {
-	background-color: #ff6633;
-	color: white;
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -75,7 +75,7 @@
 }
 
 .buttonInactive {
-	background-color: #fcd5ba;
-	color: #ff6633;
+	background-color: var(--color-warning-bg);
+	color: var(--color-accent);
 	border-radius: 0.25rem;
 }

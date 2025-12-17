@@ -21,15 +21,15 @@
 	position: absolute;
 	top: -0.75rem;
 	left: 0.5rem;
-	color: white;
+	color: var(--color-bg-white);
 }
 
 .checkboxSelected {
 	background-color: var(--color-primary);
-	border-color: #f3f2f1;
+	border-color: var(--color-bg-light);
 }
 
 .checkboxUnselected {
-	background-color: #ffffff;
-	border-color: #f3f2f1;
+	background-color: var(--color-bg-white);
+	border-color: var(--color-bg-light);
 }

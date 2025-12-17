@@ -5,7 +5,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: #fcd5bacc;
+	background-color: var(--color-warning-bg) cc;
 	min-height: 100vh;
 	color: var(--color-main-text);
 	padding: 2.5rem 0.75rem;
@@ -14,7 +14,7 @@
 
 .authContainer {
 	position: relative;
-	background-color: #ffffff;
+	background-color: var(--color-bg-white);
 	border-radius: 0.25rem;
 	box-shadow: var(--shadow-auth-form);
 	max-height: calc(100vh - 5rem);

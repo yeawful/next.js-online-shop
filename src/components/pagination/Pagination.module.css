@@ -2,7 +2,7 @@
 	display: flex;
 	justify-content: center;
 	margin-top: 2.5rem;
-	color: var(--color-white);
+	color: var(--color-bg-white);
 	font-size: 0.875rem;
 }
 
@@ -23,42 +23,42 @@
 }
 
 .buttonActive {
-	background-color: #ff6633;
-	color: var(--color-white);
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
 }
 
 .buttonActive:hover {
-	background-color: #ff6633;
+	background-color: var(--color-accent);
 }
 
 .buttonDisabled {
-	background-color: #fcd5ba;
+	background-color: var(--color-warning-bg);
 	cursor: not-allowed;
 }
 
 .pageButton {
-	border: 1px solid #ff6633;
+	border: 1px solid var(--color-accent);
 }
 
 .pageButtonActive {
-	background-color: #ff6633;
-	color: var(--color-white);
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
 	border-color: transparent;
 }
 
 .pageButtonInactive {
-	color: #ff6633;
-	background-color: var(--color-white);
+	color: var(--color-accent);
+	background-color: var(--color-bg-white);
 }
 
 .pageButtonInactive:hover {
-	background-color: #ff6633;
-	color: var(--color-white);
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
 	border-color: transparent;
 }
 
 .ellipsis {
-	color: #ff6633;
+	color: var(--color-accent);
 }
 
 @media (min-width: 768px) {

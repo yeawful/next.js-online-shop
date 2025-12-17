@@ -16,7 +16,7 @@
 	text-align: center;
 	padding-top: 2rem;
 	padding-bottom: 2rem;
-	color: #6b7280;
+	color: var(--color-text-secondary);
 }
 
 @media (min-width: 768px) {

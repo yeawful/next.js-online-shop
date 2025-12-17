@@ -15,14 +15,14 @@
 
 .iconWrapper {
 	padding: 0.75rem;
-	background-color: #ff6633;
+	background-color: var(--color-accent);
 	border-radius: 9999px;
 }
 
 .icon {
 	height: 2rem;
 	width: 2rem;
-	color: white;
+	color: var(--color-bg-white);
 }
 
 .textContent {
@@ -39,7 +39,7 @@
 }
 
 .description {
-	color: #4b5563;
+	color: var(--color-text-hover);
 	max-width: 28rem;
 	margin: 0;
 	line-height: 1.5;
@@ -47,7 +47,7 @@
 
 .oldEmail {
 	font-weight: 600;
-	color: #ff6633;
+	color: var(--color-accent);
 }
 
 .newEmail {
@@ -70,8 +70,8 @@
 	transition: all 0.2s ease;
 	border: none;
 	font-size: 1rem;
-	background-color: #ff6633;
-	color: white;
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
 	height: 2.75rem;
 }
 

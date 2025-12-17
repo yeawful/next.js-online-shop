@@ -27,7 +27,7 @@
 }
 
 .lastItem {
-	color: #8f8f8f;
+	color: var(--color-text-placeholder);
 }
 
 .linkItem {
@@ -65,7 +65,7 @@
 
 .skeletonText {
 	height: 1rem;
-	background-color: #e5e7eb;
+	background-color: var(--color-border-light);
 	border-radius: 0.25rem;
 	width: 5rem;
 	animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;

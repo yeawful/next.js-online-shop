@@ -1,11 +1,11 @@
 .badge {
-	background-color: #ff6633;
+	background-color: var(--color-accent);
 	border-radius: 0.25rem;
 	padding-top: 0.25rem;
 	padding-bottom: 0.25rem;
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
-	color: #ffffff;
+	color: var(--color-bg-white);
 	display: flex;
 	justify-content: center;
 	align-items: center;

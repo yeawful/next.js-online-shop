@@ -80,7 +80,7 @@
 
 .filterHeader {
 	height: 2.75rem;
-	background-color: #f3f2f1;
+	background-color: var(--color-bg-light);
 	border-radius: 0.25rem;
 	font-size: 1rem;
 	line-height: 1.5rem;

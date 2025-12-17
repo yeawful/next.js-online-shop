@@ -45,8 +45,8 @@
 }
 
 .buttonActive {
-	background-color: #ff6633;
-	color: white;
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
 	border: none;
 }
 
@@ -59,8 +59,8 @@
 }
 
 .buttonInactive {
-	background-color: #fcd5ba;
-	color: #ff6633;
+	background-color: var(--color-warning-bg);
+	color: var(--color-accent);
 }
 
 .buttonMargin {

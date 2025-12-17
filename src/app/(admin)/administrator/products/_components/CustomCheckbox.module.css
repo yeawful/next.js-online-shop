@@ -20,13 +20,13 @@
 	position: relative;
 	width: 1.25rem;
 	height: 1.25rem;
-	border: 1px solid #bfbfbf;
+	border: 1px solid var(--color-border-input);
 	border-radius: 0.25rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	transition-duration: 300ms;
-	background-color: white;
+	background-color: var(--color-bg-white);
 }
 
 .customCheckboxChecked {
@@ -37,7 +37,7 @@
 .checkmark {
 	width: 0.75rem;
 	height: 0.75rem;
-	color: white;
+	color: var(--color-bg-white);
 }
 
 .labelText {

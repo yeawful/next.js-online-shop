@@ -1,5 +1,5 @@
 .container {
-	background-color: white;
+	background-color: var(--color-bg-white);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -20,10 +20,10 @@
 }
 
 .linkButton {
-	background-color: #ff6633;
+	background-color: var(--color-accent);
 	width: 100%;
 	text-align: center;
-	color: white;
+	color: var(--color-bg-white);
 	font-size: 1.5rem;
 	line-height: 2rem;
 	padding: 0.5rem 0.75rem;

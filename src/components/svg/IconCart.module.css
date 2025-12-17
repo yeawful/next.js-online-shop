@@ -8,11 +8,11 @@
 }
 
 .rectActive {
-	fill: #ff6633;
+	fill: var(--color-accent);
 }
 
 .pathActive {
-	fill: #ff6633;
+	fill: var(--color-accent);
 }
 
 .rectInactive {

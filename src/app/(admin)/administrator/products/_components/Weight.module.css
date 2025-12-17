@@ -11,7 +11,7 @@
 }
 
 .required {
-	color: #d80000;
+	color: var(--color-error);
 }
 
 .input {
@@ -21,9 +21,9 @@
 	color: var(--color-main-text);
 	font-size: 1rem;
 	line-height: 1.5rem;
-	border: 1px solid #bfbfbf;
+	border: 1px solid var(--color-border-input);
 	border-radius: 0.25rem;
-	background-color: white;
+	background-color: var(--color-bg-white);
 }
 
 .input:focus {
@@ -31,7 +31,7 @@
 	box-shadow:
 		0 4px 6px -1px rgb(0 0 0 / 0.1),
 		0 2px 4px -2px rgb(0 0 0 / 0.1);
-	background-color: white;
+	background-color: var(--color-bg-white);
 	outline: none;
 	caret-color: var(--color-primary);
 }
@@ -39,7 +39,7 @@
 .formLabel {
 	font-size: 1rem;
 	line-height: 1.5rem;
-	color: #8f8f8f;
+	color: var(--color-text-placeholder);
 	display: block;
 }
 
@@ -50,7 +50,7 @@
 	color: var(--color-main-text);
 	font-size: 1rem;
 	line-height: 1.5rem;
-	border: 1px solid #bfbfbf;
+	border: 1px solid var(--color-border-input);
 	border-radius: 0.25rem;
 }
 
@@ -59,7 +59,7 @@
 	box-shadow:
 		0 4px 6px -1px rgb(0 0 0 / 0.1),
 		0 2px 4px -2px rgb(0 0 0 / 0.1);
-	background-color: white;
+	background-color: var(--color-bg-white);
 	outline: none;
 	caret-color: var(--color-primary);
 }
@@ -69,7 +69,7 @@
 	height: 2rem;
 	color: var(--color-primary);
 	border: 1px solid var(--color-primary);
-	background-color: white;
+	background-color: var(--color-bg-white);
 	width: 7.5rem;
 	border-radius: 0.25rem;
 	display: flex;
@@ -79,7 +79,7 @@
 }
 
 .loginLink:hover {
-	color: white;
+	color: var(--color-bg-white);
 	background-color: var(--color-primary);
 }
 
@@ -91,7 +91,7 @@
 
 .radioLabel {
 	padding: 0.5rem 1rem;
-	border: 1px solid #d1d5db;
+	border: 1px solid var(--color-border-default);
 	border-radius: 0.5rem;
 	cursor: pointer;
 	transition-property:
@@ -102,6 +102,6 @@
 
 .radioLabelActive {
 	background-color: #3b82f6;
-	color: white;
+	color: var(--color-bg-white);
 	border-color: #3b82f6;
 }

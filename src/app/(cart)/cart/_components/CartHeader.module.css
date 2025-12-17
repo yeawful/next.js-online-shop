@@ -36,7 +36,7 @@
 	margin-left: 1.25rem;
 	top: -1rem;
 	right: 8.25rem;
-	background-color: #ff6633;
+	background-color: var(--color-accent);
 	border-radius: 0.25rem;
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
@@ -58,5 +58,5 @@
 
 .countText {
 	font-size: 1rem;
-	color: #ffffff;
+	color: var(--color-bg-white);
 }

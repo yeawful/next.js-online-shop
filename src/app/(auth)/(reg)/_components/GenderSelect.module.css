@@ -5,14 +5,14 @@
 
 .label {
 	font-size: 1rem;
-	color: #8f8f8f;
+	color: var(--color-text-placeholder);
 	display: block;
 }
 
 .genderGroup {
 	display: flex;
 	gap: 0.25rem;
-	background-color: #f3f2f1;
+	background-color: var(--color-bg-light);
 	height: 2.5rem;
 	border-radius: 0.25rem;
 	padding: 0.25rem;
@@ -30,7 +30,7 @@
 
 .genderLabelActive {
 	background-color: var(--color-primary);
-	color: #ffffff;
+	color: var(--color-bg-white);
 }
 
 .genderInput {

@@ -29,7 +29,7 @@
 .addButton {
 	background-color: var(--color-primary);
 	border-radius: 0.25rem;
-	color: #ffffff;
+	color: var(--color-bg-white);
 	cursor: pointer;
 	transition-duration: 300ms;
 	padding-left: 1rem;

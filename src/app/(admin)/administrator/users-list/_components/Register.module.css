@@ -1,10 +1,10 @@
 .container {
-	border-bottom: 1px solid #d1d5db;
+	border-bottom: 1px solid var(--color-border-default);
 	order: 7;
 	display: flex;
 	flex-direction: row;
 	gap: 0.5rem;
-	border-right: 1px solid #d1d5db;
+	border-right: 1px solid var(--color-border-default);
 }
 
 .label {
@@ -21,7 +21,7 @@
 .time {
 	font-size: 0.75rem;
 	line-height: 1rem;
-	color: #9ca3af;
+	color: var(--color-text-muted);
 }
 
 @media (min-width: 768px) {

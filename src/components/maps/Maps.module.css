@@ -37,7 +37,7 @@
 
 .locationButtonActive {
 	background-color: var(--color-primary);
-	color: var(--color-white);
+	color: var(--color-bg-white);
 }
 
 .locationButtonActive:hover {
@@ -45,7 +45,7 @@
 }
 
 .locationButtonInactive {
-	background-color: var(--color-bg-gray);
+	background-color: var(--color-bg-light);
 }
 
 .locationButtonInactive:hover {

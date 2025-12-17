@@ -61,7 +61,7 @@
 }
 
 .errorMessage {
-	color: #ef4444;
+	color: var(--color-error-light);
 	text-align: center;
 	margin: 1rem 0;
 	padding: 1rem;

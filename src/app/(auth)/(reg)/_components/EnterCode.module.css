@@ -13,7 +13,7 @@
 
 .subtitle {
 	text-align: center;
-	color: #8f8f8f;
+	color: var(--color-text-placeholder);
 }
 
 .form {
@@ -34,19 +34,19 @@
 	text-align: center;
 	font-size: 1.5rem;
 	padding: 0.75rem 1rem;
-	border: 1px solid #bfbfbf;
+	border: 1px solid var(--color-border-input);
 	border-radius: 4px;
 }
 
 .codeInput:focus {
 	border-color: var(--color-primary);
 	box-shadow: var(--shadow-button-default);
-	background-color: white;
+	background-color: var(--color-bg-white);
 	outline: none;
 }
 
 .error {
-	color: #ef4444;
+	color: var(--color-error-light);
 	text-align: center;
 	margin-top: 0.5rem;
 	font-size: 0.875rem;
@@ -65,8 +65,8 @@
 }
 
 .buttonActive {
-	background-color: #ff6633;
-	color: white;
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
 }
 
 .buttonActive:hover {
@@ -78,8 +78,8 @@
 }
 
 .buttonInactive {
-	background-color: #fcd5ba;
-	color: #ff6633;
+	background-color: var(--color-warning-bg);
+	color: var(--color-accent);
 }
 
 .backLink {

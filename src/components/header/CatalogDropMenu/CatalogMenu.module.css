@@ -10,7 +10,7 @@
 	top: 100%;
 	left: 0;
 	width: 100%;
-	background-color: var(--color-white);
+	background-color: var(--color-bg-white);
 	box-shadow: var(--shadow-catalog-menu);
 	z-index: 50;
 }
@@ -38,7 +38,7 @@
 }
 
 .categoryLink:hover {
-	color: #ff6633;
+	color: var(--color-accent);
 }
 
 .noCategoriesText {

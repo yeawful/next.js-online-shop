@@ -42,8 +42,8 @@
 	font-weight: 500;
 	cursor: pointer;
 	transition-duration: 300ms;
-	background-color: #ff6633;
-	color: white;
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
 	border: none;
 }
 
@@ -65,7 +65,7 @@
 	flex: 1;
 	padding: 0.5rem 1rem;
 	border-radius: 0.375rem;
-	background-color: #f3f2f1;
+	background-color: var(--color-bg-light);
 	color: #606060;
 	cursor: pointer;
 	transition-duration: 300ms;
@@ -91,7 +91,7 @@
 	padding: 0.5rem 1rem;
 	border-radius: 0.375rem;
 	background-color: var(--color-primary);
-	color: white;
+	color: var(--color-bg-white);
 	cursor: pointer;
 	transition-duration: 300ms;
 	border: none;
@@ -126,7 +126,7 @@
 	padding: 0.5rem 1rem;
 	color: var(--color-main-text);
 	font-size: 1rem;
-	border: 1px solid #bfbfbf;
+	border: 1px solid var(--color-border-input);
 	border-radius: 0.375rem;
 	caret-color: var(--color-primary);
 }
@@ -134,12 +134,12 @@
 .input:focus {
 	border-color: var(--color-primary);
 	box-shadow: var(--shadow-button-default);
-	background-color: white;
+	background-color: var(--color-bg-white);
 	outline: none;
 }
 
 .input:disabled {
-	background-color: #f3f2f1;
+	background-color: var(--color-bg-light);
 	cursor: not-allowed;
 }
 
@@ -150,7 +150,7 @@
 	transform: translateY(-50%);
 	height: 1.25rem;
 	width: 1.25rem;
-	color: #9ca3af;
+	color: var(--color-text-muted);
 }
 
 .editIcon {

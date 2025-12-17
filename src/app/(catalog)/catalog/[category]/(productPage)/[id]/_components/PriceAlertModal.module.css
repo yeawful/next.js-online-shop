@@ -1,5 +1,5 @@
 .modal {
-	background-color: white;
+	background-color: var(--color-bg-white);
 	border-radius: 0.5rem;
 	padding: 1.5rem;
 	width: 100%;
@@ -37,11 +37,11 @@
 }
 
 .inputError {
-	border-color: #d80000;
+	border-color: var(--color-error);
 }
 
 .errorText {
-	color: #d80000;
+	color: var(--color-error);
 	font-size: 0.75rem;
 	line-height: 1rem;
 	margin-top: 0.25rem;
@@ -62,7 +62,7 @@
 	padding-right: 1rem;
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
-	color: white;
+	color: var(--color-bg-white);
 	border-radius: 0.25rem;
 	font-size: 0.875rem;
 	line-height: 1.25rem;
@@ -97,7 +97,7 @@
 	border-radius: 0.25rem;
 	cursor: pointer;
 	transition-duration: 300ms;
-	background-color: #f3f2f1;
+	background-color: var(--color-bg-light);
 }
 
 .cancelButton:hover:not(:disabled) {

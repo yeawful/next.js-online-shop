@@ -17,7 +17,7 @@
 }
 
 .container {
-	background-color: white;
+	background-color: var(--color-bg-white);
 	border-radius: 8px;
 	padding: 24px;
 	max-width: 580px;
@@ -66,7 +66,7 @@
 
 .button {
 	background-color: var(--color-primary);
-	color: white;
+	color: var(--color-bg-white);
 	padding: 8px 24px;
 	border-radius: 4px;
 	font-size: 1rem;
@@ -83,7 +83,7 @@
 
 .smallText {
 	font-size: 0.875rem;
-	color: #4b5563;
+	color: var(--color-text-hover);
 	margin-bottom: 16px;
 	margin-top: 0;
 	line-height: 1.5;
@@ -94,13 +94,13 @@
 }
 
 .divider {
-	border-color: #e5e7eb;
+	border-color: var(--color-border-light);
 	margin: 16px 0;
 }
 
 .footerText {
 	font-size: 0.75rem;
-	color: #6b7280;
+	color: var(--color-text-secondary);
 	margin: 0;
 	line-height: 1.25;
 }
@@ -108,12 +108,12 @@
 .companySection {
 	margin-top: 24px;
 	padding-top: 16px;
-	border-top: 1px solid #e5e7eb;
+	border-top: 1px solid var(--color-border-light);
 }
 
 .companyInfo {
 	font-size: 0.75rem;
-	color: #9ca3af;
+	color: var(--color-text-muted);
 	margin: 0;
 	text-align: center;
 	line-height: 1.25;
@@ -121,7 +121,7 @@
 
 .copyright {
 	font-size: 0.75rem;
-	color: #9ca3af;
+	color: var(--color-text-muted);
 	margin: 8px 0 0 0;
 	text-align: center;
 	line-height: 1.25;

@@ -21,11 +21,11 @@
 
 .filterButtonActive {
 	background-color: var(--color-primary);
-	color: white;
+	color: var(--color-bg-white);
 }
 
 .filterButtonInactive {
-	background-color: #f3f2f1;
+	background-color: var(--color-bg-light);
 	color: #606060;
 }
 
@@ -41,7 +41,7 @@
 	transition-duration: 300ms;
 	gap: 0.5rem;
 	background-color: var(--color-primary);
-	color: white;
+	color: var(--color-bg-white);
 }
 
 .filterLink {
@@ -69,7 +69,7 @@
 	border-radius: 0.25rem;
 	font-size: 0.75rem;
 	line-height: 1rem;
-	background-color: #f3f2f1;
+	background-color: var(--color-bg-light);
 	color: #606060;
 	animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }

@@ -1,22 +1,50 @@
+@import "../styles/normalize.css";
+
 :root {
 	--font-sans: var(--font-rubik);
+
 	--color-primary: #70c05b;
+	--color-accent: #ff6633;
+
 	--color-main-text: #414141;
-	--color-bg-gray: #f3f2f1;
-	--color-white: #ffffff;
+
+	--color-bg-light: #f3f2f1;
+	--color-bg-white: #ffffff;
+
+	--color-text-secondary: #6b7280;
+	--color-text-muted: #9ca3af;
+	--color-text-placeholder: #8f8f8f;
+	--color-text-hover: #4b5563;
+
+	--color-border-default: #d1d5db;
+	--color-border-light: #e5e7eb;
+	--color-border-input: #bfbfbf;
+
+	--color-success: #008c48;
+	--color-success-bg: #f0fdf4;
+
+	--color-error: #d80000;
+	--color-error-light: #ef4444;
+	--color-error-bg: #ffc7c7;
+
+	--color-warning-bg: #fcd5ba;
+	--color-warning-border: #fde68a;
+
 	--shadow-default: 2px 4px 8px 0px rgba(0, 0, 0, 0.1);
+
 	--shadow-button-default: 4px 8px 16px 0px rgba(112, 192, 91, 0.2);
 	--shadow-button-secondary: 4px 8px 16px 0px rgba(0, 0, 0, 0.1);
 	--shadow-button-active: inset 0px 2px 0px 0px rgba(0, 0, 0, 0.2);
+
 	--shadow-article: 4px 8px 16px 0px rgba(255, 102, 51, 0.2);
-	--shadow-card-shop: 4px 8px 16px 0px rgba(255, 102, 51, 0.2);
+
 	--shadow-category-block: 1px 2px 4px 0px rgba(112, 192, 91, 0.2);
 	--shadow-catalog-menu: 0px 8px 16px 0px rgba(0, 0, 0, 0.15);
 }
 
 body {
 	background-color: #fbf8ec;
-	color: var(--foreground);
+	color: var(--color-main-text);
 	font-family: var(--font-rubik), sans-serif;
 	min-height: 100vh;
 	display: flex;

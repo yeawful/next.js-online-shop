@@ -4,7 +4,7 @@
 }
 
 .rect {
-	fill: white;
+	fill: var(--color-bg-white);
 	fill-opacity: 0;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .pathOrangeActive {
-	fill: #ff6633;
+	fill: var(--color-accent);
 }
 
 .pathInactive {

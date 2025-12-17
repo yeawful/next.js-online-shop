@@ -48,11 +48,11 @@
 }
 
 .noResults {
-	color: #8f8f8f;
+	color: var(--color-text-placeholder);
 	padding: 0.5rem 1rem;
 }
 
 .enterText {
-	color: #8f8f8f;
+	color: var(--color-text-placeholder);
 	padding: 1rem;
 }

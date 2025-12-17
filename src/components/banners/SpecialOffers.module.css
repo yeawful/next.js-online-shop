@@ -35,7 +35,7 @@
 	padding-top: 1.25rem;
 	padding-left: 1.25rem;
 	border-radius: 0.25rem;
-	background-color: #fcd5ba;
+	background-color: var(--color-warning-bg);
 	width: 100%;
 	max-width: 336px;
 	height: 170px;
@@ -47,7 +47,7 @@
 }
 
 .cardBanner:hover {
-	box-shadow: var(--shadow-card-shop);
+	box-shadow: var(--shadow-article);
 }
 
 .cardBannerContent {

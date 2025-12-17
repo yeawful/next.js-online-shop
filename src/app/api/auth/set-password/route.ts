@@ -5,7 +5,20 @@ import { getDB } from "../../../../utils/api-routes";
 
 export async function POST(request: NextRequest) {
 	try {
-		const { userId, password } = await request.json();
+		const {
+			userId,
+			password,
+
+			surname,
+			name,
+			email,
+			birthdayDate,
+			region,
+			location,
+			gender,
+			card,
+			hasCard,
+		} = await request.json();
 
 		if (!userId || !password) {
 			return Response.json(
@@ -16,11 +29,25 @@ export async function POST(request: NextRequest) {
 
 		const db = await getDB();
 
+		const updateData: Record<string, unknown> = {
+			password: await bcrypt.hash(password, 10),
+			updatedAt: new Date(),
+		};
+
+		if (surname) updateData.surname = surname;
+		if (name) updateData.name = name;
+		if (email) updateData.email = email;
+		if (birthdayDate) updateData.birthdayDate = birthdayDate;
+		if (region) updateData.region = region;
+		if (location) updateData.location = location;
+		if (gender) updateData.gender = gender;
+		if (hasCard) updateData.card = card;
+
 		const result = await db
 			.collection("user")
 			.updateOne(
 				{ _id: ObjectId.createFromHexString(userId) },
-				{ $set: { password: await bcrypt.hash(password, 10) } }
+				{ $set: updateData }
 			);
 
 		if (result.matchedCount === 0) {

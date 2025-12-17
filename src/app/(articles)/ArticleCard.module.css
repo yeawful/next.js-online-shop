@@ -1,11 +1,11 @@
 .articleCard {
-	background-color: var(--color-white);
+	background-color: var(--color-bg-white);
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 	border-radius: 0.25rem;
 	overflow: hidden;
-	box-shadow: var(--shadow-card);
+	box-shadow: var(--shadow-article);
 	transition-duration: 300ms;
 }
 
@@ -34,7 +34,7 @@
 
 .articleDate {
 	font-size: 0.5rem;
-	color: #8f8f8f;
+	color: var(--color-text-placeholder);
 }
 
 .articleTitle {
@@ -68,7 +68,7 @@
 .readMoreButton:hover {
 	background-color: var(--color-primary);
 	box-shadow: var(--shadow-button-default);
-	color: var(--color-white);
+	color: var(--color-bg-white);
 }
 
 .readMoreButton:active {

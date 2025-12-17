@@ -1,5 +1,5 @@
 .closeButton {
-	background-color: #f3f2f1;
+	background-color: var(--color-bg-light);
 	border-radius: 0.25rem;
 	transition-duration: 300ms;
 	cursor: pointer;

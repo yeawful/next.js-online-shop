@@ -34,7 +34,7 @@
 
 .emailNotice {
 	color: var(--color-primary);
-	background-color: white;
+	background-color: var(--color-bg-white);
 	padding: 1rem;
 	border-radius: 4px;
 	border: 1px solid var(--color-primary);
@@ -57,25 +57,25 @@
 .phoneNotice {
 	margin-top: 1rem;
 	padding: 1rem;
-	background-color: white;
+	background-color: var(--color-bg-white);
 	border-radius: 4px;
-	border: 1px solid #ff6633;
+	border: 1px solid var(--color-accent);
 }
 
 .phoneNoticeTitle {
 	font-weight: 600;
-	color: #ff6633;
+	color: var(--color-accent);
 	margin-bottom: 0.5rem;
 }
 
 .phoneNoticeText {
-	color: #ff6633;
+	color: var(--color-accent);
 	font-size: 0.875rem;
 	line-height: 1.4;
 }
 
 .phoneButton {
-	color: #ff6633;
+	color: var(--color-accent);
 	font-weight: 500;
 	text-decoration: underline;
 	margin-left: 0.25rem;

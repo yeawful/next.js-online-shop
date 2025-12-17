@@ -22,7 +22,7 @@
 
 .thumbnail {
 	position: relative;
-	background-color: white;
+	background-color: var(--color-bg-white);
 	width: 4rem;
 	height: 37px;
 	display: flex;
@@ -47,7 +47,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: white;
+	background-color: var(--color-bg-white);
 	height: 248px;
 	width: 248px;
 	padding: 0.625rem;
@@ -81,8 +81,8 @@
 	position: absolute;
 	top: 1.25rem;
 	right: 1.25rem;
-	background-color: #ff6633;
-	color: white;
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
 	padding-top: 0.25rem;

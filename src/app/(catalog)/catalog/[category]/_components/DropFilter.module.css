@@ -15,7 +15,7 @@
 	transition-duration: 300ms;
 	gap: 0.5rem;
 	background-color: var(--color-primary);
-	color: var(--color-white);
+	color: var(--color-bg-white);
 	cursor: pointer;
 	border: none;
 }
@@ -38,7 +38,7 @@
 	height: 100vh;
 	width: 100%;
 	max-width: 22.5rem;
-	background-color: var(--color-white);
+	background-color: var(--color-bg-white);
 	z-index: 50;
 	padding: 1rem;
 	overflow-y: auto;
@@ -62,7 +62,7 @@
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 1rem;
-	background-color: var(--color-bg-gray);
+	background-color: var(--color-bg-light);
 	height: 2.75rem;
 	border-radius: 0.25rem;
 	font-size: 1rem;

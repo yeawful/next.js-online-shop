@@ -17,11 +17,11 @@
 
 .discountPriceOutOfStock {
 	font-weight: 700;
-	color: #6b7280;
+	color: var(--color-text-secondary);
 }
 
 .discountLabel {
-	color: #bfbfbf;
+	color: var(--color-border-input);
 }
 
 .regularPrice {
@@ -29,14 +29,14 @@
 }
 
 .regularPriceOutOfStock {
-	color: #9ca3af;
+	color: var(--color-text-muted);
 	text-decoration: line-through;
 }
 
 .regularLabel {
-	color: #bfbfbf;
+	color: var(--color-border-input);
 }
 
 .perUnit {
-	color: #bfbfbf;
+	color: var(--color-border-input);
 }

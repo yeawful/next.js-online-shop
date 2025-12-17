@@ -10,8 +10,8 @@
 	font-weight: 500;
 	cursor: pointer;
 	transition-duration: 300ms;
-	background-color: #ff6633;
-	color: white;
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
 	border: none;
 }
 

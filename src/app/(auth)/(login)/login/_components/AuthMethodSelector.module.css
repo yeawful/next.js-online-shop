@@ -49,7 +49,7 @@
 	justify-content: center;
 	padding: 1rem;
 	border-radius: 0.5rem;
-	border: 1px solid #e5e7eb;
+	border: 1px solid var(--color-border-light);
 	transition: all 0.3s;
 	cursor: pointer;
 	width: 100%;
@@ -72,18 +72,18 @@
 }
 
 .button:hover .iconContainer {
-	background-color: #ff6633;
+	background-color: var(--color-accent);
 }
 
 .icon {
 	height: 1.5rem;
 	width: 1.5rem;
-	color: #ff6633;
+	color: var(--color-accent);
 	transition: color 0.3s;
 }
 
 .button:hover .icon {
-	color: white;
+	color: var(--color-bg-white);
 }
 
 .buttonText {

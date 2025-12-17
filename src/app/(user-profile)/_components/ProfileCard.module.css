@@ -26,7 +26,7 @@
 
 .editButton {
 	background-color: var(--color-primary);
-	color: white;
+	color: var(--color-bg-white);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -60,7 +60,7 @@
 
 .cancelButton {
 	padding: 0.5rem 1rem;
-	background-color: #f3f2f1;
+	background-color: var(--color-bg-light);
 	border-radius: 0.25rem;
 	color: #606060;
 	transition-duration: 300ms;
@@ -95,7 +95,7 @@
 .saveButton {
 	padding: 0.5rem 1rem;
 	background-color: var(--color-primary);
-	color: white;
+	color: var(--color-bg-white);
 	border-radius: 0.25rem;
 	transition-duration: 300ms;
 	border: none;
@@ -137,24 +137,24 @@
 	color: var(--color-main-text);
 	font-size: 1rem;
 	line-height: 1.5rem;
-	border: 1px solid #bfbfbf;
+	border: 1px solid var(--color-border-input);
 	border-radius: 0.25rem;
-	background-color: white;
+	background-color: var(--color-bg-white);
 }
 
 .input:focus {
-	border-color: #70c05b;
+	border-color: var(--color-primary);
 	box-shadow:
 		0 4px 6px -1px rgb(0 0 0 / 0.1),
 		0 2px 4px -2px rgb(0 0 0 / 0.1);
-	background-color: white;
+	background-color: var(--color-bg-white);
 	outline: none;
 	caret-color: var(--color-primary);
 }
 
 .input:disabled {
 	cursor: not-allowed;
-	background-color: #f3f2f1;
+	background-color: var(--color-bg-light);
 }
 
 .inputFullWidth {
@@ -168,7 +168,7 @@
 	transform: translateY(-50%);
 	height: 1.25rem;
 	width: 1.25rem;
-	color: #9ca3af;
+	color: var(--color-text-muted);
 }
 
 .editIcon {
@@ -178,14 +178,14 @@
 }
 
 .error {
-	color: #ef4444;
+	color: var(--color-error-light);
 	font-size: 0.875rem;
 	line-height: 1.25rem;
 	margin-top: 0.5rem;
 }
 
 .info {
-	color: #6b7280;
+	color: var(--color-text-secondary);
 	font-size: 0.875rem;
 	line-height: 1.25rem;
 	margin-top: 0.5rem;

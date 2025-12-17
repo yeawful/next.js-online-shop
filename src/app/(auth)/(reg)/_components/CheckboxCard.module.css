@@ -21,13 +21,13 @@
 	position: relative;
 	width: 1.25rem;
 	height: 1.25rem;
-	border: 1px solid #bfbfbf;
+	border: 1px solid var(--color-border-input);
 	border-radius: 0.25rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	transition-duration: 300ms;
-	background-color: #ffffff;
+	background-color: var(--color-bg-white);
 }
 
 .checkboxCustomChecked {
@@ -36,10 +36,10 @@
 }
 
 .checkboxIcon {
-	color: #ffffff;
+	color: var(--color-bg-white);
 }
 
 .checkboxText {
 	margin-left: 0.5rem;
-	color: #8f8f8f;
+	color: var(--color-text-placeholder);
 }

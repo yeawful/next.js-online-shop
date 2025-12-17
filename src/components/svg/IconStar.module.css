@@ -8,7 +8,7 @@
 }
 
 .baseStar {
-	fill: #bfbfbf;
+	fill: var(--color-border-input);
 	fill-opacity: 1;
 }
 
@@ -25,6 +25,6 @@
 }
 
 .filledStar {
-	fill: #ff6633;
+	fill: var(--color-accent);
 	fill-opacity: 1;
 }

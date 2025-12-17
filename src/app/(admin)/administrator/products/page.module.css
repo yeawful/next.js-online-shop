@@ -16,8 +16,8 @@
 }
 
 .link {
-	background-color: #ff6633;
-	color: white;
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -46,12 +46,4 @@
 		width: 50%;
 		justify-content: flex-start;
 	}
-}
-
-.linkWithVars:hover {
-	box-shadow: var(--shadow-article);
-}
-
-.linkWithVars:active {
-	box-shadow: var(--shadow-button-active);
 }

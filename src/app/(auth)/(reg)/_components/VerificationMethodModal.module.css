@@ -31,7 +31,7 @@
 }
 
 .subtitle {
-	color: #6b7280;
+	color: var(--color-text-secondary);
 }
 
 .verificationOptions {
@@ -48,16 +48,16 @@
 	align-items: center;
 	justify-content: center;
 	padding: 0.75rem;
-	border: 2px solid #e5e7eb;
+	border: 2px solid var(--color-border-light);
 	border-radius: 0.75rem;
-	background-color: #ffffff;
+	background-color: var(--color-bg-white);
 	transition: all 0.3s;
 	cursor: pointer;
 	text-decoration: none;
 }
 
 .verificationLink:hover {
-	border-color: #ff6633;
+	border-color: var(--color-accent);
 	box-shadow: var(--shadow-article);
 }
 
@@ -74,7 +74,7 @@
 }
 
 .verificationLink:hover .iconContainer {
-	background-color: #ff6633;
+	background-color: var(--color-accent);
 }
 
 @media (min-width: 768px) {
@@ -92,18 +92,18 @@
 }
 
 .verificationLink:hover .iconContainer {
-	background-color: #ff6633;
+	background-color: var(--color-accent);
 }
 
 .icon {
 	width: 1.5rem;
 	height: 1.5rem;
-	color: #ff6633;
+	color: var(--color-accent);
 	transition: color 0.3s;
 }
 
 .verificationLink:hover .icon {
-	color: #ffffff;
+	color: var(--color-bg-white);
 }
 
 .linkTitle {
@@ -113,7 +113,7 @@
 
 .linkSubtitle {
 	font-size: 0.875rem;
-	color: #6b7280;
+	color: var(--color-text-secondary);
 	margin-top: 0.25rem;
 }
 
@@ -135,7 +135,7 @@
 	position: absolute;
 	animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 	border-radius: 9999px;
-	background-color: #ff6633;
+	background-color: var(--color-accent);
 	opacity: 0.75;
 	height: 100%;
 	width: 100%;
@@ -144,7 +144,7 @@
 .pingDot {
 	position: relative;
 	border-radius: 9999px;
-	background-color: #ff6633;
+	background-color: var(--color-accent);
 	height: 1rem;
 	width: 1rem;
 }
@@ -157,12 +157,12 @@
 
 .dividerLine {
 	flex-grow: 1;
-	border-top: 1px solid #e5e7eb;
+	border-top: 1px solid var(--color-border-light);
 }
 
 .dividerText {
 	margin: 0 1rem;
-	color: #9ca3af;
+	color: var(--color-text-muted);
 	font-size: 0.875rem;
 }
 

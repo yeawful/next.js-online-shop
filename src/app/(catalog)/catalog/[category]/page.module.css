@@ -38,7 +38,7 @@
 
 .filterHeader {
 	height: 2.75rem;
-	background-color: var(--color-bg-gray);
+	background-color: var(--color-bg-light);
 	border-radius: 0.25rem;
 	font-size: 1rem;
 	font-weight: 700;
@@ -66,6 +66,11 @@
 }
 
 @media (min-width: 1280px) {
+	.categoryPage {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
 	.categoryTitle {
 		margin-left: 0;
 		margin-bottom: 3.75rem;

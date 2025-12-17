@@ -13,7 +13,7 @@
 }
 
 .categoryItemEditing {
-	border: 4px dashed #9ca3af;
+	border: 4px dashed var(--color-text-muted);
 }
 
 .categoryItemHovered {

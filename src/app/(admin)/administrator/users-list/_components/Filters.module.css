@@ -1,11 +1,11 @@
 .container {
-	background-color: white;
+	background-color: var(--color-bg-white);
 	padding: 1rem;
 	border-radius: 0.5rem;
 	box-shadow:
 		0 4px 6px -1px rgb(0 0 0 / 0.1),
 		0 2px 4px -2px rgb(0 0 0 / 0.1);
-	border: 1px solid #e5e7eb;
+	border: 1px solid var(--color-border-light);
 }
 
 .header {
@@ -30,8 +30,8 @@
 	padding: 0.5rem 0.75rem;
 	font-size: 0.75rem;
 	line-height: 1rem;
-	background-color: #ff6633;
-	color: white;
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -61,7 +61,7 @@
 	border-radius: 0.25rem;
 	cursor: pointer;
 	transition-duration: 300ms;
-	background-color: #f3f2f1;
+	background-color: var(--color-bg-light);
 }
 
 .clearButton:hover {
@@ -110,7 +110,7 @@
 .select {
 	width: 100%;
 	padding: 0.5rem;
-	border: 1px solid #d1d5db;
+	border: 1px solid var(--color-border-default);
 	border-radius: 0.25rem;
 	font-size: 0.875rem;
 	line-height: 1.25rem;
@@ -135,8 +135,8 @@
 }
 
 .buttonActive {
-	background-color: #ff6633;
-	color: white;
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -155,7 +155,7 @@
 }
 
 .buttonInactive {
-	background-color: #fcd5ba;
-	color: #ff6633;
+	background-color: var(--color-warning-bg);
+	color: var(--color-accent);
 	border-radius: 0.25rem;
 }

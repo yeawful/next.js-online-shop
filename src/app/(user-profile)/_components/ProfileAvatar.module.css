@@ -52,8 +52,8 @@
 	bottom: -0.3rem;
 	right: 0;
 	background-color: var(--color-primary);
-	color: white;
-	padding: 0.5rem;
+	color: var(--color-bg-white);
+	padding: 0.5625rem;
 	border-radius: 50%;
 	cursor: pointer;
 	box-shadow:
@@ -70,8 +70,8 @@
 	position: absolute;
 	bottom: -0.25rem;
 	left: 0;
-	background-color: #ff6633;
-	color: white;
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
 	padding: 0.5rem;
 	border-radius: 50%;
 	cursor: pointer;
@@ -99,13 +99,13 @@
 
 .instructionText {
 	font-size: 0.875rem;
-	color: #4b5563;
+	color: var(--color-text-hover);
 	margin-bottom: 0.25rem;
 }
 
 .subInstructionText {
 	font-size: 0.75rem;
-	color: #6b7280;
+	color: var(--color-text-secondary);
 }
 
 @keyframes spin {

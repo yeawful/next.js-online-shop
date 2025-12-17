@@ -22,11 +22,11 @@
 }
 
 .borderRight {
-	border-right: 1px solid #d1d5db;
+	border-right: 1px solid var(--color-border-default);
 }
 
 .borderBottom {
-	border-bottom: 1px solid #d1d5db;
+	border-bottom: 1px solid var(--color-border-default);
 }
 
 .cellPadding {
@@ -62,7 +62,7 @@
 }
 
 .bgGrayLight {
-	background-color: #f3f2f1;
+	background-color: var(--color-bg-light);
 }
 
 .textXs {
@@ -75,19 +75,19 @@
 }
 
 .textGreen {
-	color: #008c48;
+	color: var(--color-success);
 }
 
 .textGray400 {
-	color: #9ca3af;
+	color: var(--color-text-muted);
 }
 
 .textGray600 {
-	color: #4b5563;
+	color: var(--color-text-hover);
 }
 
 .textGray600Hover:hover {
-	color: #4b5563;
+	color: var(--color-text-hover);
 }
 
 .cursorDefault {
@@ -151,16 +151,16 @@
 }
 
 .roleAdmin {
-	background-color: #ffc7c7;
-	color: #d80000;
+	background-color: var(--color-error-bg);
+	color: var(--color-error);
 }
 
 .roleManager {
 	background-color: #e5ffde;
-	color: #008c48;
+	color: var(--color-success);
 }
 
 .roleUser {
-	background-color: #f3f2f1;
-	color: #414141;
+	background-color: var(--color-bg-light);
+	color: var(--color-main-text);
 }

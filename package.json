@@ -10,7 +10,6 @@
 		"price-check": "curl -X GET http://localhost:3000/api/cron/price-check?secret=7f46cc0abf1a94d4c0ce48118bb9acc74d7f17a32c1b56cc9d8030cba82bb758"
 	},
 	"dependencies": {
-		"@a1rth/css-normalize": "^1.2.4",
 		"@faker-js/faker": "^10.1.0",
 		"@iminside/react-yandex-maps": "^1.2.7",
 		"@react-email/components": "^1.0.1",

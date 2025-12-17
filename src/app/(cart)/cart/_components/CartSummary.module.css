@@ -4,7 +4,7 @@
 	gap: 0.625rem;
 	padding-bottom: 1.5rem;
 	border-bottom-width: 2px;
-	border-bottom-color: #f3f2f1;
+	border-bottom-color: var(--color-bg-light);
 }
 
 .summaryRow {
@@ -14,7 +14,7 @@
 }
 
 .itemCount {
-	color: #8f8f8f;
+	color: var(--color-text-placeholder);
 }
 
 .itemCountPrice {
@@ -22,11 +22,11 @@
 }
 
 .discountText {
-	color: #8f8f8f;
+	color: var(--color-text-placeholder);
 }
 
 .discountAmount {
-	color: #ff6633;
+	color: var(--color-accent);
 	font-weight: 700;
 }
 
@@ -40,7 +40,7 @@
 
 .totalRow {
 	font-size: 1rem;
-	color: #8f8f8f;
+	color: var(--color-text-placeholder);
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -55,9 +55,9 @@
 }
 
 .minimumWarning {
-	background-color: #d80000;
+	background-color: var(--color-error);
 	border-radius: 0.25rem;
-	color: #ffffff;
+	color: var(--color-bg-white);
 	font-size: 0.75rem;
 	text-align: center;
 	margin-left: auto;
@@ -95,8 +95,8 @@
 }
 
 .buttonActive {
-	background-color: #ff6633;
-	color: #ffffff;
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -114,7 +114,7 @@
 }
 
 .buttonInactive {
-	background-color: #fcd5ba;
-	color: #ff6633;
+	background-color: var(--color-warning-bg);
+	color: var(--color-accent);
 	border-radius: 0.25rem;
 }

@@ -13,11 +13,11 @@
 	text-decoration: underline;
 	cursor: pointer;
 	text-align: center;
-	color: #ff6633;
+	color: var(--color-accent);
 	border: none;
 }
 
 .resendButton:disabled {
-	color: #9ca3af;
+	color: var(--color-text-muted);
 	cursor: not-allowed;
 }

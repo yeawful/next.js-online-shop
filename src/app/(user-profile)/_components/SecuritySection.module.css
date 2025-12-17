@@ -1,5 +1,5 @@
 .container {
-	border-top: 1px solid #e5e7eb;
+	border-top: 1px solid var(--color-border-light);
 	padding-top: 2rem;
 }
 
@@ -16,7 +16,7 @@
 	padding: 0.75rem;
 	background-color: #fef2f2;
 	border: 1px solid #fecaca;
-	color: #d80000;
+	color: var(--color-error);
 	border-radius: 0.375rem;
 }
 
@@ -44,8 +44,8 @@
 }
 
 .buttonActive {
-	background-color: #ff6633;
-	color: white;
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
 }
 
 .buttonActive:hover {
@@ -57,13 +57,13 @@
 }
 
 .buttonInactive {
-	background-color: #fcd5ba;
-	color: #ff6633;
+	background-color: var(--color-warning-bg);
+	color: var(--color-accent);
 }
 
 .logoutProfileButton {
-	background-color: #ff6633;
-	color: white;
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
 	flex: 1;
 	display: flex;
 	align-items: center;
@@ -78,20 +78,20 @@
 }
 
 .logoutProfileButton:hover {
-	background-color: #f3f2f1;
+	background-color: var(--color-bg-light);
 	color: #606060;
 	box-shadow: var(--shadow-article);
 }
 
 .logoutProfileButton:active {
-	background-color: #f3f2f1;
+	background-color: var(--color-bg-light);
 	color: #606060;
 	box-shadow: var(--shadow-button-active);
 }
 
 .logoutAppButton {
 	flex: 1;
-	background-color: #f3f2f1;
+	background-color: var(--color-bg-light);
 	border: none;
 	border-radius: 0.375rem;
 	display: flex;
@@ -119,8 +119,8 @@
 }
 
 .deleteAccountButton {
-	background-color: #ffc7c7;
-	color: #d80000;
+	background-color: var(--color-error-bg);
+	color: var(--color-error);
 	padding: 0.5rem 1rem;
 	height: 3rem;
 	border-radius: 0.375rem;
@@ -132,6 +132,6 @@
 }
 
 .deleteAccountButton:hover {
-	background-color: #d80000;
+	background-color: var(--color-error);
 	color: #f2f2f2;
 }

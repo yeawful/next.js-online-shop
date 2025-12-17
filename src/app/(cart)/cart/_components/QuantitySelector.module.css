@@ -4,7 +4,7 @@
 	background-color: var(--color-primary);
 	padding: 0.5rem;
 	border-radius: 0.25rem;
-	color: #ffffff;
+	color: var(--color-bg-white);
 	position: relative;
 	height: 2.5rem;
 	gap: 0.5rem;
@@ -39,7 +39,7 @@
 .minusIcon {
 	width: 0.9375rem;
 	height: 1px;
-	background-color: #ffffff;
+	background-color: var(--color-bg-white);
 }
 
 .quantity {
@@ -60,7 +60,7 @@
 	left: 0;
 	width: 100%;
 	height: 1px;
-	background-color: #ffffff;
+	background-color: var(--color-bg-white);
 	transform: translateY(-50%);
 }
 
@@ -70,6 +70,6 @@
 	top: 0;
 	width: 1px;
 	height: 100%;
-	background-color: #ffffff;
+	background-color: var(--color-bg-white);
 	transform: translateX(-50%);
 }

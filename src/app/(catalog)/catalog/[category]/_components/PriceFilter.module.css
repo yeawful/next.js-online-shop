@@ -6,8 +6,8 @@
 }
 
 .applyButton {
-	background-color: #ff6633;
-	color: white;
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
 	height: 2.5rem;
 	border-radius: 0.25rem;
 	display: flex;

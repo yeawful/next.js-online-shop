@@ -44,32 +44,30 @@ export const EnterCode = ({ phoneNumber }: { phoneNumber: string }) => {
 
 			setAttemptsLeft(CONFIG.MAX_ATTEMPTS);
 
-			const passwordResponse = await fetch("/api/auth/set-password", {
+			const response = await fetch("/api/auth/set-password", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({
 					userId: verifyData.user.id,
 					password: regFormData.password,
+
+					// данные профиля
+					surname: regFormData.surname,
+					name: regFormData.name,
+					email: regFormData.email,
+					birthdayDate: regFormData.birthdayDate,
+					region: regFormData.region,
+					location: regFormData.location,
+					gender: regFormData.gender,
+					card: regFormData.card,
+					hasCard: regFormData.hasCard,
 				}),
 			});
 
-			if (!passwordResponse.ok) {
-				const errorData = await passwordResponse.json();
-				console.error("Детали ошибки", errorData);
-				throw new Error(errorData.error || "Ошибка установки пароля");
+			if (!response.ok) {
+				const errorData = await response.json();
+				throw new Error(errorData.error || "Ошибка завершения регистрации");
 			}
-
-			let userDataToUpdate = { ...regFormData };
-
-			if (verifyData.user.phoneNumberVerified) {
-				// eslint-disable-next-line @typescript-eslint/no-unused-vars
-				const { email, ...rest } = userDataToUpdate;
-				userDataToUpdate = rest as typeof regFormData;
-			}
-
-			const { error: updateError } =
-				await authClient.updateUser(userDataToUpdate);
-			if (updateError) throw updateError;
 
 			router.replace("/login");
 		} catch (error) {

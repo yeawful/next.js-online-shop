@@ -13,7 +13,7 @@
 .loaderDot {
 	width: 0.5rem;
 	height: 0.5rem;
-	background-color: #9ca3af;
+	background-color: var(--color-text-muted);
 	border-radius: 50%;
 	animation: bounce 1.4s infinite ease-in-out;
 }

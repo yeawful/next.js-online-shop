@@ -47,12 +47,12 @@
 .textarea {
 	width: 100%;
 	max-width: 544px;
-	background-color: white;
+	background-color: var(--color-bg-white);
 	padding-left: 1rem;
 	padding-right: 1rem;
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
-	border: 1px solid #bfbfbf;
+	border: 1px solid var(--color-border-input);
 	border-radius: 0.25rem;
 	font-family: inherit;
 }
@@ -63,16 +63,16 @@
 }
 
 .textarea::placeholder {
-	color: #9ca3af;
+	color: var(--color-text-muted);
 }
 
 .validationError,
 .serverError {
-	color: #d80000;
+	color: var(--color-error);
 	font-size: 0.875rem;
 	line-height: 1.25rem;
 	padding: 0.5rem;
-	background-color: #ffc7c7;
+	background-color: var(--color-error-bg);
 	border-radius: 0.25rem;
 	margin-bottom: 0.5rem;
 }
@@ -92,8 +92,8 @@
 }
 
 .submitButton:not(.submitting) {
-	background-color: #ff6633;
-	color: white;
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
 }
 
 .submitButton:not(.submitting):hover {
@@ -104,8 +104,8 @@
 
 .submitButton.submitting {
 	cursor: not-allowed;
-	background-color: #fcd5ba;
-	color: #ff6633;
+	background-color: var(--color-warning-bg);
+	color: var(--color-accent);
 }
 
 .submitButton:disabled:not(.submitting) {

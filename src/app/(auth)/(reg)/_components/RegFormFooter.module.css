@@ -11,8 +11,8 @@
 }
 
 .submitButtonActive {
-	background-color: #ff6633;
-	color: #ffffff;
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
 }
 
 .submitButtonActive:hover {
@@ -24,8 +24,8 @@
 }
 
 .submitButtonInactive {
-	background-color: #fcd5ba;
-	color: #ff6633;
+	background-color: var(--color-warning-bg);
+	color: var(--color-accent);
 }
 
 .loginLink {
@@ -35,7 +35,7 @@
 	height: 2rem;
 	color: var(--color-primary);
 	border: 1px solid var(--color-primary);
-	background-color: #ffffff;
+	background-color: var(--color-bg-white);
 	width: 7.5rem;
 	border-radius: 0.25rem;
 	display: flex;
@@ -46,11 +46,11 @@
 }
 
 .loginLink:hover {
-	color: #ffffff;
+	color: var(--color-bg-white);
 	background-color: var(--color-primary);
 }
 
 .loginLink:active {
-	color: #ffffff;
+	color: var(--color-bg-white);
 	box-shadow: var(--shadow-button-default);
 }

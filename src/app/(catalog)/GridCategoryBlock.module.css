@@ -47,7 +47,7 @@
 }
 
 .categoryText {
-	color: var(--color-white);
+	color: var(--color-bg-white);
 	font-size: 1.125rem;
 	font-weight: 700;
 	word-break: break-word;

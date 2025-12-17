@@ -1,7 +1,11 @@
 .container {
-	background: linear-gradient(to right, #ff6633, #70c05b);
+	background: linear-gradient(
+		to right,
+		var(--color-accent),
+		var(--color-primary)
+	);
 	padding: 2rem 1.5rem;
-	color: white;
+	color: var(--color-bg-white);
 }
 
 .title {
