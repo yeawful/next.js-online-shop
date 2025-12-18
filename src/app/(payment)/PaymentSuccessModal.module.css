@@ -1,0 +1,103 @@
+.overlay {
+	position: fixed;
+	inset: 0;
+	background-color: var(--color-bg-white);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 50;
+	padding: 1rem;
+}
+
+.modal {
+	background-color: var(--color-bg-white);
+	border-radius: 0.5rem;
+	max-width: 28rem;
+	width: 100%;
+	padding: 1.5rem;
+	text-align: center;
+}
+
+.iconContainer {
+	width: 4rem;
+	height: 4rem;
+	background-color: var(--color-success-bg);
+	border-radius: 9999px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1rem;
+}
+
+.icon {
+	width: 2rem;
+	height: 2rem;
+	color: var(--color-success);
+}
+
+.title {
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: #111827;
+	margin-bottom: 0.5rem;
+}
+
+.details {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	margin-bottom: 1.5rem;
+	text-align: left;
+	background-color: var(--color-bg-light);
+	padding: 1rem;
+	border-radius: 0.5rem;
+}
+
+.detailRow {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.detailLabel {
+	color: var(--color-text-secondary);
+}
+
+.detailValue {
+	font-weight: 600;
+}
+
+.paymentId {
+	font-family: ui-monospace, monospace;
+	font-size: 0.875rem;
+}
+
+.cardNumber {
+	font-family: ui-monospace, monospace;
+}
+
+.message {
+	color: var(--color-text-secondary);
+	margin-bottom: 1.5rem;
+}
+
+.button {
+	width: 100%;
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	background-color: var(--color-success);
+	color: var(--color-bg-white);
+	border-radius: 0.5rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: background-color 0.2s;
+	border: none;
+}
+
+.button:hover {
+	background-color: #007a40;
+}

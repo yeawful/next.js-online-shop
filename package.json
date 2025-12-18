@@ -7,7 +7,8 @@
 		"build": "next build --webpack",
 		"start": "next start -p 3000",
 		"lint": "next lint",
-		"price-check": "curl -X GET http://localhost:3000/api/cron/price-check?secret=7f46cc0abf1a94d4c0ce48118bb9acc74d7f17a32c1b56cc9d8030cba82bb758"
+		"price-check": "curl -X GET http://localhost:3000/api/cron/price-check?secret=7f46cc0abf1a94d4c0ce48118bb9acc74d7f17a32c1b56cc9d8030cba82bb758",
+		"update-delivery-dates": "curl -X GET http://localhost:3000/api/cron/update-delivery-dates?secret=7f46cc0abf1a94d4c0ce48118bb9acc74d7f17a32c1b56cc9d8030cba82bb758"
 	},
 	"dependencies": {
 		"@faker-js/faker": "^10.1.0",

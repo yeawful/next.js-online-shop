@@ -1,33 +1,38 @@
 .button {
 	position: absolute;
+	border: 1px solid var(--color-primary);
 	bottom: 0.5rem;
 	left: 0.5rem;
 	right: 0.5rem;
-	border: 1px solid var(--color-primary);
 	height: 2.5rem;
 	border-radius: 0.25rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	color: var(--color-primary);
-	cursor: pointer;
-	transition: all 300ms;
+	transition-duration: 300ms;
 	user-select: none;
-	background-color: transparent;
 }
 
-.button:hover {
+.buttonAvailable {
+	color: var(--color-primary);
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.buttonAvailable:hover {
 	color: var(--color-bg-white);
 	background-color: var(--color-accent);
 	border-color: transparent;
 }
 
-.button:active {
+.buttonAvailable:active {
 	box-shadow: var(--shadow-button-active);
 }
 
-.button:disabled {
-	opacity: 0.5;
+.buttonUnavailable {
+	background-color: var(--color-border-default);
+	color: var(--color-text-secondary);
+	border-color: var(--color-border-default);
 	cursor: not-allowed;
 }
 

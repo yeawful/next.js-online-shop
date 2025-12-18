@@ -76,7 +76,7 @@
 }
 
 .phoneText:hover {
-	color: #000000;
+	color: var(--color-bg-dark);
 }
 
 .nav {
@@ -96,7 +96,7 @@
 }
 
 .navItem:hover {
-	color: #000000;
+	color: var(--color-bg-dark);
 }
 
 .design {

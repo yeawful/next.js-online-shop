@@ -1,0 +1,37 @@
+.button {
+	padding: 0.75rem;
+	border-radius: 0.25rem;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	font-size: 1.5rem;
+	cursor: pointer;
+	transition-duration: 300ms;
+	border: none;
+}
+
+.buttonActive {
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition-duration: 300ms;
+}
+
+.buttonActive:hover {
+	box-shadow: var(--shadow-article);
+}
+
+.buttonActive:active {
+	box-shadow: var(--shadow-button-active);
+}
+
+.buttonInactive {
+	background-color: var(--color-warning-bg);
+	color: var(--color-accent);
+	border-radius: 0.25rem;
+	cursor: not-allowed;
+}

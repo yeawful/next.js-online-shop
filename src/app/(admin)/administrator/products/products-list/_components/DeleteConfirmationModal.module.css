@@ -70,7 +70,7 @@
 	padding-bottom: 0.5rem;
 	border: 1px solid var(--color-border-default);
 	border-radius: 0.25rem;
-	color: #000000;
+	color: var(--color-bg-dark);
 	background-color: transparent;
 	cursor: pointer;
 }

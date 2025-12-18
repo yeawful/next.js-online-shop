@@ -17,7 +17,7 @@
 	left: 0.75rem;
 	top: 50%;
 	transform: translateY(-50%);
-	color: #000000;
+	color: var(--color-bg-dark);
 }
 
 .input {

@@ -1,0 +1,55 @@
+.summarySection {
+	display: flex;
+	flex-direction: column;
+	gap: 0.625rem;
+	padding-bottom: 1.5rem;
+	border-bottom-width: 2px;
+	border-bottom-color: var(--color-bg-light);
+}
+
+.summaryRow {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.itemCount {
+	color: var(--color-text-placeholder);
+}
+
+.itemCountPrice {
+	color: #000000;
+}
+
+.discountText {
+	color: var(--color-text-placeholder);
+}
+
+.discountAmount {
+	color: var(--color-accent);
+	font-weight: 700;
+}
+
+.finalSection {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 1.5rem;
+}
+
+.totalRow {
+	font-size: 1rem;
+	color: var(--color-text-placeholder);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.totalAmount {
+	font-weight: 700;
+	font-size: 1.5rem;
+	color: var(--color-main-text);
+}

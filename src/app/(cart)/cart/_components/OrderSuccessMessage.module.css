@@ -1,0 +1,67 @@
+.container {
+	text-align: center;
+	padding: 1rem;
+	background-color: #e5ffde;
+	color: #008c49;
+	border-radius: 0.25rem;
+	border: 1px solid var(--color-primary);
+}
+
+.title {
+	font-weight: 700;
+	font-size: 1.125rem;
+	margin-bottom: 0.5rem;
+}
+
+.orderNumber {
+	margin-bottom: 0.75rem;
+}
+
+.orderNumber strong {
+	font-weight: 700;
+}
+
+.info {
+	font-size: 0.875rem;
+	margin-bottom: 0.75rem;
+}
+
+.bonusInfo {
+	font-size: 0.875rem;
+	margin-bottom: 0.75rem;
+	color: var(--color-primary);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+.bonusIcon {
+	flex-shrink: 0;
+}
+
+.button {
+	height: 2.5rem;
+	border-radius: 0.25rem;
+	width: 100%;
+	font-size: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition-duration: 300ms;
+	border: none;
+}
+
+.buttonPrimary {
+	background-color: var(--color-primary);
+	color: var(--color-bg-white);
+	cursor: pointer;
+}
+
+.buttonPrimary:hover {
+	box-shadow: var(--shadow-button-default);
+}
+
+.buttonPrimary:active {
+	box-shadow: var(--shadow-button-active);
+}

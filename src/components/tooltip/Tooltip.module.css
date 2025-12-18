@@ -1,4 +1,4 @@
-.tooltipContainer {
+.container {
 	position: absolute;
 	left: 0;
 	margin-top: 0.5rem;
@@ -6,20 +6,29 @@
 	transition: all 0.3s ease-in-out;
 }
 
-.tooltipContainerTop {
-	composes: tooltipContainer;
-	top: -3rem;
+.containerTop {
+	top: -3.25rem;
+}
+
+.containerTopCard {
+	top: -7.5rem;
+}
+
+.containerBottom {
+	top: auto;
+	margin-bottom: 0.5rem;
 }
 
 .tooltip {
 	position: relative;
 	background-color: var(--color-error);
-	color: var(--color-bg-white);
+	color: #ffffff;
 	font-size: 0.875rem;
 	padding: 0.5rem;
-	border-radius: 4px;
-	max-width: 260px;
-	margin: 0 auto;
+	border-radius: 0.25rem;
+	max-width: 16.25rem;
+	margin-left: auto;
+	margin-right: auto;
 	display: flex;
 	align-items: center;
 	z-index: 50;
@@ -27,62 +36,46 @@
 	animation: fadeIn 0.3s ease-in-out forwards;
 }
 
-.tooltipBottom {
-	composes: tooltip;
-	margin-bottom: 0.5rem;
-}
-
-.tooltipTop {
-	composes: tooltip;
-	margin-top: 0.25rem;
-}
-
-.icon {
-	flex-shrink: 0;
-}
-
-.iconBottom {
-	composes: icon;
-	margin-right: 1rem;
-}
-
-.iconTop {
-	composes: icon;
-	margin-left: 1rem;
-	margin-right: 1rem;
-}
-
-.triangleBottom {
-	position: absolute;
-	left: 50%;
-	top: -3px;
-	transform: translateX(-50%);
-	width: 0;
-	height: 0;
-	border-left: 6px solid transparent;
-	border-right: 6px solid transparent;
-	border-bottom: 4px solid var(--color-error);
-}
-
-.triangleTop {
-	position: absolute;
-	left: 50%;
-	bottom: -3px;
-	transform: translateX(-50%);
-	width: 0;
-	height: 0;
-	border-left: 6px solid transparent;
-	border-right: 6px solid transparent;
-	border-top: 4px solid var(--color-error);
-}
-
 @keyframes fadeIn {
 	from {
 		opacity: 0;
-		transform: translateY(-5px);
+		transform: translateY(-10px);
 	}
 	to {
 		opacity: 1;
 		transform: translateY(0);
 	}
+}
+
+.icon {
+	margin-right: 1rem;
+}
+
+.iconTop {
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+.arrowTop {
+	position: absolute;
+	left: 50%;
+	bottom: -0.1875rem;
+	transform: translateX(-50%);
+	width: 0;
+	height: 0;
+	border-left: 0.375rem solid transparent;
+	border-right: 0.375rem solid transparent;
+	border-top: 0.25rem solid var(--color-error);
+}
+
+.arrowBottom {
+	position: absolute;
+	left: 50%;
+	top: -0.1875rem;
+	transform: translateX(-50%);
+	width: 0;
+	height: 0;
+	border-left: 0.375rem solid transparent;
+	border-right: 0.375rem solid transparent;
+	border-bottom: 0.25rem solid var(--color-error);
 }

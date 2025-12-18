@@ -6,7 +6,7 @@
 }
 
 .priceTitle {
-	color: #000000;
+	color: var(--color-bg-dark);
 	font-size: 1rem;
 }
 

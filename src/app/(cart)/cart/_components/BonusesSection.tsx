@@ -1,40 +1,32 @@
 import InStockToggle from "@/components/filter/InStockToggle";
 import { CONFIG } from "../../../../../config/config";
+import { useCartStore } from "@/store/cartStore";
 import styles from "./BonusesSection.module.css";
 
-interface BonusesSectionProps {
-	bonusesCount: number;
-	useBonuses: boolean;
-	onUseBonusesChange: (value: boolean) => void;
-	totalPrice: number;
-}
+const BonusesSection = () => {
+	const { pricing, isOrdered, useBonuses, setUseBonuses } = useCartStore();
+	const { totalPrice, maxBonusUse } = pricing;
 
-const BonusesSection = ({
-	bonusesCount,
-	useBonuses,
-	onUseBonusesChange,
-	totalPrice,
-}: BonusesSectionProps) => {
-	if (bonusesCount < 0) return null;
+	if (maxBonusUse <= 0) return null;
 
 	return (
 		<div className={styles.container}>
 			<div className={styles.toggleRow}>
 				<InStockToggle
 					checked={useBonuses}
-					onChangeAction={onUseBonusesChange}
+					onChangeAction={isOrdered ? () => {} : setUseBonuses}
 				/>
 				<p>
 					Списать{" "}
 					{Math.min(
-						bonusesCount,
+						maxBonusUse,
 						Math.floor((totalPrice * CONFIG.MAX_BONUSES_PERCENT) / 100)
 					)}{" "}
 					₽
 				</p>
 			</div>
 			<div className={styles.bonusInfo}>
-				{`На карте накоплено ${bonusesCount} ₽`}
+				{`На карте накоплено ${maxBonusUse} ₽`}
 			</div>
 		</div>
 	);

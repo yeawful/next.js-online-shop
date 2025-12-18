@@ -28,6 +28,12 @@ const AdminPanel = () => {
 				>
 					Редактирование товара
 				</Link>
+				<Link
+					href="/administrator/delivery-times"
+					className={styles.adProductLink}
+				>
+					График доставки
+				</Link>
 			</div>
 		</div>
 	);

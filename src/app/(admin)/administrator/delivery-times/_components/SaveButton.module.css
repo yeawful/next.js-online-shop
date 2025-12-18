@@ -1,0 +1,35 @@
+.container {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2rem;
+}
+
+.button {
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition-duration: 300ms;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	width: 100%;
+	border: none;
+}
+
+.button:hover {
+	box-shadow: var(--shadow-article);
+}
+
+.button:active {
+	box-shadow: var(--shadow-button-active);
+}
+
+.button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}

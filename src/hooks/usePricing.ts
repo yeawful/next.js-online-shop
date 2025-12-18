@@ -1,22 +1,10 @@
 "use client";
 
-import { useCallback } from "react";
-import { ProductCardProps } from "@/types/product";
+import { useEffect, useMemo } from "react";
 import { calculateFinalPrice, calculatePriceByCard } from "../utils/calcPrices";
 import { CONFIG } from "../../config/config";
-
-interface UsePricingProps {
-	availableCartItems: Array<{
-		productId: string;
-		quantity: number;
-	}>;
-	productsData: {
-		[key: string]: ProductCardProps;
-	};
-	hasLoyaltyCard: boolean;
-	bonusesCount: number;
-	useBonuses: boolean;
-}
+import { useCartStore } from "../store/cartStore";
+import { CalculatedItem, UsePricingProps } from "@/types/pricingProps";
 
 export const usePricing = ({
 	availableCartItems,
@@ -25,51 +13,64 @@ export const usePricing = ({
 	bonusesCount,
 	useBonuses,
 }: UsePricingProps) => {
-	const totalPrice = availableCartItems.reduce((total, item) => {
-		const product = productsData[item.productId];
-		if (!product) return total;
+	const { updatePricing } = useCartStore();
 
-		const priceWithDiscount = calculateFinalPrice(
-			product.basePrice,
-			product.discountPercent || 0
-		);
+	const calculatedItems = useMemo(() => {
+		return availableCartItems
+			.map((item) => {
+				const product = productsData[item.productId];
+				if (!product) return null;
 
-		const finalPrice = hasLoyaltyCard
-			? calculatePriceByCard(priceWithDiscount, CONFIG.CARD_DISCOUNT_PERCENT)
-			: priceWithDiscount;
+				const priceWithDiscount = calculateFinalPrice(
+					product.basePrice,
+					product.discountPercent || 0
+				);
 
-		return total + finalPrice * item.quantity;
-	}, 0);
+				const finalPrice = hasLoyaltyCard
+					? calculatePriceByCard(
+							priceWithDiscount,
+							CONFIG.CARD_DISCOUNT_PERCENT
+						)
+					: priceWithDiscount;
 
-	const totalMaxPrice = availableCartItems.reduce((total, item) => {
-		const product = productsData[item.productId];
-		if (!product) return total;
+				const discountAmount = priceWithDiscount - finalPrice;
+				const bonuses = priceWithDiscount * (CONFIG.BONUSES_PERCENT / 100);
 
-		const priceWithDiscount = calculateFinalPrice(
-			product.basePrice,
-			product.discountPercent || 0
-		);
+				return {
+					basePrice: product.basePrice,
+					priceWithDiscount,
+					finalPrice,
+					discountAmount,
+					bonuses,
+					quantity: item.quantity,
+				};
+			})
+			.filter(Boolean) as (CalculatedItem & { quantity: number })[];
+	}, [availableCartItems, productsData, hasLoyaltyCard]);
 
-		return total + priceWithDiscount * item.quantity;
-	}, 0);
+	const { totalPrice, totalMaxPrice, totalDiscount, totalBonusesValue } =
+		useMemo(() => {
+			return calculatedItems.reduce(
+				(acc, item) => {
+					const quantity = item.quantity;
 
-	const totalDiscount = availableCartItems.reduce((total, item) => {
-		const product = productsData[item.productId];
-		if (!product) return total;
-
-		const priceWithDiscount = calculateFinalPrice(
-			product.basePrice,
-			product.discountPercent || 0
-		);
-
-		const finalPrice = hasLoyaltyCard
-			? calculatePriceByCard(priceWithDiscount, CONFIG.CARD_DISCOUNT_PERCENT)
-			: priceWithDiscount;
-
-		const itemDiscount = (priceWithDiscount - finalPrice) * item.quantity;
-
-		return total + itemDiscount;
-	}, 0);
+					return {
+						totalPrice: acc.totalPrice + item.finalPrice * quantity,
+						totalMaxPrice:
+							acc.totalMaxPrice + item.priceWithDiscount * quantity,
+						totalDiscount: acc.totalDiscount + item.discountAmount * quantity,
+						totalBonusesValue:
+							acc.totalBonusesValue + Math.round(item.bonuses) * quantity,
+					};
+				},
+				{
+					totalPrice: 0,
+					totalMaxPrice: 0,
+					totalDiscount: 0,
+					totalBonusesValue: 0,
+				}
+			);
+		}, [calculatedItems]);
 
 	const maxBonusUse = Math.min(
 		bonusesCount,
@@ -80,22 +81,28 @@ export const usePricing = ({
 		? Math.max(0, totalPrice - maxBonusUse)
 		: totalPrice;
 
-	const totalBonuses = useCallback(() => {
-		return availableCartItems.reduce((total, item) => {
-			const product = productsData[item.productId];
-			if (!product) return total;
-
-			const priceWithDiscount = calculateFinalPrice(
-				product.basePrice,
-				product.discountPercent || 0
-			);
-			const bonuses = priceWithDiscount * (CONFIG.BONUSES_PERCENT / 100);
-
-			return total + Math.round(bonuses) * item.quantity;
-		}, 0);
-	}, [availableCartItems, productsData]);
-
 	const isMinimumReached = finalPrice >= 1000;
+
+	useEffect(() => {
+		updatePricing({
+			totalPrice,
+			totalMaxPrice,
+			totalDiscount,
+			finalPrice,
+			maxBonusUse,
+			totalBonuses: totalBonusesValue,
+			isMinimumReached,
+		});
+	}, [
+		totalPrice,
+		totalMaxPrice,
+		totalDiscount,
+		finalPrice,
+		maxBonusUse,
+		totalBonusesValue,
+		isMinimumReached,
+		updatePricing,
+	]);
 
 	return {
 		totalPrice,
@@ -103,7 +110,7 @@ export const usePricing = ({
 		totalDiscount,
 		finalPrice,
 		maxBonusUse,
-		totalBonuses: totalBonuses(),
+		totalBonuses: totalBonusesValue,
 		isMinimumReached,
 	};
 };

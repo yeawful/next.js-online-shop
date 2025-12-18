@@ -2,14 +2,20 @@ import styles from "./CartHeader.module.css";
 
 interface CartHeaderProps {
 	itemCount: number;
+	title: string;
 }
 
-const CartHeader = ({ itemCount }: CartHeaderProps) => {
+const CartHeader = ({ itemCount, title }: CartHeaderProps) => {
+	const badgeClass =
+		title === "Доставка"
+			? `${styles.countBadge} ${styles.countBadgeDelivery}`
+			: `${styles.countBadge} ${styles.countBadgeCart}`;
+
 	return (
 		<div className={styles.container}>
-			<h1 className={styles.title}>Корзина</h1>
+			<h1 className={styles.title}>{title}</h1>
 			{itemCount > 0 && (
-				<div className={styles.countBadge}>
+				<div className={badgeClass}>
 					<span className={styles.countText}>{itemCount}</span>
 				</div>
 			)}

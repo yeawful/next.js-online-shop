@@ -34,8 +34,7 @@
 .countBadge {
 	position: absolute;
 	margin-left: 1.25rem;
-	top: -1rem;
-	right: 8.25rem;
+	top: -0.5rem;
 	background-color: var(--color-accent);
 	border-radius: 0.25rem;
 	padding-left: 0.5rem;
@@ -44,15 +43,35 @@
 	padding-bottom: 0.25rem;
 }
 
+.countBadgeCart {
+	right: 8.25rem;
+}
+
 @media (min-width: 768px) {
-	.countBadge {
+	.countBadgeCart {
 		right: 5rem;
 	}
 }
 
 @media (min-width: 1280px) {
-	.countBadge {
+	.countBadgeCart {
 		right: 0;
+	}
+}
+
+.countBadgeDelivery {
+	right: 7.25rem;
+}
+
+@media (min-width: 768px) {
+	.countBadgeDelivery {
+		right: 3.75rem;
+	}
+}
+
+@media (min-width: 1280px) {
+	.countBadgeDelivery {
+		right: -1.25rem;
 	}
 }
 

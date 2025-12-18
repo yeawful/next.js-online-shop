@@ -1,0 +1,175 @@
+.overlay {
+	position: fixed;
+	inset: 0;
+	background-color: var(--color-bg-white);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 50;
+	padding: 1rem;
+}
+
+.modal {
+	background-color: var(--color-bg-white);
+	border-radius: 0.5rem;
+	max-width: 28rem;
+	width: 100%;
+	padding: 1.5rem;
+}
+
+.title {
+	font-size: 1.25rem;
+	font-weight: 700;
+	margin-bottom: 1rem;
+}
+
+.amount {
+	color: var(--color-text-secondary);
+	margin-bottom: 1rem;
+}
+
+.testCards {
+	margin-bottom: 1rem;
+	padding: 0.75rem;
+	background-color: var(--color-bg-light);
+	border-radius: 0.25rem;
+}
+
+.testCardsTitle {
+	font-size: 0.875rem;
+	font-weight: 500;
+	margin-bottom: 0.5rem;
+}
+
+.testCardButton {
+	display: block;
+	width: 100%;
+	text-align: left;
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	font-size: 0.875rem;
+	margin-bottom: 0.25rem;
+	cursor: pointer;
+	border: none;
+}
+
+.testCardButton:hover {
+	background-color: var(--color-bg-light);
+}
+
+.testCardButton:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.testCardNumber {
+	font-family: ui-monospace, monospace;
+}
+
+.testCardDescription {
+	color: var(--color-text-secondary);
+	margin-left: 0.5rem;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.formGroup {
+	display: flex;
+	flex-direction: column;
+}
+
+.label {
+	display: block;
+	font-size: 0.875rem;
+	font-weight: 500;
+	margin-bottom: 0.25rem;
+}
+
+.input {
+	width: 100%;
+	padding: 0.5rem;
+	border: 1px solid var(--color-border-default);
+	border-radius: 0.25rem;
+	transition: border-color 0.2s;
+}
+
+.input:focus {
+	outline: none;
+	border-color: var(--color-primary);
+}
+
+.input:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.cardNumberInput {
+	font-family: ui-monospace, monospace;
+}
+
+.formGrid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+}
+
+.nameInput {
+	text-transform: uppercase;
+}
+
+.actions {
+	display: flex;
+	gap: 0.75rem;
+	padding-top: 1rem;
+}
+
+.cancelButton {
+	flex: 1;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	border: 1px solid var(--color-border-default);
+	border-radius: 0.25rem;
+	color: var(--color-text-secondary);
+	background-color: transparent;
+	cursor: pointer;
+	transition: all 0.3s;
+	border: none;
+}
+
+.cancelButton:hover {
+	background-color: var(--color-bg-light);
+}
+
+.cancelButton:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.payButton {
+	flex: 1;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	background-color: var(--color-success);
+	color: var(--color-bg-white);
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	border: none;
+}
+
+.payButton:hover {
+	background-color: #007a40;
+}
+
+.payButton:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}

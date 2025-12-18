@@ -13,6 +13,13 @@
 	}
 }
 
+@media (min-width: 1280px) {
+	.container {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
 .emptyContainer {
 	margin-left: auto;
 	margin-right: auto;
@@ -56,6 +63,15 @@
 	.contentWrapper {
 		column-gap: 3.75rem;
 	}
+}
+
+.mainContent {
+	flex: 1;
+}
+
+.disabledContent {
+	pointer-events: none;
+	opacity: 0.5;
 }
 
 .itemsColumn {

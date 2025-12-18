@@ -1,0 +1,21 @@
+.container {
+	width: 100%;
+}
+
+.emptyState {
+	padding: 1.5rem;
+	text-align: center;
+	color: var(--color-text-secondary);
+	font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+	.emptyState {
+		padding: 2rem;
+		font-size: 1rem;
+	}
+}
+
+.slotsContainer {
+	border-top: 1px solid #151515;
+}

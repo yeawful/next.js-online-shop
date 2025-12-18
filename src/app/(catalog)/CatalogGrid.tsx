@@ -66,7 +66,7 @@ const CatalogGrid = ({
 							slug={category.slug}
 							title={category.title}
 							img={category.img}
-							priority={index < 4}
+							priority={index === 0}
 						/>
 					</div>
 				</div>
