@@ -40,28 +40,20 @@
 	flex-shrink: 0;
 }
 
-.button {
-	height: 2.5rem;
+.refreshButton {
+	margin-left: 1rem;
+	background-color: var(--color-success);
+	color: #ffffff;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 	border-radius: 0.25rem;
-	width: 100%;
-	font-size: 1rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	transition-duration: 300ms;
-	border: none;
-}
-
-.buttonPrimary {
-	background-color: var(--color-primary);
-	color: var(--color-bg-white);
 	cursor: pointer;
+	transition: background-color 0.3s;
+	font-weight: 500;
 }
 
-.buttonPrimary:hover {
-	box-shadow: var(--shadow-button-default);
-}
-
-.buttonPrimary:active {
-	box-shadow: var(--shadow-button-active);
+.refreshButton:hover {
+	background-color: #007a40;
 }

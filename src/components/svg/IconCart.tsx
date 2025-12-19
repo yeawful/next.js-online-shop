@@ -1,6 +1,6 @@
 import styles from "./IconCart.module.css";
 
-const IconCart = ({ isActive }: { isActive: boolean }) => {
+const IconCart = ({ isActive }: { isActive?: boolean }) => {
 	const getRectClass = () => {
 		return isActive ? styles.rectActive : styles.rectInactive;
 	};

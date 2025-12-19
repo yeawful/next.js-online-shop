@@ -2,7 +2,6 @@ import { CreditCard } from "lucide-react";
 import { getFullEnding } from "../../../../utils/getWordEnding";
 import { useCartStore } from "@/store/cartStore";
 import { CONFIG } from "../../../../../config/config";
-import { useRouter } from "next/navigation";
 import styles from "./OrderSuccessMessage.module.css";
 
 const OrderSuccessMessage = ({
@@ -12,12 +11,11 @@ const OrderSuccessMessage = ({
 }) => {
 	const { pricing, useBonuses } = useCartStore();
 	const { totalBonuses, maxBonusUse, totalPrice } = pricing;
-	const router = useRouter();
 	const { setIsOrdered } = useCartStore();
 
 	const handleNewOrder = () => {
 		setIsOrdered(false);
-		router.replace("/");
+		window.location.reload();
 	};
 
 	const usedBonuses = Math.min(
@@ -52,6 +50,9 @@ const OrderSuccessMessage = ({
 				className={`${styles.button} ${styles.buttonPrimary}`}
 			>
 				Вернуться на главную
+			</button>
+			<button onClick={handleNewOrder} className={styles.refreshButton}>
+				Обновить страницу
 			</button>
 		</div>
 	);

@@ -11,8 +11,13 @@ import {
 	calculatePriceByCard,
 } from "../../../utils/calcPrices";
 import AddToCartButton from "../AddToCartButton/AddToCartButton";
+import IconCart from "@/components/svg/IconCart";
 
 const cardDiscountPercent = CONFIG.CARD_DISCOUNT_PERCENT;
+
+interface ExtendedProductCardProps extends ProductCardProps {
+	index?: number;
+}
 
 const ProductCard = ({
 	id,
@@ -21,27 +26,49 @@ const ProductCard = ({
 	basePrice,
 	discountPercent = 0,
 	rating,
-	tags,
 	categories,
 	quantity,
-}: ProductCardProps) => {
-	const isNewProduct = tags?.includes("new");
+	orderQuantity,
+	isLowStock,
+	insufficientStock,
+	isOrderPage = false,
+	index = 0,
+}: ExtendedProductCardProps) => {
+	const finalPrice = calculateFinalPrice(basePrice, discountPercent);
 
-	const finalPrice = isNewProduct
-		? basePrice
-		: calculateFinalPrice(basePrice, discountPercent);
+	const priceByCard = calculatePriceByCard(finalPrice, cardDiscountPercent);
 
-	const priceByCard = isNewProduct
-		? basePrice
-		: calculatePriceByCard(finalPrice, cardDiscountPercent);
+	const showTwoPrices =
+		!isOrderPage && discountPercent > 0 && cardDiscountPercent > 0;
+
+	const displayPrice = showTwoPrices ? priceByCard : finalPrice;
 
 	const productId = id;
 	const mainCategory = categories?.[0];
 
 	const productUrl = `/catalog/${encodeURIComponent(mainCategory)}/${productId}?desc=${encodeURIComponent(description.substring(0, 50))}`;
 
+	const isPriorityImage = index < 4;
+
 	return (
 		<div className={styles.productCard}>
+			{orderQuantity && (
+				<div className={styles.quantityIndicator}>
+					<IconCart />
+					{orderQuantity}
+				</div>
+			)}
+
+			{(isLowStock || insufficientStock) && (
+				<div
+					className={`${styles.stockIndicator} ${
+						insufficientStock ? styles.outOfStock : styles.lowStock
+					}`}
+				>
+					{insufficientStock ? "Нет в наличии" : `Осталось: ${quantity}`}
+				</div>
+			)}
+
 			<FavoriteButton productId={productId.toString()} />
 			<Link href={productUrl}>
 				<div className={styles.productImageContainer}>
@@ -50,10 +77,10 @@ const ProductCard = ({
 						alt="Товар"
 						fill
 						className={styles.productImage}
-						priority={false}
+						priority={isPriorityImage}
 						sizes="(max-width: 768px) 160px, (max-width: 1280px) 224px, 272px"
 					/>
-					{discountPercent > 0 && (
+					{!isOrderPage && discountPercent > 0 && (
 						<div className={styles.discountBadge}>-{discountPercent}%</div>
 					)}
 				</div>
@@ -62,14 +89,14 @@ const ProductCard = ({
 					<div className={styles.priceSection}>
 						<div className={styles.priceContainer}>
 							<div className={styles.currentPrice}>
-								<span>{formatPrice(priceByCard)}</span>
+								<span>{formatPrice(displayPrice)}</span>
 								<span>₽</span>
 							</div>
-							{discountPercent > 0 && (
+							{showTwoPrices && (
 								<p className={styles.cardPriceLabel}>С картой</p>
 							)}
 						</div>
-						{finalPrice !== basePrice && cardDiscountPercent > 0 && (
+						{showTwoPrices && (
 							<div className={styles.priceContainer}>
 								<div className={styles.originalPrice}>
 									<span>{formatPrice(finalPrice)}</span>

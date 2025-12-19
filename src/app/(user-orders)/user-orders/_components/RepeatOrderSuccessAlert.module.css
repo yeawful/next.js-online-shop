@@ -1,0 +1,37 @@
+.container {
+	margin-top: 1.5rem;
+	padding: 1rem;
+	background-color: #f0fdf4;
+	border: 1px solid #bbf7d0;
+	border-radius: 0.5rem;
+}
+
+.content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.message {
+	color: var(--color-success);
+	font-weight: 500;
+}
+
+.refreshButton {
+	margin-left: 1rem;
+	background-color: var(--color-success);
+	color: #ffffff;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	font-weight: 500;
+	border: none;
+}
+
+.refreshButton:hover {
+	background-color: #007a40;
+}

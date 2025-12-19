@@ -31,6 +31,7 @@
 	grid-template-columns: repeat(2, 1fr);
 	gap: 1rem;
 	justify-items: center;
+	margin-inline: 0.75rem;
 }
 
 .noProducts {

@@ -1,0 +1,12 @@
+.container {
+	margin-top: 1.5rem;
+	padding: 1.5rem;
+	border-radius: 0.25rem;
+	background-color: var(--color-bg-light);
+}
+
+.title {
+	font-size: 1.125rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+}

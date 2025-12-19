@@ -1,12 +1,13 @@
-.iconBox {
+.icon {
+	fill: none;
 	display: block;
 	margin-bottom: -0.5rem;
 }
 
-.iconFillDefault {
-	fill: rgb(65, 65, 65);
+.managerIcon {
+	fill: rgb(255, 102, 51);
 }
 
-.iconFillManager {
-	fill: rgb(255, 102, 51);
+.userIcon {
+	fill: rgb(65, 65, 65);
 }

@@ -17,6 +17,52 @@
 	box-shadow: var(--shadow-article);
 }
 
+.quantityIndicator {
+	position: absolute;
+	top: 0.5rem;
+	left: 0.5rem;
+	color: var(--color-main-text);
+	display: flex;
+	align-items: center;
+	padding: 0.25rem;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 0.25rem;
+	justify-content: center;
+	gap: 0.25rem;
+	font-size: 1.125rem;
+	font-weight: 700;
+	z-index: 10;
+}
+
+.stockIndicator {
+	position: absolute;
+	top: 0.5rem;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 0.25rem;
+	border-radius: 0.25rem;
+	font-size: 0.5rem;
+	z-index: 10;
+}
+
+@media (min-width: 768px) {
+	.stockIndicator {
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+		font-size: 0.75rem;
+	}
+}
+
+.outOfStock {
+	background-color: var(--color-error);
+	color: var(--color-bg-white);
+}
+
+.lowStock {
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
+}
+
 .productImageContainer {
 	position: relative;
 	aspect-ratio: 1 / 1;

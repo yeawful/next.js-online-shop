@@ -1,0 +1,162 @@
+.container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+	.container {
+		margin-bottom: 2.625rem;
+	}
+}
+
+.dateInfo {
+	display: flex;
+	flex-direction: column;
+	font-size: 0.875rem;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+@media (min-width: 768px) {
+	.dateInfo {
+		flex-direction: row;
+	}
+}
+
+@media (min-width: 1280px) {
+	.dateInfo {
+		font-size: 1.5rem;
+		gap: 1.5rem;
+	}
+}
+
+.date {
+	font-weight: 700;
+	font-size: 1.5rem;
+}
+
+.time {
+	font-weight: 700;
+	display: none;
+}
+
+@media (min-width: 1280px) {
+	.time {
+		display: block;
+	}
+}
+
+.status {
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
+	border-radius: 9999px;
+	font-size: 0.75rem;
+	flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+	.status {
+		font-size: 1rem;
+	}
+}
+
+.priceInfo {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+@media (min-width: 768px) {
+	.priceInfo {
+		flex-direction: row;
+	}
+}
+
+@media (min-width: 1280px) {
+	.priceInfo {
+		gap: 1.5rem;
+	}
+}
+
+.price {
+	font-size: 1.25rem;
+}
+
+@media (min-width: 768px) {
+	.price {
+		font-size: 1.5rem;
+	}
+}
+
+.orderButton {
+	height: 2.5rem;
+	border-radius: 0.25rem;
+	transition-duration: 300ms;
+	font-size: 1rem;
+	border: none;
+}
+
+@media (min-width: 768px) {
+	.orderButton {
+		width: 12.5rem;
+	}
+}
+
+.orderButtonEnabled {
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
+	cursor: pointer;
+}
+
+.orderButtonEnabled:hover {
+	box-shadow: var(--shadow-button-default);
+}
+
+.orderButtonDisabled {
+	background-color: var(--color-border-default);
+	color: var(--color-text-secondary);
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+
+.deliveryButton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.5rem;
+	gap: 0.5rem;
+	border-radius: 0.25rem;
+	background-color: var(--color-primary);
+	color: var(--color-bg-white);
+	cursor: pointer;
+	transition-duration: 300ms;
+	border: none;
+}
+
+.deliveryButton:hover {
+	box-shadow: var(--shadow-button-default);
+}
+
+.deliveryIcon {
+	flex-shrink: 0;
+}
+
+.deliveryText {
+	flex: 1;
+}
+
+.desktopText {
+	display: none;
+}
+
+@media (min-width: 768px) {
+	.desktopText {
+		display: inline;
+	}
+}

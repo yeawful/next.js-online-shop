@@ -59,6 +59,12 @@ body {
 	color: inherit;
 }
 
+@media (max-width: 768px) {
+	footer {
+		margin-bottom: 3.5rem;
+	}
+}
+
 .no-ymaps-copyright [class*="copyrights-pane"] {
 	visibility: hidden;
 }

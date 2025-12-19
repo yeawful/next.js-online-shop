@@ -1,0 +1,194 @@
+.overlay {
+	position: fixed;
+	inset: 0;
+	backdrop-filter: blur(4px);
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 50;
+}
+
+.modal {
+	background-color: var(--color-bg-white);
+	padding: 1.5rem;
+	border-radius: 0.5rem;
+	max-width: 28rem;
+	width: 100%;
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+.title {
+	font-size: 1.125rem;
+	font-weight: 700;
+	margin-bottom: 1rem;
+}
+
+.dateSection {
+	margin-bottom: 1rem;
+}
+
+.dateLabel {
+	display: block;
+	font-size: 0.875rem;
+	font-weight: 500;
+	margin-bottom: 0.5rem;
+}
+
+.dateGrid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0.5rem;
+}
+
+.dateButton {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+	border-radius: 0.25rem;
+	font-size: 0.875rem;
+	transition-duration: 300ms;
+	cursor: pointer;
+	border: none;
+}
+
+.dateButtonSelected {
+	background-color: var(--color-primary);
+	color: var(--color-bg-white);
+}
+
+.dateButtonUnselected {
+	background-color: var(--color-bg-light);
+	color: var(--color-main-text);
+}
+
+.dateButtonUnselected:hover {
+	background-color: var(--color-border-light);
+}
+
+.dateNumeric {
+	font-size: 0.75rem;
+	margin-top: 0.25rem;
+}
+
+.dateFull {
+	font-size: 0.75rem;
+	display: none;
+}
+
+@media (min-width: 640px) {
+	.dateFull {
+		display: block;
+	}
+}
+
+.timeSection {
+	margin-bottom: 1rem;
+}
+
+.timeLabel {
+	display: block;
+	font-size: 0.875rem;
+	font-weight: 500;
+	margin-bottom: 0.5rem;
+}
+
+.timeGrid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0.5rem;
+}
+
+.timeButton {
+	background-color: var(--color-bg-light);
+	color: var(--color-main-text);
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+	border-radius: 0.25rem;
+	font-size: 0.875rem;
+	transition-duration: 300ms;
+	cursor: pointer;
+	border: none;
+}
+
+.timeButton:hover {
+	background-color: var(--color-primary);
+	color: var(--color-bg-white);
+}
+
+.timeButton:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.mobileTime {
+	font-size: 0.75rem;
+}
+
+@media (min-width: 1280px) {
+	.mobileTime {
+		display: none;
+	}
+}
+
+.desktopTime {
+	display: none;
+	font-size: 0.875rem;
+}
+
+@media (min-width: 1280px) {
+	.desktopTime {
+		display: block;
+	}
+}
+
+.noTimeSlots {
+	grid-column: span 2;
+	text-align: center;
+	color: var(--color-text-secondary);
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+
+.actions {
+	display: flex;
+	gap: 0.5rem;
+	margin-top: 1rem;
+}
+
+.cancelButton {
+	flex: 1;
+	background-color: var(--color-border-default);
+	color: #374151;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	border-radius: 0.25rem;
+	transition-duration: 300ms;
+	cursor: pointer;
+	border: none;
+}
+
+.cancelButton:hover {
+	background-color: var(--color-text-muted);
+	color: var(--color-bg-white);
+}
+
+.cancelButton:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.creatingOrder {
+	margin-top: 1rem;
+	text-align: center;
+}
+
+.loadingText {
+	font-size: 0.875rem;
+	color: var(--color-text-secondary);
+	margin-top: 0.25rem;
+}

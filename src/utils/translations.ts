@@ -29,4 +29,6 @@ export const TRANSLATIONS: Record<string, string> = {
 	favorites: "Избранное",
 	cart: "Корзина",
 	"delivery-times": "График доставки",
+	"user-orders": "Заказы",
+	"admin-orders": "Заказы",
 };

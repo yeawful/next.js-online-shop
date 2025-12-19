@@ -3,9 +3,10 @@
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import Image from "next/image";
-import { Suspense } from "react";
 import iconToRight from "/public/icons-products/icon-arrow-right.svg";
 import { TRANSLATIONS } from "../../utils/translations";
+import { Suspense } from "react";
+import MiniLoader from "../loaders/MiniLoader";
 import styles from "./Breadcrumbs.module.css";
 
 function BreadcrumbsContent() {
@@ -86,15 +87,7 @@ function BreadcrumbsContent() {
 
 const Breadcrumbs = () => {
 	return (
-		<Suspense
-			fallback={
-				<nav className={styles.skeletonContainer}>
-					<div className={styles.skeletonItem}>
-						<div className={styles.skeletonText}></div>
-					</div>
-				</nav>
-			}
-		>
+		<Suspense fallback={<MiniLoader />}>
 			<BreadcrumbsContent />
 		</Suspense>
 	);

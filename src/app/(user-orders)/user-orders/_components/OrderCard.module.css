@@ -1,0 +1,11 @@
+.container {
+	color: var(--color-main-text);
+	margin-bottom: 2rem;
+	border-bottom: 1px solid var(--color-border-light);
+	padding-bottom: 2rem;
+}
+
+.container:last-child {
+	border-bottom: none;
+	margin-bottom: 0;
+}

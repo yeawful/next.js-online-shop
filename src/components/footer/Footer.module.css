@@ -8,7 +8,7 @@
 }
 
 .footerContent {
-	padding: 1.75rem 1.75rem 2.5rem 1.75rem;
+	padding: 1.75rem 1.75rem 1rem 1.75rem;
 	color: var(--color-main-text);
 	display: grid;
 	grid-template-areas:
@@ -107,6 +107,10 @@
 	transition: opacity 0.3s;
 }
 
+.designLink {
+	display: none;
+}
+
 .designLink:hover {
 	opacity: 0.8;
 }
@@ -122,6 +126,7 @@
 			"logo nav social design";
 		grid-template-columns: auto 1fr auto auto;
 		gap: 0 2.5rem;
+		padding-bottom: 2.5rem;
 	}
 
 	.logoLink {

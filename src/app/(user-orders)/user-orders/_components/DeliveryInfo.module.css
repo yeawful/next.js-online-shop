@@ -1,0 +1,27 @@
+.container {
+	margin-bottom: 1rem;
+}
+
+.deliveryText {
+	font-size: 0.875rem;
+	color: var(--color-main-text);
+}
+
+.strongText {
+	font-weight: 600;
+}
+
+.editButton {
+	margin-top: 0.5rem;
+	color: var(--color-main-text);
+	font-size: 0.875rem;
+	cursor: pointer;
+	background: none;
+	border: none;
+	padding: 0;
+	text-decoration: none;
+}
+
+.editButton:hover {
+	text-decoration: underline;
+}
