@@ -9,7 +9,7 @@ const Hero = () => {
 			<div className={styles.heroContent}>
 				<div className={styles.heroImage}>
 					<Image
-						src="/images/graphics/food.png"
+						src="/images/graphics/food.svg"
 						alt="Слайд"
 						fill
 						sizes="(max-width: 768px) 50px, (max-width: 1200px) 75px, 100px"

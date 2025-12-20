@@ -63,6 +63,18 @@
 	.contentWrapper {
 		column-gap: 3.75rem;
 	}
+
+	.emptyContainer {
+		min-height: 35rem;
+		padding: 0rem;
+	}
+
+	.emptyTitle {
+		font-size: 4rem;
+		min-width: 76rem;
+		margin-bottom: 0rem;
+		min-height: 15rem;
+	}
 }
 
 .mainContent {
