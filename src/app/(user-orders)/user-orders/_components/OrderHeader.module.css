@@ -54,7 +54,7 @@
 	padding-right: 0.5rem;
 	padding-top: 0.25rem;
 	padding-bottom: 0.25rem;
-	border-radius: 9999px;
+	border-radius: 0.5rem;
 	font-size: 0.75rem;
 	flex-shrink: 0;
 }
