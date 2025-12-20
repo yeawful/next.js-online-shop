@@ -46,6 +46,10 @@
 	border: none;
 }
 
+.cardBannerAction {
+	background-color: var(--color-success-bg-light);
+}
+
 .cardBanner:hover {
 	box-shadow: var(--shadow-article);
 }
@@ -100,8 +104,8 @@
 }
 
 .bannerImage {
-	width: 100%;
-	height: 100%;
+	width: auto;
+	height: 95%;
 	object-fit: cover;
 	border-radius: 0.25rem;
 }
@@ -115,10 +119,6 @@
 		width: 737px;
 	}
 
-	.specialOffersTitle {
-		margin-bottom: 2rem;
-	}
-
 	.offersContent {
 		flex-direction: row;
 		gap: 2rem;
@@ -130,6 +130,13 @@
 
 	.actionBanner {
 		width: 353px;
+	}
+
+	.bannerImage {
+		position: absolute;
+		height: 90%;
+		left: 9.5rem;
+		top: 0.2rem;
 	}
 }
 
@@ -185,5 +192,11 @@
 
 	.deskBanner {
 		display: block;
+	}
+	.bannerImage {
+		position: absolute;
+		height: 100%;
+		left: 18.5rem;
+		top: 0.2rem;
 	}
 }

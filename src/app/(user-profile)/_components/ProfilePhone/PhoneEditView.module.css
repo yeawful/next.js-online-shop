@@ -9,7 +9,7 @@
 	flex: 1;
 	background-color: var(--color-bg-light);
 	border-radius: 0.25rem;
-	color: #606060;
+	color: var(--color-text-muted-strong);
 	transition-duration: 300ms;
 	cursor: pointer;
 	border: none;

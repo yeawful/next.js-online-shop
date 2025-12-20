@@ -49,12 +49,7 @@ const CategoryPage = async ({
 			<h1 className={styles.categoryTitle}>
 				{TRANSLATIONS[category] || category}
 			</h1>
-			<DropFilter
-				basePath={`/catalog/${category}`}
-				category={category}
-				apiEndpoint={""}
-				userId={""}
-			/>
+			<DropFilter basePath={`/catalog/${category}`} category={category} />
 			<div className={styles.filterButtonsDesktop}>
 				<FilterButtons basePath={`/catalog/${category}`} />
 			</div>

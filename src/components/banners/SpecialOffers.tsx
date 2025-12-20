@@ -24,27 +24,23 @@ const SpecialOffers = () => {
 							className={styles.cardBannerImage}
 						/>
 					</button>
-					<button className={styles.actionBanner}>
-						<div className={styles.mobTabBanner}>
-							<Image
-								src="/images/banners/banner-action-mob-tab.jpeg"
-								alt="Акционные товары"
-								width={353}
-								height={170}
-								className={styles.bannerImage}
-								priority
-							/>
+
+					<button className={`${styles.cardBanner} ${styles.cardBannerAction}`}>
+						<div className={styles.cardBannerContent}>
+							<p className={styles.cardBannerTitle}>
+								Покупайте акционные товары
+							</p>
+							<p className={styles.cardBannerText}>
+								И получайте вдвое больше бонусов
+							</p>
 						</div>
-						<div className={styles.deskBanner}>
-							<Image
-								src="/images/banners/banner-action-desk.jpeg"
-								alt="Акционные товары"
-								width={584}
-								height={200}
-								className={styles.bannerImage}
-								priority
-							/>
-						</div>
+						<Image
+							src="/images/banners/banner-card-image2.png"
+							alt="Оформите карту"
+							width={220}
+							height={100}
+							className={styles.bannerImage}
+						/>
 					</button>
 				</div>
 			</div>

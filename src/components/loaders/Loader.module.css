@@ -54,3 +54,11 @@
 		transform: rotate(-360deg);
 	}
 }
+
+@media (prefers-reduced-motion: reduce) {
+	.loaderRing1,
+	.loaderRing2 {
+		animation-duration: 1s !important;
+		animation-iteration-count: infinite !important;
+	}
+}

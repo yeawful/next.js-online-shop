@@ -3,7 +3,7 @@
 	margin-bottom: 1rem;
 	border-radius: 0.25rem;
 	border: 1px solid var(--color-border-light);
-	background-color: #e5ffde;
+	background-color: var(--color-success-bg-light);
 	color: #008c49;
 }
 

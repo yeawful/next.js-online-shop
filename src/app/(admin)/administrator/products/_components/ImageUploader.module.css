@@ -13,7 +13,7 @@
 
 .uploadAreaDragging {
 	border-color: var(--color-primary);
-	background-color: #e5ffde;
+	background-color: var(--color-success-bg-light);
 }
 
 .uploadAreaDefault {

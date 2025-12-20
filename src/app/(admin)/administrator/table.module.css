@@ -156,7 +156,7 @@
 }
 
 .roleManager {
-	background-color: #e5ffde;
+	background-color: var(--color-success-bg-light);
 	color: var(--color-success);
 }
 

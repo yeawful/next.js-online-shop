@@ -16,9 +16,9 @@
 }
 
 .rectInactive {
-	fill: #606060;
+	fill: var(--color-text-muted-strong);
 }
 
 .pathInactive {
-	fill: #606060;
+	fill: var(--color-text-muted-strong);
 }

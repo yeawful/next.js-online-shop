@@ -118,7 +118,7 @@
 
 .checkboxUnavailable {
 	background-color: var(--color-bg-white);
-	border-color: #d1d5db;
+	border-color: var(--color-border-default);
 }
 
 .statusText {

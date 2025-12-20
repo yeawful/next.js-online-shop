@@ -98,7 +98,7 @@ const Footer = () => {
 							<Link href="#">Статьи</Link>
 						</li>
 						<li className={styles.navItem}>
-							Политика обработки персональных данных
+							<Link href="#"> Политика обработки персональных данных</Link>
 						</li>
 					</ul>
 				</nav>

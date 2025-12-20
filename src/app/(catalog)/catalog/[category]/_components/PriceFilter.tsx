@@ -17,7 +17,7 @@ function PriceFilterContent(props: PriceFilterProps) {
 		basePath,
 		category,
 		setIsFilterOpenAction,
-		apiEndpoint = "/category",
+		apiEndpoint = "category",
 		userId,
 	} = props;
 
@@ -58,6 +58,16 @@ function PriceFilterContent(props: PriceFilterProps) {
 				params.set("userId", userId);
 			}
 
+			const normalizedEndpoint = apiEndpoint?.replace(/^\/+/, "");
+
+			if (!normalizedEndpoint) {
+				console.error("PriceFilter: apiEndpoint пустой", {
+					basePath,
+					category,
+				});
+				return;
+			}
+
 			const response = await fetch(`/api/${apiEndpoint}?${params.toString()}`);
 
 			if (!response.ok) throw new Error(`Ошибка сервера: ${response.status}`);
@@ -89,7 +99,15 @@ function PriceFilterContent(props: PriceFilterProps) {
 		} finally {
 			setIsLoading(false);
 		}
-	}, [apiEndpoint, category, searchParams, urlPriceFrom, urlPriceTo, userId]);
+	}, [
+		apiEndpoint,
+		basePath,
+		category,
+		searchParams,
+		urlPriceFrom,
+		urlPriceTo,
+		userId,
+	]);
 
 	useEffect(() => {
 		fetchPriceData();

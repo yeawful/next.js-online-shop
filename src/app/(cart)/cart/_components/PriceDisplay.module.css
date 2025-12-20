@@ -25,7 +25,7 @@
 }
 
 .regularPrice {
-	color: #606060;
+	color: var(--color-text-muted-strong);
 }
 
 .regularPriceOutOfStock {

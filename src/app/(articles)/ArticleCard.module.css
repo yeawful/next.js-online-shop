@@ -57,7 +57,7 @@
 	margin-top: auto;
 	width: 9.375rem;
 	height: 2.5rem;
-	background-color: #e5ffde;
+	background-color: var(--color-success-bg-light);
 	font-size: 1rem;
 	color: var(--color-primary);
 	transition-duration: 300ms;

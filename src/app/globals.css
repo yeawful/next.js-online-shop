@@ -14,6 +14,7 @@
 
 	--color-text-secondary: #6b7280;
 	--color-text-muted: #9ca3af;
+	--color-text-muted-strong: #606060;
 	--color-text-placeholder: #8f8f8f;
 	--color-text-hover: #4b5563;
 
@@ -23,6 +24,7 @@
 
 	--color-success: #008c48;
 	--color-success-bg: #f0fdf4;
+	--color-success-bg-light: #e5ffde;
 
 	--color-error: #d80000;
 	--color-error-light: #ef4444;
@@ -59,7 +61,7 @@ body {
 	color: inherit;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 	footer {
 		margin-bottom: 3.5rem;
 	}

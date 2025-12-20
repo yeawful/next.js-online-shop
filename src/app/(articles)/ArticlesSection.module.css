@@ -36,6 +36,10 @@
 }
 
 @media (min-width: 768px) {
+	.articleSection {
+		padding-left: max(calc((100% - 1208px) / 2));
+		padding-right: max(calc((100% - 1208px) / 2));
+	}
 	.articleHeader {
 		margin-bottom: 2rem;
 	}

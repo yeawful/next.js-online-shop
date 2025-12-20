@@ -53,12 +53,7 @@ const FavoritesPage = async ({
 		<div className={styles.container}>
 			<h1 className={styles.title}>{TRANSLATIONS[category] || category}</h1>
 			<div className={styles.mobileFilter}>
-				<DropFilter
-					basePath={`/${category}`}
-					category={category}
-					apiEndpoint={""}
-					userId={""}
-				/>
+				<DropFilter basePath={`/${category}`} category={category} />
 			</div>
 			<div className={styles.desktopFilter}>
 				<FilterButtons basePath={`/${category}`} />

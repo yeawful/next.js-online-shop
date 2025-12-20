@@ -26,7 +26,7 @@
 
 .filterButtonInactive {
 	background-color: var(--color-bg-light);
-	color: #606060;
+	color: var(--color-text-muted-strong);
 }
 
 .filterTag {
@@ -70,7 +70,7 @@
 	font-size: 0.75rem;
 	line-height: 1rem;
 	background-color: var(--color-bg-light);
-	color: #606060;
+	color: var(--color-text-muted-strong);
 	animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 

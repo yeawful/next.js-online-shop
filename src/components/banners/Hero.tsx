@@ -13,6 +13,7 @@ const Hero = () => {
 						alt="Слайд"
 						fill
 						sizes="(max-width: 768px) 50px, (max-width: 1200px) 75px, 100px"
+						loading="eager"
 					/>
 				</div>
 

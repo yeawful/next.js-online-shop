@@ -79,13 +79,13 @@
 
 .logoutProfileButton:hover {
 	background-color: var(--color-bg-light);
-	color: #606060;
+	color: var(--color-text-muted-strong);
 	box-shadow: var(--shadow-article);
 }
 
 .logoutProfileButton:active {
 	background-color: var(--color-bg-light);
-	color: #606060;
+	color: var(--color-text-muted-strong);
 	box-shadow: var(--shadow-button-active);
 }
 
@@ -99,7 +99,7 @@
 	justify-content: center;
 	align-items: center;
 	height: 3rem;
-	color: #606060;
+	color: var(--color-text-muted-strong);
 	font-weight: 500;
 	cursor: pointer;
 	transition-duration: 300ms;

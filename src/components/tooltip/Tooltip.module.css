@@ -22,7 +22,7 @@
 .tooltip {
 	position: relative;
 	background-color: var(--color-error);
-	color: #ffffff;
+	color: var(--color-bg-white);
 	font-size: 0.875rem;
 	padding: 0.5rem;
 	border-radius: 0.25rem;

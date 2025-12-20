@@ -13,7 +13,6 @@
 	font-weight: 700;
 	color: var(--color-main-text);
 	margin-bottom: 2rem;
-	max-width: 336px;
 	line-height: 150%;
 }
 
@@ -58,6 +57,11 @@
 }
 
 @media (min-width: 768px) {
+	.categoryPage {
+		padding-left: max(12px, calc((100% - 1208px) / 2));
+		padding-right: max(6px, calc((100% - 1208px) / 2));
+		margin-left: 0;
+	}
 	.categoryTitle {
 		margin-bottom: 2.5rem;
 		font-size: 3rem;
@@ -75,6 +79,7 @@
 		margin-bottom: 3.75rem;
 		font-size: 3rem;
 		max-width: none;
+		max-width: 336px;
 	}
 
 	.filterButtonsDesktop {

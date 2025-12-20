@@ -18,7 +18,7 @@
 }
 
 .itemCountPrice {
-	color: #000000;
+	color: var(--color-bg-dark);
 }
 
 .discountText {
