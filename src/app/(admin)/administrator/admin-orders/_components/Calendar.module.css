@@ -1,0 +1,123 @@
+.calendarContainer {
+	position: absolute;
+	top: 4.25rem;
+	left: 0;
+	z-index: 50;
+	background-color: var(--color-bg-white);
+	border: 1px solid var(--color-border-light);
+	border-radius: 0.5rem;
+	box-shadow: var(--shadow-default);
+	padding: 1rem;
+	width: 23rem;
+}
+
+.navigation {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.monthTitle {
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+	font-weight: 700;
+	color: var(--color-main-text);
+}
+
+.navButtons {
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+}
+
+.navButton {
+	padding: 0.5rem;
+	background-color: var(--color-bg-light);
+	border-radius: 0.25rem;
+	transition-duration: 300ms;
+	cursor: pointer;
+	position: relative;
+	border: none;
+}
+
+.navIcon {
+	transition: filter 0.3s;
+}
+
+.navIconHover {
+	filter: sepia(1) brightness(0);
+}
+
+.arrowPrev {
+	transform: rotate(180deg);
+}
+
+.fullWidthCalendar {
+	width: 100%;
+}
+
+.dayPickerRoot {
+	width: 100%;
+}
+
+.dayPickerMonth {
+	width: 100%;
+}
+
+.dayPickerTable {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.dayPickerHeadRow {
+	border-bottom: 1px solid var(--color-border-light);
+}
+
+.dayPickerHeadCell {
+	font-weight: 400;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+}
+
+.dayPickerRow {
+	border-bottom: 1px solid var(--color-border-light);
+}
+
+.dayPickerCell {
+	height: 2.5rem;
+	text-align: center;
+}
+
+.dayPickerDay {
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 9999px;
+	color: #606060;
+	transition-duration: 300ms;
+	cursor: pointer;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.dayPickerDay:hover {
+	color: var(--color-bg-white);
+	background-color: var(--color-accent);
+}
+
+.dayPickerDaySelected {
+	background-color: var(--color-accent) !important;
+	color: var(--color-bg-white) !important;
+}
+
+.dayPickerDayToday {
+	background-color: var(--color-bg-light) !important;
+	color: var(--color-bg-white) !important;
+}
+
+.dayPickerDayOutside {
+	color: var(--color-text-muted);
+	opacity: 0.5;
+}

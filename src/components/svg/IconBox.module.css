@@ -4,10 +4,10 @@
 	margin-bottom: -0.5rem;
 }
 
-.managerIcon {
+.iconActive {
 	fill: rgb(255, 102, 51);
 }
 
-.userIcon {
+.iconInactive {
 	fill: rgb(65, 65, 65);
 }

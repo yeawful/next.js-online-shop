@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { formatPrice } from "../../../../utils/formatPrice";
-import { formatOrderDate } from "./utils/formatOrderDate";
-import { getStatusColor } from "./utils/getStatusColor";
-import { getStatusText } from "./utils/getStatusText";
+import { formatOrderDate } from "../utils/formatOrderDate";
+import { getStatusColor } from "../utils/getStatusColor";
+import { getStatusText } from "../utils/getStatusText";
 import { OrderHeaderProps } from "@/types/order";
 import styles from "./OrderHeader.module.css";
 
@@ -18,8 +18,8 @@ const OrderHeader = ({
 			<div className={styles.dateInfo}>
 				<p className={styles.date}>{formatOrderDate(order.deliveryDate)}</p>
 				<p className={styles.time}>{order.deliveryTimeSlot}</p>
-				<span className={`${styles.status} ${getStatusColor(order.status)}`}>
-					{getStatusText(order.status)}
+				<span className={`${styles.status} ${getStatusColor(order)}`}>
+					{getStatusText(order)}
 				</span>
 			</div>
 			<div className={styles.priceInfo}>

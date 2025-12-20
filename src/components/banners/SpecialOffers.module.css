@@ -121,7 +121,7 @@
 
 	.offersContent {
 		flex-direction: row;
-		gap: 1rem;
+		gap: 2rem;
 	}
 
 	.cardBanner {
@@ -175,7 +175,7 @@
 	}
 
 	.actionBanner {
-		width: 584px;
+		width: 600px;
 		height: 200px;
 	}
 

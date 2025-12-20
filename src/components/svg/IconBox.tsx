@@ -1,13 +1,9 @@
-import { useAuthStore } from "@/store/authStore";
 import styles from "./IconBox.module.css";
 
 const IconBox = ({ isActive = false }: { isActive?: boolean }) => {
-	const { user } = useAuthStore();
-
-	const iconClass =
-		isActive || user?.role === "manager" || user?.role === "admin"
-			? `${styles.icon} ${styles.managerIcon}`
-			: `${styles.icon} ${styles.userIcon}`;
+	const iconClass = isActive
+		? `${styles.icon} ${styles.iconActive}`
+		: `${styles.icon} ${styles.iconInactive}`;
 
 	return (
 		<svg

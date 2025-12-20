@@ -1,0 +1,177 @@
+.modalContainer {
+	position: absolute;
+	right: 0;
+	z-index: 50;
+	margin-top: 3.5rem;
+}
+
+.modalContent {
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+	padding-top: 1.25rem;
+	padding-bottom: 1.25rem;
+	width: 23rem;
+	background-color: var(--color-bg-white);
+	border-radius: 0.25rem;
+	box-shadow: var(--shadow-button-secondary);
+}
+
+.modalHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 1.5rem;
+}
+
+.modalTitle {
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+	color: var(--color-main-text);
+}
+
+.closeButton {
+	cursor: pointer;
+	transition: opacity 0.3s;
+}
+
+.closeButton:hover {
+	opacity: 0.7;
+}
+
+.deliveryInfo {
+	padding: 1.25rem;
+	color: var(--color-main-text);
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+}
+
+.loading {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	text-align: center;
+	color: var(--color-main-text);
+}
+
+.slotsGrid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0.5rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.slotButton {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+	border-radius: 0.25rem;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	transition-duration: 300ms;
+	cursor: pointer;
+	border: none;
+}
+
+.slotButtonDefault {
+	background-color: var(--color-bg-light);
+}
+
+.slotButtonSelected {
+	background-color: var(--color-primary);
+	color: var(--color-bg-white);
+}
+
+.slotButtonDefault:hover {
+	background-color: var(--color-primary);
+	color: var(--color-bg-white);
+}
+
+.actionsContainer {
+	display: flex;
+	gap: 0.5rem;
+	margin-top: 1rem;
+	padding-top: 1rem;
+}
+
+.confirmButton {
+	flex: 1;
+	height: 2.5rem;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition-duration: 300ms;
+	border: none;
+}
+
+.confirmButtonActive {
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
+}
+
+.confirmButtonActive:hover {
+	box-shadow: var(--shadow-article);
+}
+
+.confirmButtonActive:active {
+	box-shadow: var(--shadow-button-active);
+}
+
+.confirmButtonInactive {
+	background-color: var(--color-warning-bg);
+	color: var(--color-accent);
+}
+
+.noSlots {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	text-align: center;
+	color: var(--color-text-secondary);
+}
+
+.noData {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	text-align: center;
+	color: var(--color-text-secondary);
+}
+
+.baseButton {
+	width: 16.25rem;
+	height: 4.25rem;
+	margin-top: 2.5rem;
+	margin-bottom: 2.5rem;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.5rem;
+	line-height: 2rem;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition-duration: 300ms;
+	border: none;
+}
+
+.activeButton {
+	background-color: var(--color-accent);
+	color: var(--color-bg-white);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition-duration: 300ms;
+	border: none;
+}
+
+.activeButton:hover {
+	box-shadow: var(--shadow-article);
+}
+
+.activeButton:active {
+	box-shadow: var(--shadow-button-active);
+}
+
+.inactiveButton {
+	background-color: var(--color-warning-bg);
+	color: var(--color-accent);
+	border-radius: 0.25rem;
+}

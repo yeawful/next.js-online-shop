@@ -1,0 +1,33 @@
+.bgLight {
+	background-color: var(--color-bg-light);
+}
+
+.bgLightWithText {
+	background-color: var(--color-bg-light);
+	color: var(--color-main-text);
+}
+
+.bgError {
+	background-color: var(--color-error);
+	color: var(--color-bg-white);
+}
+
+.bgSuccess {
+	background-color: var(--color-success);
+	color: var(--color-bg-white);
+}
+
+.bgSuccessLight {
+	background-color: var(--color-success-bg);
+	color: var(--color-success);
+}
+
+.bgWarning {
+	background-color: var(--color-warning-bg);
+	color: #b35c00;
+}
+
+.bgDefault {
+	background-color: var(--color-bg-light);
+	color: var(--color-text-hover);
+}

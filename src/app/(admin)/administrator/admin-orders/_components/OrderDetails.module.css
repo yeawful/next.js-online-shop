@@ -1,0 +1,134 @@
+.container {
+	color: var(--color-main-text);
+	padding: 1.25rem;
+	margin-top: 2.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.title {
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+	font-weight: 700;
+	color: var(--color-main-text);
+	margin-bottom: 1rem;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+}
+
+.section {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.sectionTitle {
+	font-weight: 500;
+	color: var(--color-text-hover);
+}
+
+.detailsList {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.detailRow {
+	display: flex;
+	justify-content: space-between;
+}
+
+.detailLabel {
+	color: var(--color-text-secondary);
+}
+
+.detailValue {
+	font-weight: 500;
+}
+
+.discountValue {
+	composes: detailValue;
+	color: var(--color-success);
+}
+
+.bonusEarned {
+	composes: detailValue;
+	color: var(--color-success);
+}
+
+.customerSection {
+	composes: section;
+	grid-column: span 2;
+}
+
+.customerGrid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+}
+
+.customerField {
+	display: flex;
+	flex-direction: column;
+}
+
+.customerLabel {
+	color: var(--color-text-secondary);
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+}
+
+.customerValue {
+	font-weight: 500;
+}
+
+.birthdayContainer {
+	display: flex;
+	align-items: center;
+}
+
+.birthdaySoon {
+	color: var(--color-error);
+}
+
+.weightSection {
+	margin-top: 1.5rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--color-border-light);
+}
+
+.weightTitle {
+	font-weight: 500;
+	color: var(--color-text-hover);
+	margin-bottom: 1rem;
+}
+
+.weightText {
+	color: var(--color-text-secondary);
+	margin-left: 1rem;
+}
+
+@media (min-width: 768px) {
+	.grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.customerGrid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+@media (min-width: 1024px) {
+	.grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.customerSection {
+		grid-column: span 3;
+	}
+}

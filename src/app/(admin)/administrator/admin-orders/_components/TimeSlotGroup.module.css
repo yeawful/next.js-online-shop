@@ -1,0 +1,74 @@
+.timeSlotHeader {
+	display: flex;
+	justify-content: space-between;
+	color: var(--color-main-text);
+	font-size: 1.25rem;
+	line-height: 1.75rem;
+}
+
+.timeSlotContainer {
+	display: flex;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.iconClock {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+.slotTime {
+	font-weight: 700;
+}
+
+.completedContainer {
+	display: flex;
+	gap: 0.625rem;
+	align-items: center;
+}
+
+.completedCount {
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+
+.completedDivider {
+	font-size: 1.25rem;
+	line-height: 1.75rem;
+}
+
+.ordersContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 3.75rem;
+}
+
+@media (min-width: 768px) {
+	.timeSlotHeader {
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+
+	.completedCount,
+	.completedDivider {
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+}
+
+@media (min-width: 1280px) {
+	.timeSlotHeader {
+		font-size: 2.25rem;
+		line-height: 2.5rem;
+	}
+
+	.completedCount {
+		font-size: 1.875rem;
+		line-height: 2.25rem;
+	}
+
+	.completedDivider {
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+}

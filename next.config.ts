@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
 	reactCompiler: true,
 	images: {
 		qualities: [70, 75, 90, 100],
+		localPatterns: [{ pathname: "/**" }],
 	},
 };
 

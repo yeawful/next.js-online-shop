@@ -1,0 +1,288 @@
+import { useState, useEffect } from "react";
+import { updateOrderStatus } from "@/app/(cart)/cart/utils/orderHelpers";
+import { getMappedStatus } from "../utils/getMappedStatus";
+import { getEnglishStatuses } from "../utils/getEnglishStatuses";
+import StatusDropdown from "./StatusDropdown";
+import UserAvatar from "./UserAvatar";
+import IconVision from "@/components/svg/IconVision";
+import Image from "next/image";
+import { formatPhoneNumber } from "../utils/formatPhoneNumber";
+import { useGetAdminOrdersQuery } from "@/store/redux/api/ordersApi";
+import {
+	useGetOrderMessagesQuery,
+	useHasUnreadMessagesQuery,
+} from "@/store/redux/api/chatApi";
+import IconNotice from "@/components/svg/IconNotice";
+import OrderChatModal from "./OrderChatModal";
+import CalendarOrderModal from "./CalendarOrderModal";
+import OrderProductsLoader from "./OrderProductsLoader";
+import OrderDetails from "./OrderDetails";
+import { exportOrderToExcel } from "../utils/exportOrderToExcel";
+import styles from "./AdminOrderCard.module.css";
+
+interface AdminOrderCardProps {
+	orderId: string;
+}
+
+const AdminOrderCard = ({ orderId }: AdminOrderCardProps) => {
+	const { data } = useGetAdminOrdersQuery();
+
+	const order = data?.orders?.find((o) => o._id === orderId);
+
+	const [currentStatusLabel, setCurrentStatusLabel] = useState<string>(
+		order ? getMappedStatus(order) : ""
+	);
+	const [isUpdating, setIsUpdating] = useState(false);
+	const [showOrderDetails, setShowOrderDetails] = useState(false);
+	const [showChat, setShowChat] = useState(false);
+	const [showCalendar, setShowCalendar] = useState(false);
+	const [showFullOrder, setShowFullOrder] = useState(false);
+	const [totalOrderWeight, setTotalOrderWeight] = useState(0);
+	const [isExporting, setIsExporting] = useState(false);
+
+	const { data: messages = [] } = useGetOrderMessagesQuery(orderId);
+
+	const { data: hasUnread = false } = useHasUnreadMessagesQuery(orderId, {
+		pollingInterval: 2000,
+	});
+
+	const showCalendarIcon =
+		order && (order.status === "confirmed" || order.status === "pending");
+
+	useEffect(() => {
+		if (order) {
+			setCurrentStatusLabel(getMappedStatus(order));
+		}
+	}, [order]);
+
+	const formattedPhone = order ? formatPhoneNumber(order.phone) : "";
+
+	const handleStatusChange = async (newStatusLabel: string) => {
+		if (!order) return;
+
+		setIsUpdating(true);
+		try {
+			const { status: englishStatus, paymentStatus } = getEnglishStatuses(
+				newStatusLabel,
+				order
+			);
+
+			const updateData: { status: string; paymentStatus?: string } = {
+				status: englishStatus,
+			};
+
+			if (paymentStatus !== undefined) {
+				updateData.paymentStatus = paymentStatus;
+			}
+
+			await updateOrderStatus(order._id, updateData);
+			setCurrentStatusLabel(newStatusLabel);
+		} catch (error) {
+			console.error("Ошибка при обновлении статуса:", error);
+		} finally {
+			setIsUpdating(false);
+		}
+	};
+
+	const handleToggleDetails = () => {
+		if (!showOrderDetails) {
+			setShowOrderDetails(true);
+			setShowFullOrder(false);
+		} else {
+			setShowOrderDetails(false);
+			setShowFullOrder(false);
+		}
+	};
+
+	const handleToggleFullOrder = () => {
+		if (showFullOrder) {
+			setShowOrderDetails(false);
+			setShowFullOrder(false);
+		} else {
+			setShowFullOrder(true);
+		}
+	};
+
+	const handleOpenChat = () => {
+		fetch(`/api/admin/chat/${orderId}/read`, {
+			method: "POST",
+		});
+		setShowChat(true);
+	};
+
+	const handleCloseChat = () => {
+		setShowChat(false);
+	};
+
+	const handleOpenCalendar = () => {
+		if (showCalendarIcon) {
+			setShowCalendar(true);
+		}
+	};
+
+	const handleCloseCalendar = () => {
+		if (showCalendarIcon) {
+			setShowCalendar(false);
+		}
+	};
+
+	const handleTotalWeightCalculated = (weight: number) => {
+		setTotalOrderWeight(weight);
+	};
+
+	const handleExportToExcel = async () => {
+		if (!order || isExporting) return;
+
+		setIsExporting(true);
+		try {
+			await exportOrderToExcel(order);
+		} catch (error) {
+			console.error("Ошибка при выгрузке в Excel:", error);
+		} finally {
+			setIsExporting(false);
+		}
+	};
+
+	if (!order) return null;
+
+	return (
+		<div className={styles.container}>
+			<div className={styles.orderHeader}>
+				<div className={styles.orderInfo}>
+					<h2 className={styles.orderNumber}>{order.orderNumber.slice(-3)}</h2>
+					<div className={styles.userInfo}>
+						<UserAvatar
+							userId={order.userId}
+							gender={order.gender}
+							name={order.name}
+						/>
+						<span className={styles.userName}>{order.name}</span>
+					</div>
+				</div>
+
+				<div className={styles.contactInfo}>
+					<div className={styles.phoneContainer}>
+						<Image
+							alt="Телефон"
+							src="/icons-orders/icon-phone.svg"
+							width={24}
+							height={24}
+						/>
+						<span className={styles.phoneNumber}>{formattedPhone}</span>
+					</div>
+
+					<StatusDropdown
+						currentStatusLabel={currentStatusLabel}
+						isUpdating={isUpdating}
+						onStatusChange={handleStatusChange}
+					/>
+					{!showOrderDetails && (
+						<button className={styles.viewButton} onClick={handleToggleDetails}>
+							<IconVision showPassword={!showOrderDetails} />
+							Просмотреть
+						</button>
+					)}
+
+					{showOrderDetails && (
+						<button
+							className={`${styles.activeButton} ${styles.viewButton}`}
+							onClick={handleExportToExcel}
+						>
+							<Image
+								src="/icons-orders/icon-upload.svg"
+								alt="Excel"
+								width={24}
+								height={24}
+							/>
+							Выгрузить в Excel
+						</button>
+					)}
+
+					{showCalendarIcon ? (
+						<div>
+							<button
+								className={styles.iconButton}
+								onClick={handleOpenCalendar}
+							>
+								<Image
+									src="/icons-auth/icon-date.svg"
+									alt="Календарь"
+									width={24}
+									height={24}
+								/>
+							</button>
+							<CalendarOrderModal
+								orderId={orderId}
+								isOpen={showCalendar}
+								onClose={handleCloseCalendar}
+							/>
+						</div>
+					) : (
+						<button className={styles.iconButton} onClick={handleOpenChat}>
+							{messages.length === 0 ? (
+								<Image
+									src="/icons-orders/icon-message-empty.svg"
+									alt="Чат пустой"
+									width={24}
+									height={24}
+								/>
+							) : (
+								<Image
+									src="/icons-orders/icon-message.svg"
+									alt="Чат"
+									width={24}
+									height={24}
+								/>
+							)}
+							{hasUnread && <IconNotice />}
+						</button>
+					)}
+				</div>
+			</div>
+			{showOrderDetails && (
+				<>
+					<OrderProductsLoader
+						orderItems={order.items}
+						onTotalWeightCalculated={handleTotalWeightCalculated}
+						applyIndexStyles={!showFullOrder}
+						showFullOrder={showFullOrder}
+					/>
+
+					{showFullOrder && (
+						<OrderDetails order={order} totalWeight={totalOrderWeight} />
+					)}
+				</>
+			)}
+
+			{showOrderDetails && !showFullOrder && (
+				<div className={styles.bottomButton}>
+					<button
+						className={styles.bottomButtonContent}
+						onClick={handleToggleFullOrder}
+					>
+						<IconVision showPassword={true} />
+						Показать заказ
+					</button>
+				</div>
+			)}
+			{showFullOrder && (
+				<div className={styles.bottomButton}>
+					<button
+						className={styles.bottomButtonContent}
+						onClick={handleToggleFullOrder}
+					>
+						<IconVision showPassword={false} />
+						Скрыть
+					</button>
+				</div>
+			)}
+			<OrderChatModal
+				orderId={orderId}
+				isOpen={showChat}
+				onClose={handleCloseChat}
+			/>
+		</div>
+	);
+};
+
+export default AdminOrderCard;

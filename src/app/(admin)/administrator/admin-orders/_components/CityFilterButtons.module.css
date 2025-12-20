@@ -1,0 +1,68 @@
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.625rem;
+	margin-bottom: 3.75rem;
+}
+
+.button {
+	padding: 0.5rem;
+	width: auto;
+	height: 2.5rem;
+	border-radius: 0.25rem;
+	transition-duration: 300ms;
+	cursor: pointer;
+	font-size: 0.75rem;
+	line-height: 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.5rem;
+	border: none;
+}
+
+.buttonSelected {
+	background-color: var(--color-primary);
+	color: var(--color-bg-white);
+	position: relative;
+}
+
+.buttonUnselected {
+	background-color: var(--color-bg-light);
+	color: var(--color-main-text);
+}
+
+.buttonUnselected:hover {
+	box-shadow: var(--shadow-button-secondary);
+}
+
+.buttonUnselected:active {
+	box-shadow: var(--shadow-button-active);
+}
+
+.counter {
+	color: var(--color-bg-white);
+	width: 1.5rem;
+	height: 1.5rem;
+	font-size: 0.75rem;
+	line-height: 1rem;
+	background-color: var(--color-accent);
+	border-radius: 0.25rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media (min-width: 768px) {
+	.button {
+		font-size: 0.875rem;
+		line-height: 1.25rem;
+	}
+}
+
+@media (min-width: 1280px) {
+	.button {
+		font-size: 1rem;
+		line-height: 1.5rem;
+	}
+}

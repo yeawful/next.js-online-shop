@@ -1,0 +1,47 @@
+.bgLight {
+	background-color: var(--color-bg-light);
+}
+
+.textMain {
+	color: var(--color-main-text);
+}
+
+.bgPrimary {
+	background-color: var(--color-primary);
+}
+
+.textPrimary {
+	color: var(--color-primary);
+}
+
+.bgSuccess {
+	background-color: var(--color-success);
+}
+
+.textSuccess {
+	color: var(--color-success);
+}
+
+.bgOrange {
+	background-color: #fca21c;
+}
+
+.textOrange {
+	color: #fca21c;
+}
+
+.bgError {
+	background-color: var(--color-error);
+}
+
+.textError {
+	color: var(--color-error);
+}
+
+.bgBlue {
+	background-color: #1cb9fc;
+}
+
+.textBlue {
+	color: #1cb9fc;
+}

@@ -1,0 +1,16 @@
+.container {
+	padding-left: max(12px, calc((100% - 1208px) / 2));
+	padding-right: max(12px, calc((100% - 1208px) / 2));
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 2rem;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+@media (min-width: 1280px) {
+	.container {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}

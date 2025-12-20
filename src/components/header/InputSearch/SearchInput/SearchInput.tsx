@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { SearchInputProps } from "@/types/searchInputProps";
-import iconSearch from "/public/icons-header/icon-search.svg";
 import styles from "./SearchInput.module.css";
 
 const SearchInput = ({
@@ -28,7 +27,12 @@ const SearchInput = ({
 					onBlur={handleInputBlur}
 				/>
 				<button className={styles.searchButton} type="submit">
-					<Image src={iconSearch} alt="Поиск" width={24} height={24} />
+					<Image
+						src="/icons-header/icon-search.svg"
+						alt="Поиск"
+						width={24}
+						height={24}
+					/>
 				</button>
 			</form>
 		</div>
