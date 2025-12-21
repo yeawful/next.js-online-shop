@@ -34,5 +34,6 @@
 @media (min-width: 1280px) {
 	.headerTop {
 		gap: 2.5rem;
+		padding: 0.5rem;
 	}
 }

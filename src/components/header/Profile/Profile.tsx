@@ -154,7 +154,6 @@ const Profile = () => {
 				</div>
 			</div>
 
-			{/* Выпадающее меню */}
 			<div
 				className={`${styles.dropdownMenu} ${isMenuOpen ? styles.dropdownOpen : ""} ${isMobile ? styles.dropdownMobile : styles.dropdownDesktop}`}
 			>

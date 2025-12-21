@@ -50,8 +50,9 @@
 
 	.heroImage {
 		display: block;
-		width: 12.5rem;
-		height: 8.25rem;
+		width: 15rem;
+		height: 10rem;
+		top: 1.15rem;
 	}
 
 	.heroTitle {
@@ -73,6 +74,7 @@
 	.heroImage {
 		width: 18.75rem;
 		height: 12.5rem;
+		top: 1.5rem;
 	}
 
 	.heroTitle {

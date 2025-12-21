@@ -19,6 +19,7 @@ import ReviewsWrapper from "./_components/ReviewsWrapper";
 import Actions from "@/app/(products)/Actions";
 import FavoriteButton from "@/components/products/FavoriteButton/FavoriteButton";
 import { getFullEnding } from "../../../../../../utils/getWordEnding";
+import ProductTitle from "./_components/ProductTitle";
 import styles from "./ProductPageContent.module.css";
 
 interface ProductPageContentProps {
@@ -46,7 +47,7 @@ const ProductPageContent = ({
 
 	return (
 		<div className={styles.container}>
-			<h1 className={styles.title}>{product.description}</h1>
+			<ProductTitle title={product.title} description={product.description} />
 			<div className={styles.productHeader}>
 				<div className={styles.article}>арт. {product.article}</div>
 				<div className={styles.ratingContainer}>

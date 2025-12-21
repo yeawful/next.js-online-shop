@@ -35,6 +35,10 @@
 }
 
 @media (min-width: 768px) {
+	.container {
+		gap: 1.5rem;
+	}
+
 	.mobileOnly {
 		display: none;
 	}

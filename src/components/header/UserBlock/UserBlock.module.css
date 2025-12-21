@@ -22,6 +22,6 @@
 		position: static;
 		box-shadow: none;
 		font-size: 0.75rem;
-		padding-left: 0;
+		padding: 0.5rem;
 	}
 }
