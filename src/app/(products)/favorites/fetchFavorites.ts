@@ -45,7 +45,7 @@ const fetchFavorites = async (options: {
 		}
 
 		const res = await fetch(url.toString(), {
-			next: { revalidate: 60 },
+			next: { revalidate: 0 },
 		});
 
 		if (!res.ok) {

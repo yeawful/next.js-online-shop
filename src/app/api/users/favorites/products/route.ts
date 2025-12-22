@@ -6,7 +6,7 @@ import { Filter } from "mongodb";
 import { ObjectId } from "mongodb";
 
 export const dynamic = "force-dynamic";
-export const revalidate = 60;
+export const revalidate = 0;
 
 export async function GET(request: Request) {
 	try {
