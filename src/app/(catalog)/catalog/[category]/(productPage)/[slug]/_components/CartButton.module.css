@@ -33,13 +33,6 @@
 	cursor: not-allowed;
 }
 
-@media (min-width: 768px) {
-	.formButton {
-		height: 3.75rem;
-		font-size: 1.5rem;
-	}
-}
-
 .cartIcon {
 	position: absolute;
 	left: 1rem;
@@ -47,4 +40,11 @@
 
 .buttonText {
 	text-align: center;
+}
+
+@media (min-width: 768px) {
+	.formButton {
+		height: 3.75rem;
+		font-size: 1.5rem;
+	}
 }

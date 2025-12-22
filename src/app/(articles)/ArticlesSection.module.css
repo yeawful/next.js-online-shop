@@ -1,8 +1,8 @@
 .articleSection {
 	display: flex;
 	flex-direction: column;
-	padding-left: max(12px, calc((100% - 1208px) / 2));
-	padding-right: max(12px, calc((100% - 1208px) / 2));
+	padding-left: max(calc((100% - 1208px) / 2));
+	padding-right: max(calc((100% - 1208px) / 2));
 }
 
 .articleHeader {
@@ -36,10 +36,6 @@
 }
 
 @media (min-width: 768px) {
-	.articleSection {
-		padding-left: max(calc((100% - 1208px) / 2));
-		padding-right: max(calc((100% - 1208px) / 2));
-	}
 	.articleHeader {
 		margin-bottom: 2rem;
 	}

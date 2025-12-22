@@ -72,15 +72,6 @@
 	animation: spin 1s linear infinite;
 }
 
-@keyframes spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
-}
-
 .hint {
 	font-size: 0.875rem;
 	margin-top: 0.5rem;
@@ -96,4 +87,13 @@
 
 .hintSuccess {
 	color: #008c49;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }

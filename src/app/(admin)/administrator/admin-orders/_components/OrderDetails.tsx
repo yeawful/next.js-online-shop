@@ -90,7 +90,9 @@ const OrderDetails = ({ order, totalWeight = 0 }: OrderDetailsProps) => {
 						</div>
 						<div className={styles.detailRow}>
 							<span className={styles.detailLabel}>Начислено бонусов:</span>
-							<span className={styles.bonusEarned}>+{order.earnedBonuses}</span>
+							<span className={styles.discountValue}>
+								+{order.earnedBonuses}
+							</span>
 						</div>
 					</div>
 				</div>

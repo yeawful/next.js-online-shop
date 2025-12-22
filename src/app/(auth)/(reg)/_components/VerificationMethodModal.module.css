@@ -2,17 +2,6 @@
 	animation: zoomIn 0.2s ease-out;
 }
 
-@keyframes zoomIn {
-	from {
-		opacity: 0;
-		transform: scale(0.95);
-	}
-	to {
-		opacity: 1;
-		transform: scale(1);
-	}
-}
-
 .contentContainer {
 	display: flex;
 	flex-direction: column;
@@ -75,12 +64,6 @@
 
 .verificationLink:hover .iconContainer {
 	background-color: var(--color-accent);
-}
-
-@media (min-width: 768px) {
-	.verificationLink {
-		width: 20rem;
-	}
 }
 
 .iconContainer {
@@ -166,10 +149,27 @@
 	font-size: 0.875rem;
 }
 
+@media (min-width: 768px) {
+	.verificationLink {
+		width: 20rem;
+	}
+}
+
 @keyframes ping {
 	75%,
 	100% {
 		transform: scale(2);
 		opacity: 0;
+	}
+}
+
+@keyframes zoomIn {
+	from {
+		opacity: 0;
+		transform: scale(0.95);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
 	}
 }

@@ -12,16 +12,6 @@
 	gap: 1rem;
 }
 
-@keyframes pulse {
-	0%,
-	100% {
-		opacity: 1;
-	}
-	50% {
-		opacity: 0.5;
-	}
-}
-
 .skeletonItem {
 	padding: 1rem;
 	background-color: #f3f4f6;
@@ -110,4 +100,14 @@
 	color: var(--color-main-text);
 	font-size: 1rem;
 	line-height: 1.5rem;
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
 }

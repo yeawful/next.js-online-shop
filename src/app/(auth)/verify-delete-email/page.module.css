@@ -51,15 +51,6 @@
 	animation: spin 1s linear infinite;
 }
 
-@keyframes spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
-}
-
 .description {
 	text-align: center;
 }
@@ -110,4 +101,13 @@
 .submitButton:disabled:hover {
 	background-color: var(--color-warning-bg);
 	color: var(--color-error);
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }

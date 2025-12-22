@@ -5,30 +5,10 @@
 	height: 6rem;
 }
 
-@media (min-width: 768px) {
-	.container {
-		width: 21rem;
-	}
-}
-
 .title {
 	font-size: 2.25rem;
 	font-weight: 700;
 	margin-bottom: 2rem;
-}
-
-@media (min-width: 768px) {
-	.title {
-		font-size: 3rem;
-		margin-bottom: 2.5rem;
-	}
-}
-
-@media (min-width: 1280px) {
-	.title {
-		font-size: 4rem;
-		margin-bottom: 3.75rem;
-	}
 }
 
 .countBadge {
@@ -47,35 +27,45 @@
 	right: 8.25rem;
 }
 
-@media (min-width: 768px) {
-	.countBadgeCart {
-		right: 5rem;
-	}
-}
-
-@media (min-width: 1280px) {
-	.countBadgeCart {
-		right: 0;
-	}
-}
-
 .countBadgeDelivery {
 	right: 7.25rem;
 }
 
+.countText {
+	font-size: 1rem;
+	color: var(--color-bg-white);
+}
+
 @media (min-width: 768px) {
+	.container {
+		width: 21rem;
+	}
+
+	.title {
+		font-size: 3rem;
+		margin-bottom: 2.5rem;
+	}
+
+	.countBadgeCart {
+		right: 5rem;
+	}
+
 	.countBadgeDelivery {
 		right: 3.75rem;
 	}
 }
 
 @media (min-width: 1280px) {
+	.title {
+		font-size: 4rem;
+		margin-bottom: 3.75rem;
+	}
+
+	.countBadgeCart {
+		right: 0;
+	}
+
 	.countBadgeDelivery {
 		right: -1.25rem;
 	}
-}
-
-.countText {
-	font-size: 1rem;
-	color: var(--color-bg-white);
 }

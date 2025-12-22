@@ -5,34 +5,15 @@
 	gap: 0.75rem;
 }
 
-@media (min-width: 1024px) {
-	.addressContainer {
-		grid-template-columns: auto 1fr;
-		gap: 1.5rem;
-	}
-}
-
 .addressLabel {
 	color: var(--color-main-text);
 	font-size: 0.875rem;
-}
-
-@media (min-width: 1024px) {
-	.addressLabel {
-		font-size: 1rem;
-	}
 }
 
 .address {
 	font-weight: 500;
 	font-size: 0.875rem;
 	word-break: break-word;
-}
-
-@media (min-width: 1024px) {
-	.address {
-		font-size: 1rem;
-	}
 }
 
 .detailsContainer {
@@ -43,12 +24,6 @@
 	flex-direction: column;
 	gap: 0.75rem;
 	font-size: 0.875rem;
-}
-
-@media (min-width: 1024px) {
-	.detailsContainer {
-		font-size: 1rem;
-	}
 }
 
 .detailRow {
@@ -71,4 +46,23 @@
 
 .bonusesEarned {
 	color: var(--color-success);
+}
+
+@media (min-width: 1024px) {
+	.addressContainer {
+		grid-template-columns: auto 1fr;
+		gap: 1.5rem;
+	}
+
+	.addressLabel {
+		font-size: 1rem;
+	}
+
+	.address {
+		font-size: 1rem;
+	}
+
+	.detailsContainer {
+		font-size: 1rem;
+	}
 }

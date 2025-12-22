@@ -6,13 +6,6 @@
 	margin-bottom: 1rem;
 }
 
-@media (min-width: 768px) {
-	.container {
-		padding: 1rem;
-		margin-bottom: 1.5rem;
-	}
-}
-
 .title {
 	font-size: 1rem;
 	font-weight: 600;
@@ -20,27 +13,11 @@
 	text-align: center;
 }
 
-@media (min-width: 768px) {
-	.title {
-		font-size: 1.125rem;
-		margin-bottom: 1rem;
-	}
-}
-
 .form {
 	display: flex;
 	flex-direction: column;
 	gap: 0.75rem;
 	align-items: center;
-}
-
-@media (min-width: 768px) {
-	.form {
-		flex-direction: row;
-		gap: 1rem;
-		align-items: flex-end;
-		justify-content: center;
-	}
 }
 
 .inputGroup {
@@ -64,12 +41,6 @@
 	padding-bottom: 0.5rem;
 	width: 100%;
 	font-size: 0.875rem;
-}
-
-@media (min-width: 768px) {
-	.input {
-		font-size: 1rem;
-	}
 }
 
 .button {
@@ -97,6 +68,27 @@
 }
 
 @media (min-width: 768px) {
+	.container {
+		padding: 1rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.title {
+		font-size: 1.125rem;
+		margin-bottom: 1rem;
+	}
+
+	.form {
+		flex-direction: row;
+		gap: 1rem;
+		align-items: flex-end;
+		justify-content: center;
+	}
+
+	.input {
+		font-size: 1rem;
+	}
+
 	.button {
 		padding-left: 1rem;
 		padding-right: 1rem;

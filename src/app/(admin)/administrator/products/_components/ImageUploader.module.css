@@ -49,15 +49,6 @@
 	margin-right: auto;
 }
 
-@keyframes spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
-}
-
 .icon {
 	width: 3rem;
 	height: 3rem;
@@ -93,4 +84,13 @@
 	font-size: 0.875rem;
 	line-height: 1.25rem;
 	color: #dc2626;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }

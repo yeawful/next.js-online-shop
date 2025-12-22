@@ -29,12 +29,6 @@
 	margin-bottom: 1rem;
 }
 
-@media (min-width: 1280px) {
-	.header {
-		gap: 1rem;
-	}
-}
-
 .averageRating {
 	font-size: 1.125rem;
 	line-height: 1.75rem;
@@ -68,4 +62,10 @@
 .ratingCount {
 	font-size: 1rem;
 	line-height: 1.5rem;
+}
+
+@media (min-width: 1280px) {
+	.header {
+		gap: 1rem;
+	}
 }

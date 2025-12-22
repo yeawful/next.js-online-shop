@@ -5,12 +5,6 @@
 	margin-bottom: 1rem;
 }
 
-@media (min-width: 1280px) {
-	.container {
-		margin-bottom: 1.5rem;
-	}
-}
-
 .checkboxLabel {
 	display: flex;
 	align-items: center;
@@ -81,4 +75,10 @@
 
 .removeButton:hover {
 	text-decoration: underline;
+}
+
+@media (min-width: 1280px) {
+	.container {
+		margin-bottom: 1.5rem;
+	}
 }

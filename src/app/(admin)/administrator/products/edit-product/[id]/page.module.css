@@ -51,18 +51,6 @@
 	gap: 1.5rem;
 }
 
-@media (min-width: 768px) {
-	.gridCols2 {
-		grid-template-columns: repeat(2, 1fr);
-	}
-}
-
-@media (min-width: 768px) {
-	.gridCols3 {
-		grid-template-columns: repeat(3, 1fr);
-	}
-}
-
 .submitButton {
 	flex: 1;
 	background-color: var(--color-primary);
@@ -87,4 +75,14 @@
 .submitButton:disabled {
 	opacity: 0.5;
 	cursor: not-allowed;
+}
+
+@media (min-width: 768px) {
+	.gridCols2 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.gridCols3 {
+		grid-template-columns: repeat(3, 1fr);
+	}
 }

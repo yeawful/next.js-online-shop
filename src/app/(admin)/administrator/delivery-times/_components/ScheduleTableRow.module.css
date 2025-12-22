@@ -16,23 +16,10 @@
 	justify-content: space-between;
 }
 
-@media (min-width: 768px) {
-	.timeCell {
-		padding: 0.75rem;
-	}
-}
-
 .timeSlot {
 	font-weight: 500;
 	font-size: 0.875rem;
 	margin-bottom: 0.25rem;
-}
-
-@media (min-width: 768px) {
-	.timeSlot {
-		font-size: 1rem;
-		margin-bottom: 0.5rem;
-	}
 }
 
 .removeButton {
@@ -57,25 +44,12 @@
 	box-shadow: var(--shadow-button-active);
 }
 
-@media (min-width: 768px) {
-	.removeButton {
-		font-size: 0.875rem;
-		padding: 0.25rem;
-	}
-}
-
 .dateCell {
 	padding: 0.5rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	border-right: 1px solid var(--color-border-light);
-}
-
-@media (min-width: 768px) {
-	.dateCell {
-		padding: 0.75rem;
-	}
 }
 
 .lastDateCell {
@@ -125,16 +99,34 @@
 	font-size: 0.75rem;
 }
 
-@media (min-width: 768px) {
-	.statusText {
-		font-size: 0.875rem;
-	}
-}
-
 .statusAvailable {
 	color: var(--color-primary);
 }
 
 .statusUnavailable {
 	color: var(--color-error);
+}
+
+@media (min-width: 768px) {
+	.timeCell {
+		padding: 0.75rem;
+	}
+
+	.timeSlot {
+		font-size: 1rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.removeButton {
+		font-size: 0.875rem;
+		padding: 0.25rem;
+	}
+
+	.dateCell {
+		padding: 0.75rem;
+	}
+
+	.statusText {
+		font-size: 0.875rem;
+	}
 }

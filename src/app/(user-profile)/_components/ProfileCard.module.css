@@ -52,12 +52,6 @@
 		0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
-@media (min-width: 768px) {
-	.editButton {
-		width: auto;
-	}
-}
-
 .cancelButton {
 	padding: 0.5rem 1rem;
 	background-color: var(--color-bg-light);
@@ -86,12 +80,6 @@
 	cursor: not-allowed;
 }
 
-@media (min-width: 768px) {
-	.cancelButton {
-		flex: none;
-	}
-}
-
 .saveButton {
 	padding: 0.5rem 1rem;
 	background-color: var(--color-primary);
@@ -118,12 +106,6 @@
 .saveButton:disabled {
 	opacity: 0.5;
 	cursor: not-allowed;
-}
-
-@media (min-width: 768px) {
-	.saveButton {
-		flex: none;
-	}
 }
 
 .inputContainer {
@@ -189,4 +171,18 @@
 	font-size: 0.875rem;
 	line-height: 1.25rem;
 	margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+	.editButton {
+		width: auto;
+	}
+
+	.cancelButton {
+		flex: none;
+	}
+
+	.saveButton {
+		flex: none;
+	}
 }

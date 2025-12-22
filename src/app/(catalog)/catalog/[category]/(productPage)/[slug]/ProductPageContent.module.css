@@ -4,23 +4,10 @@
 	color: var(--color-main-text);
 }
 
-@media (min-width: 768px) {
-	.container {
-		padding-left: max(16px, calc((100% - 1208px) / 2));
-		padding-right: max(16px, calc((100% - 1208px) / 2));
-	}
-}
-
 .title {
 	font-size: 1.25rem;
 	font-weight: 700;
 	margin-bottom: 1rem;
-}
-
-@media (min-width: 768px) {
-	.title {
-		font-size: 1.5rem;
-	}
 }
 
 .productHeader {
@@ -30,12 +17,6 @@
 	align-items: center;
 	gap: 1.5rem;
 	margin-bottom: 1rem;
-}
-
-@media (min-width: 768px) {
-	.productHeader {
-		margin-bottom: 1.5rem;
-	}
 }
 
 .article {
@@ -61,18 +42,6 @@
 	gap: 6.25rem;
 }
 
-@media (min-width: 768px) {
-	.contentWrapper {
-		gap: 5rem;
-	}
-}
-
-@media (min-width: 1280px) {
-	.contentWrapper {
-		gap: 7.5rem;
-	}
-}
-
 .mainContent {
 	display: flex;
 	flex-direction: column;
@@ -81,45 +50,13 @@
 	justify-content: center;
 }
 
-@media (min-width: 768px) {
-	.mainContent {
-		flex-direction: row;
-		flex-wrap: wrap;
-		gap: 2.5rem;
-	}
-}
-
 .infoColumn {
 	display: flex;
 	flex-direction: column;
 }
 
-@media (min-width: 768px) {
-	.infoColumn {
-		width: 344px;
-	}
-}
-
-@media (min-width: 1024px) {
-	.infoColumn {
-		width: 376px;
-	}
-}
-
 .reviewsSection {
 	margin-bottom: 1rem;
-}
-
-@media (min-width: 768px) {
-	.reviewsSection {
-		margin-bottom: 2rem;
-	}
-}
-
-@media (min-width: 1280px) {
-	.reviewsSection {
-		margin-bottom: 2.5rem;
-	}
 }
 
 .reviewsTitle {
@@ -130,19 +67,6 @@
 	margin-bottom: 1rem;
 }
 
-@media (min-width: 768px) {
-	.reviewsTitle {
-		margin-bottom: 2rem;
-	}
-}
-
-@media (min-width: 1280px) {
-	.reviewsTitle {
-		font-size: 2.25rem;
-		margin-bottom: 2.5rem;
-	}
-}
-
 .reviewsContainer {
 	display: flex;
 	flex-direction: column;
@@ -151,13 +75,67 @@
 }
 
 @media (min-width: 768px) {
+	.container {
+		padding-left: max(16px, calc((100% - 1208px) / 2));
+		padding-right: max(16px, calc((100% - 1208px) / 2));
+	}
+
+	.title {
+		font-size: 1.5rem;
+	}
+
+	.productHeader {
+		margin-bottom: 1.5rem;
+	}
+
+	.contentWrapper {
+		gap: 5rem;
+	}
+
+	.mainContent {
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 2.5rem;
+	}
+
+	.infoColumn {
+		width: 344px;
+	}
+
+	.reviewsSection {
+		margin-bottom: 2rem;
+	}
+
+	.reviewsTitle {
+		margin-bottom: 2rem;
+	}
+
 	.reviewsContainer {
 		flex-direction: row;
 		column-gap: 2rem;
 	}
 }
 
+@media (min-width: 1024px) {
+	.infoColumn {
+		width: 376px;
+	}
+}
+
 @media (min-width: 1280px) {
+	.contentWrapper {
+		gap: 7.5rem;
+	}
+
+	.reviewsSection {
+		margin-bottom: 2.5rem;
+	}
+
+	.reviewsTitle {
+		font-size: 2.25rem;
+		margin-bottom: 2.5rem;
+	}
+
 	.reviewsContainer {
 		column-gap: 9rem;
 	}

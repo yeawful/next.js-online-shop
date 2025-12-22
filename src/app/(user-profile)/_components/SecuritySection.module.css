@@ -26,12 +26,6 @@
 	gap: 1.5rem;
 }
 
-@media (min-width: 1024px) {
-	.buttonsGrid {
-		grid-template-columns: repeat(3, 1fr);
-	}
-}
-
 .buttonBase {
 	width: 260px;
 	height: 68px;
@@ -134,4 +128,10 @@
 .deleteAccountButton:hover {
 	background-color: var(--color-error);
 	color: #f2f2f2;
+}
+
+@media (min-width: 1024px) {
+	.buttonsGrid {
+		grid-template-columns: repeat(3, 1fr);
+	}
 }

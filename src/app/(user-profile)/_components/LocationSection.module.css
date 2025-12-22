@@ -54,16 +54,6 @@
 	width: 100%;
 }
 
-@media (min-width: 768px) {
-	.editButton {
-		width: auto;
-	}
-
-	.buttonGroup {
-		width: auto;
-	}
-}
-
 .cancelButton {
 	flex: 1;
 	padding: 0.5rem 1rem;
@@ -74,12 +64,6 @@
 	transition-duration: 300ms;
 	border: none;
 	font-size: 1rem;
-}
-
-@media (min-width: 768px) {
-	.cancelButton {
-		flex: none;
-	}
 }
 
 .cancelButton:hover {
@@ -102,12 +86,6 @@
 	font-size: 1rem;
 }
 
-@media (min-width: 768px) {
-	.saveButton {
-		flex: none;
-	}
-}
-
 .saveButton:hover {
 	box-shadow: 0 4px 8px rgba(112, 192, 91, 0.2);
 }
@@ -127,12 +105,28 @@
 	gap: 1.5rem;
 }
 
+.select {
+	width: 100%;
+}
+
 @media (min-width: 768px) {
+	.editButton {
+		width: auto;
+	}
+
+	.buttonGroup {
+		width: auto;
+	}
+
+	.cancelButton {
+		flex: none;
+	}
+
+	.saveButton {
+		flex: none;
+	}
+
 	.grid {
 		grid-template-columns: repeat(2, 1fr);
 	}
-}
-
-.select {
-	width: 100%;
 }

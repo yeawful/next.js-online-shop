@@ -68,12 +68,6 @@
 	font-size: 0.75rem;
 }
 
-@media (min-width: 768px) {
-	.buttonsContainer {
-		font-size: 0.875rem;
-	}
-}
-
 .captureButton {
 	flex: 1;
 	color: var(--color-bg-white);
@@ -107,12 +101,6 @@
 	align-items: center;
 }
 
-@media (min-width: 768px) {
-	.captureButtonContent {
-		gap: 1rem;
-	}
-}
-
 .cancelButton {
 	flex: 1;
 	background-color: var(--color-bg-light);
@@ -144,6 +132,16 @@
 	color: var(--color-text-secondary);
 	text-align: center;
 	margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+	.buttonsContainer {
+		font-size: 0.875rem;
+	}
+
+	.captureButtonContent {
+		gap: 1rem;
+	}
 }
 
 @keyframes spin {

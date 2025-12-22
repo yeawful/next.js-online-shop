@@ -82,18 +82,6 @@
 	gap: 1rem;
 }
 
-@media (min-width: 768px) {
-	.formGrid {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-	}
-}
-
-@media (min-width: 1024px) {
-	.formGrid {
-		grid-template-columns: repeat(4, minmax(0, 1fr));
-	}
-}
-
 .field {
 	display: block;
 }
@@ -158,4 +146,16 @@
 	background-color: var(--color-warning-bg);
 	color: var(--color-accent);
 	border-radius: 0.25rem;
+}
+
+@media (min-width: 768px) {
+	.formGrid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 1024px) {
+	.formGrid {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
 }

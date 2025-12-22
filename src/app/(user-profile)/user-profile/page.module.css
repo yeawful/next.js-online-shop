@@ -4,15 +4,9 @@
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: 1rem;
-	padding-right: 1rem;
-}
-
-@media (min-width: 1280px) {
-	.pageContainer {
-		padding-left: 0rem;
-		padding-right: 0rem;
-	}
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-top: -1rem;
 }
 
 .content {
@@ -27,25 +21,8 @@
 	overflow: hidden;
 }
 
-@keyframes slideIn {
-	from {
-		opacity: 0;
-		transform: translateY(2rem);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
 .innerContent {
 	padding: 1.5rem;
-}
-
-@media (min-width: 768px) {
-	.innerContent {
-		padding: 2rem;
-	}
 }
 
 .registrationBadge {
@@ -79,7 +56,36 @@
 }
 
 @media (min-width: 768px) {
+	.pageContainer {
+		margin-top: 0rem;
+		margin-bottom: 0rem;
+	}
+
+	.innerContent {
+		padding: 2rem;
+	}
+
 	.grid {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 1280px) {
+	.pageContainer {
+		padding-left: 0rem;
+		padding-right: 0rem;
+		margin-top: 0rem;
+		margin-bottom: 0rem;
+	}
+}
+
+@keyframes slideIn {
+	from {
+		opacity: 0;
+		transform: translateY(2rem);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }

@@ -30,17 +30,17 @@
 	margin-left: 0.25rem;
 }
 
+.title {
+	font-size: 1.875rem;
+	line-height: 2.25rem;
+	font-weight: 700;
+	margin-bottom: 2rem;
+}
+
 @media (min-width: 1024px) {
 	.backLink {
 		margin-bottom: 1rem;
 		font-size: 1rem;
 		line-height: 1.5rem;
 	}
-}
-
-.title {
-	font-size: 1.875rem;
-	line-height: 2.25rem;
-	font-weight: 700;
-	margin-bottom: 2rem;
 }

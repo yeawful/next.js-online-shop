@@ -8,12 +8,6 @@
 	row-gap: 0rem;
 }
 
-@media (min-width: 768px) {
-	.ordersList {
-		row-gap: 7.5rem;
-	}
-}
-
 .loadMoreContainer {
 	display: flex;
 	justify-content: center;
@@ -39,4 +33,10 @@
 
 .loadMoreButton:hover {
 	box-shadow: var(--shadow-button-secondary);
+}
+
+@media (min-width: 768px) {
+	.ordersList {
+		row-gap: 7.5rem;
+	}
 }

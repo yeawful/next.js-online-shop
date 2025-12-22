@@ -6,31 +6,12 @@
 	gap: 1.5rem;
 }
 
-@media (min-width: 768px) {
-	.container {
-		margin-bottom: 2.625rem;
-	}
-}
-
 .dateInfo {
 	display: flex;
 	flex-direction: column;
 	font-size: 0.875rem;
 	gap: 0.5rem;
 	align-items: center;
-}
-
-@media (min-width: 768px) {
-	.dateInfo {
-		flex-direction: row;
-	}
-}
-
-@media (min-width: 1280px) {
-	.dateInfo {
-		font-size: 1.5rem;
-		gap: 1.5rem;
-	}
 }
 
 .date {
@@ -43,12 +24,6 @@
 	display: none;
 }
 
-@media (min-width: 1280px) {
-	.time {
-		display: block;
-	}
-}
-
 .status {
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
@@ -59,12 +34,6 @@
 	flex-shrink: 0;
 }
 
-@media (min-width: 768px) {
-	.status {
-		font-size: 1rem;
-	}
-}
-
 .priceInfo {
 	display: flex;
 	flex-direction: column;
@@ -72,26 +41,8 @@
 	align-items: center;
 }
 
-@media (min-width: 768px) {
-	.priceInfo {
-		flex-direction: row;
-	}
-}
-
-@media (min-width: 1280px) {
-	.priceInfo {
-		gap: 1.5rem;
-	}
-}
-
 .price {
 	font-size: 1.25rem;
-}
-
-@media (min-width: 768px) {
-	.price {
-		font-size: 1.5rem;
-	}
 }
 
 .orderButton {
@@ -100,12 +51,6 @@
 	transition-duration: 300ms;
 	font-size: 1rem;
 	border: none;
-}
-
-@media (min-width: 768px) {
-	.orderButton {
-		width: 12.5rem;
-	}
 }
 
 .orderButtonEnabled {
@@ -156,7 +101,46 @@
 }
 
 @media (min-width: 768px) {
+	.container {
+		margin-bottom: 2.625rem;
+	}
+
+	.dateInfo {
+		flex-direction: row;
+	}
+
+	.status {
+		font-size: 1rem;
+	}
+
+	.priceInfo {
+		flex-direction: row;
+	}
+
+	.price {
+		font-size: 1.5rem;
+	}
+
+	.orderButton {
+		width: 12.5rem;
+	}
+
 	.desktopText {
 		display: inline;
+	}
+}
+
+@media (min-width: 1280px) {
+	.dateInfo {
+		font-size: 1.5rem;
+		gap: 1.5rem;
+	}
+
+	.time {
+		display: block;
+	}
+
+	.priceInfo {
+		gap: 1.5rem;
 	}
 }

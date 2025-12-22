@@ -19,13 +19,15 @@ const TopMenu = () => {
 	const isUserOrdersPage = pathname === "/user-orders";
 	const isAdminOrdersPage = pathname === "/administrator/admin-orders";
 
-	const { user } = useAuthStore();
+	const { isAuth, user } = useAuthStore();
 	const { totalItems, fetchCart } = useCartStore();
 
 	const isManagerOrAdmin = user?.role === "manager" || user?.role === "admin";
-	const ordersLink = isManagerOrAdmin
-		? "/administrator/admin-orders"
-		: "/user-orders";
+	const ordersLink = !isAuth
+		? "/login"
+		: isManagerOrAdmin
+			? "/administrator/admin-orders"
+			: "/user-orders";
 	const isOrdersPage = isUserOrdersPage || isAdminOrdersPage;
 
 	useEffect(() => {
@@ -38,11 +40,15 @@ const TopMenu = () => {
 		return isActive ? styles.menuTextActive : styles.menuText;
 	};
 
+	const getLink = (path: string) => {
+		return isAuth ? path : "/login";
+	};
+
 	return (
 		<ul className={styles.container}>
 			<li>
 				<Link
-					href="/catalog"
+					href={"/catalog"}
 					className={`${styles.menuItem} ${styles.mobileOnly}`}
 				>
 					<IconMenuMob isCatalogPage={isCatalogPage} />
@@ -52,7 +58,7 @@ const TopMenu = () => {
 
 			{!isManagerOrAdmin && (
 				<li>
-					<Link href="/favorites" className={styles.menuItem}>
+					<Link href={getLink("/favorites")} className={styles.menuItem}>
 						<IconHeart isActive={isFavoritesPage} variant="orange" />
 						<span className={getTextClass(isFavoritesPage)}>Избранное</span>
 					</Link>
@@ -68,7 +74,7 @@ const TopMenu = () => {
 
 			{!isManagerOrAdmin && (
 				<li className={styles.cartItem}>
-					<Link href="/cart" className={styles.menuItem}>
+					<Link href={getLink("/cart")} className={styles.menuItem}>
 						<IconCart isActive={isCartPage} />
 
 						{totalItems > 0 && (

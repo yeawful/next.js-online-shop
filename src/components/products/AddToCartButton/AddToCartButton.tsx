@@ -9,6 +9,8 @@ import {
 } from "@/actions/orderActions";
 import QuantitySelector from "@/app/(cart)/cart/_components/QuantitySelector";
 import Tooltip from "@/components/tooltip/Tooltip";
+import { useAuthStore } from "@/store/authStore";
+import { useRouter } from "next/navigation";
 import styles from "./AddToCartButton.module.css";
 
 interface AddToCartButtonProps {
@@ -20,6 +22,8 @@ const AddToCartButton = ({
 	productId,
 	availableQuantity,
 }: AddToCartButtonProps) => {
+	const { isAuth } = useAuthStore();
+	const router = useRouter();
 	const [isLoading, setIsLoading] = useState(false);
 	const [showTooltip, setShowTooltip] = useState(false);
 	const [tooltipMessage, setTooltipMessage] = useState("");
@@ -43,6 +47,11 @@ const AddToCartButton = ({
 	};
 
 	const handleAddToCart = async () => {
+		if (!isAuth) {
+			router.push("/login");
+			return;
+		}
+
 		if (hasReachedMaxQuantity) {
 			showMessage(`Осталось ${availableQuantity} шт. этого товара`);
 			return;

@@ -79,12 +79,6 @@
 	gap: 0.5rem;
 }
 
-@media (min-width: 768px) {
-	.detailsGrid {
-		grid-template-columns: repeat(4, 1fr);
-	}
-}
-
 .detail {
 	font-size: 0.875rem;
 	color: var(--color-text-secondary);
@@ -139,4 +133,10 @@
 .deleteButton:disabled {
 	opacity: 0.5;
 	cursor: default;
+}
+
+@media (min-width: 768px) {
+	.detailsGrid {
+		grid-template-columns: repeat(4, 1fr);
+	}
 }

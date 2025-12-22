@@ -24,12 +24,6 @@
 	width: 100%;
 }
 
-@media (min-width: 768px) {
-	.buttonGroup {
-		width: auto;
-	}
-}
-
 .editButton {
 	width: 100%;
 	padding: 0.5rem 1rem;
@@ -55,12 +49,6 @@
 	box-shadow: var(--shadow-button-active);
 }
 
-@media (min-width: 768px) {
-	.editButton {
-		width: auto;
-	}
-}
-
 .cancelButton {
 	flex: 1;
 	padding: 0.5rem 1rem;
@@ -78,12 +66,6 @@
 
 .cancelButton:active {
 	box-shadow: var(--shadow-button-active);
-}
-
-@media (min-width: 768px) {
-	.cancelButton {
-		flex: none;
-	}
 }
 
 .saveButton {
@@ -108,12 +90,6 @@
 .saveButton:disabled {
 	opacity: 0.5;
 	cursor: not-allowed;
-}
-
-@media (min-width: 768px) {
-	.saveButton {
-		flex: none;
-	}
 }
 
 .inputContainer {
@@ -157,4 +133,22 @@
 	height: 1rem;
 	width: 1rem;
 	margin-right: 0.25rem;
+}
+
+@media (min-width: 768px) {
+	.buttonGroup {
+		width: auto;
+	}
+
+	.editButton {
+		width: auto;
+	}
+
+	.cancelButton {
+		flex: none;
+	}
+
+	.saveButton {
+		flex: none;
+	}
 }

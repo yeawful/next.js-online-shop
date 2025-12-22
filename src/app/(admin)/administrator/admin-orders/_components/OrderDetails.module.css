@@ -51,18 +51,10 @@
 	font-weight: 500;
 }
 
-.discountValue {
-	composes: detailValue;
-	color: var(--color-success);
-}
-
-.bonusEarned {
-	composes: detailValue;
-	color: var(--color-success);
-}
-
 .customerSection {
-	composes: section;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
 	grid-column: span 2;
 }
 

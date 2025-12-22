@@ -12,13 +12,6 @@
 	font-size: 0.75rem;
 }
 
-@media (min-width: 768px) {
-	.timeHeader {
-		padding: 0.75rem;
-		font-size: 0.875rem;
-	}
-}
-
 .dateHeader {
 	padding: 0.5rem;
 	font-weight: 600;
@@ -26,12 +19,6 @@
 	text-align: center;
 	border-right: 1px solid var(--color-border-light);
 	font-size: 0.875rem;
-}
-
-@media (min-width: 768px) {
-	.dateHeader {
-		padding: 0.75rem;
-	}
 }
 
 .lastDateHeader {
@@ -42,12 +29,6 @@
 	font-weight: 500;
 	font-size: 0.75rem;
 	margin-bottom: 0.25rem;
-}
-
-@media (min-width: 768px) {
-	.dateTitle {
-		font-size: 0.875rem;
-	}
 }
 
 .dateNumeric {
@@ -64,5 +45,20 @@
 @media (min-width: 640px) {
 	.dateFull {
 		display: block;
+	}
+}
+
+@media (min-width: 768px) {
+	.timeHeader {
+		padding: 0.75rem;
+		font-size: 0.875rem;
+	}
+
+	.dateHeader {
+		padding: 0.75rem;
+	}
+
+	.dateTitle {
+		font-size: 0.875rem;
 	}
 }

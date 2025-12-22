@@ -26,14 +26,6 @@
 	z-index: 10;
 }
 
-@media (min-width: 768px) {
-	.stockIndicator {
-		padding-left: 0.5rem;
-		padding-right: 0.5rem;
-		font-size: 0.75rem;
-	}
-}
-
 .outOfStock {
 	background-color: var(--color-error);
 	color: var(--color-bg-white);
@@ -122,38 +114,10 @@
 	color: var(--color-main-text);
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
+	line-clamp: 3;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	line-height: 1.5;
-}
-
-@media (min-width: 768px) {
-	.productImageContainer {
-		width: 14rem;
-	}
-
-	.currentPrice {
-		font-size: 1.125rem;
-	}
-
-	.cardPriceLabel {
-		font-size: 0.75rem;
-	}
-
-	.originalPrice {
-		font-size: 1rem;
-	}
-
-	.description {
-		font-size: 1rem;
-		-webkit-line-clamp: 2;
-	}
-}
-
-@media (min-width: 1280px) {
-	.productImageContainer {
-		width: 272px;
-	}
 }
 
 .adminCategory {
@@ -202,6 +166,34 @@
 	.cardAdmin {
 		width: 14rem;
 	}
+
+	.stockIndicator {
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+		font-size: 0.75rem;
+	}
+
+	.productImageContainer {
+		width: 14rem;
+	}
+
+	.currentPrice {
+		font-size: 1.125rem;
+	}
+
+	.cardPriceLabel {
+		font-size: 0.75rem;
+	}
+
+	.originalPrice {
+		font-size: 1rem;
+	}
+
+	.description {
+		font-size: 1rem;
+		-webkit-line-clamp: 2;
+		line-clamp: 2;
+	}
 }
 
 @media (min-width: 1280px) {
@@ -212,5 +204,9 @@
 
 	.cardStandard {
 		height: 21.8125rem;
+	}
+
+	.productImageContainer {
+		width: 272px;
 	}
 }

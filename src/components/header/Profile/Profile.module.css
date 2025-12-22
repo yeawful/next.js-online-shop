@@ -33,12 +33,6 @@
 	display: none;
 }
 
-@media (min-width: 1280px) {
-	.linkText {
-		display: flex;
-	}
-}
-
 .userInfo {
 	display: flex;
 	align-items: center;
@@ -53,42 +47,16 @@
 	object-fit: cover;
 }
 
-@media (min-width: 768px) {
-	.avatar {
-		display: block;
-	}
-}
-
-@media (min-width: 1280px) {
-	.avatar {
-		display: block;
-	}
-}
-
 .userName {
 	display: none;
 	cursor: pointer;
 	padding: 0.625rem;
 }
 
-@media (min-width: 1280px) {
-	.userName {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-}
-
 .arrowIcon {
 	display: none;
 	transform-origin: center;
 	transition: transform 0.3s;
-}
-
-@media (min-width: 1280px) {
-	.arrowIcon {
-		display: block;
-	}
 }
 
 .arrowRotated {
@@ -184,5 +152,31 @@
 	}
 	50% {
 		opacity: 0.5;
+	}
+}
+
+@media (min-width: 768px) {
+	.avatar {
+		display: block;
+	}
+}
+
+@media (min-width: 1280px) {
+	.avatar {
+		display: block;
+	}
+
+	.linkText {
+		display: flex;
+	}
+
+	.arrowIcon {
+		display: block;
+	}
+
+	.userName {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 }

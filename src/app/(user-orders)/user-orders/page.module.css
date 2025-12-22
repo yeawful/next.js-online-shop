@@ -15,25 +15,6 @@
 	color: var(--color-main-text);
 }
 
-@media (min-width: 768px) {
-	.container {
-		margin-left: 0;
-		margin-right: 0;
-	}
-
-	.title {
-		margin-bottom: 2rem;
-		font-size: 3rem;
-	}
-}
-
-@media (min-width: 1280px) {
-	.title {
-		margin-bottom: 2.5rem;
-		font-size: 4rem;
-	}
-}
-
 .emptyContainer {
 	display: flex;
 	flex-direction: column;
@@ -60,4 +41,23 @@
 .emptyDescription {
 	color: var(--color-text-secondary);
 	max-width: 28rem;
+}
+
+@media (min-width: 768px) {
+	.container {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.title {
+		margin-bottom: 2rem;
+		font-size: 3rem;
+	}
+}
+
+@media (min-width: 1280px) {
+	.title {
+		margin-bottom: 2.5rem;
+		font-size: 4rem;
+	}
 }

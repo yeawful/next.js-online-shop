@@ -3,6 +3,9 @@ import { baseUrl } from "@/utils/baseUrl";
 import { getSitemapData } from "@/utils/getSitemapData";
 import { createSlug } from "@/utils//createSlug";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	const currentDate = new Date().toISOString().split("T")[0];
 

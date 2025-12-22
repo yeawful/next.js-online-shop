@@ -37,28 +37,8 @@
 	margin-bottom: 1rem;
 }
 
-@media (min-width: 768px) {
-	.sectionMargin {
-		margin-bottom: 1.5rem;
-	}
-
-	.borderRight {
-		border-radius: 0;
-	}
-
-	.borderBottom {
-		border-radius: 0;
-	}
-}
-
 .hideMobile {
 	display: none;
-}
-
-@media (min-width: 768px) {
-	.hideMobile {
-		display: grid;
-	}
 }
 
 .bgGrayLight {
@@ -140,16 +120,6 @@
 	grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
-@media (min-width: 768px) {
-	.gridCols12 {
-		grid-template-columns: repeat(12, minmax(0, 1fr));
-	}
-
-	.gap2 {
-		gap: 0.5rem;
-	}
-}
-
 .roleAdmin {
 	background-color: var(--color-error-bg);
 	color: var(--color-error);
@@ -163,4 +133,30 @@
 .roleUser {
 	background-color: var(--color-bg-light);
 	color: var(--color-main-text);
+}
+
+@media (min-width: 768px) {
+	.sectionMargin {
+		margin-bottom: 1.5rem;
+	}
+
+	.borderRight {
+		border-radius: 0;
+	}
+
+	.borderBottom {
+		border-radius: 0;
+	}
+
+	.hideMobile {
+		display: grid;
+	}
+
+	.gridCols12 {
+		grid-template-columns: repeat(12, minmax(0, 1fr));
+	}
+
+	.gap2 {
+		gap: 0.5rem;
+	}
 }

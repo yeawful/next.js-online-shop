@@ -78,12 +78,6 @@
 	display: none;
 }
 
-@media (min-width: 640px) {
-	.dateFull {
-		display: block;
-	}
-}
-
 .timeSection {
 	margin-bottom: 1rem;
 }
@@ -129,21 +123,9 @@
 	font-size: 0.75rem;
 }
 
-@media (min-width: 1280px) {
-	.mobileTime {
-		display: none;
-	}
-}
-
 .desktopTime {
 	display: none;
 	font-size: 0.875rem;
-}
-
-@media (min-width: 1280px) {
-	.desktopTime {
-		display: block;
-	}
 }
 
 .noTimeSlots {
@@ -191,4 +173,20 @@
 	font-size: 0.875rem;
 	color: var(--color-text-secondary);
 	margin-top: 0.25rem;
+}
+
+@media (min-width: 640px) {
+	.dateFull {
+		display: block;
+	}
+}
+
+@media (min-width: 1280px) {
+	.mobileTime {
+		display: none;
+	}
+
+	.desktopTime {
+		display: block;
+	}
 }

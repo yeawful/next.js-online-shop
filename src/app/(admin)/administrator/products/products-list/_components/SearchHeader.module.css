@@ -8,12 +8,6 @@
 	color: var(--color-main-text);
 }
 
-@media (min-width: 768px) {
-	.headerContainer {
-		flex-direction: row;
-	}
-}
-
 .backLink {
 	display: flex;
 	align-items: center;
@@ -55,4 +49,10 @@
 	font-size: 1.5rem;
 	font-weight: 700;
 	margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+	.headerContainer {
+		flex-direction: row;
+	}
 }

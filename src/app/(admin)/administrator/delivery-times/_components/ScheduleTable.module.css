@@ -9,13 +9,13 @@
 	font-size: 0.875rem;
 }
 
+.slotsContainer {
+	border-top: 1px solid #151515;
+}
+
 @media (min-width: 768px) {
 	.emptyState {
 		padding: 2rem;
 		font-size: 1rem;
 	}
-}
-
-.slotsContainer {
-	border-top: 1px solid #151515;
 }

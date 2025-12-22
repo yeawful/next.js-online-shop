@@ -15,48 +15,13 @@
 	line-height: 150%;
 }
 
-@media (min-width: 768px) {
-	.title {
-		font-size: 3rem;
-		line-height: 3rem;
-		margin-bottom: 2.5rem;
-		max-width: none;
-	}
-}
-
-@media (min-width: 1280px) {
-	.container {
-		padding-left: max(12px, calc((100% - 1208px) / 2));
-		padding-right: max(12px, calc((100% - 1208px) / 2));
-	}
-
-	.title {
-		margin-left: 0;
-		font-size: 4rem;
-		line-height: 4rem;
-		margin-bottom: 3.75rem;
-	}
-}
-
 .mobileFilter {
 	display: flex;
 	margin-left: 0.75rem;
 }
 
-@media (min-width: 1280px) {
-	.mobileFilter {
-		display: none;
-	}
-}
-
 .desktopFilter {
 	display: none;
-}
-
-@media (min-width: 1280px) {
-	.desktopFilter {
-		display: flex;
-	}
 }
 
 .layout {
@@ -71,12 +36,6 @@
 	flex-direction: column;
 	width: 17rem;
 	gap: 2.5rem;
-}
-
-@media (min-width: 1280px) {
-	.sidebar {
-		display: flex;
-	}
 }
 
 .filterHeader {
@@ -102,7 +61,44 @@
 	display: none;
 }
 
+@media (min-width: 768px) {
+	.title {
+		font-size: 3rem;
+		line-height: 3rem;
+		margin-bottom: 2.5rem;
+		max-width: none;
+	}
+
+	.content {
+		margin: 0.75rem;
+	}
+}
+
 @media (min-width: 1280px) {
+	.container {
+		padding-left: max(12px, calc((100% - 1208px) / 2));
+		padding-right: max(12px, calc((100% - 1208px) / 2));
+	}
+
+	.title {
+		margin-left: 0;
+		font-size: 4rem;
+		line-height: 4rem;
+		margin-bottom: 3.75rem;
+	}
+
+	.mobileFilter {
+		display: none;
+	}
+
+	.desktopFilter {
+		display: flex;
+	}
+
+	.sidebar {
+		display: flex;
+	}
+
 	.desktopControls {
 		display: flex;
 	}

@@ -34,20 +34,6 @@
 	display: flex;
 }
 
-@media (min-width: 768px) {
-	.container {
-		gap: 1.5rem;
-	}
-
-	.mobileOnly {
-		display: none;
-	}
-
-	.menuItem {
-		gap: 0.6rem;
-	}
-}
-
 .cartItem {
 	position: relative;
 	display: flex;
@@ -73,4 +59,18 @@
 	align-items: center;
 	justify-content: center;
 	padding: 0.125rem 0.25rem;
+}
+
+@media (min-width: 768px) {
+	.container {
+		gap: 1.5rem;
+	}
+
+	.mobileOnly {
+		display: none;
+	}
+
+	.menuItem {
+		gap: 0.6rem;
+	}
 }
