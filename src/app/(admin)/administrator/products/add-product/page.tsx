@@ -9,20 +9,20 @@ import {
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { ChangeEvent, FormEvent, useCallback, useState } from "react";
-import Title from "../_components/Title";
-import Article from "../_components/Article";
-import Description from "../_components/Description";
-import BasePrice from "../_components/BasePrice";
-import Discount from "../_components/Discount";
-import Quantity from "../_components/Quantity";
-import Weight from "../_components/Weight";
-import Brand from "../_components/Brand";
-import Manufacturer from "../_components/Manufacturer";
-import Categories from "../_components/Categories";
-import Tags from "../_components/Tags";
-import CheckboxGroup from "../_components/CheckboxGroup";
-import ImageUploadSection from "../_components/ImageUploadSection";
-import SuccessCreatedMessage from "../_components/SuccessCreatedMessage";
+import Title from "./_components/Title";
+import Article from "./_components/Article";
+import Description from "./_components/Description";
+import BasePrice from "./_components/BasePrice";
+import Discount from "./_components/Discount";
+import Quantity from "./_components/Quantity";
+import Weight from "./_components/Weight";
+import Brand from "./_components/Brand";
+import Manufacturer from "./_components/Manufacturer";
+import Categories from "./_components/Categories";
+import Tags from "./_components/Tags";
+import CheckboxGroup from "./_components/CheckboxGroup";
+import ImageUploadSection from "./_components/ImageUploadSection";
+import SuccessCreatedMessage from "./_components/SuccessCreatedMessage";
 import styles from "./page.module.css";
 
 export default function AddProductPage() {
