@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { TRANSLATIONS } from "../../../../utils/translations";
-import HighlightText from "../../HighlightText/HighlightText";
+import { TRANSLATIONS } from "../../../utils/translations";
+import HighlightText from "../HighlightText/HighlightText";
 import MiniLoader from "@/components/loaders/MiniLoader";
 import { SearchResultsProps } from "@/types/searchResultsProps";
 import styles from "./SearchResults.module.css";
