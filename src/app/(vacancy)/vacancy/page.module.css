@@ -1,0 +1,13 @@
+.container {
+	padding-left: max(16px, calc((100% - 1208px) / 2));
+	padding-right: max(16px, calc((100% - 1208px) / 2));
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media (min-width: 768px) {
+	.container {
+		padding-left: max(12px, calc((100% - 1208px) / 2));
+		padding-right: max(12px, calc((100% - 1208px) / 2));
+	}
+}

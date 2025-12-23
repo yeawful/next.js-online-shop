@@ -1,0 +1,127 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+	flex: 1;
+}
+
+.menuItem {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding: 1.5rem;
+	border-radius: 1rem;
+	text-align: left;
+	cursor: pointer;
+	transition:
+		transform 0.5s ease,
+		background 0.5s ease;
+	transform-origin: center;
+	position: relative;
+}
+
+.menuItem:hover {
+	transform: scale(1.02);
+}
+
+.menuItem:active {
+	transform: scale(0.99);
+}
+
+.iconContainer {
+	position: relative;
+	padding: 1rem;
+	border-radius: 0.75rem;
+	background-color: rgba(255, 255, 255, 0.9);
+	backdrop-filter: blur(0.25rem);
+	transition: background-color 0.5s ease;
+}
+
+.menuItem:hover .iconContainer {
+	background-color: var(--color-bg-white);
+}
+
+.iconBackground {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(
+		135deg,
+		var(--color-bg-white),
+		var(--color-bg-light)
+	);
+	border-radius: 0.75rem;
+	opacity: 0.5;
+}
+
+.iconWrapper {
+	position: relative;
+}
+
+.iconGlow {
+	position: absolute;
+	inset: 0;
+	border-radius: 0.5rem;
+	opacity: 0;
+	filter: blur(0.25rem);
+	transition: opacity 0.5s ease;
+}
+
+.menuItem:hover .iconGlow {
+	opacity: 0.2;
+}
+
+.icon {
+	position: relative;
+	color: var(--color-text-hover);
+	transition: transform 0.5s ease;
+}
+
+.menuItem:hover .icon {
+	transform: scale(1.1);
+}
+
+.content {
+	flex: 1;
+}
+
+.title {
+	font-weight: 700;
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+	color: var(--color-bg-dark);
+	transition: color 0.3s ease;
+}
+
+.menuItem:hover .title {
+	color: #374151;
+}
+
+.description {
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	color: var(--color-text-secondary);
+	margin-top: 0.25rem;
+	transition: color 0.3s ease;
+}
+
+.menuItem:hover .description {
+	color: var(--color-text-hover);
+}
+
+/* Стили для анимации появления */
+@keyframes slideIn {
+	from {
+		opacity: 0;
+		transform: translateX(1.875rem);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.animateSlideIn {
+	animation: slideIn 0.5s ease-out;
+	animation-fill-mode: both;
+}

@@ -1,0 +1,71 @@
+.textBlue {
+	color: #2563eb;
+}
+
+.textGreen {
+	color: #16a34a;
+}
+
+.textPurple {
+	color: #9333ea;
+}
+
+.textIndigo {
+	color: #4f46e5;
+}
+
+.textOrange {
+	color: #ea580c;
+}
+
+.textGray {
+	color: #4b5563;
+}
+
+.bgBlue {
+	background-color: #2563eb;
+}
+
+.bgGreen {
+	background-color: #16a34a;
+}
+
+.bgPurple {
+	background-color: #9333ea;
+}
+
+.bgIndigo {
+	background-color: #4f46e5;
+}
+
+.bgOrange {
+	background-color: #ea580c;
+}
+
+.bgGray {
+	background-color: #4b5563;
+}
+
+.bgBlueLight {
+	background-color: #dbeafe;
+}
+
+.bgGreenLight {
+	background-color: #dcfce7;
+}
+
+.bgPurpleLight {
+	background-color: #f3e8ff;
+}
+
+.bgIndigoLight {
+	background-color: #e0e7ff;
+}
+
+.bgOrangeLight {
+	background-color: #ffedd5;
+}
+
+.bgGrayLight {
+	background-color: #f3f4f6;
+}

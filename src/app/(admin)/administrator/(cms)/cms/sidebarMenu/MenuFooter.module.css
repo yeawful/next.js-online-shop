@@ -1,0 +1,47 @@
+.container {
+	padding-top: 2rem;
+	margin-top: 2rem;
+	border-top: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.content {
+	text-align: center;
+}
+
+.versionBadge {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	background: linear-gradient(to right, #f9fafb, var(--color-bg-white));
+	border-radius: 9999px;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.statusDot {
+	width: 0.5rem;
+	height: 0.5rem;
+	background-color: #34d399;
+	border-radius: 9999px;
+	animation: pulse 2s ease-in-out infinite;
+}
+
+.versionText {
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	font-weight: 500;
+	color: var(--color-text-secondary);
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+}

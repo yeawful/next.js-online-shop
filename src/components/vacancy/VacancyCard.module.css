@@ -1,0 +1,117 @@
+.vacancyCard {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	background-color: var(--color-bg-white);
+	box-shadow: 0.0625rem 0.125rem 0.125rem 0 rgba(0, 0, 0, 0.1);
+	border-radius: 0.25rem;
+	padding: 1rem;
+	width: 100%;
+}
+
+.vacancyTitle {
+	font-family: var(--font-rubik), sans-serif;
+	font-size: 1.25rem;
+	font-weight: 700;
+	line-height: 1.5em;
+	color: var(--color-main-text);
+	width: 100%;
+}
+
+.vacancySection {
+	display: flex;
+	flex-direction: column;
+	gap: 0.375rem;
+	width: 100%;
+}
+
+.sectionTitle {
+	font-family: var(--font-rubik), sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5em;
+	color: var(--color-main-text);
+}
+
+.sectionText {
+	font-family: var(--font-rubik), sans-serif;
+	font-size: 0.875rem;
+	font-weight: 400;
+	line-height: 1.5em;
+	color: var(--color-main-text);
+}
+
+.phoneSection {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.phoneNumber {
+	font-family: var(--font-rubik), sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5em;
+	color: var(--color-main-text);
+	text-decoration: none;
+	border-bottom: 0.0625rem solid var(--color-main-text);
+}
+
+.callButton {
+	width: 100%;
+}
+
+@media (min-width: 48rem) {
+	.vacancyCard {
+		gap: 1rem;
+		padding: 1.5rem;
+	}
+
+	.vacancyTitle {
+		font-size: 1.5rem;
+	}
+
+	.vacancySection {
+		gap: 0.5rem;
+	}
+
+	.sectionTitle {
+		font-size: 1.125rem;
+	}
+
+	.sectionText {
+		font-size: 1rem;
+	}
+
+	.phoneNumber {
+		font-size: 1.125rem;
+	}
+}
+
+@media (min-width: 80rem) {
+	.vacancyCard {
+		gap: 1rem;
+		padding: 2rem;
+		flex: 1;
+	}
+
+	.vacancyTitle {
+		font-size: 1.5rem;
+	}
+
+	.vacancySection {
+		gap: 0.5rem;
+	}
+
+	.sectionTitle {
+		font-size: 1.125rem;
+	}
+
+	.sectionText {
+		font-size: 1rem;
+	}
+
+	.callButton {
+		width: 14.5rem;
+	}
+}

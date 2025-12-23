@@ -1,0 +1,43 @@
+.container {
+	display: flex;
+	gap: 0.75rem;
+	padding-top: 1rem;
+	border-top: 1px solid var(--color-border-light);
+}
+
+.submitButton {
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	background-color: var(--color-primary);
+	color: var(--color-bg-white);
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	border: none;
+}
+
+.submitButton:hover {
+	background-color: rgba(112, 192, 91, 0.9);
+}
+
+.submitButton:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.backButton {
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	border: 1px solid var(--color-border-default);
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.backButton:hover {
+	background-color: var(--color-bg-light);
+}

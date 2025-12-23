@@ -1,0 +1,33 @@
+.container {
+	padding: 1rem;
+	border-radius: 0.5rem;
+	border: 1px solid #f3f4f6;
+	transition: border-color 0.2s ease;
+}
+
+.container:hover {
+	border-color: #e5e7eb;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 0.5rem;
+}
+
+.iconContainer {
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+}
+
+.value {
+	font-size: 1.5rem;
+	line-height: 2rem;
+	font-weight: 700;
+}
+
+.title {
+	font-weight: 500;
+	color: var(--color-bg-dark);
+}

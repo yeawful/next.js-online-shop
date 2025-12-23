@@ -34,6 +34,9 @@ const AdminPanel = () => {
 				>
 					График доставки
 				</Link>
+				<Link href="/administrator/cms" className={styles.adProductLink}>
+					Блог
+				</Link>
 			</div>
 		</div>
 	);

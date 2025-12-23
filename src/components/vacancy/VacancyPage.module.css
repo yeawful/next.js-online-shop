@@ -1,0 +1,71 @@
+.vacanciesSection {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5rem;
+	width: 100%;
+}
+
+.vacanciesTitle {
+	font-family: var(--font-rubik), sans-serif;
+	font-size: 2.25rem;
+	font-weight: 700;
+	line-height: 1.5em;
+	color: var(--color-main-text);
+	width: 100%;
+	text-align: left;
+	margin-bottom: 1rem;
+}
+
+.vacanciesGrid {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	width: 100%;
+}
+
+.vacanciesRow {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	width: 100%;
+}
+
+@media (min-width: 768px) {
+	.vacanciesSection {
+		gap: 2rem;
+	}
+
+	.vacanciesTitle {
+		font-size: 3rem;
+	}
+
+	.vacanciesGrid {
+		gap: 1.5rem;
+	}
+
+	.vacanciesRow {
+		flex-direction: row;
+		gap: 1.5rem;
+	}
+}
+
+@media (min-width: 1280px) {
+	.vacanciesSection {
+		gap: 3.75rem;
+	}
+
+	.vacanciesTitle {
+		font-size: 4rem;
+		width: 75.5rem;
+	}
+
+	.vacanciesGrid {
+		gap: 2.5rem;
+	}
+
+	.vacanciesRow {
+		gap: 2.5rem;
+		width: 75.5rem;
+	}
+}

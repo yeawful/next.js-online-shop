@@ -31,4 +31,8 @@ export const TRANSLATIONS: Record<string, string> = {
 	"delivery-times": "График доставки",
 	"user-orders": "Заказы",
 	"admin-orders": "Заказы",
+	vacancy: "Вакасии",
+	cms: "Блог",
+	"semantic-core": "Семантическое ядро",
+	categories: "Категории",
 };

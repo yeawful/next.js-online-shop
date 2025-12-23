@@ -1,0 +1,25 @@
+.container {
+	padding: 1rem;
+	background-color: var(--color-bg-light);
+	border-radius: 0.5rem;
+}
+
+.title {
+	font-weight: 500;
+	color: var(--color-bg-dark);
+	margin-bottom: 0.5rem;
+}
+
+.details {
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	color: var(--color-text-secondary);
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.detailItem strong {
+	font-weight: 600;
+	color: var(--color-text-hover);
+}
