@@ -3,11 +3,11 @@
 import { useCallback, useEffect, useState } from "react";
 import NavAndInfo from "./_components/NavAndInfo";
 import { UserData } from "@/types/userData";
-import ErrorComponent from "@/components/error/ErrorComponent";
+import ErrorComponent from "@/components/ui/ErrorComponent";
 import { useAuthStore } from "@/store/authStore";
 import { CONFIG } from "../../../../../config/config";
 import UsersTable from "./_components/UsersTable";
-import { Loader } from "@/components/loaders/Loader";
+import { Loader } from "@/components/ui/Loader";
 import Filters from "./_components/Filters";
 import { FiltersState } from "@/types/filtersState";
 import styles from "./page.module.css";

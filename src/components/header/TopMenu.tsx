@@ -4,10 +4,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useAuthStore } from "@/store/authStore";
 import { useCartStore } from "@/store/cartStore";
-import IconMenuMob from "@/components/svg/IconMenuMob";
-import IconBox from "@/components/svg/IconBox";
-import IconHeart from "@/components/svg/IconHeart";
-import IconCart from "@/components/svg/IconCart";
+import IconMenuMob from "@/components/ui/svg/IconMenuMob";
+import IconBox from "@/components/ui/svg/IconBox";
+import IconHeart from "@/components/ui/svg/IconHeart";
+import IconCart from "@/components/ui/svg/IconCart";
 import { useEffect } from "react";
 import styles from "./TopMenu.module.css";
 

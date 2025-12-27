@@ -1,6 +1,6 @@
 "use client";
 
-import IconBell from "@/components/svg/IconBell";
+import IconBell from "@/components/ui/svg/IconBell";
 import { useAuthStore } from "@/store/authStore";
 import { useEffect, useState } from "react";
 import { PriceAlertModal } from "./PriceAlertModal";

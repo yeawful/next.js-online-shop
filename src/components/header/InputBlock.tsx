@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { SearchProduct } from "@/types/searchProduct";
-import SearchInput from "../SearchInput/SearchInput";
-import SearchResults from "../SearchResults/SearchResults";
+import SearchInput from "./SearchInput";
+import SearchResults from "./SearchResults";
 import styles from "./InputBlock.module.css";
 
 const InputBlock = ({

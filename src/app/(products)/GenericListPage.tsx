@@ -1,12 +1,12 @@
 /* eslint-disable react-hooks/error-boundaries */
-import ProductsSection from "@/components/products/ProductsSection/ProductsSection";
+import ProductsSection from "@/components/products/ProductsSection";
 import { GenericListPageProps } from "@/types/genericListPageProps";
 import { CONFIG } from "../../../config/config";
-import PaginationWrapper from "@/components/pagination/PaginationWrapper";
+import PaginationWrapper from "@/components/navigation/PaginationWrapper";
 import ArticleSection from "../(articles)/ArticlesSection";
 import { ProductCardProps } from "@/types/product";
 import { ArticleCardProps } from "@/types/articles";
-import ErrorComponent from "@/components/error/ErrorComponent";
+import ErrorComponent from "@/components/ui/ErrorComponent";
 
 const GenericListPage = async ({
 	searchParams,

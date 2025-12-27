@@ -1,6 +1,6 @@
-import UserBlock from "../UserBlock/UserBlock";
-import LogoBlock from "../LogoBlock/LogoBlock";
-import CatalogMenuWrapper from "../CatalogDropMenu/CatalogMenuWrapper";
+import UserBlock from "./UserBlock";
+import LogoBlock from "./LogoBlock";
+import CatalogMenuWrapper from "./CatalogMenuWrapper";
 import styles from "./Header.module.css";
 
 const Header = () => {

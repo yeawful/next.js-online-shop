@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useAuthStore } from "@/store/authStore";
-import IconStar from "@/components/svg/IconStar";
+import IconStar from "@/components/ui/svg/IconStar";
 import styles from "./AddReviewForm.module.css";
 
 interface AddReviewFormProps {

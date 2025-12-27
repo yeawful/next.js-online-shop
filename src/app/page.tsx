@@ -5,7 +5,7 @@ import Purchases from "@/app/(user)/Purchases";
 import SpecialOffers from "@/components/banners/SpecialOffers";
 import Maps from "@/components/maps/Maps";
 import Articles from "@/app/(articles)/Articles";
-import { Loader } from "@/components/loaders/Loader";
+import { Loader } from "@/components/ui/Loader";
 import { Suspense } from "react";
 import styles from "./page.module.css";
 

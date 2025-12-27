@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { getAvatarByGender } from "../../../utils/getAvatarByGender";
 import { useEffect, useRef, useState } from "react";
-import IconAvatarChange from "@/components/svg/IconAvatarChange";
+import IconAvatarChange from "@/components/ui/svg/IconAvatarChange";
 import { useAuthStore } from "@/store/authStore";
 import ConfirmAvatarModal from "./ConfirmAvatarModal";
 import useAvatar from "@/hooks/useAvatar";

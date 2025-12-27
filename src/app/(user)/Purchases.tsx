@@ -1,9 +1,9 @@
 "use client";
 
 import fetchPurchases from "./fetchPurchases";
-import ProductsSection from "@/components/products/ProductsSection/ProductsSection";
+import ProductsSection from "@/components/products/ProductsSection";
 import { CONFIG } from "../../../config/config";
-import ErrorComponent from "@/components/error/ErrorComponent";
+import ErrorComponent from "@/components/ui/ErrorComponent";
 import { useAuthStore } from "@/store/authStore";
 import { useEffect, useState } from "react";
 import { ProductCardProps } from "@/types/product";

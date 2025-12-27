@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { tableStyles } from "../../styles";
-import MiniLoader from "@/components/loaders/MiniLoader";
+import MiniLoader from "@/components/ui/MiniLoader";
 import { UserRole } from "@/types/userData";
 import { useAuthStore } from "@/store/authStore";
 import {

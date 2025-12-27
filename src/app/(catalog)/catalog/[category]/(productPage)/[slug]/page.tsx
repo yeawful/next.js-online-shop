@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { ProductCardProps } from "@/types/product";
 import { getProduct } from "../getProduct";
 import ProductPageContent from "./ProductPageContent";
-import ErrorComponent from "@/components/error/ErrorComponent";
+import ErrorComponent from "@/components/ui/ErrorComponent";
 import { baseUrl } from "../../../../../../utils/baseUrl";
 
 interface PageProps {

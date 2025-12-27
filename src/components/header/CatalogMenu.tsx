@@ -1,8 +1,8 @@
-import ErrorComponent from "@/components/error/ErrorComponent";
-import MiniLoader from "@/components/loaders/MiniLoader";
+import ErrorComponent from "@/components/ui/ErrorComponent";
+import MiniLoader from "@/components/ui/MiniLoader";
 import { CatalogMenuProps } from "@/types/catalogMenuProps";
 import Link from "next/link";
-import SearchBlock from "../SearchBlock/SearchBlock";
+import SearchBlock from "./SearchBlock";
 import styles from "./CatalogMenu.module.css";
 
 const CatalogMenu = ({

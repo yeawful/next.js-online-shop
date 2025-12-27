@@ -1,5 +1,5 @@
 import { ProductCardProps } from "@/types/product";
-import ProductsSection from "@/components/products/ProductsSection/ProductsSection";
+import ProductsSection from "@/components/products/ProductsSection";
 
 interface SameBrandProductsProps {
 	currentProduct: ProductCardProps;

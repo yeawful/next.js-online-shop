@@ -1,4 +1,4 @@
-import ViewAllButton from "@/components/products/ViewAllButton/ViewAllButton";
+import ViewAllButton from "@/components/products/ViewAllButton";
 import { ArticlesSectionProps } from "@/types/articlesSection";
 import ArticleCard from "./ArticleCard";
 import styles from "./ArticlesSection.module.css";

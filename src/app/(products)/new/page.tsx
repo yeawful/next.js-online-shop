@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import fetchProductsByTag from "../fetchProducts";
 import GenericListPage from "../GenericListPage";
-import { Loader } from "@/components/loaders/Loader";
+import { Loader } from "@/components/ui/Loader";
 
 export const metadata = {
 	title: 'Новинки магазина "Северяночка"',

@@ -8,7 +8,7 @@ import {
 	updateOrderItemQuantityAction,
 } from "@/actions/orderActions";
 import QuantitySelector from "@/app/(cart)/cart/_components/QuantitySelector";
-import Tooltip from "@/components/tooltip/Tooltip";
+import Tooltip from "@/components/ui/Tooltip";
 import { useAuthStore } from "@/store/authStore";
 import { useRouter } from "next/navigation";
 import styles from "./AddToCartButton.module.css";

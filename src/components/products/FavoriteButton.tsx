@@ -1,7 +1,7 @@
 "use client";
 
 import { useAuthStore } from "@/store/authStore";
-import IconHeart from "@/components/svg/IconHeart";
+import IconHeart from "@/components/ui/svg/IconHeart";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useFavorites } from "@/hooks/useFavorites";

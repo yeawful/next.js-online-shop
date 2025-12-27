@@ -2,7 +2,7 @@ import { RepeatOrderSectionProps } from "@/types/userOrder";
 import { PriceComparisonAlert } from "./PriceComparisonAlert";
 import { PricePreservedAlert } from "./PricePreservedAlert";
 import { DeliveryInfo } from "./DeliveryInfo";
-import CartSummary from "@/components/cart/CartSummary";
+import CartSummary from "@/app/(cart)/cart/_components/CartSummary";
 import styles from "./RepeatOrderSection.module.css";
 
 const RepeatOrderSection = ({

@@ -1,6 +1,6 @@
 "use client";
 
-import { Loader } from "@/components/loaders/Loader";
+import { Loader } from "@/components/ui/Loader";
 import { useEffect } from "react";
 import AddTimeSlotForm from "./_components/AddTimeSlotForm";
 import MessageAlert from "./_components/MessageAlert";

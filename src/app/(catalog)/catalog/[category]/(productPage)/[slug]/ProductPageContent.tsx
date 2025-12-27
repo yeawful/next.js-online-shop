@@ -4,7 +4,7 @@ import {
 	calculateFinalPrice,
 	calculatePriceByCard,
 } from "../../../../../../utils/calcPrices";
-import StarRating from "@/components/products/StarRating/StarRating";
+import StarRating from "@/components/products/StarRating";
 import ShareButton from "./_components/ShareButton";
 import ImagesBlock from "./_components/ImagesBlock";
 import ProductOffer from "./_components/ProductOffer";
@@ -17,7 +17,7 @@ import SameBrandProducts from "./_components/SameBrandProducts";
 import RatingDistribution from "./_components/RatingDistribution";
 import ReviewsWrapper from "./_components/ReviewsWrapper";
 import Actions from "@/app/(products)/Actions";
-import FavoriteButton from "@/components/products/FavoriteButton/FavoriteButton";
+import FavoriteButton from "@/components/products/FavoriteButton";
 import { getFullEnding } from "../../../../../../utils/getWordEnding";
 import ProductTitle from "./_components/ProductTitle";
 import styles from "./ProductPageContent.module.css";

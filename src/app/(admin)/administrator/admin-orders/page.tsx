@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Loader } from "@/components/loaders/Loader";
-import ErrorComponent from "@/components/error/ErrorComponent";
+import { Loader } from "@/components/ui/Loader";
+import ErrorComponent from "@/components/ui/ErrorComponent";
 import AdminOrdersHeader from "./_components/AdminOrdersHeader";
 import { getThreeDaysDates } from "../delivery-times/utils/getThreeDaysDates";
 import DateSelector from "./_components/DateSelector";

@@ -1,5 +1,5 @@
-import ButtonSearch from "../ButtonSearch/ButtonSearch";
-import InputBlock from "../InputBlock/InputBlock";
+import ButtonSearch from "./ButtonSearch";
+import InputBlock from "./InputBlock";
 import styles from "./SearchBlock.module.css";
 
 const SearchBlock = ({

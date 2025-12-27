@@ -1,7 +1,7 @@
 "use client";
 
 import { addToCartAction } from "@/actions/addToCartActions";
-import Tooltip from "@/components/tooltip/Tooltip";
+import Tooltip from "@/components/ui/Tooltip";
 import { useCartStore } from "@/store/cartStore";
 import Image from "next/image";
 import { useState } from "react";

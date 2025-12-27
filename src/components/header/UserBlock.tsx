@@ -1,5 +1,5 @@
-import Profile from "../Profile/Profile";
-import TopMenu from "../TopMenu/TopMenu";
+import Profile from "./Profile";
+import TopMenu from "./TopMenu";
 import styles from "./UserBlock.module.css";
 
 const UserBlock = () => {

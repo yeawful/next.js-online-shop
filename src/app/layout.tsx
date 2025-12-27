@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/header/Header/Header";
+import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
-import Breadcrumbs from "@/components/breadcrumbs/Breadcrumbs";
+import Breadcrumbs from "@/components/navigation/Breadcrumbs";
 import { RegFormProvider } from "./contexts/RegFormContext";
 import StatesProvider from "@/store/StatesProvider";
 import StoreProvider from "./provider";

@@ -1,8 +1,8 @@
 "use client";
 
-import IconVision from "@/components/svg/IconVision";
+import IconVision from "@/components/ui/svg/IconVision";
 import { ChangeEvent } from "react";
-import Tooltip from "@/components/tooltip/Tooltip";
+import Tooltip from "@/components/ui/Tooltip";
 import { isPasswordValid } from "../../../utils/validation/passwordValid";
 import styles from "./PasswordInput.module.css";
 

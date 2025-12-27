@@ -1,7 +1,7 @@
 import fetchProductsByTag from "./fetchProducts";
-import ProductsSection from "@/components/products/ProductsSection/ProductsSection";
+import ProductsSection from "@/components/products/ProductsSection";
 import { CONFIG } from "../../../config/config";
-import ErrorComponent from "@/components/error/ErrorComponent";
+import ErrorComponent from "@/components/ui/ErrorComponent";
 
 interface ActionProps {
 	randomLimit?: number;

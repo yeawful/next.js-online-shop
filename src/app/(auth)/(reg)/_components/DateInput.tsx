@@ -2,7 +2,7 @@
 
 import { ChangeEvent, useState } from "react";
 import Image from "next/image";
-import Tooltip from "../../../../components/tooltip/Tooltip";
+import Tooltip from "../../../../components/ui/Tooltip";
 import { validateBirthDate } from "../../../../utils/validation/validateBirthDate";
 import styles from "./DateInput.module.css";
 

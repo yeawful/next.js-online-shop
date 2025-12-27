@@ -1,6 +1,6 @@
 "use client";
 
-import MiniLoader from "@/components/loaders/MiniLoader";
+import MiniLoader from "@/components/ui/MiniLoader";
 import { useState, useEffect } from "react";
 import styles from "./Categories.module.css";
 

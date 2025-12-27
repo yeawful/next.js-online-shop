@@ -1,4 +1,4 @@
-import InStockToggle from "@/components/filter/InStockToggle";
+import InStockToggle from "@/components/ui/InStockToggle";
 import { CONFIG } from "../../../../../config/config";
 import { useCartStore } from "@/store/cartStore";
 import styles from "./BonusesSection.module.css";

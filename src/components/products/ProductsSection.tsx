@@ -1,5 +1,5 @@
-import ProductCard from "../ProductCard/ProductCard";
-import ViewAllButton from "../ViewAllButton/ViewAllButton";
+import ProductCard from "./ProductCard";
+import ViewAllButton from "./ViewAllButton";
 import { ProductsSectionProps } from "@/types/productsSection";
 import styles from "./ProductsSection.module.css";
 

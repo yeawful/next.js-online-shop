@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuthStore } from "@/store/authStore";
-import { Loader } from "@/components/loaders/Loader";
+import { Loader } from "@/components/ui/Loader";
 
 export default function AdminLayout({
 	children,

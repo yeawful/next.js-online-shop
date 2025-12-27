@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ProductsSection from "@/components/products/ProductsSection/ProductsSection";
+import ProductsSection from "@/components/products/ProductsSection";
 import { ProductCardProps } from "@/types/product";
-import MiniLoader from "@/components/loaders/MiniLoader";
+import MiniLoader from "@/components/ui/MiniLoader";
 import styles from "./OrderProductsLoader.module.css";
 
 interface OrderProduct {

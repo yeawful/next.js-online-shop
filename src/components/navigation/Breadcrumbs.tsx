@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { TRANSLATIONS } from "../../utils/translations";
 import { Suspense } from "react";
-import MiniLoader from "../loaders/MiniLoader";
+import MiniLoader from "../ui/MiniLoader";
 import { useProduct } from "@/app/contexts/ProductContext";
 import styles from "./Breadcrumbs.module.css";
 

@@ -1,6 +1,6 @@
-import { ExtendedCartSummaryProps } from "../../types/cart";
+import { ExtendedCartSummaryProps } from "../../../../types/cart";
 import { useCartStore } from "@/store/cartStore";
-import { CONFIG } from "../../../config/config";
+import { CONFIG } from "../../../../../config/config";
 import { useState } from "react";
 import PriceSummary from "@/app/(cart)/cart/_components/PriceSummary";
 import MinimumOrderWarning from "@/app/(cart)/cart/_components/MinimumOrderWarning";
@@ -13,7 +13,7 @@ import {
 	markPaymentAsFailed,
 	prepareCartItemsWithPrices,
 	updateUserAfterPayment,
-} from "../../app/(cart)/cart/utils/orderHelpers";
+} from "../utils/orderHelpers";
 import FakePaymentModal from "@/app/(payment)/FakePaymentModal";
 import PaymentSuccessModal from "@/app/(payment)/PaymentSuccessModal";
 import { useRouter } from "next/navigation";

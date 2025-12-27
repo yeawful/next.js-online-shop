@@ -2,8 +2,8 @@
 
 import { CatalogProps } from "@/types/catalog";
 import { useEffect, useState } from "react";
-import ErrorComponent from "@/components/error/ErrorComponent";
-import { Loader } from "@/components/loaders/Loader";
+import ErrorComponent from "@/components/ui/ErrorComponent";
+import { Loader } from "@/components/ui/Loader";
 import CatalogAdminControls from "../CatalogAdminControls";
 import CatalogGrid from "../CatalogGrid";
 import { useAuthStore } from "@/store/authStore";

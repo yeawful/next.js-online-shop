@@ -4,12 +4,12 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { FormEvent, useCallback, useEffect, useState, Suspense } from "react";
 import { CONFIG } from "../../../../../../config/config";
 import { PriceFilterProps, PriceRange } from "@/types/priceTypes";
-import MiniLoader from "@/components/loaders/MiniLoader";
-import ErrorComponent from "@/components/error/ErrorComponent";
+import MiniLoader from "@/components/ui/MiniLoader";
+import ErrorComponent from "@/components/ui/ErrorComponent";
 import PriceFilterHeader from "./PriceFilterHeader";
 import PriceInputs from "./PriceInputs";
 import PriceRangeSlider from "./PriceRangeSlider";
-import InStockToggle from "@/components/filter/InStockToggle";
+import InStockToggle from "@/components/ui/InStockToggle";
 import styles from "./PriceFilter.module.css";
 
 function PriceFilterContent(props: PriceFilterProps) {

@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import StarRating from "@/components/products/StarRating/StarRating";
-import ErrorComponent from "@/components/error/ErrorComponent";
+import StarRating from "@/components/products/StarRating";
+import ErrorComponent from "@/components/ui/ErrorComponent";
 import styles from "./ProductReviews.module.css";
 
 interface Review {

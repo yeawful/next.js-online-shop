@@ -1,4 +1,4 @@
-import IconVision from "@/components/svg/IconVision";
+import IconVision from "@/components/ui/svg/IconVision";
 import styles from "./OrderActions.module.css";
 
 interface OrderActionsProps {

@@ -1,8 +1,8 @@
 "use client";
 
-import ErrorComponent from "@/components/error/ErrorComponent";
-import { Loader } from "@/components/loaders/Loader";
-import ProductsSection from "@/components/products/ProductsSection/ProductsSection";
+import ErrorComponent from "@/components/ui/ErrorComponent";
+import { Loader } from "@/components/ui/Loader";
+import ProductsSection from "@/components/products/ProductsSection";
 import { ProductCardProps } from "@/types/product";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";

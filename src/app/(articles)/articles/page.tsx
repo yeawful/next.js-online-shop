@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import fetchArticles from "../fetchArticles";
 import GenericListPage from "@/app/(products)/GenericListPage";
-import { Loader } from "@/components/loaders/Loader";
+import { Loader } from "@/components/ui/Loader";
 
 export const metadata = {
 	title: 'Статьи на сайте магазина "Северяночка"',

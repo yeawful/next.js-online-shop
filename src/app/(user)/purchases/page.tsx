@@ -1,7 +1,7 @@
 import GenericListPage from "@/app/(products)/GenericListPage";
 import fetchPurchases from "../fetchPurchases";
 import { Suspense } from "react";
-import { Loader } from "@/components/loaders/Loader";
+import { Loader } from "@/components/ui/Loader";
 import { getServerUserId } from "../../../utils/getServerUserId";
 
 const AllPurchases = async ({

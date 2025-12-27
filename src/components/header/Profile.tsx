@@ -5,9 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useAuthStore } from "@/store/authStore";
 import { useRouter } from "next/navigation";
-import { getAvatarByGender } from "../../../utils/getAvatarByGender";
-import { checkAvatarExists } from "../../../utils/avatarUtils";
-import MiniLoader from "@/components/loaders/MiniLoader";
+import { getAvatarByGender } from "../../utils/getAvatarByGender";
+import { checkAvatarExists } from "../../utils/avatarUtils";
+import MiniLoader from "@/components/ui/MiniLoader";
 import styles from "./Profile.module.css";
 
 const Profile = () => {

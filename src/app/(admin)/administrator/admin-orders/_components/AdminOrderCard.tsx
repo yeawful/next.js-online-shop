@@ -4,7 +4,7 @@ import { getMappedStatus } from "../utils/getMappedStatus";
 import { getEnglishStatuses } from "../utils/getEnglishStatuses";
 import StatusDropdown from "./StatusDropdown";
 import UserAvatar from "./UserAvatar";
-import IconVision from "@/components/svg/IconVision";
+import IconVision from "@/components/ui/svg/IconVision";
 import Image from "next/image";
 import { formatPhoneNumber } from "../utils/formatPhoneNumber";
 import { useGetAdminOrdersQuery } from "@/store/redux/api/ordersApi";
@@ -12,7 +12,7 @@ import {
 	useGetOrderMessagesQuery,
 	useHasUnreadMessagesQuery,
 } from "@/store/redux/api/chatApi";
-import IconNotice from "@/components/svg/IconNotice";
+import IconNotice from "@/components/ui/svg/IconNotice";
 import OrderChatModal from "./OrderChatModal";
 import CalendarOrderModal from "./CalendarOrderModal";
 import OrderProductsLoader from "./OrderProductsLoader";

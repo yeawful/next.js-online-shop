@@ -1,5 +1,5 @@
 import GenericListPage from "@/app/(products)/GenericListPage";
-import { Loader } from "@/components/loaders/Loader";
+import { Loader } from "@/components/ui/Loader";
 import { Suspense } from "react";
 import { TRANSLATIONS } from "../../../utils/translations";
 import fetchFavorites from "./fetchFavorites";

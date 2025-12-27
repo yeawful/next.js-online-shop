@@ -8,7 +8,7 @@ import {
 	updateOrderItemQuantityAction,
 } from "@/actions/orderActions";
 import { useCartStore } from "@/store/cartStore";
-import { Loader } from "@/components/loaders/Loader";
+import { Loader } from "@/components/ui/Loader";
 import { ProductCardProps } from "@/types/product";
 import CartHeader from "./_components/CartHeader";
 import CartControls from "./_components/CartControls";

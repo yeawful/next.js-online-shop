@@ -1,7 +1,7 @@
 "use client";
 
-import ErrorComponent from "@/components/error/ErrorComponent";
-import { Loader } from "@/components/loaders/Loader";
+import ErrorComponent from "@/components/ui/ErrorComponent";
+import { Loader } from "@/components/ui/Loader";
 import { Order } from "@/types/order";
 import { useEffect, useState } from "react";
 import UserOrdersList from "./_components/UserOrdersList";

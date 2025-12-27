@@ -6,7 +6,7 @@ import { MailWarning, Phone } from "lucide-react";
 import { useRouter } from "next/navigation";
 import ProfileHeader from "../_components/ProfileHeader";
 import { useEffect, useState } from "react";
-import { Loader } from "@/components/loaders/Loader";
+import { Loader } from "@/components/ui/Loader";
 import SecuritySection from "../_components/SecuritySection";
 import ProfileAvatar from "../_components/ProfileAvatar";
 import LocationSection from "../_components/LocationSection";

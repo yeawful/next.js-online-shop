@@ -8,7 +8,7 @@ import {
 	calculatePriceByCard,
 } from "../../../../utils/calcPrices";
 import { formatPrice } from "../../../../utils/formatPrice";
-import Tooltip from "@/components/tooltip/Tooltip";
+import Tooltip from "@/components/ui/Tooltip";
 import CartSkeletons from "./CartSkeletons";
 import SelectionCheckbox from "./SelectionCheckbox";
 import ProductImage from "./ProductImage";

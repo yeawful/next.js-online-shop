@@ -1,4 +1,4 @@
-import IconStar from "@/components/svg/IconStar";
+import IconStar from "@/components/ui/svg/IconStar";
 import styles from "./StarRating.module.css";
 
 const StarRating = ({ rating = 5.0 }: { rating: number }) => {

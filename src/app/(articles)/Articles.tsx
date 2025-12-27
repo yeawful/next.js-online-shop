@@ -1,7 +1,7 @@
 import fetchArticles from "./fetchArticles";
 import ArticleSection from "./ArticlesSection";
 import { CONFIG } from "../../../config/config";
-import ErrorComponent from "@/components/error/ErrorComponent";
+import ErrorComponent from "@/components/ui/ErrorComponent";
 
 const Articles = async () => {
 	try {

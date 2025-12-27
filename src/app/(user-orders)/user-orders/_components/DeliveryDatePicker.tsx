@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Schedule } from "@/types/deliverySchedule";
-import MiniLoader from "@/components/loaders/MiniLoader";
+import MiniLoader from "@/components/ui/MiniLoader";
 import {
 	formatDateFull,
 	formatDateNumeric,

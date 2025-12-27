@@ -1,17 +1,17 @@
 import Image from "next/image";
 import { ProductCardProps } from "@/types/product";
 import { formatPrice } from "@/utils/formatPrice";
-import StarRating from "../StarRating/StarRating";
+import StarRating from "./StarRating";
 import Link from "next/link";
-import { CONFIG } from "../../../../config/config";
-import FavoriteButton from "../FavoriteButton/FavoriteButton";
+import { CONFIG } from "../../../config/config";
+import FavoriteButton from "./FavoriteButton";
 import {
 	calculateFinalPrice,
 	calculatePriceByCard,
-} from "../../../utils/calcPrices";
-import AddToCartButton from "../AddToCartButton/AddToCartButton";
-import IconCart from "@/components/svg/IconCart";
-import { TRANSLATIONS } from "../../../utils/translations";
+} from "../../utils/calcPrices";
+import AddToCartButton from "./AddToCartButton";
+import IconCart from "@/components/ui/svg/IconCart";
+import { TRANSLATIONS } from "../../utils/translations";
 import styles from "./ProductCard.module.css";
 
 const cardDiscountPercent = CONFIG.CARD_DISCOUNT_PERCENT;
