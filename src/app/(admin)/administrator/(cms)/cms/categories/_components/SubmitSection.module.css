@@ -1,3 +1,26 @@
+.uploadingMessage {
+	margin-top: 1rem;
+	padding: 0.75rem;
+	background-color: #dbeafe;
+	color: #1d4ed8;
+	border-radius: 0.25rem;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	border: 1px solid #bfdbfe;
+}
+
+.uploadingContent {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.uploadingSpinner {
+	width: 1rem;
+	height: 1rem;
+	animation: spin 1s linear infinite;
+}
+
 .container {
 	display: flex;
 	gap: 0.75rem;
@@ -65,4 +88,13 @@
 .cancelButton:disabled {
 	opacity: 0.5;
 	cursor: not-allowed;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }

@@ -211,6 +211,7 @@ function PriceFilterContent(props: PriceFilterProps) {
 			<InStockToggle
 				checked={inStock}
 				onChangeAction={(checked) => setInStock(checked)}
+				labelText="В наличии"
 			/>
 			<button type="submit" className={styles.applyButton}>
 				Применить

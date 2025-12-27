@@ -1,0 +1,17 @@
+.container {
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+	padding: 1rem;
+	background-color: #fefce8;
+	border-radius: 0.25rem;
+}
+
+.message {
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	color: #92400e;
+}
+
+.message strong {
+	font-weight: 600;
+}

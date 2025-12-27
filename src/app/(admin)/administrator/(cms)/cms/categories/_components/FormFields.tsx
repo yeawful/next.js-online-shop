@@ -7,6 +7,7 @@ interface FormFieldsProps {
 	formData: any;
 	errors: any;
 	charCount: any;
+	isSubmitting: boolean;
 	onInputChange: (field: string, value: string, maxLength: number) => void;
 	onGenerateSlug: () => void;
 }
@@ -15,6 +16,7 @@ export const FormFields = ({
 	formData,
 	errors,
 	charCount,
+	isSubmitting,
 	onInputChange,
 	onGenerateSlug,
 }: FormFieldsProps) => {
@@ -51,6 +53,7 @@ export const FormFields = ({
 						onInputChange("name", e.target.value, SEO_LIMITS.name.max)
 					}
 					required
+					disabled={isSubmitting}
 					className={`${styles.input} ${errors.name ? styles.inputError : ""}`}
 					placeholder="Например: Соки"
 				/>
@@ -79,12 +82,14 @@ export const FormFields = ({
 							onInputChange("slug", cleaned, SEO_LIMITS.slug.max);
 						}}
 						required
+						disabled={isSubmitting}
 						className={`${styles.input} ${styles.slugInput} ${errors.slug ? styles.inputError : ""}`}
 						placeholder="soki"
 					/>
 					<button
 						type="button"
 						onClick={onGenerateSlug}
+						disabled={isSubmitting}
 						className={styles.generateButton}
 						title="Сгенерировать из названия"
 					>
@@ -118,6 +123,7 @@ export const FormFields = ({
 						)
 					}
 					rows={3}
+					disabled={isSubmitting}
 					className={`${styles.textarea} ${errors.description ? styles.inputError : ""}`}
 					placeholder="Краткое описание категории для поисковых систем (10-160 символов)"
 				/>
@@ -153,6 +159,7 @@ export const FormFields = ({
 							SEO_LIMITS.keywords.maxLength
 						)
 					}
+					disabled={isSubmitting}
 					className={`${styles.input} ${errors.keywords ? styles.inputError : ""}`}
 					placeholder="мясо, напитки, польза и вред"
 				/>

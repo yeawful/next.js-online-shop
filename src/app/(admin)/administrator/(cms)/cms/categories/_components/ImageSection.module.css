@@ -12,3 +12,266 @@
 	font-weight: 500;
 	margin-bottom: 1rem;
 }
+
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.imagePreview {
+	background-color: var(--color-bg-white);
+	padding: 1rem;
+	border-radius: 0.25rem;
+	border: 1px solid var(--color-border-light);
+}
+
+.previewContainer {
+	display: flex;
+	align-items: flex-start;
+	gap: 1rem;
+}
+
+.previewImage {
+	width: 50rem;
+	height: 28.125rem;
+	object-fit: contain;
+	border-radius: 0.125rem;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.previewInfo {
+	flex: 1;
+	margin-top: 2rem;
+}
+
+.previewText {
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	color: var(--color-text-secondary);
+	margin-bottom: 0.5rem;
+}
+
+.alertMessage {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+	font-size: 0.75rem;
+	line-height: 1rem;
+	color: #059669;
+	margin-bottom: 0.5rem;
+}
+
+.alertIcon {
+	width: 0.75rem;
+	height: 0.75rem;
+}
+
+.removeButton {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+	padding-top: 0.375rem;
+	padding-bottom: 0.375rem;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	background-color: #fef2f2;
+	color: #dc2626;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	border: 1px solid #fecaca;
+}
+
+.removeButton:hover {
+	background-color: #fee2e2;
+	border-color: #fca5a5;
+}
+
+.removeButton:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.removeIcon {
+	width: 1rem;
+	height: 1rem;
+}
+
+.uploadLabel {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	font-weight: 500;
+	margin-bottom: 0.5rem;
+}
+
+.hint {
+	color: var(--color-text-secondary);
+	font-size: 0.75rem;
+	line-height: 1rem;
+	margin-left: 0.5rem;
+}
+
+.uploadContainer {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.fileInputWrapper {
+	position: relative;
+	cursor: pointer;
+	flex: 1;
+}
+
+.fileInput {
+	display: none;
+}
+
+.fileInputLabel {
+	display: block;
+	width: 100%;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	border: 1px solid var(--color-border-default);
+	border-radius: 0.25rem;
+	outline: none;
+	transition:
+		border-color 0.3s ease,
+		box-shadow 0.3s ease,
+		background-color 0.3s ease;
+	background-color: var(--color-bg-white);
+}
+
+.fileInputLabel:focus-within {
+	border-color: var(--color-primary);
+	box-shadow: 0 0 0 3px rgba(112, 192, 91, 0.2);
+}
+
+.fileInputLabel:hover {
+	background-color: var(--color-bg-light);
+}
+
+.fileInputLabel:disabled {
+	opacity: 0.5;
+	background-color: var(--color-bg-light);
+	cursor: not-allowed;
+}
+
+.fileInputContent {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: var(--color-text-hover);
+}
+
+.uploadIcon {
+	width: 1rem;
+	height: 1rem;
+}
+
+.uploadingIndicator {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	color: #059669;
+}
+
+.uploadingSpinner {
+	animation: spin 1s linear infinite;
+	border-radius: 9999px;
+	height: 1rem;
+	width: 1rem;
+	border: 2px solid #059669;
+	border-top-color: transparent;
+}
+
+.formatHint {
+	font-size: 0.75rem;
+	line-height: 1rem;
+	color: var(--color-text-secondary);
+	margin-top: 0.5rem;
+}
+
+.altTextContainer {
+	margin-top: 1rem;
+}
+
+.altTextHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 0.25rem;
+}
+
+.altTextLabel {
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	font-weight: 500;
+}
+
+.altTextCounter {
+	font-size: 0.75rem;
+	line-height: 1rem;
+}
+
+.altTextCounterNormal {
+	color: var(--color-text-secondary);
+}
+
+.altTextCounterError {
+	color: var(--color-error);
+}
+
+.altTextInput {
+	width: 100%;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+	padding-top: 0.625rem;
+	padding-bottom: 0.625rem;
+	background-color: var(--color-bg-white);
+	border: 1px solid var(--color-border-default);
+	border-radius: 0.25rem;
+	outline: none;
+	transition:
+		border-color 0.3s ease,
+		box-shadow 0.3s ease;
+}
+
+.altTextInput:focus {
+	border-color: var(--color-primary);
+	box-shadow: 0 0 0 3px rgba(112, 192, 91, 0.2);
+}
+
+.altTextInputError {
+	border-color: var(--color-error-light);
+}
+
+.altTextInputError:focus {
+	border-color: var(--color-error);
+	box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.altTextInput:disabled {
+	opacity: 0.5;
+	background-color: var(--color-bg-light);
+	cursor: not-allowed;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
