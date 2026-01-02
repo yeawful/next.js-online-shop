@@ -1,27 +1,35 @@
-.uploadingMessage {
+.submittingNotice {
 	margin-top: 1rem;
 	padding: 0.75rem;
-	background-color: #dbeafe;
+	background-color: #eff6ff;
 	color: #1d4ed8;
-	border-radius: 0.25rem;
+	border-radius: 0.375rem;
 	font-size: 0.875rem;
-	line-height: 1.25rem;
-	border: 1px solid #bfdbfe;
+	border: 1px solid #dbeafe;
 }
 
-.uploadingContent {
+.submittingContent {
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
 }
 
-.uploadingSpinner {
+.spinnerIcon {
 	width: 1rem;
 	height: 1rem;
 	animation: spin 1s linear infinite;
 }
 
-.container {
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.buttonsContainer {
 	display: flex;
 	gap: 0.75rem;
 	margin-top: 1.5rem;
@@ -31,16 +39,13 @@
 	display: flex;
 	align-items: center;
 	gap: 0.25rem;
-	padding-left: 1rem;
-	padding-right: 1rem;
-	padding-top: 0.625rem;
-	padding-bottom: 0.625rem;
+	padding: 0.625rem 1rem;
 	background-color: var(--color-primary);
 	color: var(--color-bg-white);
-	border-radius: 0.25rem;
-	cursor: pointer;
-	transition: background-color 0.2s ease;
+	border-radius: 0.375rem;
 	font-weight: 500;
+	cursor: pointer;
+	transition: background-color 0.2s;
 	outline: none;
 	border: none;
 }
@@ -58,23 +63,14 @@
 	cursor: not-allowed;
 }
 
-.buttonIcon {
-	width: 1rem;
-	height: 1rem;
-}
-
 .cancelButton {
-	padding-left: 1rem;
-	padding-right: 1rem;
-	padding-top: 0.625rem;
-	padding-bottom: 0.625rem;
-	border: 1px solid var(--color-border-default);
-	border-radius: 0.25rem;
-	cursor: pointer;
-	transition: background-color 0.2s ease;
+	padding: 0.625rem 1rem;
+	border: 1px solid var(--color-border-input);
+	border-radius: 0.375rem;
 	font-weight: 500;
+	cursor: pointer;
+	transition: background-color 0.2s;
 	outline: none;
-	border: none;
 }
 
 .cancelButton:hover {
@@ -82,7 +78,7 @@
 }
 
 .cancelButton:focus {
-	box-shadow: 0 0 0 3px rgba(209, 213, 219, 0.5);
+	box-shadow: 0 0 0 3px var(--color-border-light);
 }
 
 .cancelButton:disabled {
@@ -90,11 +86,7 @@
 	cursor: not-allowed;
 }
 
-@keyframes spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+.buttonIcon {
+	width: 1rem;
+	height: 1rem;
 }

@@ -33,9 +33,9 @@
 }
 
 .previewImage {
-	width: 50rem;
-	height: 28.125rem;
-	object-fit: contain;
+	width: 10rem;
+	height: 10rem;
+	object-fit: cover;
 	border-radius: 0.125rem;
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
@@ -200,6 +200,21 @@
 	line-height: 1rem;
 	color: var(--color-text-secondary);
 	margin-top: 0.5rem;
+}
+
+.warningMessage {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: 1rem;
+	line-height: 1.5rem;
+	color: var(--color-error);
+	margin-top: 0.25rem;
+}
+
+.warningIcon {
+	width: 1.25rem;
+	height: 1.25rem;
 }
 
 .altTextContainer {

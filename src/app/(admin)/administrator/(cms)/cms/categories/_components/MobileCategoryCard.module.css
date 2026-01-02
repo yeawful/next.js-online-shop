@@ -1,0 +1,51 @@
+.container {
+	padding: 1rem;
+	position: relative;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.container:hover {
+	background-color: var(--color-bg-light);
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.content {
+	flex: 1;
+	min-width: 0;
+}
+
+.innerHeader {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.75rem;
+	margin-bottom: 0.25rem;
+}
+
+.toggleButton {
+	margin-left: 0.5rem;
+	color: var(--color-text-muted);
+	cursor: pointer;
+	transition: color 0.3s ease;
+	flex-shrink: 0;
+	margin-top: 0.25rem;
+}
+
+.toggleButton:hover {
+	color: var(--color-text-secondary);
+}
+
+.toggleIcon {
+	width: 1.25rem;
+	height: 1.25rem;
+	transition: transform 0.2s ease;
+}
+
+.toggleIconExpanded {
+	transform: rotate(180deg);
+}

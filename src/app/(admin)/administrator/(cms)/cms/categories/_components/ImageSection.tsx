@@ -1,31 +1,19 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
 import { AlertCircle, Upload, XCircle } from "lucide-react";
 import { SEO_LIMITS } from "../../utils/SEO_LIMITS";
 import { useRef } from "react";
+import { useCategoryStore } from "@/store/categoryStore";
+import { ImageSectionProps } from "../../types";
 import styles from "./ImageSection.module.css";
 
-interface ImageSectionProps {
-	errors: any;
-	formData: any;
-	charCount: any;
-	isUploading: boolean;
-	isSubmitting: boolean;
-	onInputChange: (field: string, value: string, maxLength: number) => void;
-	onFileChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-	onRemoveImage: () => void;
-}
-
-const ImageSection = ({
+export const ImageSection = ({
 	errors,
-	formData,
 	charCount,
-	isUploading,
-	isSubmitting,
 	onInputChange,
 	onFileChange,
 	onRemoveImage,
 }: ImageSectionProps) => {
+	const { editingId, isUploading, isSubmitting, formData } = useCategoryStore();
 	const fileInputRef = useRef<HTMLInputElement>(null);
 
 	const handleRemoveImage = () => {
@@ -34,6 +22,11 @@ const ImageSection = ({
 		if (fileInputRef.current) {
 			fileInputRef.current.value = "";
 		}
+	};
+
+	const getCharCounterClass = (current: number, max: number) => {
+		if (current > max) return styles.altTextCounterError;
+		return styles.altTextCounterNormal;
 	};
 
 	return (
@@ -47,40 +40,40 @@ const ImageSection = ({
 								<Image
 									src={formData.image}
 									alt="Предпросмотр"
-									width={800}
-									height={450}
+									width={160}
+									height={160}
 									className={styles.previewImage}
 									unoptimized={formData.image.startsWith("blob:")}
 								/>
 							</div>
-						</div>
-						<div className={styles.previewInfo}>
-							<p className={styles.previewText}>
-								{formData.image.startsWith("blob:")
-									? "Новое изображение (будет загружено при сохранении)"
-									: "Текущее изображение категории"}
-							</p>
-							{formData.image.startsWith("blob:") && (
-								<p className={styles.alertMessage}>
-									<AlertCircle className={styles.alertIcon} />
-									Старое изображение будет удалено после сохранения
+							<div className={styles.previewInfo}>
+								<p className={styles.previewText}>
+									{formData.image.startsWith("blob:")
+										? "Новое изображение (будет загружено при сохранении)"
+										: "Текущее изображение категории"}
 								</p>
-							)}
-							<button
-								type="button"
-								onClick={handleRemoveImage}
-								disabled={isUploading || isSubmitting}
-								className={styles.removeButton}
-							>
-								<XCircle className={styles.removeIcon} />
-								Удалить изображение
-							</button>
+								{formData.image.startsWith("blob:") && (
+									<p className={styles.alertMessage}>
+										<AlertCircle className={styles.alertIcon} />
+										Старое изображение будет удалено после сохранения
+									</p>
+								)}
+								<button
+									type="button"
+									onClick={handleRemoveImage}
+									disabled={isUploading || isSubmitting}
+									className={styles.removeButton}
+								>
+									<XCircle className={styles.removeIcon} />
+									Удалить изображение
+								</button>
+							</div>
 						</div>
 					</div>
 				)}
 				<div>
 					<label className={styles.uploadLabel}>
-						{"Загрузить изображение"}
+						{formData.image ? "Заменить изображение" : "Загрузить изображение"}
 						<span className={styles.hint}>
 							(рекомендуется 800×450px, максимум 5MB)
 						</span>
@@ -112,6 +105,14 @@ const ImageSection = ({
 					<p className={styles.formatHint}>
 						Поддерживаемые форматы: JPG, PNG, GIF, WebP. Изображение будет
 						загружено на сервер только при сохранении категории.
+						{editingId &&
+							formData.image &&
+							formData.image.startsWith("blob:") && (
+								<span className={styles.warningMessage}>
+									<AlertCircle className={styles.warningIcon} />
+									При сохранении старое изображение будет удалено
+								</span>
+							)}
 					</p>
 				</div>
 				{formData.image && (
@@ -121,11 +122,7 @@ const ImageSection = ({
 								Описание изображения (ALT текст)
 							</label>
 							<span
-								className={`${styles.altTextCounter} ${
-									charCount.imageAlt > SEO_LIMITS.imageAlt.max
-										? styles.altTextCounterError
-										: styles.altTextCounterNormal
-								}`}
+								className={`${styles.altTextCounter} ${getCharCounterClass(charCount.imageAlt, SEO_LIMITS.imageAlt.max)}`}
 							>
 								{charCount.imageAlt}/{SEO_LIMITS.imageAlt.max}
 							</span>
@@ -152,5 +149,3 @@ const ImageSection = ({
 		</div>
 	);
 };
-
-export default ImageSection;

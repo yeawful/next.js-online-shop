@@ -1,47 +1,30 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { RotateCcw } from "lucide-react";
 import { SEO_LIMITS } from "../../utils/SEO_LIMITS";
+import { useCategoryStore } from "@/store/categoryStore";
+import { FormFieldsProps } from "../../types";
 import styles from "./FormFields.module.css";
 
-interface FormFieldsProps {
-	formData: any;
-	errors: any;
-	charCount: any;
-	isSubmitting: boolean;
-	onInputChange: (field: string, value: string, maxLength: number) => void;
-	onGenerateSlug: () => void;
-}
-
 export const FormFields = ({
-	formData,
 	errors,
 	charCount,
-	isSubmitting,
 	onInputChange,
 	onGenerateSlug,
 }: FormFieldsProps) => {
-	const getCharCounterClass = (current: number, max: number) => {
-		if (current > max) return styles.charCounterError;
-		return styles.charCounterNormal;
-	};
+	const { isSubmitting, formData } = useCategoryStore();
 
-	const getDescriptionCharCounterClass = (
-		current: number,
-		max: number,
-		min: number
-	) => {
-		if (current > max) return styles.charCounterError;
-		if (current < min && current > 0) return styles.charCounterWarning;
-		return styles.charCounterNormal;
+	const getCharCountClass = (count: number, max: number, min?: number) => {
+		if (count > max) return styles.charCountError;
+		if (min && count < min && count > 0) return styles.charCountWarning;
+		return styles.charCountNormal;
 	};
 
 	return (
-		<div className={styles.grid}>
+		<div className={styles.container}>
 			<div className={styles.fieldContainer}>
-				<div className={styles.fieldHeader}>
+				<div className={styles.labelContainer}>
 					<label className={styles.label}>Название категории *</label>
 					<span
-						className={`${styles.charCounter} ${getCharCounterClass(charCount.name, SEO_LIMITS.name.max)}`}
+						className={`${styles.charCount} ${getCharCountClass(charCount.name, SEO_LIMITS.name.max)}`}
 					>
 						{charCount.name}/{SEO_LIMITS.name.max}
 					</span>
@@ -61,10 +44,10 @@ export const FormFields = ({
 			</div>
 
 			<div className={styles.fieldContainer}>
-				<div className={styles.fieldHeader}>
+				<div className={styles.labelContainer}>
 					<label className={styles.label}>Алиас (slug) *</label>
 					<span
-						className={`${styles.charCounter} ${getCharCounterClass(charCount.slug, SEO_LIMITS.slug.max)}`}
+						className={`${styles.charCount} ${getCharCountClass(charCount.slug, SEO_LIMITS.slug.max)}`}
 					>
 						{charCount.slug}/{SEO_LIMITS.slug.max}
 					</span>
@@ -93,7 +76,7 @@ export const FormFields = ({
 						className={styles.generateButton}
 						title="Сгенерировать из названия"
 					>
-						<RotateCcw className={styles.generateIcon} />
+						<RotateCcw className={styles.generateButtonIcon} />
 						Генерировать
 					</button>
 				</div>
@@ -105,10 +88,10 @@ export const FormFields = ({
 			</div>
 
 			<div className={`${styles.fieldContainer} ${styles.fullWidth}`}>
-				<div className={styles.fieldHeader}>
+				<div className={styles.labelContainer}>
 					<label className={styles.label}>Описание (мета-описание)</label>
 					<span
-						className={`${styles.charCounter} ${getDescriptionCharCounterClass(charCount.description, SEO_LIMITS.description.max, SEO_LIMITS.description.min)}`}
+						className={`${styles.charCount} ${getCharCountClass(charCount.description, SEO_LIMITS.description.max, SEO_LIMITS.description.min)}`}
 					>
 						{charCount.description}/{SEO_LIMITS.description.max}
 					</span>
@@ -124,7 +107,7 @@ export const FormFields = ({
 					}
 					rows={3}
 					disabled={isSubmitting}
-					className={`${styles.textarea} ${errors.description ? styles.inputError : ""}`}
+					className={`${styles.textarea} ${errors.description ? styles.textareaError : ""}`}
 					placeholder="Краткое описание категории для поисковых систем (10-160 символов)"
 				/>
 				{errors.description ? (
@@ -138,13 +121,15 @@ export const FormFields = ({
 			</div>
 
 			<div className={`${styles.fieldContainer} ${styles.fullWidth}`}>
-				<div className={styles.fieldHeader}>
+				<div className={styles.labelContainer}>
 					<label className={styles.label}>
 						Ключевые слова
-						<span className={styles.commaHint}>(через запятую)</span>
+						<span className={styles.hint} style={{ marginLeft: "0.5rem" }}>
+							(через запятую)
+						</span>
 					</label>
 					<span
-						className={`${styles.charCounter} ${getCharCounterClass(charCount.keywords, SEO_LIMITS.keywords.maxLength)}`}
+						className={`${styles.charCount} ${getCharCountClass(charCount.keywords, SEO_LIMITS.keywords.maxLength)}`}
 					>
 						{charCount.keywords}/{SEO_LIMITS.keywords.maxLength}
 					</span>

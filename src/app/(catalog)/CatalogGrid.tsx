@@ -12,43 +12,18 @@ const CatalogGrid = ({
 	onDragLeaveAction,
 	onDropAction,
 }: CatalogGridProps) => {
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	const getCategoryClasses = (category: any) => {
-		const classes = [styles.categoryItem];
-
-		if (isEditing) {
-			classes.push(styles.categoryItemEditing);
-		}
-
-		if (hoveredCategoryId === category._id) {
-			classes.push(styles.categoryItemHovered);
-		}
-
-		if (category.mobileColSpan === "col-span-2") {
-			classes.push(styles.mobileColSpan2);
-		}
-
-		if (category.tabletColSpan === "md:col-span-1") {
-			classes.push(styles.tabletColSpan1);
-		} else if (category.tabletColSpan === "md:col-span-2") {
-			classes.push(styles.tabletColSpan2);
-		}
-
-		if (category.colSpan === "col-span-2") {
-			classes.push(styles.colSpan2);
-		} else if (category.colSpan === "xl:col-span-2") {
-			classes.push(styles.desktopColSpan2);
-		}
-
-		return classes.join(" ");
-	};
-
 	return (
-		<div className={styles.catalogGrid}>
+		<div className={styles.grid}>
 			{categories.map((category, index) => (
 				<div
 					key={category._id}
-					className={getCategoryClasses(category)}
+					className={`${category.mobileColSpan} ${category.tabletColSpan} ${
+						category.colSpan
+					} ${styles.categoryItem} ${
+						isEditing ? styles.categoryItemEditing : ""
+					} ${
+						hoveredCategoryId === category._id ? styles.categoryItemHovered : ""
+					}`}
 					onDragOver={(e) => onDragOverAction(e, category._id)}
 					onDragLeave={onDragLeaveAction}
 					onDrop={(e) => onDropAction(e, category._id)}
@@ -56,7 +31,7 @@ const CatalogGrid = ({
 					<div
 						className={`${styles.categoryContent} ${
 							draggedCategory?._id === category._id
-								? styles.categoryContentDragging
+								? styles.categoryContentDragged
 								: ""
 						}`}
 						draggable={isEditing}
@@ -66,7 +41,7 @@ const CatalogGrid = ({
 							slug={category.slug}
 							title={category.title}
 							img={category.img}
-							priority={index === 0}
+							priority={index < 4}
 						/>
 					</div>
 				</div>

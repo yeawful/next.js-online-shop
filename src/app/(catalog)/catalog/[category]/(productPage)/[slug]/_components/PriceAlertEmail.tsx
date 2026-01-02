@@ -102,7 +102,6 @@ const PriceAlertEmail = (props: PriceAlertEmailProps) => {
 
 							<Hr className="border-[#e0e0e0] my-8" />
 
-							{/* Footer */}
 							<Section className="text-center">
 								<Text className="text-[#666666] text-sm mb-4 leading-5">
 									Это письмо отправлено автоматически, потому что Вы подписались
@@ -124,7 +123,6 @@ const PriceAlertEmail = (props: PriceAlertEmailProps) => {
 							</Section>
 						</Section>
 
-						{/* Company Info */}
 						<Section className="bg-[#f8f8f8] py-6 px-8 border-t border-[#e0e0e0]">
 							<Text className="text-[#999999] text-xs text-center leading-4 mb-2">
 								Северяночка

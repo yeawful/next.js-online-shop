@@ -1,16 +1,18 @@
+import { useCategoryStore } from "@/store/categoryStore";
 import { useSiteSettings } from "../hooks/useSiteSettings";
 import { useStatsValues } from "../hooks/useStatsValues";
 import { getStatValue } from "../utils/getStatValue";
 import { stats } from "../utils/stats";
-import StatItem from "./StatItem";
+import { StatItem } from "./StatItem";
 import { StatsSkeleton } from "./StatsSkeleton";
 import styles from "./StatsSection.module.css";
 
 export const StatsSection = () => {
-	const { keywordsCount } = useStatsValues();
+	const { categoriesCount, keywordsCount } = useStatsValues();
 	const { loading: settingsLoading } = useSiteSettings();
+	const { loading: categoriesLoading } = useCategoryStore();
 
-	const loading = settingsLoading;
+	const loading = settingsLoading || categoriesLoading;
 
 	if (loading) return <StatsSkeleton />;
 
@@ -22,7 +24,11 @@ export const StatsSection = () => {
 					<StatItem
 						key={index}
 						stat={stat}
-						statValue={getStatValue(stat.title, keywordsCount.toString())}
+						statValue={getStatValue(
+							stat.title,
+							categoriesCount.toString(),
+							keywordsCount.toString()
+						)}
 					/>
 				))}
 			</div>

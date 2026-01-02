@@ -1,3 +1,13 @@
 .container {
-	margin-top: 2rem;
+	width: 100%;
+}
+
+.loading {
+	padding: 2rem;
+	text-align: center;
+	color: var(--color-text-secondary);
+}
+
+.divider {
+	border-top: 1px solid var(--color-border-light);
 }

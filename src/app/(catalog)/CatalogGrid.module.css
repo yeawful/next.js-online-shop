@@ -1,12 +1,26 @@
-.catalogGrid {
+.grid {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 1rem;
 }
 
+@media (min-width: 768px) {
+	.grid {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.5rem;
+	}
+}
+
+@media (min-width: 1280px) {
+	.grid {
+		grid-template-columns: repeat(4, 1fr);
+		gap: 2rem;
+	}
+}
+
 .categoryItem {
-	background-color: #f3f4f6;
-	border-radius: 0.25rem;
+	background-color: var(--color-bg-light);
+	border-radius: 0.5rem;
 	overflow: hidden;
 	min-height: 12.5rem;
 	height: 100%;
@@ -17,7 +31,7 @@
 }
 
 .categoryItemHovered {
-	border: 3px solid #991b1b;
+	border: 3px solid var(--color-error);
 }
 
 .categoryContent {
@@ -25,40 +39,6 @@
 	width: 100%;
 }
 
-.categoryContentDragging {
+.categoryContentDragged {
 	opacity: 0.5;
-}
-
-.colSpan2 {
-	grid-column: span 2 / span 2;
-}
-
-.mobileColSpan2 {
-	grid-column: span 2 / span 2;
-}
-
-@media (min-width: 768px) {
-	.catalogGrid {
-		grid-template-columns: repeat(3, 1fr);
-		gap: 1.5rem;
-	}
-
-	.tabletColSpan1 {
-		grid-column: span 1 / span 1;
-	}
-
-	.tabletColSpan2 {
-		grid-column: span 2 / span 2;
-	}
-}
-
-@media (min-width: 1280px) {
-	.catalogGrid {
-		grid-template-columns: repeat(4, 1fr);
-		gap: 2rem;
-	}
-
-	.desktopColSpan2 {
-		grid-column: span 2 / span 2;
-	}
 }

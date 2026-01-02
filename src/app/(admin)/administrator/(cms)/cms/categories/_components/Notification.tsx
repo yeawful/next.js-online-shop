@@ -1,21 +1,14 @@
 import { X } from "lucide-react";
+import { NotificationProps } from "../../types";
 import styles from "./Notification.module.css";
 
-interface NotificationProps {
-	type: "success" | "error";
-	message: string;
-	onClose: () => void;
-}
-
 export const Notification = ({ type, message, onClose }: NotificationProps) => {
-	const containerClass =
-		type === "success"
-			? `${styles.container} ${styles.containerSuccess}`
-			: `${styles.container} ${styles.containerError}`;
+	const typeClasses =
+		type === "success" ? styles.notificationSuccess : styles.notificationError;
 
 	return (
-		<div className={containerClass}>
-			<div className={styles.messageContainer}>
+		<div className={`${styles.notification} ${typeClasses}`}>
+			<div className={styles.content}>
 				<span>{message}</span>
 			</div>
 			<button

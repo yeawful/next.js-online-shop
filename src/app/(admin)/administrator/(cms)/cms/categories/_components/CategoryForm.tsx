@@ -1,34 +1,12 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState } from "react";
+import { CategoryFormField, CategoryFormProps, CharCount } from "../../types";
 import { FormFields } from "./FormFields";
-import ImageSection from "./ImageSection";
-import SubmitSection from "./SubmitSection";
+import { ImageSection } from "./ImageSection";
+import { SubmitSection } from "./SubmitSection";
+import { useCategoryStore } from "@/store/categoryStore";
 import styles from "./CategoryForm.module.css";
 
-interface CategoryFormProps {
-	formData: any;
-	errors: any;
-	isSubmitting: boolean;
-	onFieldChange: (field: string, value: string) => void;
-	onGenerateSlug: () => void;
-	onSaveImageFile: (file: File) => void;
-	onRemoveImage: () => void;
-	onSubmit: (e: React.FormEvent) => void;
-	onCancel: () => void;
-}
-
-interface CharCount {
-	name: number;
-	slug: number;
-	description: number;
-	keywords: number;
-	imageAlt: number;
-}
-
-const CategoryForm = ({
-	formData,
+export const CategoryForm = ({
 	errors,
-	isSubmitting,
 	onFieldChange,
 	onGenerateSlug,
 	onSaveImageFile,
@@ -36,18 +14,18 @@ const CategoryForm = ({
 	onSubmit,
 	onCancel,
 }: CategoryFormProps) => {
-	const [isUploading, setIsUploading] = useState(false);
+	const { setIsUploading, formData } = useCategoryStore();
 
 	const charCount: CharCount = {
-		name: formData.name?.length || 0,
-		slug: formData.slug?.length || 0,
-		description: formData.description?.length || 0,
-		keywords: formData.keywords?.length || 0,
-		imageAlt: formData.imageAlt?.length || 0,
+		name: formData.name.length,
+		slug: formData.slug.length,
+		description: formData.description.length,
+		keywords: formData.keywords.length,
+		imageAlt: formData.imageAlt.length,
 	};
 
 	const handleInputChange = (
-		field: string,
+		field: CategoryFormField,
 		value: string,
 		maxLength: number
 	) => {
@@ -86,28 +64,19 @@ const CategoryForm = ({
 			<h2 className={styles.title}>Создание новой категории</h2>
 			<form onSubmit={onSubmit} className={styles.form}>
 				<ImageSection
-					formData={formData}
 					errors={errors}
 					charCount={charCount}
-					isUploading={isUploading}
-					isSubmitting={isSubmitting}
 					onInputChange={handleInputChange}
 					onFileChange={handleFileChange}
 					onRemoveImage={onRemoveImage}
 				/>
 				<FormFields
-					formData={formData}
 					errors={errors}
-					isSubmitting={isSubmitting}
 					charCount={charCount}
 					onInputChange={handleInputChange}
 					onGenerateSlug={handleGenerateSlug}
 				/>
-				<SubmitSection
-					onCancel={onCancel}
-					isSubmitting={isSubmitting}
-					isUploading={isUploading}
-				/>
+				<SubmitSection onCancel={onCancel} />
 			</form>
 		</div>
 	);
