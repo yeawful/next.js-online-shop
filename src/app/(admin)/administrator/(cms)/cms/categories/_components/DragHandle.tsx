@@ -1,17 +1,10 @@
-import React from "react";
-import { DragHandleProps } from "../../types";
+import { GripVertical } from "lucide-react";
 import styles from "./DragHandle.module.css";
 
-export const DragHandle = React.forwardRef<HTMLDivElement, DragHandleProps>(
-	() => (
+export const DragHandle = () => {
+	return (
 		<div className={styles.dragHandle} title="Перетащить для сортировки">
-			<div className={styles.dotsContainer}>
-				<div className={styles.dot}></div>
-				<div className={styles.dot}></div>
-				<div className={styles.dot}></div>
-			</div>
+			<GripVertical className={styles.icon} />
 		</div>
-	)
-);
-
-DragHandle.displayName = "DragHandle";
+	);
+};

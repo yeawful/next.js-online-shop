@@ -1,0 +1,17 @@
+.statsContainer {
+	margin-top: 0.75rem;
+	font-size: 0.875rem;
+	color: var(--color-text-muted);
+}
+
+.statsNumber {
+	font-weight: 500;
+}
+
+.searchQuery {
+	margin-left: 1rem;
+}
+
+.queryText {
+	font-weight: 500;
+}

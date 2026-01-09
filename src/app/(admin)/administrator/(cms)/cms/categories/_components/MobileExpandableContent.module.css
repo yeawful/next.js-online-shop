@@ -74,6 +74,7 @@
 	line-height: 1rem;
 	cursor: pointer;
 	transition: background-color 0.3s ease;
+	border: none;
 }
 
 .editButton:hover {
@@ -93,6 +94,7 @@
 	line-height: 1rem;
 	cursor: pointer;
 	transition: background-color 0.3s ease;
+	border: none;
 }
 
 .deleteButton:hover {

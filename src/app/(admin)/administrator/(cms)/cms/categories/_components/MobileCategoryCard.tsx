@@ -11,6 +11,7 @@ export const MobileCategoryCard = ({
 	displayNumericId,
 	onDelete,
 	onEdit,
+	isDragging = false,
 }: SortableItemProps) => {
 	const [isExpanded, setIsExpended] = useState(false);
 
@@ -20,7 +21,7 @@ export const MobileCategoryCard = ({
 
 	return (
 		<div
-			className={styles.container}
+			className={`${styles.container} ${isDragging ? styles.dragging : ""}`}
 			onClick={() => setIsExpended(!isExpanded)}
 		>
 			<div className={styles.header}>

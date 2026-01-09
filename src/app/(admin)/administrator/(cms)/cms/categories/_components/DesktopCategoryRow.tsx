@@ -10,6 +10,7 @@ export const DesktopCategoryRow = ({
 	displayNumericId,
 	onDelete,
 	onEdit,
+	isDragging = false,
 }: SortableItemProps) => {
 	const handleEdit = (e: React.MouseEvent) => {
 		e.stopPropagation();
@@ -22,7 +23,7 @@ export const DesktopCategoryRow = ({
 	};
 
 	return (
-		<div className={styles.container}>
+		<div className={`${styles.container} ${isDragging ? styles.dragging : ""}`}>
 			<div className={styles.grid}>
 				<div className={styles.cell}>
 					<DragHandle />
