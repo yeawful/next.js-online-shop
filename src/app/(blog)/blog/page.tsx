@@ -8,6 +8,8 @@ import EmptyState from "./categories/_components/EmptyState";
 import CategoriesSidebar from "./categories/sidebar/CategoriesSidebar";
 import styles from "./page.module.css";
 
+export const dynamic = "force-dynamic";
+
 const truncate = (str: string, maxLength: number): string => {
 	if (str.length <= maxLength) return str;
 	return str.substring(0, maxLength - 3) + "...";

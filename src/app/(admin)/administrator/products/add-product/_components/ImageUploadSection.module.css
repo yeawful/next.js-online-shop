@@ -48,6 +48,7 @@
 	transition-duration: 150ms;
 	border: none;
 	cursor: pointer;
+	width: 2rem;
 }
 
 .removeButton:hover:not(:disabled) {

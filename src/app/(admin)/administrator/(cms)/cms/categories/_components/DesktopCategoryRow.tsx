@@ -14,12 +14,12 @@ export const DesktopCategoryRow = ({
 }: SortableItemProps) => {
 	const handleEdit = (e: React.MouseEvent) => {
 		e.stopPropagation();
+		window.scrollTo({ top: 0, behavior: "smooth" });
 		onEdit(category);
 	};
 
 	const handleDelete = (e: React.MouseEvent) => {
 		e.stopPropagation();
-		window.scrollTo({ top: 0, behavior: "smooth" });
 		onDelete(category._id.toString());
 	};
 
