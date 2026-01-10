@@ -19,6 +19,7 @@ export const DesktopCategoryRow = ({
 
 	const handleDelete = (e: React.MouseEvent) => {
 		e.stopPropagation();
+		window.scrollTo({ top: 0, behavior: "smooth" });
 		onDelete(category._id.toString());
 	};
 

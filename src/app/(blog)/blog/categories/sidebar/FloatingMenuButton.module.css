@@ -1,0 +1,80 @@
+.floatingButton {
+	position: fixed;
+	right: 1.5rem;
+	bottom: 1.5rem;
+	z-index: 40;
+	width: 3.5rem;
+	height: 3.5rem;
+	border-radius: 9999px;
+	background: linear-gradient(to bottom right, #3b82f6, #8b5cf6);
+	color: var(--color-bg-white);
+	box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all 0.3s;
+	border: none;
+}
+
+.floatingButton:hover {
+	box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+	transform: scale(1.05);
+}
+
+.floatingButton:active {
+	transform: scale(0.95);
+}
+
+.icon {
+	width: 1.5rem;
+	height: 1.5rem;
+	transition: transform 0.3s;
+}
+
+.floatingButton:hover .icon {
+	transform: rotate(90deg);
+}
+
+@keyframes float {
+	0%,
+	100% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+}
+
+.floatAnimation {
+	animation: float 3s ease-in-out infinite;
+}
+
+.badge {
+	position: absolute;
+	top: -0.25rem;
+	right: -0.25rem;
+	width: 1.25rem;
+	height: 1.25rem;
+	background-color: var(--color-error-light);
+	border-radius: 9999px;
+	font-size: 0.75rem;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+}
+
+.pulseAnimation {
+	animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

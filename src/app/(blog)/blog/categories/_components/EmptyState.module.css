@@ -1,0 +1,35 @@
+.emptyContainer {
+	text-align: center;
+	padding: 4rem 0;
+	background-color: var(--color-bg-white);
+	border-radius: 0.5rem;
+	box-shadow: var(--shadow-default);
+}
+
+.iconWrapper {
+	width: 6rem;
+	height: 6rem;
+	margin: 0 auto 1.5rem;
+	border-radius: 9999px;
+	background-color: var(--color-bg-light);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.icon {
+	width: 3rem;
+	height: 3rem;
+	color: var(--color-text-muted);
+}
+
+.title {
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: var(--color-main-text);
+	margin-bottom: 0.5rem;
+}
+
+.description {
+	color: var(--color-text-muted);
+}

@@ -1,0 +1,33 @@
+.emptyContainer {
+	text-align: center;
+	padding: 3rem 0;
+}
+
+.iconWrapper {
+	width: 4rem;
+	height: 4rem;
+	margin: 0 auto 1rem;
+	border-radius: 9999px;
+	background-color: var(--color-bg-light);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.iconWrapper.dark {
+	background-color: #1f2937;
+}
+
+.icon {
+	width: 2rem;
+	height: 2rem;
+	color: var(--color-text-muted);
+}
+
+.message {
+	color: var(--color-text-muted);
+}
+
+.message.dark {
+	color: #9ca3af;
+}

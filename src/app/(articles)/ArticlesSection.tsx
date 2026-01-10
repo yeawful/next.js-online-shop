@@ -14,10 +14,7 @@ const ArticleSection = ({
 				<div className={styles.articleHeader}>
 					<h2 className={styles.articleTitle}>{title}</h2>
 					{viewAllButton && (
-						<ViewAllButton
-							btnText={viewAllButton.text}
-							href={viewAllButton.href}
-						/>
+						<ViewAllButton btnText={viewAllButton.text} href="/blog" />
 					)}
 				</div>
 				<ul className={styles.articlesGrid}>

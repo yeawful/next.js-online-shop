@@ -95,7 +95,7 @@ const Footer = () => {
 							<Link href="#">Вакансии</Link>
 						</li>
 						<li className={styles.navItem}>
-							<Link href="#">Статьи</Link>
+							<Link href="/blog">Статьи</Link>
 						</li>
 						<li className={styles.navItem}>
 							<Link href="#"> Политика обработки персональных данных</Link>

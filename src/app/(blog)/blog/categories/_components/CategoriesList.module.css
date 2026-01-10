@@ -1,0 +1,70 @@
+@keyframes gentleAppear {
+	0% {
+		opacity: 0;
+		transform: translateY(20px) scale(0.95);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+}
+
+@media (min-width: 640px) {
+	.grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.5rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	.grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.cardWrapper {
+	animation: gentleAppear 0.6s ease-out forwards;
+	opacity: 0;
+}
+
+.delay0 {
+	animation-delay: 0s;
+}
+
+.delay1 {
+	animation-delay: 0.1s;
+}
+
+.delay2 {
+	animation-delay: 0.2s;
+}
+
+.delay3 {
+	animation-delay: 0.3s;
+}
+
+.delay4 {
+	animation-delay: 0.4s;
+}
+
+.delay5 {
+	animation-delay: 0.5s;
+}
+
+.delay6 {
+	animation-delay: 0.6s;
+}
+
+.delay7 {
+	animation-delay: 0.7s;
+}
+
+.delay8 {
+	animation-delay: 0.8s;
+}

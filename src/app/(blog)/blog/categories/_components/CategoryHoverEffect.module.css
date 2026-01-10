@@ -1,0 +1,12 @@
+.hoverEffect {
+	position: absolute;
+	inset: 0;
+	border: 2px solid transparent;
+	border-radius: 0.5rem;
+	pointer-events: none;
+	transition: border-color 0.5s;
+}
+
+.hoverEffect:hover {
+	border-color: #bbf7d0;
+}
